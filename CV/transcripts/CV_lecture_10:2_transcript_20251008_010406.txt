@@ -1,0 +1,869 @@
+[0.00s - 3.00s] Again, a small part is where we get the stitch together, these small images to get
+[3.00s - 6.00s] So, and also the thing is, like, if you do stitching, we can even go beyond even vision
+[6.00s - 9.00s] So like, you see these like 360 degree cameras, like those GoPros that sometimes those videos you use
+[9.00s - 12.00s] It's the same principle with ticks, ticks that goes beyond about
+[12.00s - 15.00s] All these things are just like matching, key point matching, and stitching them
+[15.00s - 18.00s] And also like another application are these so-called gigapixel images, these like super high-res images, which I think
+[18.00s - 21.00s] Okay
+[21.00s - 24.00s] Have you guys seen this one? This is a really cool image of the city and apparently it has a lot of pixels
+[24.00s - 27.00s] So if you kind of zoom in, you can find our downtown Brooklyn somewhere around here
+[27.00s - 30.00s] This is that building on Flatbush that looks like the Lord of the Rings Tower of Sorom
+[30.00s - 33.00s] It's still on the construction deck
+[33.00s - 36.00s] Oh, this is what it looked like before it was constructed
+[36.00s - 39.00s] So like, yeah, this image looks amazing
+[39.00s - 42.00s] There's like a lot of things
+[42.00s - 45.00s] Like there's no single camera that can take an image with this much detail in this point
+[45.00s - 48.00s] But what you don't see here is like a seamless stitching of hundreds of smaller images that create this one, which again I think high-res image
+[48.00s - 51.00s] So this is another application
+[51.00s - 54.00s] And another application is when it comes to astronomy and space
+[54.00s - 57.00s] back in the day, especially on cameras, we're not even digitized
+[57.00s - 60.00s] Like when they went, when we did the US of the moon missions, they would take these series of images of the far side of the moon
+[60.00s - 63.00s] as the vehicle, the lunar, I don't know what it's called, lunar orbiter, lunar orbiter like transited across the far side
+[63.00s - 66.00s] And they would stitch these together to create like a composite image that is figured that, that kind of gives us a full picture
+[66.00s - 69.00s] And these are also, this is another old school example of stitching they did on the surface of Moon
+[69.00s - 72.00s] As you can see, the stitching is not great because, you know, I mean, geometrically they did a good job, but obviously there's lighting differences between all these images
+[72.00s - 75.00s] So you can really see the seams, but this is just to get a map of the surface of the moon
+[75.00s - 78.00s] From my perspective, so in neuroscience, we have technologies that can take super high res And what you don't see here is that this image also has close to a million, like a billion pixels in it
+[78.00s - 81.00s] Each of these dots, if you were to zoom in, if you were to zoom into this thing, you'll see each of these positions in the brain
+[81.00s - 84.00s] You can really see it in really high detail to see the little molecules in between cells
+[84.00s - 87.00s] There's no one camera that can take..
+[87.00s - 90.00s] take this image in one fell swoop without that much detail
+[90.00s - 93.00s] So what people really do is they take a series of these smaller mosaics, and then they split it together
+[93.00s - 96.00s] Again, using similar algorithms that we're going to talk about today to create this composite image that is much higher than any single microscope can take at this point in time
+[96.00s - 99.00s] So stitching is basically a crunch to get a higher resolution from a bunch of smaller resolution sensors
+[99.00s - 102.00s] Okay, so how do we actually do this? So if you guys recall, like in project one we talked about cross-correlation
+[102.00s - 105.00s] And you can cross-correlate two images, kind of align them to one another
+[105.00s - 108.00s] If you're applying them to one another, overlay one on top of the other
+[108.00s - 111.00s] The only problem with cross correlation is that by design, you can just find translations
+[111.00s - 114.00s] If you have two images, it will tell you how much to shift one image relative to the other
+[114.00s - 117.00s] And then if both of those images have the same perspective, then yeah, then you can overlay two things to one another
+[117.00s - 120.00s] But if you had bunch of images that have different perspectives, obviously cross correlation is not going to work because you can't overlay an image with one perspective with another image with a different perspective without doing something else
+[120.00s - 123.00s] and just translating one to the other
+[123.00s - 126.00s] So here's the guy that looks like this
+[126.00s - 129.00s] Let's say we have these two images right here, and they are..
+[129.00s - 132.00s] It's just what happens is you take the focus of the camera to the one side of the scene and then you float into the other side to get these two images
+[132.00s - 135.00s] You can kind of align them like this staircase here
+[135.00s - 138.00s] It's the same staircase there, so the cross-correlation will find that roughly
+[138.00s - 141.00s] And if you were to find the..
+[141.00s - 144.00s] between these images and then overlay them, you'll get this kind of break because all some part of the image might align all the translation, other parts might not
+[144.00s - 147.00s] These two images are not just translations of one another, so there's a model, the model assumes the translation, it's not a translation image
+[147.00s - 150.00s] What we really want is something like this
+[150.00s - 153.00s] So if you have a series of smaller images, which is formed by left to right, transformation, and just simply translating
+[153.00s - 156.00s] It's already here
+[156.00s - 159.00s] The size of the images changes
+[159.00s - 162.00s] So when you shift images, it was just translation
+[162.00s - 165.00s] Images are not going to change in shape or size
+[165.00s - 168.00s] But on whatever transformation we're about to do, some images get squished, other ones get more dilated
+[168.00s - 171.00s] They sometimes get warped
+[171.00s - 174.00s] So we're going to learn how to do that
+[174.00s - 177.00s] So maybe like this is another way to think about things
+[177.00s - 180.00s] So far in the class, I always say computer vision is all about filtering
+[180.00s - 183.00s] And we take images and we just filter them to get what we want out of them
+[183.00s - 186.00s] But you can think about filtering as changing the range of an image
+[186.00s - 189.00s] You can think about each image as a function
+[189.00s - 192.00s] The function is defined by its domain, which is actually this case
+[192.00s - 195.00s] Where we are in the function is not much value to be saying all about is it changes the range of an image
+[195.00s - 198.00s] It doesn't change where things are but it changes the values of things as they were like
+[198.00s - 201.00s] Like maybe an example, like in this case let's say we had our, let's say we had something on the image that looks like that had this site, that had this profile, if it did this kind of filtering we kind of basically increased the baseline values of this, that would have changed the domain but it would only change the range of the image
+[201.00s - 204.00s] This would be equivalent to doing something like a brightness increase of our image, all the decrease in our contrast in that case
+[204.00s - 207.00s] Four things
+[207.00s - 210.00s] Maybe changing the domain of this
+[210.00s - 213.00s] So instead of transforming the output of it, you don't change the outputs at all
+[213.00s - 216.00s] But you change in which those outputs are mapped to some kind of the domain of the image
+[216.00s - 219.00s] So like, let's say we have our original image like this, and you want to maybe squish it in space
+[219.00s - 222.00s] That would be equivalent to maybe squishing the domain in which that function is set on
+[222.00s - 225.00s] And we're going to learn how to
+[225.00s - 228.00s] So, and here, ultimately what we're trying to look for are these functions t
+[228.00s - 231.00s] So t is a transformation function that is a geometric transformation, in this case
+[231.00s - 234.00s] In the earlier case, t is a function that changes the range of information, and we call those
+[234.00s - 237.00s] So, just going back to the..
+[237.00s - 240.00s] Just going back to how you represent images, just to kind of define some nomenclature
+[240.00s - 243.00s] So if you have any image, you can represent it as a matrix with some values at different positions in that matrix
+[243.00s - 246.00s] But if you think about this, this can be represented as a tuple, as a striplet
+[246.00s - 249.00s] You can have x and y coordinates of these, or where these values are read, and what the value is exactly
+[249.00s - 252.00s] So this matrix can be thought of as all the possible coordinates, and the values of that function at those coordinates
+[252.00s - 255.00s] In that case, we can think about this as a..
+[255.00s - 258.00s] as a domain and range of an image
+[258.00s - 261.00s] The domain is, are the, where these values are, where the signal is, and the range is what the signal is
+[261.00s - 264.00s] So far, so far in the class, we haven't really messed with this at all
+[264.00s - 267.00s] We haven't messed with the domain of the image
+[267.00s - 270.00s] We just, like, we try to mess with the range, how those values are, because they're, what kind of information we get out of those values
+[270.00s - 273.00s] So they're going to talk about how to change the domain of an image, to get new images to come
+[273.00s - 276.00s] Okay, so yeah, let's go back to the example
+[276.00s - 279.00s] So if you have any image, we can think about it as a function to the inputs
+[279.00s - 282.00s] The inputs are the rate, are the domain of exactly spatial positions of the pixels
+[282.00s - 285.00s] And if you are looking for kind of a fill pane on this image to make it brighter, we can take this function and we can change the output of the function and just make it brighter, uniformly everywhere
+[285.00s - 288.00s] Let's look at the underlying structures, the underlying content of the image remains the same, now just the values kind of change
+[288.00s - 291.00s] If you were to warp this, then taking the previous example and making a 2D, it'll be equivalent to changing where these values are mapped to
+[291.00s - 294.00s] So it'll be like change the transformation domain
+[294.00s - 297.00s] And that'll be equivalent to like changing, you would have the exact same, again, content as before, but where that content is distributed, the image changes to some other position
+[297.00s - 300.00s] And here's some classes of, and we can think about transformations from a more geometric perspective
+[300.00s - 303.00s] Like, if you kind of think about it, this, the limited number of these linear parametric transformations that we can have, and we can think about them first abstractly, and then we'll think about how we can formulate them mathematically
+[303.00s - 306.00s] If you were to just, you can translate an image, you can shift it in position, just up and down, left, right
+[306.00s - 309.00s] You can rotate it like this, you can change aspect ratio, and you can do some kind of, parallelogram like transparently called sat-line transformation
+[309.00s - 312.00s] You can change its perspective, which is kind of what the panorama images that we saw before kind of do to get the right angles for some images
+[312.00s - 315.00s] And you can do all these other types of things like you can like warp the image to match a particular shape
+[315.00s - 318.00s] And this especially comes in handy if you guys are familiar with calibrations like for like for SLR cameras a lot sometimes lenses like who's worked with fish eye lenses before in photography so people who work with or even like you don't even have to go to the fish eye lens if you go to just the 0.5 magnification lens that are in your iPhones put it really close to your face your face becomes this weird and it works And that's because the lenses kind of non-linearly map to the center versus the edge of an image
+[318.00s - 321.00s] So we can correct for that by applying some kind of cylindrical correction of an image to warp it to the right aspect ratio
+[321.00s - 324.00s] And all these different transformations show can be parametrized by a couple of parameters that we can learn
+[324.00s - 327.00s] Yeah, so for example, and so like these are It's kind of like an optical illusion, but yeah
+[327.00s - 330.00s] In all these cases, the spread rectangles shows the original domain of the image
+[330.00s - 333.00s] And after translation, or after any of these transformations, now this domain gets mapped to some other position in space
+[333.00s - 336.00s] We go there and learn how to get those, how to parametricize those
+[336.00s - 339.00s] So the basic tool we're going to use for this
+[339.00s - 342.00s] is, let's call this function t
+[342.00s - 345.00s] So t is going to be some kind of a function that maps our original set of coordinates in an image to a new set of coordinates in the target image
+[345.00s - 348.00s] And so if we have a set of points p in one image, and we want to map them to another set of points p prime in a new image, we get to learn a transformation that takes p and it maps us up to p prime
+[348.00s - 351.00s] And what we really want is this t function to be invariant to which these what these points are
+[351.00s - 354.00s] So like we want to no matter what points that we're trying to map an image, we want to uniformly map them to another set of points that does not depend on the points that we're looking at
+[354.00s - 357.00s] So like although we want to map like this point to that other point there, we want this t function to apply the area of all the other pixels as well to the form the entire image, not just a single point
+[357.00s - 360.00s] Okay, so let's start with a very basic one, scale
+[360.00s - 363.00s] Let's say we have an image that has this domain, so let's say like this, in the traditional convention is to, you know, have the first pixel be at one one or zero zero if you want to be in Python
+[363.00s - 366.00s] Python when, and now let's say we map this domain, so each, these x and y axes They kind of tell us the coordinates of each pixel here
+[366.00s - 369.00s] And we want to map each of these pixels to this new coordinate space, where now this coordinate piece that was previously at 1.1, now is at 2.2, for example
+[369.00s - 372.00s] How do we do that? So we need to basically take the, I think this is a very basic example, but like, yeah, like in this example, if we took So this one, where we, it's not just this, let's say we non-uniformly scale this image, such that the y coordinates, they get squished by half, and with x coordinates, they get stretched by two
+[372.00s - 375.00s] We can think about this as we take our original coordinates, and now the new x coordinates are going to be twice that of the original x coordinates, and the new y coordinates are going to be half that of the original y coordinates
+[375.00s - 378.00s] And now we can, if we have this kind of relation, we can actually write a, we can write this as a, as a matrix operation
+[378.00s - 381.00s] Because ultimately, this transformation operation takes us input two-dimensional coordinates to predict if you're talking about two-dimensional images
+[381.00s - 384.00s] And it needs to give us two-dimensional coordinates out
+[384.00s - 387.00s] It needs to tell us a map between the original coordinates and the final coordinates
+[387.00s - 390.00s] And we can represent all of this as a two by two matrix multiplication operation
+[390.00s - 393.00s] Take as inputs to the natural coordinates, right? So our coordinates in the original image, it will give us two dimensional coordinates now opposite image
+[393.00s - 396.00s] And if you want to do scaling, the scaling can be represented as just as some kind of entries in the diagonal of this matrix and zeros in the antedatical
+[396.00s - 399.00s] And you can show that this matrix precisely leads to the series of equations that we have
+[399.00s - 402.00s] So in this case, what will be the..
+[402.00s - 405.00s] So like in the..
+[405.00s - 408.00s] I'm example of this
+[408.00s - 411.00s] I guess the end of an example is
+[411.00s - 414.00s] So let's say we have..
+[414.00s - 417.00s] Let's say we want to generate that first image that we saw
+[417.00s - 420.00s] Let's not see
+[420.00s - 423.00s] Okay, so let's say..
+[423.00s - 426.00s] So let's say we have these set of coordinates, and we want to map them such that the y coordinates, they get scaled by 2, and then x coordinate
+[426.00s - 429.00s] If you have these particular set of coordinates, after applying this transformation, now the new coordinates are going to be A times whatever the x coordinate was
+[429.00s - 432.00s] So the scaling along x direction is going to be A
+[432.00s - 435.00s] And then the scaling along the y direction is going to be B
+[435.00s - 438.00s] And now this is going to give us a map
+[438.00s - 441.00s] So like for every single pixel we had in our original image, now we have a corresponding pixel that is now in a new location in this new domain
+[441.00s - 444.00s] And now we can use this as a map to generate new image afterwards
+[444.00s - 447.00s] So I guess like in this example, for this particular case, A, like the A variable would be 2, B variable would be 0.5
+[447.00s - 450.00s] And then another thing is we can also do the inverse map
+[450.00s - 453.00s] So for, just like to kind of go back to this image, just like we can map the pixels of this image onto this image, if we start from this perspective, we can also map these back to here by just taking the inverse of this thing
+[453.00s - 456.00s] And inverse of inverse operation is going to be, you can think about it as, now you want to stretch, sorry, you want to crunch the x direction by half
+[456.00s - 459.00s] So the inverse of the x transformation will be 0.5, and you want to stretch the y by 2
+[459.00s - 462.00s] It's going to yield the original image back
+[462.00s - 465.00s] So that'll be, the inverse operation will be, the y will be multiplied by 2
+[465.00s - 468.00s] And that's simply just the inverse of this matrix
+[468.00s - 471.00s] So if you have any, if you have this matrix, if you were to invert it, if you were to invert this, and then multiply these, you should be able to get the original point of the impact
+[471.00s - 474.00s] And the important thing is this matrix in the always
+[474.00s - 477.00s] So in any of these linear transformations that we have, we want it to be invertible
+[477.00s - 480.00s] So by defining, by having this in this form, it should be invertible unless, in a lot of cases, will this types of translation, sorry, scaling operations be non-invertible
+[480.00s - 483.00s] It could be linear
+[483.00s - 486.00s] So like let's say we transform that and get such that A or B or zero, what does that do It basically destroys our image
+[486.00s - 489.00s] Once you destroy an image, you cannot undistroy it
+[489.00s - 492.00s] So there's no inverse operation
+[492.00s - 495.00s] If you scaled our image, I said it's no longer an image
+[495.00s - 498.00s] As long as AMD are non-zero, this is scaling operation
+[498.00s - 501.00s] Scaling can be thought of as a matrix operation
+[501.00s - 504.00s] More complex things like rotations can also be thought of as matrix operations
+[504.00s - 507.00s] So let's say we want to rotate our image by 45 degrees
+[507.00s - 510.00s] This can be parametrized by this rotation matrix
+[510.00s - 513.00s] How many have you seen this in linear algebra before? So if you want to take any kind of xy coordinates and you want to rotate them by degrees around the origin, that can be represented by this particular rotation matrix
+[513.00s - 516.00s] And if you notice, this rotation matrix, although it has four terms, is parametrized by a single parameter data
+[516.00s - 519.00s] So that's also important though
+[519.00s - 522.00s] The scaling matrix that we have has two parameters, two unique parameters that are kind of independent one another
+[522.00s - 525.00s] Rotation as a one parameter operation, all these four things they all depend on one another through the single parameter theta
+[525.00s - 528.00s] And what we can do is that like, so let's say, take a particular point by 45 degrees and we calculate what is a cosine and sine of course and find these entries and now give us 2 by 2 matrix and multiply the coordinates of our pixels in our original image to get the coordinates of our existing icon yet
+[528.00s - 531.00s] It kind of looks like what you see on the right hand side on top
+[531.00s - 534.00s] So if you have these nine pixels that we care about, the red and blue, the nine pixels in blue, the red pixels will be the corresponding maps of those pixels that are rotating by 45
+[534.00s - 537.00s] I think last but I'll take just give you a news there are some pixels that are What's the way you're dividing this for? Yeah, so we're going to talk about that next
+[537.00s - 540.00s] So again, that's a great question
+[540.00s - 543.00s] So like after we have this map, if you notice, this is going to be our final transformation
+[543.00s - 546.00s] So let's say we had a triplet
+[546.00s - 549.00s] So at pixel coordinates 1 and 0, we had a value of 83
+[549.00s - 552.00s] Now at a pixel value of cosine of whatever, theta alpha minus sine of, which is going to be the map of this, the new image, whatever these coordinates are in the new image, are going to have a value of 83
+[552.00s - 555.00s] But the question is, the thing is, these values might not be integer
+[555.00s - 558.00s] After doing this transformation, you might map them to something outside of the canvas of our image
+[558.00s - 561.00s] Then you need to, again, get into some kind of interpolation and extrapolation
+[561.00s - 564.00s] Not in math things
+[564.00s - 567.00s] We'll talk about interpolations after we kind of go through all these
+[567.00s - 570.00s] But yes, maybe like a preview of all these things
+[570.00s - 573.00s] Once you have a map of what we do in our image, to the pixels in our target image that we want to morph them into, we're going to have this type of, we're going to have a table of all the coordinates in the new image and the values they should take
+[573.00s - 576.00s] And we're going to use that to interpolate them
+[576.00s - 579.00s] That's actually a good example
+[579.00s - 582.00s] Like what you see on the..
+[582.00s - 585.00s] on the top right is that our original image, let's say its coordinates were started at 0, then we went to like 0, 1, 2, 0, 1, 2
+[585.00s - 588.00s] But our new coordinates, there are some pixels that are like, you know, they're going to be minus 1 and 2, which is outside the canvas of our image
+[588.00s - 591.00s] Those would not get it
+[591.00s - 594.00s] You would not be able to view them in any target image
+[594.00s - 597.00s] Conversely, Conversely, there's going to be some pixels that don't get any kind of correspondences
+[597.00s - 600.00s] So after you open image, there are some positions in your target that is outside the domain of the original image, and those will take zero values or some kind of nan values because you don't know what's going to..
+[600.00s - 603.00s] You wouldn't be able to fill in a value for those
+[603.00s - 606.00s] So we'll get to that after we kind of cover these different transformations
+[606.00s - 609.00s] But I know this might be confusing
+[609.00s - 612.00s] So any other follow-up questions? Okay, so we talked about inverse of scaling
+[612.00s - 615.00s] So actually, like we did, we didn't talk about it
+[615.00s - 618.00s] So inverse of this would be the inversion of this
+[618.00s - 621.00s] And inverse of the scaling matrix is, unless these are zero, then these should be one over A or one over B
+[621.00s - 624.00s] And those will be defined as long as A and B are defined
+[624.00s - 627.00s] We should also think about the inverse of this rotation matrix
+[627.00s - 630.00s] So what will be the inverse of this kind of matrix such that we get the inverse map? So instead of mapping pixels in our target image to our original image, what if you want to log all the way around? And that's the same concept as inverting, just like we were able to find the inverse of the scalar matrix by finding the inverse of this matrix itself
+[630.00s - 633.00s] We can take the inverse of those rotation matrix to find the anti-rotation
+[633.00s - 636.00s] And you can do this matrix to finding matrix inverses, especially for a 2x2 matrix
+[636.00s - 639.00s] But the nice thing about rotation matrices are that if you just transpose them, transpose a rotation matrix is its own inverse
+[639.00s - 642.00s] So that's a nice property
+[642.00s - 645.00s] So you have to do this
+[645.00s - 648.00s] If you know this is your original rotation matrix, it transposes such that now this becomes there and this one comes here
+[648.00s - 651.00s] Now you've generated inverse math from one transformation matrix to another
+[651.00s - 654.00s] Context is true, but if I know the data? Right, that's another way
+[654.00s - 657.00s] So there's a couple of ways
+[657.00s - 660.00s] Yes, exactly
+[660.00s - 663.00s] That's perfect
+[663.00s - 666.00s] That's actually good
+[666.00s - 669.00s] Okay, if you know the data, then yeah, you can just calculate minus data
+[669.00s - 672.00s] That's another way
+[672.00s - 675.00s] That's probably the smart way
+[675.00s - 678.00s] But sometimes you won't be given that data
+[678.00s - 681.00s] Sometimes we'll just give you a 2x2 matrix
+[681.00s - 684.00s] So if you want to do biotid matrix, then biotid is a rotation matrix, then you can just transpose it
+[684.00s - 687.00s] Otherwise you would have to reverse engineer what data is to take into mind
+[687.00s - 690.00s] So yeah, that could be two ways to do that
+[690.00s - 693.00s] Also, the more challenging way is just having a rotation matrix because brute force is inverted by using the matrix inverse algorithms and you can do the same thing
+[693.00s - 696.00s] All of those things, if my ass is an exam, all of these different steps in Vertis might have different computational complexities
+[696.00s - 699.00s] So more efficient than others
+[699.00s - 702.00s] We can think about that a little bit
+[702.00s - 705.00s] Okay, clear
+[705.00s - 708.00s] We can represent rotation
+[708.00s - 711.00s] We can represent scaling and rotation and its matrix operations
+[711.00s - 714.00s] We can kind of generalize the study of things
+[714.00s - 717.00s] We always have the identity transformation where you don't change anything just to have that in our repertoire
+[717.00s - 720.00s] And you can also do these things called shears, which is basically warp
+[720.00s - 723.00s] Like we just changed the ratio between the x and y coordinates
+[723.00s - 726.00s] And that's equivalent to changing these off diagonal terms is the main diagonal
+[726.00s - 729.00s] All right
+[729.00s - 732.00s] And so these are like the more like physically realistic transformations
+[732.00s - 735.00s] These are things that preserve an image and keep the content of an image as is
+[735.00s - 738.00s] But you can also do these mirror operations, which will now create a virtual image
+[738.00s - 741.00s] So now you'll have a real image, now you'll have some kind of alternate image which sometimes violates some physical rules
+[741.00s - 744.00s] So I can do this, like you can mirror images by simply splitting a minus to to one of the scaling factors
+[744.00s - 747.00s] Or you can mirror them completely, you can align both directions by subtracting each coordinate by minus one
+[747.00s - 750.00s] And maybe a trick question is, this operation, You can also get this through rotations
+[750.00s - 753.00s] How could you get this? How would you be able to get this mirror operation around epsilon 1 by epsilon? 270? 270? 180
+[753.00s - 756.00s] Yeah, exactly
+[756.00s - 759.00s] We have 180
+[759.00s - 762.00s] It'll be 180
+[762.00s - 765.00s] If your theta was 180, if you applied your signs and cosines, you will get minus 1 and minus 1 in the energy view of your operation
+[765.00s - 768.00s] Another question is, is it like so, just like, so there exists a rotation matrix that can give this type of mirroring along x and y directions
+[768.00s - 771.00s] Can we find a rotation matrix that gives us just a single mirroring option? Can you rotate an image such that you can mirror it? Why? Because that's a rotation of, I feel like that's a rotation around like a different axis
+[771.00s - 774.00s] That's not in the, it's around the z axis instead of the r
+[774.00s - 777.00s] Yeah, so one thing about the rotation matrices is that they have to have a determinant of one
+[777.00s - 780.00s] So that's one thing, another property, because of this property that, because of the property that rotation matrices are their self inverse by their affine transformation, you can derive from here that rotation matrices have a determinant of one
+[780.00s - 783.00s] and that's also what this is so like technically the identity transformation is a rotation matrix this one's not a position matrix but um if you take this matrix turban's always going to be one so why do we why we know that because What does this term mean? Cosine squared
+[783.00s - 786.00s] This is going to be a main diagonal minus the second diagonal
+[786.00s - 789.00s] So it's going to be cosine squared minus minus sine squared, which is plus sine squared
+[789.00s - 792.00s] So cosine of an angle, cosine squared plus sine squared of any angle is always 1
+[792.00s - 795.00s] I thought you were a theorem
+[795.00s - 798.00s] Because of that, all rotation matrices always have determinant 1
+[798.00s - 801.00s] So you can already determine that this matrix also is a determinant 1
+[801.00s - 804.00s] Determinant 1 minus 0, 1
+[804.00s - 807.00s] That matrix does not have a determinant 1
+[807.00s - 810.00s] It has a determinant minus 1
+[810.00s - 813.00s] Therefore, you can't be a rotation matrix
+[813.00s - 816.00s] So that's your quick one-minute proof on what the rotation matrix is
+[816.00s - 819.00s] Do all rotation matrices or whichever transformation matrices have a determinant of 1, not change like aspect ratio exactly so that's a great question so if you were to change aspect ratio of a matrix of an image that by definition you can calculate it but it will mark it will not have a determinant one anymore so like going back to actually going back to scaling matrix is a scaling is a scaling matrix we represent as a rotation matrix it can but on the one yeah so like when the product Yeah, so like the scalar matrix is a rotation matrix in both of these
+[819.00s - 822.00s] So that's actually a great, it's a trick question, but you can technically have a determinant that's one, like giving A like two and B half, for example, you would have a determinant of one, but that would not be a rotation matrix
+[822.00s - 825.00s] Because another property of rotation matrices is that each row has to have a vector norm of one
+[825.00s - 828.00s] So if you think about these two columns of these matrices, rotation matrices do not change the aspect ratio in any way
+[828.00s - 831.00s] And you can think about that as the vector norm for each of these columns
+[831.00s - 834.00s] So that's the second property
+[834.00s - 837.00s] There's a couple of properties of rotation matrices which you will cover probably in your homework or maybe in the practice exam questions
+[837.00s - 840.00s] It's about that
+[840.00s - 843.00s] That's surely going to come up
+[843.00s - 846.00s] But yeah, it's good to think about things
+[846.00s - 849.00s] So like what is the rotation matrix? What's not? And think about what rotation matrices do
+[849.00s - 852.00s] Rotation matrices do not change the area of an image
+[852.00s - 855.00s] Like on there, the rotation matrix still has the same area
+[855.00s - 858.00s] But if you do anything like a shear operation, or like some kind of scaling, you change the area of image
+[858.00s - 861.00s] And when you change an area of image, that roughly travels space to a determinative matrix
+[861.00s - 864.00s] So to determine a matrix, it gives you an idea of how much area of an image gets changed for one
+[864.00s - 867.00s] Okay, so let's think about what's likely to vary about these types of transformation operations
+[867.00s - 870.00s] So, what's invariant? So if you think about, if we have a set of points and we map them to another set of points by this transformation matrix, I guess no matter what our transformation matrix is, like as long as T is sometimes a matrix, few things don't change
+[870.00s - 873.00s] The one is origin always stays at origin
+[873.00s - 876.00s] If we start at zero, no matter what we multiply that with, we're always at origin, zero
+[876.00s - 879.00s] If you have a line in the image, or if you have straight lines in the image, after you apply any of these transformations, those straight lines are going to remain straight
+[879.00s - 882.00s] They might change their direction
+[882.00s - 885.00s] They might change their length, but they're blind just to be magnanimated lines
+[885.00s - 888.00s] Another important thing is, if two lines are parallel before in an image, under these transformations, they're going to remain parallel afterwards
+[888.00s - 891.00s] That might be a question we might ask you to prove
+[891.00s - 894.00s] Like if you have, when you set of two lines that are parallel, if you have any arbitrary T matrix, are they still parallel? And I think you'll see that there
+[894.00s - 897.00s] Okay, but one thing that we did not talk about, which is what we started the lecture with, is translation
+[897.00s - 900.00s] So like all these things we do, they remain because of the fact that all these operations we've talked about so far, scaling, rotation, cheers, mirroring and stuff like that
+[900.00s - 903.00s] All these are kind of, they don't touch the origin at all
+[903.00s - 906.00s] They all are operations around the origin
+[906.00s - 909.00s] But what we talked about earlier, we want to translate, you're going to translate one image to another
+[909.00s - 912.00s] That's definitely not the case
+[912.00s - 915.00s] If you start origin, you translate by five pixels up and to the right
+[915.00s - 918.00s] Origin is not going to be mapped to the origin in the new image
+[918.00s - 921.00s] So that's going to give it, how can we still represent this as a nature software? So let's say we get an image like this, and we're going to map that map it to a translated version of the cell
+[921.00s - 924.00s] We translate it by two pixels along each direction
+[924.00s - 927.00s] The previous equation that we performed that we have doesn't permit, wouldn't permit us to represent the coordinates of the input image to the top, to the, so the target that we want to get to
+[927.00s - 930.00s] We cannot represent this as a matrix operation yet
+[930.00s - 933.00s] So let's say, like a translation operation, you can think about it as the other set of coordinates, and you have the other coordinates
+[933.00s - 936.00s] And each of these coordinates are shifted by a certain level of translation
+[936.00s - 939.00s] Now this is a vector plus some other vector operation, but it's no longer a vector times some matrix that we showed before
+[939.00s - 942.00s] And this will create some trouble unless we can contend with this because You don't want to just rotate images, you also want to translate them, you want to move things around
+[942.00s - 945.00s] How can we unify, how can we represent translation in the same way we represent rotations and all these other operations we did before? We're getting the same mathematical framework
+[945.00s - 948.00s] So like in this case, you cannot represent a set of points, input points, and output points using nice matrix operation
+[948.00s - 951.00s] Yes
+[951.00s - 954.00s] We can do this
+[954.00s - 957.00s] if we add a nice new term just to help us
+[957.00s - 960.00s] So if we, for all of our coordinates, we just add another term, I guess scalar enough value of 1
+[960.00s - 963.00s] Now we can represent, now we can represent these as, now we can represent translation as a matrix operation
+[963.00s - 966.00s] So if you notice, We just add this additional coordinate, like this dummy coordinate to our coordinates
+[966.00s - 969.00s] And now we multiply by this 2 by 3 matrix, where you can see the initial part of this identity so it doesn't change it
+[969.00s - 972.00s] But now we have these other additional terms that can handle the translation
+[972.00s - 975.00s] We can represent translation as some kind of matrix times our coordinates with the dummy variable
+[975.00s - 978.00s] And the nice thing is, so this is called homogenous coordinates
+[978.00s - 981.00s] So these are, before we were just talking about dysregular coordinates for all our pixels
+[981.00s - 984.00s] But if you add a scalar value of 1, these are called homogenous ways of representing the pixels
+[984.00s - 987.00s] And that allows us to now represent all types of things, like translations and rotations, all under matrix operations
+[987.00s - 990.00s] So going back to before, everything can be now construed as matrix operation by adding this additional variable, additional scalar value of 1
+[990.00s - 993.00s] So by going back just, we'll go before, go to translation and just look at, like, if you want to do some kind of rotation, you can have your rotation matrix here and a scalar value of 1 in this 3 by 3 matrix
+[993.00s - 996.00s] And if you go to the math, this gives you an exact, this will give you a rotation of these x-coordinate coordinates by this angle theta
+[996.00s - 999.00s] Same thing with scaling
+[999.00s - 1002.00s] Here, you can put your two by two scaling matrix here
+[1002.00s - 1005.00s] And then you have this third coordinate diagonal
+[1005.00s - 1008.00s] And if you do the math, like this part touches the first two coordinates
+[1008.00s - 1011.00s] And this last column touches the last coordinate
+[1011.00s - 1014.00s] As you can see, like it doesn't translate anything
+[1014.00s - 1017.00s] and you just small by one by one, so it remains as one always
+[1017.00s - 1020.00s] But ultimately what this does is it's going to scale your x coordinates by this first term, and then y coordinates by the second term
+[1020.00s - 1023.00s] And if you want to adjust some translation, you don't touch this first two by two block of this new matrix, and only add these terms over here, like we had before
+[1023.00s - 1026.00s] So now we can kind of unify doing translations, scaling, rotation, and all the other stuff we talked about, like the shearing, mirroring, mirroring and stuff all under one, three by three matrix
+[1026.00s - 1029.00s] So maybe the, I guess if you want to, if you want to, if you're going to represent all these linear transformations using, without using these homogenous coordinates, you would have to represent them as some kind of like matrix operation on the coordinates plus some kind of translation
+[1029.00s - 1032.00s] But instead of having these two terms that can make our lives difficult later on, we can represent that everything has just one single matrix operation, instead of having a multiplication operation and an addition operation
+[1032.00s - 1035.00s] Questions about this? And we'll get to why we're doing this
+[1035.00s - 1038.00s] The main reason why we're doing this is..
+[1038.00s - 1041.00s] Let's say I don't want to just translate, I want to translate and rotate the image, and then do some scanning, and then do something else afterwards
+[1041.00s - 1044.00s] We want to do all these, let's say I want to do 10 different transformations to my image
+[1044.00s - 1047.00s] If you had to constantly bookkeep which things were multiplying and which things were adding, that would get very complex if you had a series of many operations
+[1047.00s - 1050.00s] But now each operation can be represented as a nice matrix operation
+[1050.00s - 1053.00s] We can just stack these matrices by left multiplying them, and it will give us a series of transformations that we've done just using multiplication
+[1053.00s - 1056.00s] That'll make our lives much easier
+[1056.00s - 1059.00s] Okay, so let me demonstrate what that means
+[1059.00s - 1062.00s] Let's say we want to start from our image, and we want to translate it first
+[1062.00s - 1065.00s] Up to the right a little bit, we can multiply our coordinates by a translation matrix
+[1065.00s - 1068.00s] which is identity matrix, which the other column added to it
+[1068.00s - 1071.00s] That represents how my translation would be rendered
+[1071.00s - 1074.00s] And then now we want to rotate this
+[1074.00s - 1077.00s] Let's say, rotate our image by theta degrees
+[1077.00s - 1080.00s] We can apply it as a rotation matrix
+[1080.00s - 1083.00s] And then we do scaling there
+[1083.00s - 1086.00s] And then we can represent it as another matrix operation
+[1086.00s - 1089.00s] And we can put them all together
+[1089.00s - 1092.00s] And we can put all this together as three matrices multiplied
+[1092.00s - 1095.00s] all at once
+[1095.00s - 1098.00s] So, and here the order matters
+[1098.00s - 1101.00s] So like the first operation that's being done is scaling our coordinates
+[1101.00s - 1104.00s] So like after you start, you always read this from right to left
+[1104.00s - 1107.00s] So like you start with original center coordinates, you scale them using this, and then you rotate them, and then you translate it
+[1107.00s - 1110.00s] And then you get this final output
+[1110.00s - 1113.00s] compose all of these together it kind of it formulates what we call an affine matrix so if you want to take any kind of that map map them to this this affine space you can represent it as three things you can represent how much you're going to scale it how much you're going to rotate it how much you're going to translate and that that counts as a all these three things together is what's called the naphe transformation Another important thing to kind of take note here is like number of free variables
+[1113.00s - 1116.00s] Like how many degrees of freedom you have
+[1116.00s - 1119.00s] So like let's count
+[1119.00s - 1122.00s] There's two things, there are two free variables that determine how much you scale the image
+[1122.00s - 1125.00s] There's one variable that defines how much rotation you have
+[1125.00s - 1128.00s] So now we have three
+[1128.00s - 1131.00s] Now we have two more variables that determine how much translation you have
+[1131.00s - 1134.00s] So we have five degrees of freedom in terms of doing this headline transformation
+[1134.00s - 1137.00s] This is going to be important later on for different types of operations and more degrees of freedom than others
+[1137.00s - 1140.00s] And we need to, if you want to solve for these variables, we need that many more equations to be able to solve for these parameters that we'll get to later on
+[1140.00s - 1143.00s] So we can compose all these as matrix compositions
+[1143.00s - 1146.00s] So we can scale, rotate, translate
+[1146.00s - 1149.00s] Does the order matter? So like let's say, if I put my scan matrix here first, and then I put my translation matrix first as last, for example, instead of this current order, what would that do to our image? Does the order matter? So what do you guys think? And why? Would I get the same result if translation was first versus last? No, so like if you were looking at the origin, for example, you scaled it and contributed
+[1149.00s - 1152.00s] Yeah, unless we have these identity transformations, so like if you are, if you did not, if you didn't do any translation, if you did any translation in the beginning, or if you didn't do any translations at the end, then then it would be the same, but as long as these values are non-trivial, then order does matter
+[1152.00s - 1155.00s] And that comes from linear algebraic the, I guess, rule, like cook matrices are usually not commutative
+[1155.00s - 1158.00s] So A times B times B times A is not the same thing
+[1158.00s - 1161.00s] For general linear algebraic matrices A and B, it's the same case here
+[1161.00s - 1164.00s] Order, we multiply this, even if you didn't have three things, we multiply two matrices in one order versus other, they're not necessarily equal to one another
+[1164.00s - 1167.00s] Unless, unless on special cases where the parameters of these matrices are like lead to like an identity matrix so the only way one the way matrices commute is if one matrix is an identity matrix anyway that's one way there could be other ways that matrices can be commuted but in general matrices do not commute so order doesn't matter okay so i'm going back to what's invariant on these operations and what's preserved
+[1167.00s - 1170.00s] So by adding this translation term, we kind of got to kind of guarantee that origin is origin anymore
+[1170.00s - 1173.00s] Now we shift things
+[1173.00s - 1176.00s] But my thing is, on these operations, you can still prove that there's lines, figure it out straight
+[1176.00s - 1179.00s] They have straight lines after this transformation
+[1179.00s - 1182.00s] And if you have a bunch of ones that were parallel to one another in two lines, they get really parallel
+[1182.00s - 1185.00s] And then let's try the transformation matrix that we derive using these affine transformations
+[1185.00s - 1188.00s] But now how can we, like these are the nicely behaved transformations, like I find is usually things that are more like well behaved rotation, scaling, translation
+[1188.00s - 1191.00s] There's going to be most of the, a lot of times that's all you need in a lot of problems
+[1191.00s - 1194.00s] But like the problem that I mentioned before, what if you do something more complex? We call this, we call this general class of transformation, somography, which you can we can change the perspective of an image
+[1194.00s - 1197.00s] So like all these transformations, affine transformation that we talked about, all it does is, like, it doesn't change the perspective image, but just changes like the angle, like the view angle, and maybe like collapses some of the different axes to one another
+[1197.00s - 1200.00s] Radically change the perspective of an image
+[1200.00s - 1203.00s] And if you think about it also, these fine operations, you can think about it as like a camera that's taking images stays where it is, but maybe it just rotates, maybe it just changes zoom level or something like that
+[1203.00s - 1206.00s] That's all a surrounding model
+[1206.00s - 1209.00s] But what happens, like how can we model with images, like the camera angle changes? Like instead of taking an image from this perspective, take it from like a bottom up perspective, like the objects with an image, they, you know, the perspective in which we're looking at them changes
+[1209.00s - 1212.00s] How can we also learn that type of map? And so these are general types of maps, which is a superset of app type transformations, they're called tomographies
+[1212.00s - 1215.00s] So here we learn the perspective and the projection image onto a new plane
+[1215.00s - 1218.00s] And here, unlike with these affine operations where we can have five degrees of freedom of these five different variables we need to solve, scaling, translation, and single rotation value, We can expand this set, and now make full use of this 3x3 matrix, and make all of these variables free
+[1218.00s - 1221.00s] If you let all these variables to be free, except for one of them, except for one of them, this defines this broad class of transformations over markers
+[1221.00s - 1224.00s] And we can use these to map any image to any other perspective that we want
+[1224.00s - 1227.00s] Now things are not, a lot of rules are broken
+[1227.00s - 1230.00s] Except for one
+[1230.00s - 1233.00s] Lines still, you know, homography, if you had a straight line, you're still gonna be straight
+[1233.00s - 1236.00s] And you can think about it this way, like, if you take a picture of, if you take a picture of some buildings in the city, if you change your perspective, things that were parallel before might no longer be parallel
+[1236.00s - 1239.00s] And also, like, ratios between these distances might change based on, like, kind of how we see here
+[1239.00s - 1242.00s] like things that had a particular distance before
+[1242.00s - 1245.00s] Like these two, let's say these two blocks were close to each other at the same distance as some other pair of blocks, but not after this homography
+[1245.00s - 1248.00s] Distances get warped across different parts of the image
+[1248.00s - 1251.00s] So that's if those general equations are going to warp distances, it depends on where the different points are in the image
+[1251.00s - 1254.00s] But still things, since this is still a linear operation, one thing that we can guarantee is that if you had a straight line, before in an image, after doing this operation, they're still going to remain straight
+[1254.00s - 1257.00s] So that's the only thing homography is preserved, is lines are still going to remain as lines
+[1257.00s - 1260.00s] But as you can see, like, there's a bunch of cubes in this image
+[1260.00s - 1263.00s] There's, like, straight edges
+[1263.00s - 1266.00s] Those edges are straight A and B
+[1266.00s - 1269.00s] So you can think about all this as, if you guys are fancy groups here, have, like, some abstract algebra, you can think about these as a set of groups
+[1269.00s - 1272.00s] All these are subsets
+[1272.00s - 1275.00s] All these groups are subsets of one another
+[1275.00s - 1278.00s] So if you think about the most basic thing that we have is a translation operation
+[1278.00s - 1281.00s] Translation operation defined by that 3 by 3 matrix that we talked about in the homogenous form
+[1281.00s - 1284.00s] Translation operation is a subset of all rigid transformations, which is going to be a translation plus some kind of rotation added to it
+[1284.00s - 1287.00s] If you make this rotation just the null, but if you just make it the identity rotation, then you get a translation for free
+[1287.00s - 1290.00s] So we call the class of rigid transformations, matrices of the form, a rotation matrix, and a translation vector in that 3x3 form
+[1290.00s - 1293.00s] And that, as we discussed before, has three degrees of freedom
+[1293.00s - 1296.00s] You have two translation operations, and two translation parameters, and one parameter that modulates the angle
+[1296.00s - 1299.00s] Translation only has two degrees of freedom, but you just saw it before the two x and y translations
+[1299.00s - 1302.00s] If you go to the next one where we add a scaling, that has another degree of freedom
+[1302.00s - 1305.00s] Because here in this case, the scaling is parameterized by a single parameter, just tells you the overall scale, not like specific x and y scales, not those in the next one
+[1305.00s - 1308.00s] But this one has four degrees of freedom, a scaling parameter, angle, so that's two, and the two translation operations
+[1308.00s - 1311.00s] and then we go to the next one affine so the affine what we talked about before is let's go back here so in affine you have six degrees of freedom it's because yeah so in affine There's a couple of different dimensions of defining a fine
+[1311.00s - 1314.00s] It can be defined as like a scaling matrix times a rotation matrix times translation matrix
+[1314.00s - 1317.00s] If you define that way, there will only be five degrees of freedom because like two for translation, two for scaling, and one for rotation
+[1317.00s - 1320.00s] The sixth one comes from ability to the shearing operation
+[1320.00s - 1323.00s] So if you do the shearing, that adds a little degree of freedom
+[1323.00s - 1326.00s] So affine in general has six degrees of freedom
+[1326.00s - 1329.00s] I'm going back a lot
+[1329.00s - 1332.00s] I have that
+[1332.00s - 1335.00s] Yeah, let's shear
+[1335.00s - 1338.00s] So affine matrices, general affine matrices also account for this shear, which then adds another degree of freedom to the RFP rotations
+[1338.00s - 1341.00s] So we can rotate with a shear, and that will have two degrees of freedom instead of one
+[1341.00s - 1344.00s] So that's another class
+[1344.00s - 1347.00s] And then the boss level transformation is homographies or predictive operations
+[1347.00s - 1350.00s] And this one has the full entire 3x3 matrix except for that last parameter
+[1350.00s - 1353.00s] And it's free to move, free to do whatever it wants
+[1353.00s - 1356.00s] And using this, we can project any conditions on any expansion of any issue
+[1356.00s - 1359.00s] Questions? Here is just one more update
+[1359.00s - 1362.00s] If you only do shear by itself, then it's 2 degrees of freedom because you have to share it x and y independently
+[1362.00s - 1365.00s] But in order to do a shear with a rotation, then you need 2 degrees of freedom
+[1365.00s - 1368.00s] But shouldn't shear just via theta thing? Because in that case it makes sense to architect 6 because who of rotation, who of scale, of rotation and..
+[1368.00s - 1371.00s] I think
+[1371.00s - 1374.00s] So I'm going to go back here
+[1374.00s - 1377.00s] Yeah, you need two degrees of freedom without doing any rotation
+[1377.00s - 1380.00s] If you're into a rotation and a shape together, this matrix can be represented as one theta that represents the rotation matrix, the rotation amounts
+[1380.00s - 1383.00s] And another one that represents the values here
+[1383.00s - 1386.00s] But I'll get back to you
+[1386.00s - 1389.00s] That's a good question
+[1389.00s - 1392.00s] That also confuses me sometimes
+[1392.00s - 1395.00s] So I think there are different conventions of parametrizing alpine
+[1395.00s - 1398.00s] In some places, people think about it as just five
+[1398.00s - 1401.00s] Yeah, like one for some places people define alpine operations as just a composition of scaling
+[1401.00s - 1404.00s] scaling rotation and translation, which would be five
+[1404.00s - 1407.00s] If you're a loose shearing, should, yeah, I think
+[1407.00s - 1410.00s] Because the SHX, SHY should be a seven, right? Some should be a seven
+[1410.00s - 1413.00s] Yeah, that should, that does make sense
+[1413.00s - 1416.00s] That should be seven
+[1416.00s - 1419.00s] So I'll kind of get back to you guys on why it's defined as six
+[1419.00s - 1422.00s] I always, in some places I see six, some places I see seven for F9
+[1422.00s - 1425.00s] So that's something I'd like to have to check
+[1425.00s - 1428.00s] Good point
+[1428.00s - 1431.00s] And then, oh, I think, I think I know why
+[1431.00s - 1434.00s] the general, so this general F-fine operation is instead of, so like here, scaling and rotation, so scaling here in this case is represented by a single parameter, then rotation is represented by another parameter, like the beta parameter, although there are four terms here
+[1434.00s - 1437.00s] Like this, the rotation matrix has four variables in it
+[1437.00s - 1440.00s] Although we only in the in the in the rigid and like scaling version in repair measure We only use two degrees of freedom in half-fine You let that you let the matrix to have all four of those terms be free
+[1440.00s - 1443.00s] So like coming back here Yeah, so actually about the way Yeah, yeah, so this is this would be if you were to think about a general half-fine matrix Like before, yeah, okay, that's the one
+[1443.00s - 1446.00s] Before, we would define this A, B, D, and E as a product of a rotation and a scaling
+[1446.00s - 1449.00s] So like rotation matrix would be sine theta and cosine theta, so I'd be very much advisable around here
+[1449.00s - 1452.00s] And a scaling matrix would be two by two, again, just like two degrees of freedom
+[1452.00s - 1455.00s] But if we kind of relax that and just let these A, B, D, and E be anything we want to represent a general two by two transformation coordinates, that gives us four degrees of freedom
+[1455.00s - 1458.00s] And then C and F parameters define the triangulation
+[1458.00s - 1461.00s] So that's, if you were to kind of, this basically tells us that like, if you think about it, this two by two matrix here, tells us how we're going to transform our x, y, z coordinates, and then the c and f terms tell us how much we're going to translate them
+[1461.00s - 1464.00s] If we just let them be whatever they want to be, about constraining them to be a rotation matrices or anything like that, that gives us a strict six degrees of freedom
+[1464.00s - 1467.00s] That's why I find transformation as six degrees of freedom
+[1467.00s - 1470.00s] We don't constrain to be a rotation matrix, right? It gives a free form general 2x2 matrix plus a translation
+[1470.00s - 1473.00s] So? Yeah, I am okay with affine being six degrees of freedom, but I think the shear should be one degree of freedom
+[1473.00s - 1476.00s] The shear should be one degree of freedom
+[1476.00s - 1479.00s] So, this one? Yeah
+[1479.00s - 1482.00s] So, it doesn't have to be
+[1482.00s - 1485.00s] I think in this example, we're only sharing along one direction
+[1485.00s - 1488.00s] So like if this was zero, this could be something non-zero
+[1488.00s - 1491.00s] And then you can share along both directions if you want
+[1491.00s - 1494.00s] And that gives you two different values
+[1494.00s - 1497.00s] So like you can share along the X direction or Y direction different proportions
+[1497.00s - 1500.00s] And you still need two degrees of freedom
+[1500.00s - 1503.00s] Wouldn't that just be sharing this scaling? Sharing and the scaling operator behind? Explain her
+[1503.00s - 1506.00s] So in this particular case, I'm looking at X coordinates
+[1506.00s - 1509.00s] What you want to scale by Y coordinates, I would just add a scale from that
+[1509.00s - 1512.00s] It's still shared
+[1512.00s - 1515.00s] But I guess, but you still need two independent operations to do how much you're going to transform your X and Y coordinates in that space
+[1515.00s - 1518.00s] So you still need two
+[1518.00s - 1521.00s] You can have a share with just one degree of freedom, and you can only share along one direction only
+[1521.00s - 1524.00s] but not the other
+[1524.00s - 1527.00s] He also did the book
+[1527.00s - 1530.00s] So you still need to do independent variables
+[1530.00s - 1533.00s] Right, but if I already have like in my affine operation, if I already have the scaling thing, I don't need that additional degree of sharing that
+[1533.00s - 1536.00s] No, because the scaling will only affect its..
+[1536.00s - 1539.00s] The scaling of A instead of a 1 will only affect the X, because that's the only time you multiply it, and it won't affect the Y
+[1539.00s - 1542.00s] So you do need the additional SHY if you want to scale it differently
+[1542.00s - 1545.00s] So if you just want to pull it in one direction, then yeah, then you only need one degree of freedom
+[1545.00s - 1548.00s] But you can see that it's different for all the different..
+[1548.00s - 1551.00s] values of y and that won't be achieved by a scaling But even for scaling I have two factors one for stretching Stretching it along this axis and one for this axis But you but it'll be linear you can't you can't angle it which is what shearing does That's where my shearing factor comes in like I just had just a theta then I can do one thing But you can't you can't angle it vertically This is a good question
+[1551.00s - 1554.00s] So this is probably the thing that we should ask us an exam question so we can have this to be resolved
+[1554.00s - 1557.00s] But these are good thoughts
+[1557.00s - 1560.00s] I'd like to know where you guys are thinking about it
+[1560.00s - 1563.00s] And maybe we'll go on deeper into this in one of the exam questions
+[1563.00s - 1566.00s] Actually, maybe
+[1566.00s - 1569.00s] If you look at the angle of the x directions, those don't change in this shear because it's only a SHx shear, right? Even if you pull it using a scaling, you'll never be able to change the angle of that kind of like horizontal line in the X, in the X plane
+[1569.00s - 1572.00s] If you shear it on the Y, that angle will change differently than if you just scale it
+[1572.00s - 1575.00s] So that's the difference in the scaling or the shearing
+[1575.00s - 1578.00s] If you just look at this image, I don't know if it's..
+[1578.00s - 1581.00s] We'll make a note to clarify this on Slack after class
+[1581.00s - 1584.00s] Or we can also discuss after class
+[1584.00s - 1587.00s] So, okay, so again, going back here, so maybe that, at least I hope that convinced you that fine, we'll have six degrees of freedom, because it's just, we're just looking at, instead of thinking about geometrically a little bit, just think about it as like a matrix operation
+[1587.00s - 1590.00s] things we care about
+[1590.00s - 1593.00s] Something, four things that changed how the coordinates are changed
+[1593.00s - 1596.00s] And two things that tell us how much we're shifting those waters using a linear operation
+[1596.00s - 1599.00s] Like kind of going back here, like where was it? This equation
+[1599.00s - 1602.00s] If all of these are fully parameterized, A and B, that's six parameters for that control how we transform our width vector and two that tells us how much we're going to shift it
+[1602.00s - 1605.00s] If all these are free to move, which is the superset of all possible transformations that we talked about, that gives us six degrees of freedom
+[1605.00s - 1608.00s] But two additional, you can have two additional degrees of freedom by thinking about this in homogeneous coordinates, and now we have these two terms, but I could also do things
+[1608.00s - 1611.00s] And those two parameters, together with all the other parameters, they can't change the perspective of an image
+[1611.00s - 1614.00s] And if you let them free them, now we have eight degrees of freedom, which is the ultimate, like the superset of all possible transformations, which are goal projections or homographies
+[1614.00s - 1617.00s] And so what are the homographies used for? So yeah, the second is to change perspective
+[1617.00s - 1620.00s] Take this view and take this image and turn it to a completely different view
+[1620.00s - 1623.00s] And you cannot do that using just rotations, scaling, or translations
+[1623.00s - 1626.00s] You need something more than that
+[1626.00s - 1629.00s] And that's where homography is kind of coming to play
+[1629.00s - 1632.00s] So let's talk about like, where's the homography equation? Please, close it up here
+[1632.00s - 1635.00s] OK, we'll kind of talk about how homographies look like I think over here, yeah, solely
+[1635.00s - 1638.00s] Homography equations are gonna look like you have set of points and you have another set of target set of points and you have to fit all those equations, so let's talk about how we can fit all these things, how we can learn
+[1638.00s - 1641.00s] We talk about the possible models that we have, now let's talk about how we can fit them
+[1641.00s - 1644.00s] So we need to begin a couple of things
+[1644.00s - 1647.00s] It means some kind of definition of a transformation family that we're permitting our points to fall under
+[1647.00s - 1650.00s] Like you say, we have two set of points, like p and p-images
+[1650.00s - 1653.00s] You're going to say, hey, these set of points p-prime are our homography of our original set of points
+[1653.00s - 1656.00s] If that's the case, then we define our model, then we define loss function, and then we use some kind of objective minimization to find the best set of parameters
+[1656.00s - 1659.00s] So we need to define the transformation comment
+[1659.00s - 1662.00s] And another thing is we need to define which pixels we want to match
+[1662.00s - 1665.00s] We can match all the pixels we want, and that kind of goes to the template matching idea we talked about earlier
+[1665.00s - 1668.00s] Or we can do feature-based
+[1668.00s - 1671.00s] You can paste, like, if you have a subset of features in our image that we know should match one another, like within SIFT or other types of feature descriptors, we're going to take a coordinates of those matched features and then transform them using whatever transformation parameter we chose, and find the parameters that minimizes that loss
+[1671.00s - 1674.00s] maybe the first thing we can do, like kind of call back to earlier
+[1674.00s - 1677.00s] Like I say, you want to do something super simple without doing any kind of..
+[1677.00s - 1680.00s] If you want to stitch images without just using all the pixels with any kind of specific key points, then that kind of goes into doing this cross-correlation analysis
+[1680.00s - 1683.00s] If you want to match this image to another one, using all the pixels, you can compute the cross-correlation, and that will give you the translation of how much offset there is from one image to another, and then you can..
+[1683.00s - 1686.00s] The problem is, for complex scenes like this, where things kind of..
+[1686.00s - 1689.00s] don't just change by the translation, but other things
+[1689.00s - 1692.00s] Things might be kind of difficult to match
+[1692.00s - 1695.00s] You can match this chair to the other, although you can kind of see there are different types of chains
+[1695.00s - 1698.00s] But like, there's types of..
+[1698.00s - 1701.00s] If you were to use everything, it would be kind of a fool's error
+[1701.00s - 1704.00s] So we can..
+[1704.00s - 1707.00s] the idea is that we can find subsets of distinct features with an image
+[1707.00s - 1710.00s] It's kind of matched from one image to another
+[1710.00s - 1713.00s] And then yeah, so doing that, this is basically the concept of your constellation matching project
+[1713.00s - 1716.00s] We have some kind of template that you can cross-correlate that to the entire scene
+[1716.00s - 1719.00s] You can define the position in the, you can look at the local maximum where you cross-correlation map to find how much translation you want to derive
+[1719.00s - 1722.00s] High points that you want to, that this template gets shifted by to match the target image
+[1722.00s - 1725.00s] And that's like, this was the subject of your project
+[1725.00s - 1728.00s] I can kind of skip through
+[1728.00s - 1731.00s] So after you find this shift, after you find this shift, you already solve for how much translation
+[1731.00s - 1734.00s] You already solve how much translation you expect to have
+[1734.00s - 1737.00s] And so now from this you can, you can, you can solve, you can fill in your transformation matrix by taking the translation you solved and then populate
+[1737.00s - 1740.00s] So like based on the, based on the cross correlation, our back to the cross correlation, and if you found the translation that you found, you can go back to the, Like if we only expect there to be translation, now you can replace that tx and t y by the translation you found using cross correlation and I use that to transform it into your entire image using that transformation matrix
+[1740.00s - 1743.00s] But I guess the reason I put that is that this approach only gives you solutions if you want to do something very simple like translation, you know, template matching
+[1743.00s - 1746.00s] If you want to do more complex things, then you can do something else
+[1746.00s - 1749.00s] We cannot select, if you want to do for translation fitting, you can either do this intensively based cross correlation analysis, or you can do what we're going to talk about next
+[1749.00s - 1752.00s] But if you want to do more complex things like you want to fit an affine operation, you want to find an affine transformation of one image to another, you can no longer do this cross correlation analysis
+[1752.00s - 1755.00s] So that only is good for searching for translations, but anything for affine is going to be difficult to do
+[1755.00s - 1758.00s] So how can we, if you want to learn, if you assume that our human transformation is not just a translation, but something more complex like tomography, some key point detection, feature-based key point detection and matching, and then learn transformation that aligns key points to one another
+[1758.00s - 1761.00s] So this going back to the same example, Mount Everest, different images, and we want to transform this image perfectly match landmarks of these images that match one another
+[1761.00s - 1764.00s] And after we have these set of points that match, that we know are good, that gives us what we've been talking about so long lecture, xy, points in one image, points in another image
+[1764.00s - 1767.00s] Once we have those, once we have that set, we can put it back into our equation that we had before to learn the t matrix
+[1767.00s - 1770.00s] Transformation matrix that maps xy into x prime y prime
+[1770.00s - 1773.00s] And once we have that, we can do our work again
+[1773.00s - 1776.00s] So we did all these things so far, now we're ready for this transformation is sufficient
+[1776.00s - 1779.00s] All right, going back here, let's say we have our key points that we match from one image to another
+[1779.00s - 1782.00s] Let's say we have these two images, and these five key points are exactly corresponding to one another
+[1782.00s - 1785.00s] Now we forward set of equations
+[1785.00s - 1788.00s] We say for each of these key points, which are defined by x i, y i, equal to i, x prime, y prime, equal to some kind of transformation times x and y plus and translation, but this whole thing can be thought of as a single matrix operation if we use any one of these coordinates
+[1788.00s - 1791.00s] Okay, so we have data that's before
+[1791.00s - 1794.00s] Our data are the key points that match
+[1794.00s - 1797.00s] We have our own model
+[1797.00s - 1800.00s] Our model now is these key points are the components of one another
+[1800.00s - 1803.00s] And lastly, we need to define an objective function
+[1803.00s - 1806.00s] So now we need to say, if you were to transform these set of points to another set of points, hop to it
+[1806.00s - 1809.00s] And we can measure how good our transformation is by looking at the squared error of the transform points
+[1809.00s - 1812.00s] The question is, should we look? If our transformation is correct, they should be exactly on top of the error targets
+[1812.00s - 1815.00s] So we should have zero loss
+[1815.00s - 1818.00s] Otherwise we're going to have to pay some loss
+[1818.00s - 1821.00s] So we want to find the parameters of these transformational matrices such that this loss is the smallest possible
+[1821.00s - 1824.00s] How do you find the affine matrix? So parameters, so going back to your question, like in this case, I just put them, we put them back into the non-homogeneous coordinates just so we can see which variables are in play, but we could easily put all these together in one homogenous matrix, three by three matrix with only six variables that are three
+[1824.00s - 1827.00s] But as you can see, Every set of target points is going to be our input points, five times these two by two matrix with four degrees of freedom, plus a translation vector with two more degrees of freedom
+[1827.00s - 1830.00s] And if we were to multiply this out, or to multiply this out, we'll get two equations
+[1830.00s - 1833.00s] We'll get two equations
+[1833.00s - 1836.00s] We'll get x i prime will be equal to m1 times x i and 2 plus Tx
+[1836.00s - 1839.00s] That would be one equation
+[1839.00s - 1842.00s] The second equation would be yi prime would be equal to m3 times xi plus m4 times yi times t1
+[1842.00s - 1845.00s] So we have two equations
+[1845.00s - 1848.00s] We can put all these equations into another matrix form but now the variables we want to solve are in the right hand side and our data, our observations are in this design matrix
+[1848.00s - 1851.00s] And then we also have our targets also in the left hand side
+[1851.00s - 1854.00s] By putting this form for every single set of key points that we match, you'll get two equations
+[1854.00s - 1857.00s] So if you have 10 key points that we match, how many equations can we get from? You have 20 different equations, pair of key points that we match
+[1857.00s - 1860.00s] And the key thing is, how many unknowns are we trying to solve for? We're trying to solve for six unknowns
+[1860.00s - 1863.00s] We're trying to solve for six unknowns
+[1863.00s - 1866.00s] How many key point matches do we need to have to be able to solve this equation at all? Yeah, so like, we need at least three points
+[1866.00s - 1869.00s] You need at least three points
+[1869.00s - 1872.00s] For each set of key points, you get two equations
+[1872.00s - 1875.00s] We're trying to solve for six unknowns
+[1875.00s - 1878.00s] More than three key points, then you're going to have more..
+[1878.00s - 1881.00s] We have our, that's going to be an over-determined problem
+[1881.00s - 1884.00s] Then you need to solve this B squared problem
+[1884.00s - 1887.00s] So what you can still solve is using this B squared problem
+[1887.00s - 1890.00s] But first things first, we have our function
+[1890.00s - 1893.00s] We have our transformation model
+[1893.00s - 1896.00s] If you have our set of points, that's not true
+[1896.00s - 1899.00s] Our first step is to set up
+[1899.00s - 1902.00s] If you have end points, we're going to have two n equations that we can set up to solve for our six unknowns in this case, because we're going to have finite transformation
+[1902.00s - 1905.00s] So that's exactly what we have
+[1905.00s - 1908.00s] So I guess if I use the word k, the letter k is the whole number of key points that we match
+[1908.00s - 1911.00s] We're going to have two k equations for six unknowns that we try to solve
+[1911.00s - 1914.00s] And we can solve for this using least squares
+[1914.00s - 1917.00s] We have some matrix A that captures our data, and vector B that matches, that captures our targets
+[1917.00s - 1920.00s] And now we have this vectoring that has all the parameters that we have
+[1920.00s - 1923.00s] Those are unknowns
+[1923.00s - 1926.00s] And we can solve for this using our favorite least squares optimization
+[1926.00s - 1929.00s] How do you solve this? Yeah, just use this in blue
+[1929.00s - 1932.00s] If it's always in closed form or if it's always using gradient descent
+[1932.00s - 1935.00s] So this type of simple stuff is probably going to solve in the answer
+[1935.00s - 1938.00s] And that will give us, after you solve for this, we'll get the, well, all these six parameters that we want to solve
+[1938.00s - 1941.00s] And that will give us our f i matrix and our translations
+[1941.00s - 1944.00s] Questions? But I think key observation is to, by putting this form, you can get an idea of how many degrees of freedom, how many key points do you need to solve different types of transformations
+[1944.00s - 1947.00s] Let's say you want to do something dumb
+[1947.00s - 1950.00s] Like, we just want to solve, using key points, we just want to solve a translation
+[1950.00s - 1953.00s] You want to see how two images are shipped to versions of one word
+[1953.00s - 1956.00s] How many key points do we need to do that reliably? What's the minimum number of key points for those two to have? to be able to solve a translation machine
+[1956.00s - 1959.00s] So I think that because you don't, these things are identity
+[1959.00s - 1962.00s] We don't have to solve it anymore
+[1962.00s - 1965.00s] You just need to solve for tx, t y
+[1965.00s - 1968.00s] So we have two unknowns and for each set of key points you get two equations, two equations, two unknowns is already solved
+[1968.00s - 1971.00s] If you have more, it'll give you a more robust estimate
+[1971.00s - 1974.00s] We need at least, we just need at least this minimum number of equations as you have unknowns
+[1974.00s - 1977.00s] And we can go beyond
+[1977.00s - 1980.00s] If you want to solve scaling, how many key points do you need just to solve the scaling? Unless, that's a trick question, unless if the key point is at origin, then you cannot solve it
+[1980.00s - 1983.00s] Then you cannot solve for the scaling
+[1983.00s - 1986.00s] You need a key point that's not on the origin
+[1986.00s - 1989.00s] You need the..
+[1989.00s - 1992.00s] So maybe you should think about it as, maybe like what I want to think about is different kinds of transformations require different amounts of information infer what those transformations are
+[1992.00s - 1995.00s] And some require more than one
+[1995.00s - 1998.00s] Yeah
+[1998.00s - 2001.00s] So after calculating the unknown values, so how do we separate the scale from the rotation? Question
+[2001.00s - 2004.00s] As I checked us
+[2004.00s - 2007.00s] That is a great question
+[2007.00s - 2010.00s] So like using this form of solving for affine, it's kind of, you can't really separate them from one another
+[2010.00s - 2013.00s] There are different algorithms that explicitly tries to solve for scaling, rotation, and translation in three different ways
+[2013.00s - 2016.00s] So that's a great question
+[2016.00s - 2019.00s] This is also general affine transformations
+[2019.00s - 2022.00s] But you can also say that instead of an affine transformation, what I really want to solve is..
+[2022.00s - 2025.00s] So like that goes back to the functional form that we were considering
+[2025.00s - 2028.00s] So going back to this family of transformations, if you want to solve for something that's rigid, like a rotation and a translation, maybe scaling, we put our equations in this form
+[2028.00s - 2031.00s] And then you would have us, you would have some kind of a, and this R matrix would be parameterized by like theta, sine of theta, cosine of theta
+[2031.00s - 2034.00s] You'd be able to see how those variables interact with your observations
+[2034.00s - 2037.00s] And you would have to, you would have, you would set up a different linear equation to solve
+[2037.00s - 2040.00s] Except the only problem is, You would have some kind of linear equation that has like sine of data and cosine of data that those are non-linear operations
+[2040.00s - 2043.00s] You wouldn't be able to solve that using just like a linear matrix operation that you need to do some kind of grading
+[2043.00s - 2046.00s] Okay
+[2046.00s - 2049.00s] Instead, the degrees, 7 degrees of 3 degrees of the addition of the finite time
+[2049.00s - 2052.00s] You could
+[2052.00s - 2055.00s] Or like not the 7 degrees, like you mean like the 5 degrees
+[2055.00s - 2058.00s] So you have two for scaling, one for rotation and one for the non-relation
+[2058.00s - 2061.00s] If you do it that way, the problem is that this rotation matrix is parameterized by the data parameter through some kind of sine and cosine functions
+[2061.00s - 2064.00s] So that you can still put it to that form, but you wouldn't be able to represent it as..
+[2064.00s - 2067.00s] I guess this could be a question that shows up
+[2067.00s - 2070.00s] Or maybe it's a question I want to raise to you guys
+[2070.00s - 2073.00s] We'll be able to represent, let's say we had a, instead of, if you assume that We assume that our transformations are scaling rotation and translations, and the rotation is very much at y 3 3.3
+[2073.00s - 2076.00s] Can we put the angle here on this home, and then form a linear equation? And what I ask you that is..
+[2076.00s - 2079.00s] But you'll be able to form..
+[2079.00s - 2082.00s] you'll be able to form that equation, where instead of m1, it'll be like cosine of theta, right? Cosine of theta, m4 will be..
+[2082.00s - 2085.00s] cosine of theta again, and the m3 will be sine and minus sine of theta
+[2085.00s - 2088.00s] You'll be able to form an equation that relates x and y using sine and cosine of theta, but you won't be able to isolate theta as, I guess, on independent, right? It will always be the sine of theta
+[2088.00s - 2091.00s] There's other tricks
+[2091.00s - 2094.00s] There's a bunch of papers that people have thought of, how to solve for that, but it won't be on the list for them
+[2094.00s - 2097.00s] Usually those things, what people do is they solve for the translation first, and then they shift
+[2097.00s - 2100.00s] And then after they solve for the translation, they solve for the rotation of the next, and then try and solve for the scalar
+[2100.00s - 2103.00s] But there's the acknowledgement that we're doing that in a piecewise way
+[2103.00s - 2106.00s] Can't be just too tightly linked
+[2106.00s - 2109.00s] Can't be just too tightly linked and later on every month
+[2109.00s - 2112.00s] Instead of all the..
+[2112.00s - 2115.00s] So say it very much
+[2115.00s - 2118.00s] So instead of the sine, since the..
+[2118.00s - 2121.00s] The thing is, like, if you need to..
+[2121.00s - 2124.00s] What do you do? Like, theta is going to be still embedded inside some kind of trigonometric function
+[2124.00s - 2127.00s] So you cannot isolate it as a linear form
+[2127.00s - 2130.00s] It's like, you cannot represent sine and theta as a linear equation unless you do some tricks like Taylor series expansion and stuff like that
+[2130.00s - 2133.00s] But, yeah
+[2133.00s - 2136.00s] But the main problem is that if you want to add that angular representation, it's the variable to try and solve is inside a non-linear function
+[2136.00s - 2139.00s] So that wouldn't be able to represent as a nice theme matrix if we were to write that
+[2139.00s - 2142.00s] But you can do other things to solve for that variable using gradient descent rather than say anything like this
+[2142.00s - 2145.00s] That's a really good question
+[2145.00s - 2148.00s] Maybe like the last thing we talked about is like the homography
+[2148.00s - 2151.00s] The homography is, and we had more
+[2151.00s - 2154.00s] we just have more parameters to fit but the same idea so let's say you have a large x and y x i prime and then x i the y i the source and target instead of our equation like this and we can show that show that under these under these equations we get this particular We get this particular set of equations
+[2154.00s - 2157.00s] And that allows us to now set up another two each
+[2157.00s - 2160.00s] Like for each pair of key points, we get this particular two equations that we can set up with all of these now degrees of freedom
+[2160.00s - 2163.00s] In this case, we allow that last variable to be also solvable
+[2163.00s - 2166.00s] So now we have nine degrees of freedom
+[2166.00s - 2169.00s] is non-homogeneous homography
+[2169.00s - 2172.00s] So we have nine variables to solve, and two equations for set of two points
+[2172.00s - 2175.00s] And we can set them up the same way
+[2175.00s - 2178.00s] The only difference in this case, the reason why we set them up this way, is you notice previously we set up the equation such that we had some x prime
+[2178.00s - 2181.00s] If x prime is equal to some function of x and y times the parameters that we're trying to solve for, Instead of doing that, what we do is we set up a set of equations where both the source key point and the target key point are in the same set of equations
+[2181.00s - 2184.00s] But now these equations solve the equal to 0
+[2184.00s - 2187.00s] We basically subtract the terms that have x and y from the terms that have x prime and y prime so that everything becomes a logical equation that includes a 0
+[2187.00s - 2190.00s] And when we have some kind of equation, when we have some kind of equation times some variables equal to zero, what does that resemble? Linear algebra
+[2190.00s - 2193.00s] It resembles, like we try to find the null space of this matrix
+[2193.00s - 2196.00s] And there's always a null space of this matrix
+[2196.00s - 2199.00s] We can use eigenvector decomposition
+[2199.00s - 2202.00s] solve for there's going to be many solutions for this so we use eigenvectors composition to solve for the one with the smallest eigenvalue but the question again like one thing to also note here is that you should solve general homographies you get two equations you get two equations for key points but now we're trying to solve for nine different variables Therefore, we need the maximum number of points to solve the homography
+[2202.00s - 2205.00s] So we need at least four, preferably five key point matches to solve the homography
+[2205.00s - 2208.00s] Three variables
+[2208.00s - 2211.00s] Yeah
+[2211.00s - 2214.00s] But maybe like, although these can be all, the only thing all these are built into OpenCV, so like a lot of these homographies can be solved for you if you just send it to your set of key points
+[2214.00s - 2217.00s] But this kind of gives you an idea of like how these different types of equations are solved and how you formulate them and how you find two sets of points
+[2217.00s - 2220.00s] Let's go through the morphing quickly before we finish the..
+[2220.00s - 2223.00s] Unless there's questions up to you
+[2223.00s - 2226.00s] So all these things we talked about gives us a way to define the transformation of such that set of points we have matches that with target set of points
+[2226.00s - 2229.00s] That may be like earlier question that we had, like was how do we do the interpolation, how do we actually do the transfer? Like once you know the transformation function, how do you actually use that to generate new images? And that has to do with sampling and morphing
+[2229.00s - 2232.00s] that requires to generate a new image from an overstar with such that it looks like something else how do you like you want to start from this image orpid such that now like its perspective changes such an overlay is perfect with our other images like when we add them together it's just a seamless transition how do we solve for that it's basically going back to the beginning it's all about now that we changed our domain we have a map of our original image domain to a new target domain But when we generate a new image, we still need to know the values of that image at discrete points
+[2232.00s - 2235.00s] Like our initial set of coordinates, pixel coordinates, our image
+[2235.00s - 2238.00s] Discrete numbers like one through whatever pixel size in x direction, one through whatever pixel size in y direction
+[2238.00s - 2241.00s] in discrete steps
+[2241.00s - 2244.00s] But after doing this transformation, we can get a pixel that I was like at coordinates one and one
+[2244.00s - 2247.00s] If you can get mapped to coordinates like 3.5 and 7.4
+[2247.00s - 2250.00s] What is that? How can we, if you have that map, how can we generate a new image without knowing like the specific value of a pixel where it's supposed to be? That's where interpolation comes into play
+[2250.00s - 2253.00s] what we need to do is we need to send the say we have a transformation by defined by a particular t function and now we have this new image we need to know what are the values of this new image at any particular coordinate point by by mapping these back where they were in the input image so we need to send the value like so we need to first we first transform our pixels to their new coordinates
+[2253.00s - 2256.00s] And after doing so, this coordinate is now going to have the same value of the image that was at the original x and y positions
+[2256.00s - 2259.00s] So let's say x and y were like 1 and 1
+[2259.00s - 2262.00s] Now this gives maps like 3.5 and 7.4
+[2262.00s - 2265.00s] So if our new image had a particular pixel coordinate, 3.5 and 7.4, it would have the exact same value as that, but it does not have that coordinate
+[2265.00s - 2268.00s] It will only have 3 and 4 and 6 and 7 and 8
+[2268.00s - 2271.00s] So it has discrete points
+[2271.00s - 2274.00s] So we need to interpolate the value of these pixel values on these non-discrete positions
+[2274.00s - 2277.00s] So yeah, so like this is a little bit of issue
+[2277.00s - 2280.00s] Like in a simple example, you want to translate an image
+[2280.00s - 2283.00s] If I shoot you a translate image by 10 pixels on each direction, it's straightforward
+[2283.00s - 2286.00s] You just shift the pixel coordinates by 10 and then just read out what the values there were and the other corresponding pixels
+[2286.00s - 2289.00s] Well, let's say we want to translate our image by 0.8 and 0.2 pixels at a time
+[2289.00s - 2292.00s] All right, this is our, let's say, this is our transformation
+[2292.00s - 2295.00s] How do you read this out? Read the interpolation
+[2295.00s - 2298.00s] So one idea is doing a nearest neighbor mapping
+[2298.00s - 2301.00s] So let's say these are our original image, and now it gets mapped by shifting everything by 0.8 and 0.2 in x and y directions, respectively
+[2301.00s - 2304.00s] So now these are the coordinates of the new image
+[2304.00s - 2307.00s] Now we need to know, like, this particular coordinate value here, what is gonna be the value of that pixel in the new image? Maybe like one idea is like, yeah, nearest neighbor would be for this, for that point, we would think nearest neighbor would be this pixel
+[2307.00s - 2310.00s] And that would be the value of that pixel over there
+[2310.00s - 2313.00s] For this one, we'd think nearest neighbor would be this one
+[2313.00s - 2316.00s] And then that would be the value of that pixel, so on and so forth
+[2316.00s - 2319.00s] Issues is, what about this one? this pixel, its nearest neighbor is, gets snapped over here
+[2319.00s - 2322.00s] So you would have, that's the nearest thing you have
+[2322.00s - 2325.00s] Or if you had some kind of zero padding, this would get padded
+[2325.00s - 2328.00s] This would get padded with a zero value
+[2328.00s - 2331.00s] Well, let's ignore the borders for now
+[2331.00s - 2334.00s] After doing this procedure with some kind of mapping, again, re-render our new image based on the values that we extrapolated
+[2334.00s - 2337.00s] And so like, I guess we'll be going through this quickly
+[2337.00s - 2340.00s] it'll take these types of values
+[2340.00s - 2343.00s] So if you do nearest neighbor, that takes a little take that value, and that one takes a little bit, take that value, and so on and so forth
+[2343.00s - 2346.00s] And if you did this, this is equivalent to just rounding up our translation, so this nearest integer, and then taking the values there
+[2346.00s - 2349.00s] So this is as good as not just translating by 1 and 0, even though that's not what our transformation matrix is listed
+[2349.00s - 2352.00s] So that could create artifacts
+[2352.00s - 2355.00s] You create some, like, just be a perspective of one image The other way to do this is by doing interpolation
+[2355.00s - 2358.00s] So here's an example of that
+[2358.00s - 2361.00s] So let's say, like this pixel, this particular point, where this gets mapped to
+[2361.00s - 2364.00s] And these are the four pixels around it that has the particular values
+[2364.00s - 2367.00s] We can interpolate this as some kind of weighted combination of the pixel values that are around that pixel
+[2367.00s - 2370.00s] So for the biliterate interpolation, each pixel is gonna have four nearest neighbors, right? Because everything snaps in a grid
+[2370.00s - 2373.00s] And some of these points are gonna be closer than others
+[2373.00s - 2376.00s] So we would proportionally, proportionally input values to this pixel based on maybe the closest one with highest weight and other ones with lesser weight
+[2376.00s - 2379.00s] That's all
+[2379.00s - 2382.00s] By doing so, we get it
+[2382.00s - 2385.00s] So kind of weighted combination that gives us some interpolated value there
+[2385.00s - 2388.00s] How do you do that in 2D? So like let's say, so I guess we do that in two steps
+[2388.00s - 2391.00s] But if everything was in 1D, if something was directly in the middle, this would be just the average of the grain pixel
+[2391.00s - 2394.00s] If it's closer to one than the other, then it'll be a weighted value of 2 pixels
+[2394.00s - 2397.00s] Yeah, so like if something is exactly not in the middle, then you take the, compute this distances, the proportional distances between this pixel and the two nearest pixels, and the target pixel value is gonna be now weighted combination of those two pixels with those distance weights
+[2397.00s - 2400.00s] So this is just basically the trickle
+[2400.00s - 2403.00s] And then like the same concept applies and we do some 2D
+[2403.00s - 2406.00s] So in 2D, let's say we have a particular point, First, you find neighbors in x and y direction
+[2406.00s - 2409.00s] In x direction, you find the weights there, and then do that for..
+[2409.00s - 2412.00s] And then the second step is finding this interpolation on the y direction
+[2412.00s - 2415.00s] Together, it will give you the four weights, four weights for the four nearest pixels to get the interpolated value
+[2415.00s - 2418.00s] So this is what happens when you have a transformation that matches to non-integer locations
+[2418.00s - 2421.00s] And we can do this, we can do this like ad nauseum
+[2421.00s - 2424.00s] Just demonstrate the points that every single pixel now has, every single pixel has four nearest neighbors
+[2424.00s - 2427.00s] You'll be able to map, even if this mapping that we have maps to non-integer locations, every pixel has four nearest neighbors
+[2427.00s - 2430.00s] And those four nearest neighbors based on their distances to the target pixel, will give some kind of weighted contribution of their values to interpret it
+[2430.00s - 2433.00s] This target pixel
+[2433.00s - 2436.00s] Yeah, so that's great
+[2436.00s - 2439.00s] And what we talked about is great for, and you would see this kind of stuff if you were doing translation
+[2439.00s - 2442.00s] So if everything's a translation, everything will still snap their grit and you'll be able to just buy the initial interpolation
+[2442.00s - 2445.00s] But all these different transformation found that you're talking about today, You could do some weird work
+[2445.00s - 2448.00s] Like if you had a homography, you could take a set of pixels like this and map them to this super warp space
+[2448.00s - 2451.00s] And now we want to read out the value of this pixel, given these four pixels that get mapped around it
+[2451.00s - 2454.00s] How do we do that? For an arbitrary transformation
+[2454.00s - 2457.00s] So this requires us to be able to convert the inverse of our transformation
+[2457.00s - 2460.00s] So in this case, if we have this forward mapping, our target pixel locations get mapped to these positions in our in our warped image
+[2460.00s - 2463.00s] In our warped image now we want to be able to fill in the values of all these pixels in this canvas
+[2463.00s - 2466.00s] If you have a case like this, this would be kind of difficult to infer
+[2466.00s - 2469.00s] How do we give different weights to these neighboring pixels? There's other techniques for doing that
+[2469.00s - 2472.00s] You can still do some weighting based on like this like some kind of Euclidean distance
+[2472.00s - 2475.00s] Alternatively, what you can do is you can take this pixel, map it back to here, and now do binary interpolation in the original space
+[2475.00s - 2478.00s] Which is much easier if your transformation is an invert
+[2478.00s - 2481.00s] So what I mean by that is..
+[2481.00s - 2484.00s] Let's say we had not just this pixel, but these four pixels around, and you want to infer their values
+[2484.00s - 2487.00s] Instead of trying to figure out how to weight different values of these pixels around it, we take these, we inverse map them to our original image space
+[2487.00s - 2490.00s] And now these lie within that grid
+[2490.00s - 2493.00s] Because original pictures are in a grid, now these pixels that we want to find their values of fall within that grid
+[2493.00s - 2496.00s] Now you can infer their values using bi-day interpolation, which we did before, but in the original input image space, and then map them back
+[2496.00s - 2499.00s] And so these parts, like I'm kind of going through it, but this is just a simple quantity of a map
+[2499.00s - 2502.00s] You want to infer values of things
+[2502.00s - 2505.00s] You just kind of find some kind of a weighting of the values of the image that you observed with the value of this new transform image from there
+[2505.00s - 2508.00s] And there's multiple ways to do this mapping and finding these weights
+[2508.00s - 2511.00s] And then the issue is obviously when you do any kind of working, sometimes, like, say you shift an image by a certain translation, you're going to have pixels that get mapped in nothing
+[2511.00s - 2514.00s] They're like that fall outside image
+[2514.00s - 2517.00s] Then usually convention is to build these images here
+[2517.00s - 2520.00s] You get this shifted image with like a zone of just a bunch of blank pixels around
+[2520.00s - 2523.00s] Okay
+[2523.00s - 2526.00s] And then after we, after we warp, all our images from target domain using the transformations we found, highly demosaicing
+[2526.00s - 2529.00s] We can add now, if everything, all the images are or to the same space now, we assume that they can just be added together because they reside in the same space, same perspective, they can be added together
+[2529.00s - 2532.00s] And we can add them based on, so they're giving some, let's say we have two images and we're trying to create a mosaic out of them
+[2532.00s - 2535.00s] They're gonna be some pixels that are gonna appear multiple times
+[2535.00s - 2538.00s] So like there's an overlap between these images, so like there's overlap areas
+[2538.00s - 2541.00s] When we add them, we say that pixel appears twice in our data and when we sum them
+[2541.00s - 2544.00s] In areas where only one image covers that space, but the other one doesn't, we say there's only one time that pixel was measured and it was not measured the other time
+[2544.00s - 2547.00s] So we can kind of create a map of how many times each pixel in our warp space has some kind of signal measured at it from these input images
+[2547.00s - 2550.00s] So we have this kind of, some weight
+[2550.00s - 2553.00s] So when we sum these two images, when we sum these two images, we sum them and then we divide them by these weights to create this mosaic picture
+[2553.00s - 2556.00s] You can't hardly see it, but this is a summation of these two images
+[2556.00s - 2559.00s] So you can kind of see a little border here, but ultimately, like pixel over here are the sum of the pixel values that we had in these two images
+[2559.00s - 2562.00s] And pixels in the top and bottom are contributed only by one of these two
+[2562.00s - 2565.00s] Okay, that's the final mosaic thing we do
+[2565.00s - 2568.00s] After we do a transformation, we transform our images using interpolation, and then we count how many times different areas of the image are covered by different images, and then sum them and divide them by that way
+[2568.00s - 2571.00s] Finale is getting this social
+[2571.00s - 2574.00s] That's kind of a workflow
+[2574.00s - 2577.00s] Find key points, find matches, find good matches using RADSEC, coding mechanism that you think about
+[2577.00s - 2580.00s] From those good matches, the key point matches, learn your transformation, whether it's a translation, affine, or homography, you have to like assume based on the what your observations, you have to choose a model that you think best explains the data and then based on that
+[2580.00s - 2583.00s] Learn the transformation
+[2583.00s - 2586.00s] From the translation, map your pixels from one image space to another and through your interpolation, map everything with the same space and add these images together
+[2586.00s - 2589.00s] We get this final mosaic of stitched images
+[2589.00s - 2592.00s] That concludes the series of lectures where just key point detection, geometric transformations, questions
+[2592.00s - 2595.00s] So let's take a five minute break and I'll take any remaining questions
+[2595.00s - 2598.00s] I'm sure I skipped over the lecture when it started in five minutes
+[2598.00s - 2601.00s] We'll talk to some of these
+[2601.00s - 2604.00s] We'll just run out of here
+[2604.00s - 2607.00s] how's it going

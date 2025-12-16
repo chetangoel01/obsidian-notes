@@ -1,0 +1,196 @@
+[0.00s - 3.00s] Start
+[3.00s - 6.00s] I'm a student for design
+[6.00s - 9.00s] Many of you are really interested on this subject
+[9.00s - 12.00s] There is a book, research in personal power
+[12.00s - 15.00s] You're interested always you can find more details
+[15.00s - 18.00s] Let's start
+[18.00s - 21.00s] So, not perception
+[21.00s - 24.00s] So it's the brain, right? So how the brain is formed as you perceive
+[24.00s - 27.00s] The brain, we try to, whatever you do, brain, the boldest, try to find patterns for that
+[27.00s - 30.00s] And like, that's right
+[30.00s - 33.00s] all these things will be done just the brain as different and those different regions are has goals right so for example here the sensory related sensor chart of trying to retrieve all the information from and the motor area to move our body or our different or the different part of our bodies mainly for example our life to try to focus on the environment right and we also have the We'll try to guide that attention to find this object or anything that we are interested in
+[33.00s - 36.00s] And this general interpretation area and try to figure out or interpretate all this data
+[36.00s - 39.00s] Or perceptions
+[39.00s - 42.00s] So to perform perceptions, we will be combining two processes
+[42.00s - 45.00s] The bottom half will try to retrieve information that can get from the environment
+[45.00s - 48.00s] For example, shapes
+[48.00s - 51.00s] ages, advocates for the environment
+[51.00s - 54.00s] And top-down process prior knowledge to figure out what is this object or what the thing that we are looking at in the environment
+[54.00s - 57.00s] To give an example here, for example, imagine that we are looking at a dog, right? Small dog
+[57.00s - 60.00s] Guys will capture, for example, the shape of the dog
+[60.00s - 63.00s] That's all this information we got our brain
+[63.00s - 66.00s] And since we have this prior knowledge about what is the of a big or a small dog or how many or a not friendly dog look like and we will conclude something, right? For example, we will say, okay, this is a friendly small dog, right? Something like that
+[66.00s - 69.00s] Just to give another example to make sure these concepts are clear, I will give another that you have and read
+[69.00s - 72.00s] So what will happen when you do have will be like following
+[72.00s - 75.00s] So the first thing that will happen is like you will be able to identify the shape and the color of this album and then this information will be able to figure out, okay, this is enough
+[75.00s - 78.00s] But what happened with the top down since we know we have this prior knowledge that how an album looks like? We already know this
+[78.00s - 81.00s] In this specific scenario, the task is, you have another task
+[81.00s - 84.00s] The task is you have all these, you can, you have this scene, right? Where you have a lot of and the task is so and you will do top down we'll just filter out everything which is not red everything which is just a rounded shape everything will be filtered out and after all these rounded shapes which are you will then say okay what is this can you see the difference now to map first you will find the brain will figure out but when you do top down you have this prior knowledge and then you will look for the things that just figure out what to find, right, on the environment
+[84.00s - 87.00s] Implications for designs
+[87.00s - 90.00s] So why do you want to, when you are designing something, you just need to show what is needed to be shown
+[90.00s - 93.00s] Nothing less, nothing more
+[93.00s - 96.00s] Great work is like always trying to process like we try to find the details, right? So you need to make sure that you, if you want to highlight something, you need to make sure that your visualization highlights that thing that you want shape, age, all these features that you can extract from this object, right? Actually, this person's keyboard and whistle won the Nobel Prize for this discovery
+[96.00s - 99.00s] So it's a big deal, right? At this point, we know that two important things are made up right
+[99.00s - 102.00s] First is identify, locate this object, where is our intention at, right? Because we always want to find out is that we have to write patterns and shapes when surrounding them
+[102.00s - 105.00s] can identify this red dot
+[105.00s - 108.00s] It's very different from the other one
+[108.00s - 111.00s] In this case, the same
+[111.00s - 114.00s] This one is different from the others means that this one is..
+[114.00s - 117.00s] A specific feature, features or white color code, there are different ways to do that
+[117.00s - 120.00s] Different channels, for example, here we are missing colors, here we are trying to increase here
+[120.00s - 123.00s] And in this example, what we are doing is trying to compare Two ways to represent an element
+[123.00s - 126.00s] Here we have this element, the white side of T, and here we have the O T
+[126.00s - 129.00s] And we will put it in our elements that we have over here
+[129.00s - 132.00s] For you to find this algorithm in this group, it's a little harder, right? It is right here
+[132.00s - 135.00s] But if I ask you to..
+[135.00s - 138.00s] It's easy, right? Because it's right here
+[138.00s - 141.00s] In this other example here
+[141.00s - 144.00s] This element is hard because this one is very similar to the other elements that we have here
+[144.00s - 147.00s] But if I ask you to use this, very easy
+[147.00s - 150.00s] This also happens when we use colors
+[150.00s - 153.00s] And why it's difficult to use this green color, this red color? Because at the end they are colors, right? But the difference remains here when you try to compare with the rest of the other group
+[153.00s - 156.00s] This green dot here is difficult to find because they are, it is very similar to the other ones
+[156.00s - 159.00s] This red dot is very different and that is why this works
+[159.00s - 162.00s] Similar thing here, so we will not explain that one
+[162.00s - 165.00s] Point, visualizations is a two-way street
+[165.00s - 168.00s] The visual, the base designers will bring something to the table, our visualizations, right? And the humans, infusers, The end user, they can be biologists, they can be like, they can like have different prior experience
+[168.00s - 171.00s] Take that prior experience into account
+[171.00s - 174.00s] To explain prior experience, we will use the head
+[174.00s - 177.00s] The first law is to convince, so you will always try to complete in complete shapes
+[177.00s - 180.00s] Even if it's explicitly there is no triangle here, right? But your brain, prior knowledge how a triangle looks like, right? So your brain already knows this information and we create this triangle here on top of these other visualizations here, right? So you need to be careful with this because you can create a visualization and intentionally leave the user and wait, that's true
+[180.00s - 183.00s] And the other one is similar
+[183.00s - 186.00s] Elements with the same is considered to be groupings
+[186.00s - 189.00s] In this case, we are using quality
+[189.00s - 192.00s] we will create two groups here the gray dot and the red right that is easy but here we need to be careful too because you use color for example creating groups okay we have three groups right the gray the orange and the blue one start looking at this one for example new application design study why we are inside the same group right so there is something wrong maybe that when they were using like for some reason they are the same group
+[192.00s - 195.00s] So if that is intentional, it's good, but it is not so many of them
+[195.00s - 198.00s] The other one is proximity
+[198.00s - 201.00s] Elements that are close to spatial proximity are somehow too close
+[201.00s - 204.00s] So here we still have dots, but when we added this spatial separation between these two dots here, we created these two groups
+[204.00s - 207.00s] So here, like color is not, it's not anymore the main feature here right here the spatial proximity between this this dot here is stronger than the the color that each dot and this is like really useful in for machine learning for example because when you do for example classifications right and you have though if you just let them have like run through you will always have all these plot your data and write your results
+[207.00s - 210.00s] And if you find a group, naturally, oh, maybe use the ground group to plot and go to the same group, you would say, okay, my classification method is working, right? So proximity here is more like more important, proximity is involved
+[210.00s - 213.00s] Here you have proximity here, but you have added here a bounded box
+[213.00s - 216.00s] this visualization in this way, you have two groups, this one and this one, right? There's no other way to integrate this
+[216.00s - 219.00s] Maybe the user can say, okay, inside this group, I have two subgroups, right? But still, the one that will, as the main is the ones that are defined by the bound box
+[219.00s - 222.00s] And this is very useful
+[222.00s - 225.00s] For example, in this visualization, imagine that you don't have this enclosure
+[225.00s - 228.00s] You don't have these borders here
+[228.00s - 231.00s] You just have the dots and you have the smaller
+[231.00s - 234.00s] It will be very, very hard if you try to say, okay, these dots that are here belong to the same category, but this ones and the ones that you will have many dots, right? But when you have this border, it's really easy, right? You can actually, it is belong to the same group, right? You have this feature and you can use it to make your visualization more intuitive
+[234.00s - 237.00s] We have also connections
+[237.00s - 240.00s] Connected together, are perceived as a group
+[240.00s - 243.00s] Here we have color
+[243.00s - 246.00s] You can say they don't
+[246.00s - 249.00s] If you add connections between these two rectangles here, you will literally say that, okay, no
+[249.00s - 252.00s] You even change the shape of the other element
+[252.00s - 255.00s] And this is very useful when you try to plot, for example, accuracy across time
+[255.00s - 258.00s] But if you want to, like, quote, like, for different categories, you need to define, like, different, going in charge to represent the accuracy of these different categories
+[258.00s - 261.00s] We are talking about perception
+[261.00s - 264.00s] We also need to talk about just noticeable difference
+[264.00s - 267.00s] So this is represent the amount something must be changed in order for a link to be noticed
+[267.00s - 270.00s] So actually there's a formula here that you can use to compute the perceived sensation, right? You can use it
+[270.00s - 273.00s] but the main takeaway from this plot is perceived sensation so just to give you an example here if you are using bright with different groups you need to increase a lot the physical intensity to to be able to change or increase the perceived like even if you go from one bite you will just increase one point if you use saturation for example which represent color if you just increase one point here the perceiving sensation will go from one to five
+[273.00s - 276.00s] So you need to be careful when you try to use these different channels and with a different group that we very easily
+[276.00s - 279.00s] About accuracy
+[279.00s - 282.00s] How accurately a channel can express quantity? Experiment was presented
+[282.00s - 285.00s] In this paper, what's done, the graphical person, were based on different plot persons and they were trying to evaluate which one
+[285.00s - 288.00s] Because, so the goal here was to compare was greater
+[288.00s - 291.00s] The targets were marked with these middle dots
+[291.00s - 294.00s] Can you see these middle dots here? So those were the targets
+[294.00s - 297.00s] The taskbar, can you compare which one is greater? So in this configuration types were made side by side, right? You can easily compare them because they are side by side and you can say, okay, this one is greater
+[297.00s - 300.00s] In this second configuration, space and spatial space, so they were separated
+[300.00s - 303.00s] But still they are aligned target here and on the third set they were like separated but also we can see that some bars were included so you can still compare the weighted line here and type they are not aligned anymore so here is here so in this case you cannot compare position anymore you need to try to figure out like of each bar here they are not like they are the same position You need to figure out like which one is
+[303.00s - 306.00s] And here we have the result
+[306.00s - 309.00s] Type 1, type 2 gives position to compare these two elements
+[309.00s - 312.00s] The best one was 2, the best one was type 3
+[312.00s - 315.00s] For the last we have type 4 and type 5 compared with these elements
+[315.00s - 318.00s] So if you are just in a visualization or if you are trying to put like things side by side, try to just basically position things like that
+[318.00s - 321.00s] And here you have like a ranking
+[321.00s - 324.00s] Like first you should choose position before one angled and the last one is always here, right? Like you should try to avoid to use like marks and your results
+[324.00s - 327.00s] And here there is a summary
+[327.00s - 330.00s] You have like here different channels like here and then on the left side you have the ordered anything that you can measure
+[330.00s - 333.00s] Like you can use a number and you can order it
+[333.00s - 336.00s] And then there..
+[336.00s - 339.00s] have the categorical attribute
+[339.00s - 342.00s] For ordered attribute, the best one that you should use is positioned on a common scale
+[342.00s - 345.00s] For example, right here, it's easy to compare
+[345.00s - 348.00s] They are on the same page
+[348.00s - 351.00s] And this one is greater than this one
+[351.00s - 354.00s] And the less, so anything like above this, maybe it's good to use, but try to avoid this
+[354.00s - 357.00s] But, and for categorical attributes, the best one is spatial region
+[357.00s - 360.00s] And second one, scholarly language is good
+[360.00s - 363.00s] Language is like very, very good by many other sections
+[363.00s - 366.00s] All right, so discriminability
+[366.00s - 369.00s] So how many distant bias can be distinguished in a channel? Depends on many different things
+[369.00s - 372.00s] Chances, special arrays, cardinality
+[372.00s - 375.00s] But we have here some diagrams, right? For example, if you are using like, you should check, if you are using, if you are the same thing for a shape
+[375.00s - 378.00s] All this, but here we will try to what is pop-out so any task you can perform in list 200 or two if i show you a visualization find this in no second so your visualization is worth can you find the red dot yeah it was instant you know you easily find this one right so which means pop-up pop-out is working right but look at here so it's the here with different elements and parallelism you have this So it's very hard, right? So you need to, pictures are not pre-attended
+[378.00s - 381.00s] So try to use pre-attended pictures, for example, color
+[381.00s - 384.00s] But be careful that the times you are attended multiple channels, right? For example, here we are using shape and code
+[384.00s - 387.00s] If I ask you here, can you find me the red dot? What it is? So first, you need to find maybe the dots, right? And then you need to find here the right dot or maybe you can like decide it to first find the right shape and then it's not very like you will not take like no so be careful when you are trying to use multiple channels because it will also reveal it for example here we are using again color and shapes if I ask you can you group me like yellow and so it's easy right so you can have the yellows the triangles It's a little harder, right? Because here you have the circles, here, then you need to go here
+[387.00s - 390.00s] You need to go triangles
+[390.00s - 393.00s] And what are the circles? So you need to look for them, right? It's not instant
+[393.00s - 396.00s] So that's happening because you are just in here multiple times
+[396.00s - 399.00s] Here about the perception is you need to know that human brain naturally, when you try to separate, it's not absolute
+[399.00s - 402.00s] Like when you said absolute, you're trying to compare like absolute values, right? In this case for example here you which one is greater? A or B? So you need to compare absolute values and it is very hard, right? Here we're adding a frame
+[402.00s - 405.00s] It's helping a little because you have a commons, but if you align them, it's instant, right? A is greater than B
+[405.00s - 408.00s] So features that support a lot of perception
+[408.00s - 411.00s] So what we use to perceive color
+[411.00s - 414.00s] So and this is the of this to, for the visible spectrum, the colors, it's just this small range here
+[414.00s - 417.00s] That's all that we have
+[417.00s - 420.00s] And for that, I have this one
+[420.00s - 423.00s] So light with our eyes, and it will be reflected on the back where we have a main component or, where we have basically the red as a main sensor
+[423.00s - 426.00s] And so when we process this light, there is photoreceptors here, the rocks and the cones
+[426.00s - 429.00s] The rot will be activated later
+[429.00s - 432.00s] When it is dark cones, the cones will be activated
+[432.00s - 435.00s] For example, right now, probably we are using the cones
+[435.00s - 438.00s] And the cones, three types of polar receptors
+[438.00s - 441.00s] Here we have the short, the medium, and sensitive cones
+[441.00s - 444.00s] The short one will be in charge of detecting the blue, the medium, green, the red
+[444.00s - 447.00s] So, here
+[447.00s - 450.00s] Summarizing
+[450.00s - 453.00s] on the back of our eye in the rot, depending on the conditions of the light
+[453.00s - 456.00s] But how these colors are detected, right? So we have this input stimulus
+[456.00s - 459.00s] Here we have a ring
+[459.00s - 462.00s] Maybe we are looking at the grass, right? And here we have the cone response curve
+[462.00s - 465.00s] Here there is a multiplication happening here
+[465.00s - 468.00s] What is happening here is like basically we will this cone response curve
+[468.00s - 471.00s] to be able to reproduce that input stimulus
+[471.00s - 474.00s] This color matching experiment, it was done to be able to see how we can adjust three primary rights to be able to reproduce a color
+[474.00s - 477.00s] There was a server here, a person, and a color this person, he or she needed to just start with this three primary light to be able to match the input color, right? So in this way we were able to figure out like how much we need to adjust, for example we want to create pink, how much we need to adjust
+[477.00s - 480.00s] Alright, so we have already according to three channels, right? So we use the eyes, we use these photoreceptors to by these different colors
+[480.00s - 483.00s] But in practice, the most useful and useful way to describe colors, especially for visualization, is through the hue saturation, hue represent the color, in this case, pink and blue
+[483.00s - 486.00s] And some intensive pieces represent the brightness
+[486.00s - 489.00s] So how do we use color in visualization? We use it to quantify and represent numbers here, to label things
+[489.00s - 492.00s] In this case, we are using 25
+[492.00s - 495.00s] We have here the graphical visualization where we are trying to represent the net primary
+[495.00s - 498.00s] Here we are using blue for oceans
+[498.00s - 501.00s] And as we can see, what we want are numbers, the net primary blue
+[501.00s - 504.00s] So light color represent, color represent, categorize groups
+[504.00s - 507.00s] Here we are using like borderline types and inside like here for example we are using the right order for development categories
+[507.00s - 510.00s] Inside we represent subcategories right? So there is two disciples that we want to follow when we are trying to quantify uniformity
+[510.00s - 513.00s] The value difference equal to the first year
+[513.00s - 516.00s] Let me use this example here to explain this
+[516.00s - 519.00s] I'm here that we nine groups, right? And this one represents the number 10, four, and so on, right? So as you can see, increasing to each group
+[519.00s - 522.00s] The transition of the color, so this group, we are following that uniformity
+[522.00s - 525.00s] What would happen if we wouldn't follow in this picture? So what would happen is like, we can like use here, for 10, we can use this one, 20, But instead of using this color to represent 40, we jump here and do this
+[525.00s - 528.00s] There, we are breaking this rule, right? Because the increases still depend
+[528.00s - 531.00s] The difference here between this color and this one is a lot, right? So uniformly, it was great
+[531.00s - 534.00s] We need to be careful with that
+[534.00s - 537.00s] Property is discriminability
+[537.00s - 540.00s] Sitting values can still perceive 20 rows
+[540.00s - 543.00s] You will not use any color because you will not be able to be printed
+[543.00s - 546.00s] You should be able to..
+[546.00s - 549.00s] set, right? You should use like maximum like 10 colors to represent categories
+[549.00s - 552.00s] Uniformity, because there is nothing that affects so all the colors, you cannot say oh, like everyone is discrete because you have jagged
+[552.00s - 555.00s] You can still differentiate between orange, green, purple
+[555.00s - 558.00s] So it's a good example how you, how somebody can result in this problem
+[558.00s - 561.00s] but how many distinct values? I think we have already covered this, right? So between codes, right? If you have more than that, you have 20, 30 categories, so you should group them, right? And then you can create subgroups inside each group, right? So, but don't use more than that because 13 color scales in which values above or below the threshold
+[561.00s - 564.00s] For example, a very intuitive one, I guess
+[564.00s - 567.00s] If you have a problem, it's clear that if you are positive profit if you are below zero you have negative profits right so if you want to see clearly this differentiation so you can use paper and ink colors if you really need this threshold here's another example here we have a visualization of if i am not wrong it's the elections for 2016 and the darker blue regular republican so here if you are at 50 like the votes are more female
+[567.00s - 570.00s] And so in this design, not just the variable color scheme
+[570.00s - 573.00s] So clearly here we can see that, right? So here there's another feature
+[573.00s - 576.00s] Inside each group, we are using sequential form
+[576.00s - 579.00s] Darker form means that we have more votes, but still we can see that it is the Republicans, right? So take that into account if you are trying to represent any data set that important to use for humans, so we need to one of these color blinds, right? Color blinds, blinds, because like one or many of them not working, something happened there, right? So in that case, there is like, do you cannot see the difference between red and green here? Probably you are colored
+[579.00s - 582.00s] And here you cannot see the difference between blue also like follow my
+[582.00s - 585.00s] I'm the teacher, is somebody, no that's important, avoid this call, right? To try to differentiate between groups
+[585.00s - 588.00s] That's all, so I did, I heard.

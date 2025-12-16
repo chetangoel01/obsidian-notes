@@ -1,0 +1,433 @@
+[0.00s - 3.00s] Okay, this should work
+[3.00s - 6.00s] So I'll start with this project discussion
+[6.00s - 9.00s] Okay, so effectively your major assignment for this class is the final project
+[9.00s - 12.00s] And here's how it works
+[12.00s - 15.00s] You can do what we call the default project, one of those later, or you can propose your own So which we might have, we must approve
+[15.00s - 18.00s] So, and what is that? Effectively, for instance, maybe..
+[18.00s - 21.00s] We search in somebody's room, right? And you have an idea of our project that you would like to do with them
+[21.00s - 24.00s] Just talk to them
+[24.00s - 27.00s] I want them to, even if it's a project for guest class, I want them to actually kind of like approve your project, right? Maybe you're..
+[27.00s - 30.00s] You have ideas
+[30.00s - 33.00s] So we can be your mentor on your final project, or you can have someone that is not part of this
+[33.00s - 36.00s] So teams are encouraged
+[36.00s - 39.00s] I like this for teams to be like two to three people
+[39.00s - 42.00s] Obviously, more is expected from a team than an individual
+[42.00s - 45.00s] So the project is a team
+[45.00s - 48.00s] So if you're doing a custom project, you should talk to one of us
+[48.00s - 51.00s] Pari, Sonia, Fabio-Juan, okay? And please reach out immediately so that..
+[51.00s - 54.00s] So why choose the default project? I'm going to go why choose one or the other, right? So if you have limited experience in research, don't have a clear idea of what you want to do, or need guidance, then do the default final project
+[54.00s - 57.00s] So, you know..
+[57.00s - 60.00s] Effectively, the default just final project is just that..
+[60.00s - 63.00s] It's going to be kind of like a more defined problem
+[63.00s - 66.00s] But it's still, the requirements are the same
+[66.00s - 69.00s] You're going to have to write a solution to that problem, right? So it's just that it gives you kind of like a little bit more guidance, scaffolding and clear goals
+[69.00s - 72.00s] Why do the custom? So if you have some research project you're excited about that involves the topics of this class, if you want to try to do something on your own, Then do the custom project
+[72.00s - 75.00s] We just need to talk to you to make sure that you..
+[75.00s - 78.00s] So in terms of..
+[78.00s - 81.00s] One is a little bit more guided, it doesn't mean that it's actually less work
+[81.00s - 84.00s] It's the same work pretty much I think
+[84.00s - 87.00s] All of them you're going to be able to use your creativity
+[87.00s - 90.00s] And I always like to select the best project in each category
+[90.00s - 93.00s] It's kind of a cool thing
+[93.00s - 96.00s] So the project proposal is due in a week, okay? I mean, so, and you're gonna need to give us, you know, a short summary of what that will be, right? So what, okay, so one of the things that is very important when you're doing a research project is to kind of like think critically about what you're going to do, right? So what is the big contribution? You know, the generally reusable and special case, what are the flaws, right? So, I mean, you can select a paper that you want to improve on those things
+[96.00s - 99.00s] You know, probably the most important thing, if you want to do a project on your own, is the issue of data
+[99.00s - 102.00s] So easiest thing to underestimate It is data collection
+[102.00s - 105.00s] You just don't have time to do data collection, to be honest
+[105.00s - 108.00s] And this is actually the big problem
+[108.00s - 111.00s] So don't, you know, if you, for some reason, you know, like, just make sure that you have the data that you would be using on your project
+[111.00s - 114.00s] So we're going to expect you to give us a demo, a presentation, and a write-up
+[114.00s - 117.00s] The write-up is extremely important, right? So this is kind of like usually how one of these papers looks like
+[117.00s - 120.00s] There's an abstract introduction, related work
+[120.00s - 123.00s] I mean, it might change the page or two, whatever your solution is, the data, your experiments, results, conclusions
+[123.00s - 126.00s] We don't want this to be longer than this, so because I want to be able to read
+[126.00s - 129.00s] I want to show you some cool projects
+[129.00s - 132.00s] So many years ago, I think it was like four or five years ago, these guys did an image caption visual reality system where this thing would actually be able to write these things
+[132.00s - 135.00s] This was before we had these LLMs, so it was pretty neat
+[135.00s - 138.00s] When Pete and John did this, they did this really cool visualization tool for sports analytics
+[138.00s - 141.00s] They then eventually published this as a paper
+[141.00s - 144.00s] This person probably did the best project that year
+[144.00s - 147.00s] It was a visualization tool for fake news
+[147.00s - 150.00s] He now has a startup on this
+[150.00s - 153.00s] So people get something out of these projects
+[153.00s - 156.00s] I just want to..
+[156.00s - 159.00s] So he eventually decided that he finished his PhD and then just now has started
+[159.00s - 162.00s] The other thing that is very useful, I like this, so I'm using this as an example here
+[162.00s - 165.00s] I don't know how many, who has a GitHub like this? This is extremely important
+[165.00s - 168.00s] Okay? Right? So, one of the things that is actually very interesting is this
+[168.00s - 171.00s] So, we keep hearing all this stuff about like, oh, there are no jobs for CS majors and all this stuff, right? So, yesterday I went to have dinner with a colleague from Microsoft
+[171.00s - 174.00s] And so, and he was actually making kind of like the opposite point is that he actually, literally he said, yeah, we laid off all the bad people
+[174.00s - 177.00s] we need to hire some really good people and we cannot find them okay right so so this is the thing it's like you know like um people this he said that he has like tens of positions for good people that he's trying to build right and and he says that this is not unusual in his group so um you know a lot of a lot of people are going to to look at your GitHub, to look at the things you actually did as you, you know
+[177.00s - 180.00s] So you can use these projects in my class and other classes, but to produce things
+[180.00s - 183.00s] Like, so does this system here calibrate? Actually, Peter did that as part of his participation in this class
+[183.00s - 186.00s] and other people have done it so you can use this for your portfolio okay so this is and you can you know put in some examples there all right so um they schedule my book my change slightly but that's how it looks like um in a way i know that we haven't been assigning a lot of assignments but to be honest it's on purpose is that i just feel that your time is definitely much better spent doing working on a research project than just doing busy work evaluation criteria is here technical quality the write-up is very important your teamwork you know i always i think that your organization of your project you have a good github and all that stuff is really important okay um i will announce the default project topics um in a day or two getting help
+[186.00s - 189.00s] There's a Discord channel there
+[189.00s - 192.00s] Try to meet with us
+[192.00s - 195.00s] Start early, iterate, do all the good stuff
+[195.00s - 198.00s] Yeah, if you want to meet me
+[198.00s - 201.00s] Questions on this? No questions about the class? No? Okay
+[201.00s - 204.00s] Cool
+[204.00s - 207.00s] Let's see
+[207.00s - 210.00s] I probably have more stuff that I can actually talk about today
+[210.00s - 213.00s] So I always keep stuff, but..
+[213.00s - 216.00s] I spend a lot of time on these slides so that they have notes
+[216.00s - 219.00s] So you guys can take a look at that
+[219.00s - 222.00s] But, you know, you guys remember right again? If you do like the whole S thing and then you go forward, there are like these detailed notes on all these slides
+[222.00s - 225.00s] You guys can go through that
+[225.00s - 228.00s] Okay, nice
+[228.00s - 231.00s] Okay, so..
+[231.00s - 234.00s] I'm going to give you the gist of this black mold and black box thing
+[234.00s - 237.00s] These lights are more complete than I could even cover in two hours and a half here
+[237.00s - 240.00s] And I want to make sure that you guys have some map
+[240.00s - 243.00s] So we're going to skip some of these things as we go forward
+[243.00s - 246.00s] So here's our guard agenda
+[246.00s - 249.00s] We are going to talk a little bit about our old friend PDP again
+[249.00s - 252.00s] Then I'm going to be moving to talk about line and chat
+[252.00s - 255.00s] And then I want to make sure that I show you the last slide of this comparative analysis
+[255.00s - 258.00s] There's materials from a lot of places
+[258.00s - 261.00s] I really like these books by MoMAAR
+[261.00s - 264.00s] So I pointed to them, they're wonderful books
+[264.00s - 267.00s] All right, so let's say that we have, this is one of the data sets it talks about
+[267.00s - 270.00s] let's say bike rentals and you view the regression model so they go here what's for you to understand how many bikes people are renting right and then one of the things you're trying to understand is is you know on a particular day given a set of variables what do people what would be people's behavior right so this is kind of like a perfect example for something like PDP okay so Let's say we have a bunch of variables, we have temperature, humidity, wind speed
+[270.00s - 273.00s] How many people here check the wind speed before they go biking? No? I sometimes do actually
+[273.00s - 276.00s] I mean, I bike to like speed later so I have like general idea of how fast I'm biking
+[276.00s - 279.00s] Yeah, yeah, you know, I mean I generally do
+[279.00s - 282.00s] And actually, it actually has happened that I usually bike with the Hudson
+[282.00s - 285.00s] that it was windy enough that some, you know, a few days was actually hard to bike, like dangerously
+[285.00s - 288.00s] But temperature is something that people are more, most people don't like to bike when it's very low temperature, right? So like if you look at a curve like this, right? We talked about this before
+[288.00s - 291.00s] How do we know how temperature affects the prediction of the number of bikes that people are gonna be renting? The general idea is we marginalize, you take all the, and I'll show you how this computation is actually done in practice
+[291.00s - 294.00s] You take all the other variables out and then you sum them up, and then you end up with a curve like this, that actually kind of like shows you how temperature affects globally what this variable is, right? And you can do this for other things
+[294.00s - 297.00s] As you guys recall, one of the big problems is Sometimes you don't have data, right? So that can be kind of a dangerous thing to do, to try to predict
+[297.00s - 300.00s] And when you try to interpret this effectively, you can notice kind of like three different behaviors
+[300.00s - 303.00s] You can notice this monotonic linear behavior either up or down
+[303.00s - 306.00s] You have this flat line
+[306.00s - 309.00s] So when you have a flat line, and effectively it says that what this tells us that the feature is effectively not important it just doesn't matter it's just kind of like back and then you might have these you know these these kind of like curves no linear effects right that you can you can you can see the difference and the way that these calculations actually happen because i don't think i showed you this before is you figure out the feature that you're interested in okay and then what you what you really do is you You go and you try to change, to go through your whole range and look at how the predictions change
+[309.00s - 312.00s] One of the complications on these things is that when you do this sometimes you also want to vary other terms
+[312.00s - 315.00s] Usually what you do is that you figure out what domains that they would be reasonable and then you would you would be generating kind of like, you'd be ascending from the distribution, right? So you generate a bunch of those curves
+[315.00s - 318.00s] So these here are all these curves that you select by going through these different temperatures, but then also varying the other stuff, you get all that
+[318.00s - 321.00s] And then the way that you actually get this is by calculating the average
+[321.00s - 324.00s] So then you get the, effectively you get this average global, right? And then there's the other thing I went through all the slides and I added the code
+[324.00s - 327.00s] You guys can, actually my plots are generated
+[327.00s - 330.00s] So these things are generated from that code
+[330.00s - 333.00s] So if you just put it on Python, you're gonna be able to generate the same plots
+[333.00s - 336.00s] So this just shows you how you would use it
+[336.00s - 339.00s] So unfortunately, business plot, you've been talking about that they're intuitive there and the interpretation is clear, right? it assumes independence among features, you can only really see a few features, and it's also like a hidden heterogeneous effect
+[339.00s - 342.00s] But there's kind of like another problem here, is that the PDP shows you the average effect across all the instances
+[342.00s - 345.00s] By default, you saw how we compute it
+[345.00s - 348.00s] So how can you know how a cold day is different than a hot day, right? like different customers
+[348.00s - 351.00s] So in a certain way, sometimes you want to move from a global to a local explanation
+[351.00s - 354.00s] Like you want to understand like a specific value
+[354.00s - 357.00s] And that's where Lime is kind of useful
+[357.00s - 360.00s] So Lime goes for local interpretable model agnostic explanations
+[360.00s - 363.00s] This paper is about 10 years old
+[363.00s - 366.00s] It's a very well-known paper, probably cited more than 20,000 times, maybe even more than that
+[366.00s - 369.00s] It was, they also had this really cool title, right? Why should I trust you? Explain the prediction of any classifier
+[369.00s - 372.00s] It's a really, it was, it's a cool paper to read
+[372.00s - 375.00s] I think I put it on the page there, so it suggests that you read
+[375.00s - 378.00s] So the idea here, what we are trying to do is we want to understand the behavior, why the model is doing this, is acting a certain way around a certain point
+[378.00s - 381.00s] Okay? So literally, we want to know about a particular decision that our model is making
+[381.00s - 384.00s] The problem is, you know, we take these points and we have no idea because the model is a black box
+[384.00s - 387.00s] We, this thing assumes that the block is a black box
+[387.00s - 390.00s] So we don't know what the model is doing at all, right? So it's different than last class
+[390.00s - 393.00s] We on purpose, we are using models that are interpretable, right? You know? So the question is when someone just gives you a model, you're just using it as a black box, how can you get some feeling of what is important for this model or not? That's what Lyme is going to do for you
+[393.00s - 396.00s] Make sense? Right? And shed as well
+[396.00s - 399.00s] So
+[399.00s - 402.00s] The way that this works, okay, the idea is kind of intuitive, okay? I mean you can read these slides but let me try to explain to you and we're gonna go through this a few times
+[402.00s - 405.00s] So what you're gonna do, you take that you're interested to understand the model behavior
+[405.00s - 408.00s] What these guys propose is to say, you know what, a model that cannot look inside, but I'm going to look inside by doing this
+[408.00s - 411.00s] I'm going to take a simpler model that I can actually kind of like look inside, and I'm going to train locally around that point a new model that approximates that the black box model to within a certain error
+[411.00s - 414.00s] This model that I'm training is going to have a set of weights
+[414.00s - 417.00s] Those weights are interpretable
+[417.00s - 420.00s] So I'm going to use those weights for actually as a way, as a proxy for the way that the model actually behaves on those variables
+[420.00s - 423.00s] Okay? So it's, they have like a whole, you know, framework there for all these explanations, but that's kind of like the basic idea
+[423.00s - 426.00s] So how does this actually work? You pick an input that you want an explanation for
+[426.00s - 429.00s] then you're gonna symbol the neighbors of the selected input so you're gonna perturb that stuff okay then you're gonna train a linear classifier on the neighbors and then the weights of the linear classifier is gonna be your acceleration okay so this is kind of like this you know you have a model you're trying to predict our light you want to know what is around you know what even another prediction around the yellow point there, what you're gonna do is you're gonna, so you could say, oh, I'm gonna sample, the domain with those black points, but actually it's a little bit more complicated because you need to sample things so that you assign higher weight to points that are of interest that are actually close to the yellow point, okay? Then what you do is that you fit the model then through it, and then you're gonna usually use that, you're gonna use the weights of this model that you get, and they usually use these rich classifiers for that
+[429.00s - 432.00s] So that's the basic item, okay? One of the things that is..
+[432.00s - 435.00s] so, I'll come back in a second, that they actually have proposed something that is like really cool on their paper
+[435.00s - 438.00s] kind of is a set of bar charts and kind of visualization to get it's kind of like the weight is is positively high for some variables and negative for other ones okay so for instance on that on that rental dating you might have that the temperature above 20 would be something that would would affect the model positively versus versus rent of But actually one of the things that is kind of interesting about this paper is that the author shows how this approach can be applied to images, can be applied to text, can be applied to a bunch of different things
+[438.00s - 441.00s] And because this was one of, and this might, it wasn't quite the first paper, but it was I think the first really well done paper in this area
+[441.00s - 444.00s] It actually shows a lot of reusable components for this
+[444.00s - 447.00s] And they also release a really nice package that people can use
+[447.00s - 450.00s] So you get something like this
+[450.00s - 453.00s] I apologize that these lights have too much stuff
+[453.00s - 456.00s] So see like this bottom here doesn't show on the, you know, so I didn't have the patience to actually get it
+[456.00s - 459.00s] But, But this is how it actually looks
+[459.00s - 462.00s] This is real code, by the way
+[462.00s - 465.00s] Of, you know, this is how it shows up
+[465.00s - 468.00s] You can, it shows you kind of like the thing, if the thing is positive or negative
+[468.00s - 471.00s] I'll tell you one of the problems with this
+[471.00s - 474.00s] So since I'm, is that because it depends on those samples and some of those are in high dimensional space, this thing can be very finicky
+[474.00s - 477.00s] So when you run the sink multiple times, you can get very different kinds of..
+[477.00s - 480.00s] I don't know if you guys have played with this
+[480.00s - 483.00s] And actually, I'm not going to cover my own paper on this, but actually one of the things that we did is when we're looking at a bunch of these black box techniques, one of the problems is because they change so much, we started thinking on how to..
+[483.00s - 486.00s] When can I trust that these attributes are the most important ones? And one of the ways that you could think about this is when a bunch of these different techniques or different versions of this would give you the same result
+[486.00s - 489.00s] So it would be kind of like somewhat resistance to change, okay? There's actually a way to formalize this in this thing called persistence
+[489.00s - 492.00s] Later in the semester, it's closer to the end of the class we're going to be going back to it as you need to use some techniques from topological data analysis structure to make this whole
+[492.00s - 495.00s] But they're useful, they're cool, okay
+[495.00s - 498.00s] Actually, I really find that some of the cool examples, I think, is things like that
+[498.00s - 501.00s] So how do they make this thing work on images? Can you imagine? Like because If I take every pixel to be an attribute, it's not good, right? So what these guys did is that they introduced this idea of what they call the super pixels
+[501.00s - 504.00s] That is actually, this is a super pixel
+[504.00s - 507.00s] So this comes from the optimization that they run
+[507.00s - 510.00s] I'm not going to cover this here, but you can look up in the paper
+[510.00s - 513.00s] when you look at the explanation for for the different classes that you're talking about here right so this is what comes out and like a electric guitar is would be would be kind of like these are the pixels that kind of like have the highest attribution for for uh for that particular query um and actually There was one example in this paper that is really, is this one, maybe you guys have seen this before
+[513.00s - 516.00s] So you show a model this image, and then it says, Husky classifies as wolf, okay? And you can say like, oh yeah, they look similar, right? But actually one of the things that is weird is when you actually look at the explanation for this particular result, It actually will tell you that this is the super pixels that are the most, these are the attributes that are the most important
+[516.00s - 519.00s] So actually the reason it's telling you this result is because of the background
+[519.00s - 522.00s] So it actually didn't even notice the, you know, the husky
+[522.00s - 525.00s] It just notices the background
+[525.00s - 528.00s] and then it's responding to that, right? So that's the explanation
+[528.00s - 531.00s] So you're saying that line relies on perturbing image samples
+[531.00s - 534.00s] Do they prescribe any method of preserving the image samples? Because I'm picturing that in these images or in like a text sort of thing, like if you just like randomly perturb tokens, for example, like you're going to get nonsense and then get nonsense out of them
+[534.00s - 537.00s] Yeah
+[537.00s - 540.00s] So to be honest, at some point I knew what they used
+[540.00s - 543.00s] But they know something
+[543.00s - 546.00s] But I don't remember
+[546.00s - 549.00s] They have a way to perturb
+[549.00s - 552.00s] Okay, okay
+[552.00s - 555.00s] Yeah
+[555.00s - 558.00s] And not only images, but they have also a way to perturb text
+[558.00s - 561.00s] Yeah
+[561.00s - 564.00s] So they actually have examples on their paper that show you how you, you know, they perturb tests as well
+[564.00s - 567.00s] I mean, continuous data is easy, but then with categorical data, it would be harder
+[567.00s - 570.00s] So I mean, this is a really, this is a really cool paper to read
+[570.00s - 573.00s] I don't think that it's not a technique that I would use in practice to be honest
+[573.00s - 576.00s] Okay, in general I'm, you know, there are, I think that for almost every single type of machine learning model there is usually better, more reliable techniques than this, but this is an awesome paper to read because they have so much stuff that they invented that people have used in these other things that improved
+[576.00s - 579.00s] So, so, but the same thing is a problem
+[579.00s - 582.00s] Yes, that's why it's, so I'm gonna, I'm gonna skip the code
+[582.00s - 585.00s] I put the code here so each of you guys wanna play with it
+[585.00s - 588.00s] You can
+[588.00s - 591.00s] I think it's nice to play with it
+[591.00s - 594.00s] So in a way, so pro sort of, the explanations are short and even possibly sometimes contrasted
+[594.00s - 597.00s] You can control the sparsity of the weight coefficients and the reason you can do this is because of they use that reach classifier
+[597.00s - 600.00s] And it's one of the things you can get it to be very sparse
+[600.00s - 603.00s] There's instability of the results is the biggest problem with this
+[603.00s - 606.00s] And there's many, many parameters that hide biases
+[606.00s - 609.00s] So it's not really the greatest
+[609.00s - 612.00s] Still, I really think that this is a paper worth reading
+[612.00s - 615.00s] So, Shep
+[615.00s - 618.00s] Shap is, we're going to cover what this thing is
+[618.00s - 621.00s] So this builds on something that is very theoretically cool
+[621.00s - 624.00s] So I'll cover some of this
+[624.00s - 627.00s] I think I'm going to spend some time on this
+[627.00s - 630.00s] It's very nice
+[630.00s - 633.00s] So some of the milestones here, there was the introduction of Shapley values in game theory
+[633.00s - 636.00s] This leads back to the 50s
+[636.00s - 639.00s] It's kind of interesting that 2010, someone actually proposed to start using Shapley-Guido-Zim machine learning
+[639.00s - 642.00s] But somehow that didn't really get any traction
+[642.00s - 645.00s] And then in 2017, there was the advent of this technique, Shaf, that is a turning point to it
+[645.00s - 648.00s] So Shapley, some people consider him the greatest game theories of all time
+[648.00s - 651.00s] during his PhD thesis at Princeton and he came up with this concept
+[651.00s - 654.00s] He won the Nobel Prize in Economics for his work in market design and management theory
+[654.00s - 657.00s] The basic problem is how do you, that he was looking at was, what is the fair way to split payout in a cooperative game? So when a lot of, when there's a whole bunch of people doing something, right, how do you properly account for everyone's contribution? That is really what this guy, what he solved in really, really cleverly
+[657.00s - 660.00s] So and a key insight is that, you know, so these were quite established game theory, right? and it has applications in so many different areas political science economics dividing profits allocating costs right so it's it's really neat i'm gonna i'm gonna cover this in enough detail that i think i hope you guys get some of the neatness of this so In 2010, someone, so Eric Struppel and Igor Kolomov, named called, proposed to use this for machine learning
+[660.00s - 663.00s] Efficient explanation of VGV, classification using game theory
+[663.00s - 666.00s] This never got any traction for some reason
+[666.00s - 669.00s] The fact that they didn't release any code, and this was actually kind of like before, in a way like people had kind of like this grasp for interpretability
+[669.00s - 672.00s] might have been the reason, but yeah
+[672.00s - 675.00s] And then kind of like probably, so that 2016 paper, the line paper that I just kind of like described to you guys, it really explained to everyone like this need and a certain way to how you can argue and think about local models, right? So I think that really helped to set the stage for the later, for the first shot
+[675.00s - 678.00s] And this paper came on by Lundberg and Lee, I thought it was at NeuroIPS
+[678.00s - 681.00s] The thing that is also really cool here is the following
+[681.00s - 684.00s] So it talks about how we are, hey, you know, there's like this great package, Shack, that they produced, okay? So the light paper, the authors, Hibéru and Gastrin, they were at the University of Washington, okay? And when they release Lime, they release a really nice package for it with really cool visualization functions and all that stuff
+[684.00s - 687.00s] Where do you think Lundberg was? Also Utah
+[687.00s - 690.00s] Also Utah
+[690.00s - 693.00s] So I have a feeling that it was like, you know, these guys just did this
+[693.00s - 696.00s] It's awesome, very well done
+[696.00s - 699.00s] They release things with code and with all that stuff, right? So, Gastrin actually is interesting because, you know, he was a, before you, Doug, he was a professor at CMU and he's the one that did XGB boost, right? Again, another thing where they had like this really nice package that just runs everywhere, right? You know, and people can use
+[699.00s - 702.00s] I think that, but my general feeling is that this impacted this whole generation of work
+[702.00s - 705.00s] that really so so when Bloomberg did this it was very natural that they would they'd be releasing all their stuff in a very nice way yeah so it's a it's good to package your stuff in the right place so publishing them in right places all that stuff is okay so let's look at this by the way this is just this is just shadowing okay this this work here So we really, this basic stuff here is all just flowing shadow
+[705.00s - 708.00s] So here's the general idea
+[708.00s - 711.00s] So let's say that you have three people, ABC, Alice, Bob and Charlie, okay? They have Gina together
+[711.00s - 714.00s] How many people have seen this theory? Maybe not everyone, hopefully
+[714.00s - 717.00s] So you have three people
+[717.00s - 720.00s] They had the Gina together and they want to share a taxi home, okay? The taxi is going to cost $51, right, okay? So one of the ways that we could do this is we could say $51 is divided by 3, everyone weighs $17
+[720.00s - 723.00s] But here's the thing that is kind of unfair
+[723.00s - 726.00s] Alice just takes the taxi by herself to her house
+[726.00s - 729.00s] It costs $15
+[729.00s - 732.00s] So if I'm Alice, I probably don't want to pay you know, $17 for something that I can pay $15
+[732.00s - 735.00s] Okay? Make sense? And then here's the thing, as it happens, imagine that Alice and Bob live together and they're in the same address
+[735.00s - 738.00s] But then Bob is not, and he doesn't have to just get the regular taxi
+[738.00s - 741.00s] He likes to take like a limo or whatever, like the UberX or something, okay? So he's that kind of person, okay? And then Charlie just happens that he lives a little bit farther out
+[741.00s - 744.00s] So how do you figure out what is a fair amount for each of these people to pay? Okay? Because, you know, so somehow you want to account for the fact that Charlie lives farther, you know
+[744.00s - 747.00s] So the way that Shepley thought about this was the following
+[747.00s - 750.00s] Let's look
+[750.00s - 753.00s] So notice that there's three people
+[753.00s - 756.00s] Three agents here, right? Having to do this
+[756.00s - 759.00s] So let's look at all the different ways that this could go on
+[759.00s - 762.00s] So if Alice takes a cab by herself, she pays $15
+[762.00s - 765.00s] If Bob takes a cab by himself, he pays $25 because he likes the luxury taxi, okay? If Charlie takes one by himself, he pays $38 because he lives farther away, okay? If Alice and Bob takes the taxi, it's 25
+[765.00s - 768.00s] Because they are sharing the same taxi, and Bob would only use the luxury one, so it's 25
+[768.00s - 771.00s] If Alice and Charlie, it would be 41
+[771.00s - 774.00s] They would leave her home first, and then there would be the rest of that
+[774.00s - 777.00s] If it's Bobby and Charlie, it would be 51
+[777.00s - 780.00s] if you if I have else to this it doesn't add any any anything else because of that right okay so now that we have this okay how can how can we figure out what each one of these people should take any ideas on how which you might want to do this take the three set and consecutively subtract like the two sets from that so so yeah so we could do things like we could start to try to figure out like we take this, that, I mean this would be like so here like L is at zero to this right but then maybe if we take right if we take this minus that then in this case L is at something right there there was some addition right so That's kind of like the general idea is is you And I'll show you the solution to this
+[780.00s - 783.00s] It's pretty clever
+[783.00s - 786.00s] But that is kind of like the way that Chef we solved this was to..
+[786.00s - 789.00s] What he did was..
+[789.00s - 792.00s] He first thought of principles that such a function would need to respect
+[792.00s - 795.00s] Okay? So he thought..
+[795.00s - 798.00s] He thought what would be a fair set of things
+[798.00s - 801.00s] I'll show you the parameters
+[801.00s - 804.00s] in a bit and then he came up with a way to actually satisfy the rules
+[804.00s - 807.00s] And then actually it's almost like a miracle that as it happens it's actually a unique way to solve it
+[807.00s - 810.00s] So there's only one way that actually exactly fits all his rules, okay? Right, so but first I just want to, let's see how we're going to solve this particular problem here, okay? So here's the general idea, okay, and built in on exactly what you said is you look at the marginal contribution
+[810.00s - 813.00s] So you look at the value with the player minus the value without that player, okay? So you have an empty coalition, you add, the cost before was zero, the cost after is 15, the marginal, the marginal contribution would be 15, okay? If there was you know if Bob was already taking the taxi, the apostle is 25, you add Alice, here the marginal addition contribution for her would be zero, right? So Charlie, Alice, so what you have now is you have all the different ways of adding somebody to an existing set solution and then you have whatever that they would need to contribute to that
+[813.00s - 816.00s] And then the idea here is this, is that why don't we just then average it out for everyone? Okay, so instead of averaging the 51 divided by 3, we're going to do an average now that is going to it's going to be the average of these marginal contributions, right, and it's actually interesting to see what happens
+[816.00s - 819.00s] So when you do that, oh sorry, okay, so how do you weigh these, you have all these permutations, okay? So for Alice, two times she was added to an empty, one time she was added to Bob, one time
+[819.00s - 822.00s] So for each one of them, you know, you have, you have kind of like these, all these, these permutations
+[822.00s - 825.00s] So here's what you do, see for Alice, we take one sex and then it's like two times 50 plus one times zero plus one plus three plus two times zero so 550 is her um is her is her shepley value okay and then you can do this for each one of them right um and then you you get you get these values here there's some magic okay remember that the total cost of 51 The beauty of this is that when you sum these things up, it actually gets exactly to the total
+[825.00s - 828.00s] Okay? Right? So it's really, I mean, it's a mathematical miracle that how this works
+[828.00s - 831.00s] Okay? Right? And so it's kind of interesting because it intuitively makes sense
+[831.00s - 834.00s] So you effectively get for everyone what their marginal contribution is, and this is effectively a weighted average of all those things
+[834.00s - 837.00s] When you sum it up, you get exactly that
+[837.00s - 840.00s] So the general way that this works, and again it gets, is you have a set of players
+[840.00s - 843.00s] So this is the general formula
+[843.00s - 846.00s] You have a set of players, your coalition, you're adding people to the coalition, you have the cost of the correlation and then the Shapley value is this weird average
+[846.00s - 849.00s] Okay, see this is an average over all possible permutations
+[849.00s - 852.00s] Okay, this here is you're taking the cost that player and without the player right for every single coalition okay and then you know this is just the number of times that that shows up okay is what is actually on the on the numerator there it's really neat okay but actually I think that this is kind of cool so The way that Shep, yes, please go ahead
+[852.00s - 855.00s] Are you guaranteed that every player will pay no more for the share of the taxi than they would in the end if they took it all month? Yeah, this is not this yet
+[855.00s - 858.00s] So efficiency, okay
+[858.00s - 861.00s] So he set up these, he set up exactly, that's what I'm telling you, like, I mean, it's kind of interesting when you see the solution, you kind of, oh, okay, you know, that person is, but no, I think that he probably, he spent a lot of time figuring out what are properties of this that need to exist and that don't need to exist
+[861.00s - 864.00s] So there's efficiency, the contribution sum to the total payout
+[864.00s - 867.00s] Symmetry, should players have identical marketing contributions, they have to pay the same
+[867.00s - 870.00s] Players who contribute nothing get nothing? And then if you have two different games, B1 and B2, you know, they're the sum of those, right? So I find that from these formulas, all these things, you can kind of like prove that the person is not going to pay more
+[870.00s - 873.00s] And this word here is really cool, right? These four axes uniquely determine the value formula, the shadow value formula
+[873.00s - 876.00s] So this is the unique solution to this
+[876.00s - 879.00s] Right
+[879.00s - 882.00s] It's one of those things in mathematics that you know it's kind of like you, it's really pretty right? This is a, so you can see why people really like this because it's such a beautiful theory okay and it's kind of like natural anytime you want to have these fair ways to divide things to try to do it in this way right? As we're going to see, this is not perfect
+[882.00s - 885.00s] Okay, so one of the issues actually, and people have, and I'll show you in a bit, people have noticed that this formulation has problems
+[885.00s - 888.00s] So the same way that life has problems, this formulation all has issues
+[888.00s - 891.00s] We do things like this with this
+[891.00s - 894.00s] So let's say you have between a model to predict an apartment price, and then for a specific apartment, you can have things like the area, the, the floor, whether it's nearby a park or not, where they allow cats or not
+[894.00s - 897.00s] And then you can do things like this
+[897.00s - 900.00s] You can say, oh, assume that this apartment, on average, apartments of this type, you know, would cost 300,000 euros
+[900.00s - 903.00s] And then, for instance, for this particular apartment, maybe it's $10,000 euro cheaper than it would be because it doesn't accept cats
+[903.00s - 906.00s] Right? So you can effectively say that, so Shapley values allow you to kind of like separate out all the features, right? Sum them up in such a way, okay? From the predictions
+[906.00s - 909.00s] And that is actually the, you know, kind of like the cool thing about this
+[909.00s - 912.00s] So if you remember lime, you just got some weights
+[912.00s - 915.00s] It doesn't mean that they sum up to anything, right? You know, this is actually additive, right? So you can add these things
+[915.00s - 918.00s] So the cool thing about this is that you kind of like get this thing that, in a way that it just sums up the right stuff
+[918.00s - 921.00s] There are some technical things that I'm going to skip for now
+[921.00s - 924.00s] One of the things here is what do you do when you have absent features in the coalition? You use marginalization
+[924.00s - 927.00s] This is similar to the way that we do PDP
+[927.00s - 930.00s] Remember like I said, you can just kind of like just select things
+[930.00s - 933.00s] You can just pick it up from the marginal distribution there
+[933.00s - 936.00s] There's a problem with this I'll point out to you later
+[936.00s - 939.00s] Maybe I just explain to you now
+[939.00s - 942.00s] Is that one of the issues is that these formulations only work if we assume that the attributes are independent
+[942.00s - 945.00s] Okay? So when things are correlated, you generate really weird results
+[945.00s - 948.00s] And I have some slides on this
+[948.00s - 951.00s] I'm going to let you go and study them by yourself
+[951.00s - 954.00s] So one of the ways to look at these things is by these force diagrams
+[954.00s - 957.00s] Let me actually show you
+[957.00s - 960.00s] One second here, let me
+[960.00s - 963.00s] Oops
+[963.00s - 966.00s] I want to show you an actual..
+[966.00s - 969.00s] Yeah
+[969.00s - 972.00s] So these are examples of..
+[972.00s - 975.00s] Maybe I go back to even the first one that I had there
+[975.00s - 978.00s] Sometimes they are shown this way other times
+[978.00s - 981.00s] So this is a typical way for us to show Chavez
+[981.00s - 984.00s] Because what happens is that for each one of them, we can actually have whatever its contribution is to the whole prediction
+[984.00s - 987.00s] So this is very similar to those waterfall charts that we saw for GAMPS, as you remember that, you have the average and then for every feature you had the amount that it would add or subtract from it
+[987.00s - 990.00s] It's exactly the same
+[990.00s - 993.00s] So here you're trying to, you know, try to screen some feature and then you would say like, oh, you know, testing here got this person, so you start with some average, right? And then there's kind of like this, these numbers are, they're not zero, they're no zero, but then they're very small, right? And then these here are just adding that particular number, okay? So this one here is whatever that coalition thing, like so you, what you can actually, what Chappie is gonna do is that it's gonna take this value here, and is going to find how much each one of these things is contributed to it, and then you can actually then plot it as well
+[993.00s - 996.00s] Makes sense
+[996.00s - 999.00s] So this is one of the ways that people visualize Shepard
+[999.00s - 1002.00s] So let me, so what this thing is here is we just compress all of them in the same line
+[1002.00s - 1005.00s] And so, and then you put in the attribute you're labeling the attribute the most important attributes
+[1005.00s - 1008.00s] So in the other graph, this thing here was on the side, and then I'm reading it on the side there
+[1008.00s - 1011.00s] So they're called
+[1011.00s - 1014.00s] A lot of times you would sort things by what changes the most
+[1014.00s - 1017.00s] So you can kind of like see here
+[1017.00s - 1020.00s] Cancer probabilities of two individuals, right? So one of the things that is nice about both Lyme and Shab is that You can take one individual and actually look at what that, why the decision for that prediction was done in the exact way
+[1020.00s - 1023.00s] So I'm not gonna, there's some things that I'm not gonna cover but that are important
+[1023.00s - 1026.00s] So there is actually other ways that you can do
+[1026.00s - 1029.00s] So I showed you ETPs that's like kind of global and in line and chat
+[1029.00s - 1032.00s] There's other ways that you can do these attributions
+[1032.00s - 1035.00s] One of them is kind of like looking at counterfactuals
+[1035.00s - 1038.00s] I don't know how many people have seen those
+[1038.00s - 1041.00s] The idea here is the following, is how much do I need to change a certain value so that the prediction would change? So the idea here is imagine that if you imagine that you have, that there is a decision boundary somewhere
+[1041.00s - 1044.00s] and I put myself in the space of all the decisions, right? I can walk and eventually kind of like move over a decision boundary, right? So that is another way that people sometimes want to actually study how these, you don't actually get an attribution there, you get more of a contrasting things
+[1044.00s - 1047.00s] Like if this value was that one versus this, you know, it'd be different
+[1047.00s - 1050.00s] But these are, these ones that we looked at here are very common
+[1050.00s - 1053.00s] Professor? Yes
+[1053.00s - 1056.00s] Does Shapley give you like the sort of gradient for each contribution of the factors, like for example for the age here, for 42, like how do I know if it's a good thing that she's young or if it's like a good thing that she's old? I don't think you get a gradient
+[1056.00s - 1059.00s] Maybe that's why they do the counterfactuals then
+[1059.00s - 1062.00s] You don't get it, really
+[1062.00s - 1065.00s] So..
+[1065.00s - 1068.00s] The other thing that is actually very complicated about this, the following, is that first, you must see how computing these values is extremely costly
+[1068.00s - 1071.00s] Because you need to..
+[1071.00s - 1074.00s] kind of like, you know, keep looking at every subset that there is a this or isn't something, right? So people have figured out that for some types of models, even if the goal of this was to be model agnostic, for some kind of models, you can actually compute them efficiently
+[1074.00s - 1077.00s] And I'm just thinking here, what..
+[1077.00s - 1080.00s] They're used a lot
+[1080.00s - 1083.00s] So if you, one of the things you know how popular something is, some packages people are very, tend to be very, what's the word is, conservative on adding features like mathematical for instance
+[1083.00s - 1086.00s] They usually only add features to things that are kind of like really used a lot
+[1086.00s - 1089.00s] If you look at the attributions in mathematical, you support Chef at this instance
+[1089.00s - 1092.00s] All these things you're going to need to look up, to look if they make sense for your application
+[1092.00s - 1095.00s] Before I go further, anybody else, any other questions so far? So this thing, these things have all kinds of caveats
+[1095.00s - 1098.00s] So there is this paper here
+[1098.00s - 1101.00s] Actually, Carlos was one of my PhD students
+[1101.00s - 1104.00s] One year where we are very lucky he was in town and then he gave this lecture
+[1104.00s - 1107.00s] So I thought it was kind of cool
+[1107.00s - 1110.00s] So together with his colleagues, he wrote this paper on showing why
+[1110.00s - 1113.00s] So they shut the explanations where math actually meant to be used for future importance
+[1113.00s - 1116.00s] And then actually, you know, it creates a humongous interpretation challenge depending on your data
+[1116.00s - 1119.00s] I added some notes, you guys can take a look
+[1119.00s - 1122.00s] But so you have to use these things carefully
+[1122.00s - 1125.00s] The computational cost is something that I just mentioned to you
+[1125.00s - 1128.00s] The issue of feature independence, I'm actually going to have another slide
+[1128.00s - 1131.00s] And then I already, there's instability
+[1131.00s - 1134.00s] Part of the problem with the instability is the problem, The way that usually compute these things is using some probabilistic function
+[1134.00s - 1137.00s] You're approximating something
+[1137.00s - 1140.00s] So anytime you do this, it's going to be..
+[1140.00s - 1143.00s] You can get noise
+[1143.00s - 1146.00s] So, you know, you have to be careful in these things
+[1146.00s - 1149.00s] Okay, shab limitations
+[1149.00s - 1152.00s] People have actually read the papers about what makes explanations human friendly
+[1152.00s - 1155.00s] I actually had mentioned this, I think it was last time, the size of the classes and number are row
+[1155.00s - 1158.00s] This thing always uses all the features
+[1158.00s - 1161.00s] It's not contrastive
+[1161.00s - 1164.00s] And it actually, you know, keeps all the features legally and this is not, yeah
+[1164.00s - 1167.00s] So you guys should take a look at those
+[1167.00s - 1170.00s] Oh, correlation, okay
+[1170.00s - 1173.00s] Correlation is a big problem
+[1173.00s - 1176.00s] Let me, so one of the problems is that a lot of times features, they cannot be, correlated, they cannot be totally uncorrelated
+[1176.00s - 1179.00s] So for instance, if you take a house and we've seen this, square footage and number of rooms, for instance, they're going to be correlated, right? So how do you handle that? It's a problem, right? So this generates all kinds of complications for all these techniques including shadow
+[1179.00s - 1182.00s] I'll let you guys, I added an example
+[1182.00s - 1185.00s] It proposes here some ways to handle correlation
+[1185.00s - 1188.00s] And I'm gonna skip this because I know Pari is gonna have something that is somewhat similar
+[1188.00s - 1191.00s] Oh, well, let me just show you this plot
+[1191.00s - 1194.00s] This plot here is a different version of that we just call
+[1194.00s - 1197.00s] So the idea here is a problem is imagine that I want to know what attributes are the most important in a data set
+[1197.00s - 1200.00s] So what I do is I take a whole bunch of points, I run SHEP multiple times, and then what I'm plotting here is for density, this is the range of SHEP values that were coming out of density
+[1200.00s - 1203.00s] Okay? So this is the distribution of the SHEP values for a particular attribute
+[1203.00s - 1206.00s] So you can kind of like see that some attributes, right, are not so important
+[1206.00s - 1209.00s] Other attributes, you know, they have, you have a very wide Shep value, right? And actually very large as well because as you recall, the Shep values, you know, the length here actually means that they're more important
+[1209.00s - 1212.00s] Okay, so this kind of plot here, is used by people to try to understand what attributes are the most important for a certain machine learning technique
+[1212.00s - 1215.00s] So this is an important plot to remember
+[1215.00s - 1218.00s] Okay, and I have a few other things
+[1218.00s - 1221.00s] Okay, so let's look at this here
+[1221.00s - 1224.00s] So we have PDPs, we have line, we have Shapley, okay? There is all kinds of, some of them have, you know, strong theoretical foundation
+[1224.00s - 1227.00s] It's really cool, right? Okay, this one is that great
+[1227.00s - 1230.00s] Lime is known as very unstable, but the shed can also be unstable
+[1230.00s - 1233.00s] You guys have like, in a way, like when, but all these techniques are useful
+[1233.00s - 1236.00s] People use them, okay, for different purposes
+[1236.00s - 1239.00s] So you..
+[1239.00s - 1242.00s] As you have real data, you can take a look at it
+[1242.00s - 1245.00s] I always find that if we actually working on a real problem, you're going to really quickly see what technique works the best for you
+[1245.00s - 1248.00s] So that's why we cover a bunch of them, but like in general, as you work on your project, if you decide to build models and things, you should definitely try out these techniques
+[1248.00s - 1251.00s] It's very..
+[1251.00s - 1254.00s] easy just to try them out because they implemented in all the major packages
+[1254.00s - 1257.00s] Okay, so this is it for these black box techniques
+[1257.00s - 1260.00s] I think next week, next week I think our class is on Tuesday, because it's fall-ready
+[1260.00s - 1263.00s] Is that nice? Yes
+[1263.00s - 1266.00s] I think I have to look at my schedule
+[1266.00s - 1269.00s] I think I'm going to start to actually look at deep learning things starting
+[1269.00s - 1272.00s] So we, today's what is the fifth class? So we, I mean, if you look, we've covered a whole bunch of stuff
+[1272.00s - 1275.00s] So in the first couple of classes, you got kind of like a really fast track info-vis class, including some of the perception and color stuff
+[1275.00s - 1278.00s] Then we did the model comparison stuff, right? Calibration, things like that
+[1278.00s - 1281.00s] We did kind of like interpretable models last week
+[1281.00s - 1284.00s] Now we did like this black box models and then we're gonna switch over to looking at ways to look at different kinds of like deep learning models
+[1284.00s - 1287.00s] Any questions? Really suggest you guys go through these slides carefully
+[1287.00s - 1290.00s] There is all the material on the website
+[1290.00s - 1293.00s] At this point I'm gonna, Why don't we take five minutes as Pari takes on this road and I sit back there for a little while and then have a home
+[1293.00s - 1296.00s] Any question about the project? Because to be honest, that's the thing that I..
+[1296.00s - 1299.00s] Give us a home.

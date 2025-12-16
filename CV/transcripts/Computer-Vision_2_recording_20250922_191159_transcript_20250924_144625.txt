@@ -1,0 +1,1156 @@
+[0.00s - 3.00s] grade on that
+[3.00s - 6.00s] The reason we did that is we don't want you to spam tag all kind of like problems keep improving your kind of forward system
+[6.00s - 9.00s] We want to know if you want to see that we have a general code that can solve this problem for anything that we want just to go into the training and validation sets
+[9.00s - 12.00s] And then same for same thing with policies or funding
+[12.00s - 15.00s] And then the class will have a little bit of a sneak peek of this made by the TAs
+[15.00s - 18.00s] So you can cover how this project looks like, how it will position all matters one
+[18.00s - 21.00s] So if it's confusing right now, hopefully it won't be confused by then
+[21.00s - 24.00s] A lot of me last time asked for opportunities to do research with my lab
+[24.00s - 27.00s] This was kind of a given
+[27.00s - 30.00s] We have like maybe one or two spots for research positions in the lab
+[30.00s - 33.00s] We want to see which of you have the best fit and the skill set available to contribute to the project in the lab
+[33.00s - 36.00s] This is what we did last year
+[36.00s - 39.00s] We want you to submit like a brief, we have a Google form where you have to submit your CV and some portfolio of what you did before and maybe like a specific statement of what you want to work on in the lab and then move it to the projects available in the lab and then see it
+[39.00s - 42.00s] And then after we get your applications, I'll forward this to the team members team leaders in the lab
+[42.00s - 45.00s] There are a couple of projects all led by team leaders, and then they will see if you're a good player, and they will probably pay for use
+[45.00s - 48.00s] And then, yeah, so Oxhours, before, I think there's a slight change in Oxhours for one of the PAs conflicts, otherwise the same Oxhours as before
+[48.00s - 51.00s] So please come to those if you have any questions about the homework or the project we're here for
+[51.00s - 54.00s] Kind of not you long
+[54.00s - 57.00s] Any questions about homework? Actually, like competition media
+[57.00s - 60.00s] We have access to the thing, so technically, that's our time starts now from the top of the data data
+[60.00s - 63.00s] So a recap of the pre-restructure
+[63.00s - 66.00s] And one thing I..
+[66.00s - 69.00s] which I did last lecture, but I didn't, but now I'm going to do it now
+[69.00s - 72.00s] Just to kind of give you guys a little sneak peek on the kind of cool things people do with computer vision
+[72.00s - 75.00s] How many of you seen this image on National Geographic for us? I guess like this kind of shows In my generation, this was a very popular image
+[75.00s - 78.00s] And so this is a girl from Afghanistan, and they took her picture in 1984
+[78.00s - 81.00s] This is a National Geographic photographer took her picture in 1984
+[81.00s - 84.00s] And like 20 years later, people found her the same person after the regime changed there
+[84.00s - 87.00s] And then they were able to identify her
+[87.00s - 90.00s] So this is one of them
+[90.00s - 93.00s] In the early days of computer vision, this was one of the victories
+[93.00s - 96.00s] People who use biometrics to identify the same person who used the patient, even though these victories have taken almost 20 years apart
+[96.00s - 99.00s] So one of the biggest applications, one of the most popular applications of computer vision in the forensic sense is that biometrics can be identified
+[99.00s - 102.00s] And we learned some features about cases that are invariant times
+[102.00s - 105.00s] different types of clothing stuff
+[105.00s - 108.00s] Identify people
+[108.00s - 111.00s] And this is what it's done right now
+[111.00s - 114.00s] Every time you go into this country, that's why they have your biometric passwords, because now you're facing teachers' apps so they can recognize you
+[114.00s - 117.00s] computation for logarithmic another area that's quite popular these days so we want to take a single image with okay neural networks to learn what the same image would look like under different lighting conditions so you take a picture once and now without taking it again you can re-light it based on where you want to place the illumination and this is by the Quite a expensive process in terms of learning, but if you have enough data you can learn these things
+[117.00s - 120.00s] And this kind of shows you what that is
+[120.00s - 123.00s] I should have some links to what this looks called
+[123.00s - 126.00s] All these neural radius fields
+[126.00s - 129.00s] It's quite an active area, I think
+[129.00s - 132.00s] Obviously, motion capture and special effects is..
+[132.00s - 135.00s] Oh, you would just make your..
+[135.00s - 138.00s] Close
+[138.00s - 141.00s] markers that they place on your face and your body, they can check your body posture perfectly and then they overlay a completely image that replaces you with like an image or any other CGI
+[141.00s - 144.00s] I think they're adopted in the use of computer augmented reality obviously not
+[144.00s - 147.00s] Everyone has a phone, everyone has Snapchat, all these filters, these filters are now applied and reapplied to create it with your iPhone
+[147.00s - 150.00s] So like from any image, you can overlay these types of objects on the iPad or on the other side
+[150.00s - 153.00s] People use this also for safety, so try to, once you have these videos of factories and stuff, you can kind of automate a lot of the robots that you can pass here
+[153.00s - 156.00s] And also you can monitor different types of events happening in Tennessee, so this is used with a lot of industrial settings where in warehouses and factories they have these automated systems for monitoring performance and quality control
+[156.00s - 159.00s] And GenKV AI, so obviously everyone is familiar with this one
+[159.00s - 162.00s] This was a picture of our lab taken last week
+[162.00s - 165.00s] I guess I want to ask you guys to spot which was the real one of these three
+[165.00s - 168.00s] And which ones are the fake ones? This one is a real one
+[168.00s - 171.00s] If it's a big blue closely, this is a big actual art faces
+[171.00s - 174.00s] These ones, those are not completely art faces, but we just took the original picture and then used these tools to kind of re-generate backgrounds, not all the settlements where we're going in Taj Mahal or in some kind of..
+[174.00s - 177.00s] If you notice that's what's looked like New York City, but Freedom Tower and Empire State building are not next to each other
+[177.00s - 180.00s] If you don't know, that should be a good way
+[180.00s - 183.00s] So generally I have those cool things, but I think we've closely it's a lot of funny business in the background
+[183.00s - 186.00s] And also the, I've been told, the grad fourth is not next to Padma Hall or those who are related to that geography area
+[186.00s - 189.00s] Okay, this is a very active way to take images and manipulate them and mesh them and like make these new models and generate new scenes
+[189.00s - 192.00s] And I think every week we try to have a little bit of previews of what's the latest and greatest methods that came out in like popular computer vision for the future
+[192.00s - 195.00s] Okay, so these are some, application of the computer vision
+[195.00s - 198.00s] And just to recap what was the last time, we try to pass the computer vision problem overall, like from a neuroscience perspective a little bit, because of power of perception and how computer vision is basically the art of trying to build systems that mimics the human visual system
+[198.00s - 201.00s] And we talked about how images can be represented in a digital format using matrices, you know, as a function
+[201.00s - 204.00s] and how we can manipulate these images using very basic tool-wise operations, like the change in brightness and histograms
+[204.00s - 207.00s] Today, we're going to take this to the next level
+[207.00s - 210.00s] So instead of talking about how we can manipulate images at a pixel level, we're going to talk about how we can manipulate them at a patch level and what that leads to, what kind of analysis
+[210.00s - 213.00s] We're talking about filters, convolutions, and going towards a little bit more holistic understanding of images rather than adding things
+[213.00s - 216.00s] Okay, so when are pixel operations, not enough
+[216.00s - 219.00s] So let's say you have an, let's say this was a desired image
+[219.00s - 222.00s] Let's say you have some kind of corruptions in our camera, in our sensor that actually gets these salt and pepper looking noise
+[222.00s - 225.00s] No matter what we do to these pixels, let's say these pixels are completely dead
+[225.00s - 228.00s] They're just like either zero or two at the maximum value of those pixels
+[228.00s - 231.00s] But my only use of those pixels, they're never going to be able to recover the underlying true color values of the image behind
+[231.00s - 234.00s] But what can we do to, what are some things that we can do to fix this? So pixel operations are not going to cut it
+[234.00s - 237.00s] What can we do to fix it? We can take advantage of the fact that pixels kind of are related to the pixels there next to them to kind of derive information
+[237.00s - 240.00s] We want pixels from the nearby pixels, which are patches
+[240.00s - 243.00s] So that's why we need to widen the inputs of our transformation functions
+[243.00s - 246.00s] So last week we talked about transformation functions that are just taken as input a single pixel and output a single pixel
+[246.00s - 249.00s] So 1d input, 1d output
+[249.00s - 252.00s] These functions do not need to be, like I said, scalar functions that only takes input a single value
+[252.00s - 255.00s] They can take it as input 9 pixels at a time, and then output a single output if you want
+[255.00s - 258.00s] If you design that, then pipe it together
+[258.00s - 261.00s] That null 9 pixels, for example, could be a patch of pixels instead of a single pixel that we care about
+[261.00s - 264.00s] And now we need to define what it means to be a patch
+[264.00s - 267.00s] So one thing I asked the TAs is to put this in
+[267.00s - 270.00s] important sign in slides that are going to be relevant to homework questions or project questions you have so just to kind of give you when you're going back and doing the homework maybe focus on these slides to kind of give you the answer what you want so about patches so to define a patch we need to define what it means to be a neighborhood define a neighborhood we need to define some type of topology of like why some things will happen to be in a neighborhood versus others are not So first we can define topology, get an image with the image as either a four or eight cell topology
+[270.00s - 273.00s] And what that means is that in a four cell topology, pixel is neighboring or immediate pixels around it
+[273.00s - 276.00s] You can know what you see on the top left
+[276.00s - 279.00s] If you do an eight cell topology, then it's connected to all the eight pixels around it, even the diagonal ones
+[279.00s - 282.00s] They're slightly farther away from the So once you define which topology you're using, then you also define adjacency
+[282.00s - 285.00s] So you say, which of these nodes are connected, given a particular topology? So in an eight-cell topology, every cell is going to be connected to eight immediate things to the ground, including the ones in the top and bottom diagonals
+[285.00s - 288.00s] And then you also need to define a path So a path is defined as a series of pixels that are sequentially connected
+[288.00s - 291.00s] So in this example, this is a possible path
+[291.00s - 294.00s] So if you go from one pixel to another pixel, this is the shortest passable path that it can take
+[294.00s - 297.00s] Or is this one of the shortest paths that it can take from this pixel to that pixel? If this was a D4 topology, so 4-cell topology will be the So we would obviously will not be able to hop from this pixel to that pixel because they will not be defined to be adjacent
+[297.00s - 300.00s] Instead we would need to hop one over and go up, which would increase our distance by actually two
+[300.00s - 303.00s] We can count the distance from this pixel to that pixel in this V8 topology space, which will be the path length, how many of those we have to traverse
+[303.00s - 306.00s] And then it decided this to show that this was V4 distance, this path length would increase by two
+[306.00s - 309.00s] So that's kind of giving you an idea that topology is really effective
+[309.00s - 312.00s] On one top, on an image that we're trying to find distances on
+[312.00s - 315.00s] And that kind of short, that goes with the distance
+[315.00s - 318.00s] So like distance is defined as the length, the shortest path that you can traverse from one pixel to the next
+[318.00s - 321.00s] So once you have these four definitions, a patch then is defined as the set of pixels that are radius
+[321.00s - 324.00s] So a patch of size r is the set of pixels that are r or less pixels away from that center pixel given
+[324.00s - 327.00s] In this example, this would be a patch of size 1
+[327.00s - 330.00s] If you were to expand this on more, then we got a patch of size 2 and so on and so forth
+[330.00s - 333.00s] A patch of..
+[333.00s - 336.00s] This patch, the definitions are going to be important, but we're going to define, we're going to do convolutions in this class, we're going to define the size of the size of this patch, and we define it based on the topology that is where it will be
+[336.00s - 339.00s] An example of how we can..
+[339.00s - 342.00s] a patch operation on a patch of size 1, in topology with cells, calling it D8, is..
+[342.00s - 345.00s] So if you care about that one pixel, the one that's valued at 145, we take all the pixels around it that are one distance away, which is the whole, all eight pixels around it
+[345.00s - 348.00s] And now we can apply some filter
+[348.00s - 351.00s] And in this case, the filter that we want is let's take the median value of all the pixel values in the hash that we've got to center around the pixel regions
+[351.00s - 354.00s] pixel interest is 145 value there
+[354.00s - 357.00s] If you take the median of those nine values, you will get the output 183
+[357.00s - 360.00s] And I'll be the output of applying this median filter to this image at that pixel
+[360.00s - 363.00s] So, and that's just for one pixel
+[363.00s - 366.00s] So let's say we have a..
+[366.00s - 369.00s] Let's say we have a larger image
+[369.00s - 372.00s] What we do is we would enumerate all possible patches within this image, so this is one patch here, another patch that's centered around here, another patch that's centered around there
+[372.00s - 375.00s] Each one of these patches are size 1
+[375.00s - 378.00s] We would come up with a median, and then we would place the output of that median filter to this output image that captures the median value that was calculated at that standard pixel
+[378.00s - 381.00s] What will be the output of the patch legal? So what will be the median for this patch? The path answer would be 30
+[381.00s - 384.00s] So if you took the median of these values, you'll get a value of 32
+[384.00s - 387.00s] And then you keep doing this for all the patches we have in our image
+[387.00s - 390.00s] And so the median of this patch is also 32
+[390.00s - 393.00s] Excuse me
+[393.00s - 396.00s] Sorry
+[396.00s - 399.00s] One question
+[399.00s - 402.00s] So when you are finding the median, do you need to consider this center of value, like in this case, 99? Yeah, so the median does not care about which wants the value in the center
+[402.00s - 405.00s] But just you're just looking at the median of all the..
+[405.00s - 408.00s] Whatever that you put in, so if you have nine inputs for this median function, you're taking the median of those nine values
+[408.00s - 411.00s] And it doesn't matter what the one in the center was
+[411.00s - 414.00s] If you notice, if you shuffle the value of these..
+[414.00s - 417.00s] If you shuffle the arrangement of these pixels, the median would still be the same
+[417.00s - 420.00s] So that also kind of starts going into these concepts, they're invariants
+[420.00s - 423.00s] So its median would be a permutation invariant to allow inputs are other permuted
+[423.00s - 426.00s] So it's really the same value
+[426.00s - 429.00s] So again, we just do this one by one, and I shortcut it
+[429.00s - 432.00s] So if you kind of keep doing this process across all these patches that we have in our image, we get the following outputs
+[432.00s - 435.00s] We get a median filter out of the center around
+[435.00s - 438.00s] And if you notice, the original image has a lot of high values and low values
+[438.00s - 441.00s] And after doing our media filter, now the new values are almost all the same
+[441.00s - 444.00s] So that kind of gives you some starting to improve your filter
+[444.00s - 447.00s] If you're trying to do a smooth, a filter of this sort, you might think of it as a way to smooth out the image
+[447.00s - 450.00s] Instead of a lot of high variance in the number of, in the values that you have in your original image, now you decrease the variance with compressed towards the media that I'm getting
+[450.00s - 453.00s] And compression from prime to me is, you know, it's going to change the model's image
+[453.00s - 456.00s] And it's going to change, it's going to create a different appearance
+[456.00s - 459.00s] So one thing that you might have noticed is, OK, so how do we kind of avoid talking about the fact that there's bunch of pixels here that if you center around them, our patch would be outside image, whatever you do with that
+[459.00s - 462.00s] And that's what kind of we convened in the group did not execute the median until they're around those pixels
+[462.00s - 465.00s] And the solution for that is padding
+[465.00s - 468.00s] Usually, once you have an input, then you want to apply a filter of certain size
+[468.00s - 471.00s] You need to pad your image such that the new image as it compensates for the filtered patch overflowing outside the boundaries of the original image
+[471.00s - 474.00s] And there are different strategies for padding
+[474.00s - 477.00s] You can either pad with zeros
+[477.00s - 480.00s] do some kind of repetition, you can basically repeat your image multiple times, such that now the overflow areas have the same statistics
+[480.00s - 483.00s] So it is your original image
+[483.00s - 486.00s] You could do mirror imaging, or you could just simply repeat the edge pixels like that before doing any filtering
+[486.00s - 489.00s] And each of these paddings are going to add different results here, if you're needing something
+[489.00s - 492.00s] So you can imagine if I zero-patterned my image, What's that going to do after I do median filtering? Yeah, it might drive the edge pixels towards zero, because now we just flooded our image with a bunch of zeros
+[492.00s - 495.00s] That's going to drive the values down to the end of the design and filtering
+[495.00s - 498.00s] If you do the repeat edge pixels, that's going to also make some biases that edge areas are going to be, are going to have maybe repeated, are not going to change that much because the repeated edge pixels, but the center pixels might change
+[498.00s - 501.00s] So all of these are going to create some different visual artifacts and you just need to be ready for that
+[501.00s - 504.00s] And when you see them, you might know padding might be the reason
+[504.00s - 507.00s] So this is exactly what I mentioned
+[507.00s - 510.00s] So if you had this over the whole problem, that's kind of the common scene for that
+[510.00s - 513.00s] Great
+[513.00s - 516.00s] So now that we have this tool, this could be a way to solve the issue that we had, this solvent-pepper noise that we have in our image
+[516.00s - 519.00s] So since there is no pixel operation that can help us recover the values of these dead pixels in our image, if we did a median filtering, assuming that, this noise is not egregious and it doesn't like blot out entire patches of image
+[519.00s - 522.00s] You should be able to recover some type of value that these deadpaces used to be before they were corrupted by just looking at, looking at Biden
+[522.00s - 525.00s] The assumption is that the median filters are going to capture some kind of..
+[525.00s - 528.00s] If you assume that pixels in an image do not change all that much from one pixel to the next, which is usually the case
+[528.00s - 531.00s] That's one of the assumptions we make in terms of when you take the image, you assume to have done continuity, some kind of smoothness of the galleries
+[531.00s - 534.00s] So by..
+[534.00s - 537.00s] that assumption kind of goes hand in hand with doing this median filter, because median filter allows you to compute values and if it's sold by just the canvas what's next door to it which we assume is going to be very close to the original piece of the map and that's what that looks like so we start from an image like this you do a median filter and you can roughly recover the shape of the underlying image although you did lose some detail so there's no there's no free bunch this kind of corruption You pay a price to it because you're applying very simple filter like median filter
+[537.00s - 540.00s] You get the pixel values, but now you pay them 10
+[540.00s - 543.00s] So now your filter image is going to be able to assume we have what is the world
+[543.00s - 546.00s] Okay
+[546.00s - 549.00s] So median filter is a very basic filter, which is when you have pictures like the salt and pepper noise, So we both take all in the field
+[549.00s - 552.00s] We did a decent job covering the underlying image
+[552.00s - 555.00s] So that's just the, both the iceberg and the whole world of filters
+[555.00s - 558.00s] You can design other types of filters if you just think about our image as a function
+[558.00s - 561.00s] So think of our image as some kind of a matrix that has values of a function that are read out of different coordinates
+[561.00s - 564.00s] And we just want to have a new image such that it goes through this filter function and then generate a new image
+[564.00s - 567.00s] So we're just going to talk about this
+[567.00s - 570.00s] is G function, which is going to be the family of filters that we want them to
+[570.00s - 573.00s] We can design those filters to do them based on what our assumptions about the image are
+[573.00s - 576.00s] So linear can filter
+[576.00s - 579.00s] We've talked about filters as a whole
+[579.00s - 582.00s] We can think about, we can kind of broadly categorize them as linear or nonlinear
+[582.00s - 585.00s] And within linear function, linear filters, There's even a subcategory of them, which are linear and shift and invariance, and which we'll talk about later
+[585.00s - 588.00s] Quick question
+[588.00s - 591.00s] The median tip that we are studying
+[591.00s - 594.00s] Where would it lie? What would it be? It was nonlinear function or linear function? Nonlinear? So nonlinear function, okay
+[594.00s - 597.00s] linear functions are defined as functions that if you have linear combinations of inputs, the outputs would be a linear combination of those inputs if they were, if the filter was applied for individually
+[597.00s - 600.00s] You cannot express a median function as a linear decomposition one
+[600.00s - 603.00s] So the median of two images that are added together is not going to be the It's not going to be a median
+[603.00s - 606.00s] The two images padded afterwards, in some ways
+[606.00s - 609.00s] So you can kind of prove that
+[609.00s - 612.00s] And I think that's going to be one of the homework questions
+[612.00s - 615.00s] So now let's talk about, and then shift invariance means that no matter how the underlying image was shifted with the filter, we'll cover the same options
+[615.00s - 618.00s] And we're going to talk about, and that's a desirable property
+[618.00s - 621.00s] If you want filters that we designed to give the same output, no matter how, if our images are slightly shifted or not, it's going to be what happens in real life
+[621.00s - 624.00s] So shift invariant filters, which is formed in the backbone of all convolution neural networks are the key to designing useful filters
+[624.00s - 627.00s] Both were robustness, but also quite efficient
+[627.00s - 630.00s] So just to give you a little bit of detail on filtering, but I don't want these sense
+[630.00s - 633.00s] We can think about filters as, again, just like we did before, kind of what we did here
+[633.00s - 636.00s] Here, what we did was we took these pixel values and then we took the median of them and then output them
+[636.00s - 639.00s] You can define the median as some kind of a mathematical operation, a nonlinear one that is, but still a mathematical operation
+[639.00s - 642.00s] Can we operationalize filters in general? They're linear, and this is how that looks like
+[642.00s - 645.00s] So linear filters take the form of outputs, are going to be some kind of linear combination of inputs that are executed at a particular domain
+[645.00s - 648.00s] So like, let's say, Let's say we have 1D, we get some kind of 1D data
+[648.00s - 651.00s] At the teeth index, the output is going to be a linear combination of values that are centered around that teeth index with some weights that are parametrized by this, by beta in these things
+[651.00s - 654.00s] So if you have some kind of noisy signal like what we have on the left, And if you want to decide the low pass filter, and low pass filter, you need to define the filter weights
+[654.00s - 657.00s] Let's say the filter weights are like this
+[657.00s - 660.00s] What this means is that at the center pixel, you take the value of the function and multiply by 0.4, for example, and on the one next over, you multiply it by 0.4
+[660.00s - 663.00s] 2, 5, and then the 2 over, you multiply by a 0.05
+[663.00s - 666.00s] Everything else is 0
+[666.00s - 669.00s] So if you design a filter like that
+[669.00s - 672.00s] Wait, so J here is the position of the pixel? J is not the position of the pixel
+[672.00s - 675.00s] J is the offset
+[675.00s - 678.00s] So if you want to execute a filter at the index, at the pixel position t, J just tells us what is a relative offset
+[678.00s - 681.00s] close nearby actually to be
+[681.00s - 684.00s] If J is 0, then you only look at the same pixel that you're applying this filter on
+[684.00s - 687.00s] J is minus 1 or 1
+[687.00s - 690.00s] You're looking at 1 over J is 2 or minus 2, then you use 2 also
+[690.00s - 693.00s] And you can define this range, and that's part of the filter design process
+[693.00s - 696.00s] So if you design a filter that only looks at, I guess maybe this question is, And this one day example, what is the neighborhood size? What are the path size that we're considering? Right, because we're only applying this operation to pixel there at most two indices apart
+[696.00s - 699.00s] And after that, nothing has changed
+[699.00s - 702.00s] Yes, there is a little bit change on the third hits of next
+[702.00s - 705.00s] Oh yeah, that's true
+[705.00s - 708.00s] There are great canisters
+[708.00s - 711.00s] I thought it was either
+[711.00s - 714.00s] So yeah, so this one, there's a slight value here
+[714.00s - 717.00s] So that being super pedantic and correct, technically this is a patch size of three
+[717.00s - 720.00s] So there's a slight value there that deserves
+[720.00s - 723.00s] Yeah, it's no wildest like this
+[723.00s - 726.00s] If you have this patch size three filter applied to this 1D signal, which we can think about maybe a 1D image, if you apply this to that, at every single E index, you will get a new value that looks like the blue trace that you see below
+[726.00s - 729.00s] And what that does is again, so we have this noisy signal, now we apply this filter, now we get a slightly smoother and lower amplitude version of this
+[729.00s - 732.00s] Would it be patch size 10 because you don't have the filtered out values on the left and on the right? That's true
+[732.00s - 735.00s] That's great
+[735.00s - 738.00s] That's a great point
+[738.00s - 741.00s] So like technically, technically it's a patch size 10, but you could, since no changes are being done to patches that are, to pixels that are beyond green, it will be equivalent actually to a filter of patch size 3
+[741.00s - 744.00s] So that's also a, point that will maybe come up later on
+[744.00s - 747.00s] You can have filters that have a pretty large patch size but operationally they actually can be compressed to something much smaller
+[747.00s - 750.00s] So you can also speed up your computation
+[750.00s - 753.00s] So technically this would be a patch size 10 filter but you can get the exact same result, your patch size was 3, and you have to do less operations on the underlying image if you want to get the same access
+[753.00s - 756.00s] So this is an example And if you think about low pass filters, one thing you notice that all the filter values here are non-negative
+[756.00s - 759.00s] So when you have non-negative values, basically acts like some kind of weighted combination of your inputs and weighted combination of inputs, almost always a non-negative linear combination
+[759.00s - 762.00s] And your feature is almost always leads to some kind of averaging between the two of them
+[762.00s - 765.00s] frequency of these high amplitude changes in your signal, you're going to reduce something smaller, and that's why it's all low pass filter
+[765.00s - 768.00s] You retain lower frequency information at the cost of getting rid of these high amplitude signals in your data
+[768.00s - 771.00s] And again, this can be done in one descent or two descent
+[771.00s - 774.00s] How many dimensions you want? You can generalize multiple dimensions, which we'll talk about later
+[774.00s - 777.00s] Okay, so these types of filters, this will be a low pass filter
+[777.00s - 780.00s] Another filter that's very common in abbreviations, a box filter
+[780.00s - 783.00s] So again, if you have an image like this, a 3x3 image, and we have a filter that has the same values everywhere
+[783.00s - 786.00s] What does that essentially do to our image? It just takes an average, so like instead of a median, you can think about it as like a median filter
+[786.00s - 789.00s] So instead of taking the..
+[789.00s - 792.00s] the median of the pixel values around the particular pixel, now it just takes average of everything around it, including itself
+[792.00s - 795.00s] And they call these box filters in the..
+[795.00s - 798.00s] And now we can kind of start to see that, like, instead of a median, if you use a mean filter, we can represent this whole thing as a nice matrix, like another matrix that looks just like an image, that we simply apply on to our image to get an output of
+[798.00s - 801.00s] And if you did the math, now the output at every single value is going to be the average of the pixels around that line, around that center
+[801.00s - 804.00s] And what this does is basically a blur effect
+[804.00s - 807.00s] So if you take an input image, if you did that, if you did this 3x3 box filter around it, you would just get a blurred version of the underlying image
+[807.00s - 810.00s] And we usually do this
+[810.00s - 813.00s] So this can be used also if you have that salt and pepper noise that we had before
+[813.00s - 816.00s] You can also apply this box filter here, and it will give you some kind of a smooth version of your
+[816.00s - 819.00s] And we want to do this sometimes because we want to add good information potentially from our neighboring regions to create some kind of a statistic that captures reasonable information for each pixel rather than just that single pixel
+[819.00s - 822.00s] And so this is one type of filter
+[822.00s - 825.00s] And now that we can see that, we can represent filters as basically, at least linear filters
+[825.00s - 828.00s] We can express linear filters as some kind of matrix operations
+[828.00s - 831.00s] Based on how we designed those matrices, we can get different outcomes in terms of our filtered images
+[831.00s - 834.00s] So this is what we started with
+[834.00s - 837.00s] This is the box filter
+[837.00s - 840.00s] It's just one that we were
+[840.00s - 843.00s] It's just basically, it's a simple averaging of the pixel with neighboring pixels
+[843.00s - 846.00s] You get an image like this
+[846.00s - 849.00s] But now we can decide to modulate the values of our filter research pad
+[849.00s - 852.00s] There's a lot more weight in the center than there in the periphery
+[852.00s - 855.00s] Then you get a slightly different outcome of what what the output image looks like
+[855.00s - 858.00s] And this one is just the same thing, but just a bigger filter
+[858.00s - 861.00s] So bigger filters just involve more information for more pixels, which means more averaging
+[861.00s - 864.00s] So in general, when you have a non-negative filter and you just make the same thing but bigger, you're going to cause much more blurring around the pixel that you care about because you're averaging more pixels to get that value
+[864.00s - 867.00s] Interestingly, now if we start to use negative values to our filters, we start to get much more weird effects
+[867.00s - 870.00s] And this is what people design filters to highlight things like edges and corners of an image
+[870.00s - 873.00s] Because by having negatives, you're going to start to see differences between pixels rather than simple averages
+[873.00s - 876.00s] The difference of pixels leads to perceiving edges, which is what we do
+[876.00s - 879.00s] Edges just means sometimes transition from one zone on an image to another
+[879.00s - 882.00s] And to be able to highlight those things, some kind of a negative and positive combination of pixels must be computed
+[882.00s - 885.00s] And you can design them by having these filters that have both positive and negative
+[885.00s - 888.00s] And we're going to talk about them later on in the little corner of the time periods of mesh
+[888.00s - 891.00s] So these are some handcrafted filters to kind of get some kind of output that we want from images
+[891.00s - 894.00s] But this is essentially the basis of convolutional neural nets, a lot of these deep neural net architectures
+[894.00s - 897.00s] What they essentially do is..
+[897.00s - 900.00s] they apply a series of filters
+[900.00s - 903.00s] So once you have an input image, you go through one layer of filtering and another layer of filtering and so on and so forth
+[903.00s - 906.00s] Each of them compositionally creates a new look on your image until you get some kind of representation in the image that is useful for you
+[906.00s - 909.00s] So you get tasks that you want to do
+[909.00s - 912.00s] The major difference is that here, these filters, instead of us designing the values of these filters, they're all learned because of some kind of a task that we assign to these systems
+[912.00s - 915.00s] But I just wanted to maybe introduce the motivation and what filters do to give you an intuition
+[915.00s - 918.00s] So then when we do learn these things later on, you have an idea of when they are learned, why they're doing what they're doing
+[918.00s - 921.00s] And then this also goes to the shift invariance thing
+[921.00s - 924.00s] So we want a filter that, let's say we want to perceive a dog in this image
+[924.00s - 927.00s] The position of the dog change within the coordinate framework on the image
+[927.00s - 930.00s] We want this filter to still get the same output
+[930.00s - 933.00s] So if you don't have shift invariance, this image and this image would have a completely different output
+[933.00s - 936.00s] A shift invariant filter
+[936.00s - 939.00s] would yield the same result
+[939.00s - 942.00s] So shift invariance is a desired property, especially when you compose lots of filters together
+[942.00s - 945.00s] You want these composition of these filters to retain
+[945.00s - 948.00s] Okay, so now the question is going back to the box filter
+[948.00s - 951.00s] Here an image like this, this box filter, this particular value and we can again we can once again represent it as some kind of a matrix that represents a filter that we apply it pixel wise
+[951.00s - 954.00s] If you think about, we can also think about these filters as doing some kind of a sliding operation
+[954.00s - 957.00s] If we are, if we're applying this filter every single pixel and then doing it to the next pixel and so on and so forth, you can think about it as some kind of sliding operation
+[957.00s - 960.00s] And we can also, just like we did for the linear filter, 1D filter I showed earlier, kind of going back here, with how we can define filters as some kind of a summation of weighted averaging or some kind of weighting of inputs across a range of input coordinates
+[960.00s - 963.00s] We can do the exact same thing in images
+[963.00s - 966.00s] and represent filtering as a simple function composition with some kind of solution
+[966.00s - 969.00s] So if you have our underlying image F here, and if you have a filter H, such that the indices of that filter kind of represent the ways that we give it in different positions, we can represent the sliding and filtering operation as a kind of a dot product and sliding operation of two functions
+[969.00s - 972.00s] We change indices in where these operat- where this operation is done
+[972.00s - 975.00s] I just kind of skip forward like this because this is familiar to people in terms of a very basic operation in Singletary
+[975.00s - 978.00s] This operation of sliding and composing two functions is called cross correlation
+[978.00s - 981.00s] So if you have two functions and you're trying to compose them, such that one function is evaluated at different indices, and the other one's evaluated indices, and you multiply them together and you sum them
+[981.00s - 984.00s] In 1D, it will look like what we have above
+[984.00s - 987.00s] In 2D, you can also define computation, and then it's called cross-correlation
+[987.00s - 990.00s] And there's fast algorithms for computing cross-correlation, which is going to be one of the questions in your project
+[990.00s - 993.00s] But in general, if you want to..
+[993.00s - 996.00s] computer third function that is a composition of two functions, the image and the filter
+[996.00s - 999.00s] We can just simply represent it using this notation for cross correlation, which is x inside a certain function
+[999.00s - 1002.00s] forget about the, I guess, the naming and stuff
+[1002.00s - 1005.00s] But I want to maybe highlight here that filtering, again, think about filtering as basically if you have two functions, one function that represents your image and another function that represents your filter
+[1005.00s - 1008.00s] Filtering is simply a cross-correlation of You get a third function, which is going to be the other tilted version of your input image
+[1008.00s - 1011.00s] So what's the difference between the cross-correlation and convolution? So that's good
+[1011.00s - 1014.00s] So that's going to come in
+[1014.00s - 1017.00s] So cross-correlation and convolution, they're different in terms of how we index the sliding operation
+[1017.00s - 1020.00s] So in cross-correlation, we have these positive indices
+[1020.00s - 1023.00s] And conveniently in convolution, those indices become negative
+[1023.00s - 1026.00s] So you kind of do the sliding backwards
+[1026.00s - 1029.00s] And that's going to be leading to some kind of shifting
+[1029.00s - 1032.00s] It's going to be old questions you have to prove in your own
+[1032.00s - 1035.00s] Okay, so that's the question we asked
+[1035.00s - 1038.00s] We kind of skipped that
+[1038.00s - 1041.00s] Why is cross-correlation not used in filtering in general? We can't use cross-correlation as a scripted, but it's not usually used
+[1041.00s - 1044.00s] And the reason for that is it's not shift because it's not commuted
+[1044.00s - 1047.00s] Not shift derivative, it's not commuted
+[1047.00s - 1050.00s] So based on how we, the order in which we do these two operations, you're gonna get a slightly different one
+[1050.00s - 1053.00s] You're gonna get a slightly different output
+[1053.00s - 1056.00s] So let's say our f function, which is, let's say this is what our image looks like at a particular point, and h is our filter, which has this shape
+[1056.00s - 1059.00s] If we cross correlate them with one another, you get this type of output
+[1059.00s - 1062.00s] Basically, an composition of those two shapes
+[1062.00s - 1065.00s] But if you switch the order, now if our, if the filter comes first versus filter comes in second, you get a completely different shape
+[1065.00s - 1068.00s] Which shows that, in this case, in general, cross correlation, based on the shape of these functions, if they're not symmetric functions, cross correlation is not going to be commutative
+[1068.00s - 1071.00s] And commutative functions are important, because if you want to compose these kind of things together, if you want to have lots of these filters composed on top of one another, we want to be able to, we want to not care about their order
+[1071.00s - 1074.00s] If things are not commuted, the way you order these filters is going to matter, which is not desirable if you want to have a box done in deployment
+[1074.00s - 1077.00s] To token methods, a very simple fix
+[1077.00s - 1080.00s] Instead of having these, instead of this writing operation done in a forward way, if you do that in a backward way, then we get commutativity, so which means that do this exact same operation, I'm going to go ahead and do this exact same operation, but with chain order of the filter and the on-the-line image, both times you will get the same output
+[1080.00s - 1083.00s] This is something that will actually improve, I believe
+[1083.00s - 1086.00s] Is there a question no more? No
+[1086.00s - 1089.00s] Improving the community
+[1089.00s - 1092.00s] It's not the primary exam type, so exam question
+[1092.00s - 1095.00s] Okay, so by doing simple indexing change, we can do the same thing, but now instead of so think about this
+[1095.00s - 1098.00s] So if we had a, if our, I picture that, but before we had an image and we had a filter, and then if you did a dot product of them, like before, you would get some kind of output and that would be a cross correlation output of the image and the filter
+[1098.00s - 1101.00s] filter, but just flip it upside down and left to right, and then to the dot product, that'll give us the convolved version of our image, that filter
+[1101.00s - 1104.00s] And then we can show that, and with this, if you flip your filter around, then you always get this commutative output of your output
+[1104.00s - 1107.00s] Okay, so an example of that is, let's start with a little condoline image, and then we want to convolve it with this filter
+[1107.00s - 1110.00s] If you want to convolve this filter, we basically need to flip it upside down and left to right
+[1110.00s - 1113.00s] And so we get this new filter, and then we just do the upfront operation as we did before
+[1113.00s - 1116.00s] And you get, so for this particular patch, if we multiply it by this and then sum it up, you'll get the value 147, and we can do that over and over again until every patch gets convolved with that filter
+[1116.00s - 1119.00s] To feed the third row as well
+[1119.00s - 1122.00s] I mean, it's still 1, 2, 3
+[1122.00s - 1125.00s] Should they be in 3, 2, 1? The third one? Third row
+[1125.00s - 1128.00s] Oh, yeah, that's true
+[1128.00s - 1131.00s] Any two, 3? Yeah, that's right
+[1131.00s - 1134.00s] This one, this one, again, sorry
+[1134.00s - 1137.00s] Yeah, this one should be 3, 2, 1
+[1137.00s - 1140.00s] Great
+[1140.00s - 1143.00s] Great eye
+[1143.00s - 1146.00s] Great eye
+[1146.00s - 1149.00s] Good to see
+[1149.00s - 1152.00s] All right
+[1152.00s - 1155.00s] Yeah
+[1155.00s - 1158.00s] Yeah
+[1158.00s - 1161.00s] That's true
+[1161.00s - 1164.00s] Yeah, exactly
+[1164.00s - 1167.00s] This thing, this kernel, which is a flip version of our filter, should be, yeah, exactly, should be basically a pop-down and left-right flip of this, and it should be 3 to 1
+[1167.00s - 1170.00s] So once we do that, then we get this convolution operation, and properties of the convoluted system, which is a convolution, we can prove that it's commutative, and that's good because you can compose many convolutions together, which is what a convoluted function is
+[1170.00s - 1173.00s] that essentially you wouldn't matter the order in which you apply this to
+[1173.00s - 1176.00s] Other properties of convolution are other than as the commutative you can show as associative And you can also break it into pieces, and then you can just show those as distributors
+[1176.00s - 1179.00s] So all these nice invariances that convolution has makes it very, I guess, desirable if you want to have lots of these convolutions applied, you can be sure that order in which we apply them is not going to change
+[1179.00s - 1182.00s] It's going to give us a bit more capacity to learn these things under different settings
+[1182.00s - 1185.00s] Images are different tasks that we're trying to do
+[1185.00s - 1188.00s] as precisely so, like, people who are familiar with, you know, Alex met image net, types of early convolutional neural networks
+[1188.00s - 1191.00s] What they essentially are, are like once you have an input image, you just come, you just put them through a couple of convolutional layers that are composed with one another
+[1191.00s - 1194.00s] The only difference is that these convolutional filters, unlike the examples I have here where the weights of those are fixed, the weights of these are going to be learned
+[1194.00s - 1197.00s] But there's no convolutional filter
+[1197.00s - 1200.00s] There's no less
+[1200.00s - 1203.00s] And you just basically learn how to filter these images through these stack of convolutions to condense information to an output layer and then use you the decision that you want for that image
+[1203.00s - 1206.00s] Classify it as a cat or a dog or tell us where the cat is, and so on and so forth
+[1206.00s - 1209.00s] So the question is, is a box with zero convolution? Can we represent the box with zero as a convolution? What do you guys think? Yeah, I'm really good
+[1209.00s - 1212.00s] So since it's a simple dot product, any kind of linear function like that can be represented also as a convolution
+[1212.00s - 1215.00s] But the thing is, since it's a symmetric filter, all the values of that filter are the same everywhere, it's both a convolution and a cross-color
+[1215.00s - 1218.00s] So if you had a bunch of box filters applied in a composed way, you would still get the same amount
+[1218.00s - 1221.00s] The symmetric filter coming up
+[1221.00s - 1224.00s] What is the box filter? Yeah, the box filter, when I say the box filter, I'm just talking about this filter where all the values are the same
+[1224.00s - 1227.00s] So it's just a mean filter
+[1227.00s - 1230.00s] Box filter, mean filter are the same, different names
+[1230.00s - 1233.00s] So mean filter, or a filter where we have the same values everywhere, which basically averages out the pixel with all the neighboring pixels, can think about it as a convolution because we can write it in the form of a convolution
+[1233.00s - 1236.00s] The thing is, it's also a cross-correlation
+[1236.00s - 1239.00s] So it's one of those, if your filter happens to be symmetric, you can show that it's both a convolution and a cross-correlation
+[1239.00s - 1242.00s] You can write it in two different ways, and then you can still arrive at the same output
+[1242.00s - 1245.00s] And one of the key things to take away from this is that symmetry of these kernels
+[1245.00s - 1248.00s] So symmetry of kernels allows us to exploit some computation but I'll get there
+[1248.00s - 1251.00s] but how compared between cross correlation and convolution, you can think about them as what it means
+[1251.00s - 1254.00s] Cross correlations are used to measure similarity between two signals
+[1254.00s - 1257.00s] So let's say we have these, let's say we have a signal in blue and we have another signal in green that's kind of shifting over time
+[1257.00s - 1260.00s] If you compute their cross correlation at any given point, like as they're sliding, we would see that their cross correlation is maximized when these two signals are exactly identical to one another
+[1260.00s - 1263.00s] And their cross correlation is zero when they're completely out of phase of one another
+[1263.00s - 1266.00s] So we can treat convolutions as a way to filter stuff
+[1266.00s - 1269.00s] People usually use cross correlations as a way to measure similarity between two signals to images, which is going to be the theme of the project that's going to be drawn
+[1269.00s - 1272.00s] So we'll get to that later as well
+[1272.00s - 1275.00s] So cross correlation is just the dot product you're using? Exactly
+[1275.00s - 1278.00s] Cross correlation is simply the dot product between two signals as you slide it to a signal
+[1278.00s - 1281.00s] Whereas the convolution is also a dot product, but the second signal you just invert before you do the dot product
+[1281.00s - 1284.00s] So, fiftures are stackable, and I kind of alluded to that before
+[1284.00s - 1287.00s] Because of its, because of the commutativity property and shift invariance property of convolutions, we can stack them to kind of come up with other convolutions that are probably they're composed of primitive convolutions
+[1287.00s - 1290.00s] And what I mean by that is, maybe before we go into the, let's talk about one more filter
+[1290.00s - 1293.00s] So, so far we've talked only about these very discrete filters that have these constant values and integer values
+[1293.00s - 1296.00s] Filters do not need to take integer values
+[1296.00s - 1299.00s] They can take values that are opposite some kind of function
+[1299.00s - 1302.00s] So we can also think about it that way
+[1302.00s - 1305.00s] So if you want to apply a Gaussian filter onto our image to create a kind of a blur, you can get the values of this filter by simply evaluating the value of this Gaussian function at different coordinates relative to the center coordinate
+[1305.00s - 1308.00s] So the center coordinate would count as 0, 0, and this would be like minus 1 and 0, this would be minus 1, minus 1, and minus 1, so on and so forth
+[1308.00s - 1311.00s] If you evaluate this Gaussian function at those flip values, you get this kind of a decaying value of this filter
+[1311.00s - 1314.00s] points, maximum in the middle, and then decaying towards the edges
+[1314.00s - 1317.00s] And this gives you a bit of a smoother notion of these filters look like
+[1317.00s - 1320.00s] And the reason we do this is box filters can oftentimes introduce artifacts because it has a very steep drop off between where you average versus what you don't
+[1320.00s - 1323.00s] If you want to have a more smoother incorporation of signals around the pixel, then you want to do something like a Gaussian filter
+[1323.00s - 1326.00s] The question is, so going back to maybe a comment made earlier about the size of this filter
+[1326.00s - 1329.00s] If you have a, let's say we have a large standard deviation in our yaw scene versus smaller standard deviation, what this is going to do is, yes, it's going to create a bigger, as we increase the standard deviation in our yaw scene, we're going to include more blurring because more information from larger neighborhoods are going to be used to take averages
+[1329.00s - 1332.00s] What this is going to do is going to increase our computational cost
+[1332.00s - 1335.00s] Because it takes almost no effort to multiply something by a zero
+[1335.00s - 1338.00s] You just ignore multiplication by zero
+[1338.00s - 1341.00s] So let's say once you design a filter, you find a bunch of values that are less than a certain threshold
+[1341.00s - 1344.00s] You just don't compute, you just don't even multiply them with your input image
+[1344.00s - 1347.00s] But if you have a filter that has lots of non-zero values and that are not insignificant, you still have to compute them
+[1347.00s - 1350.00s] And you still have to compute the dot product with your was your input image
+[1350.00s - 1353.00s] So then there's gonna be a considerable, really higher computational cost when you have a filter with a large standard deviation, for example, in this case, than the same filter size, but with a smaller standard deviation
+[1353.00s - 1356.00s] Okay, another thing is we can think about each filter also as a matrix operation
+[1356.00s - 1359.00s] So let's say, Let's say we have a 1D image, just for the sake of simplicity
+[1359.00s - 1362.00s] But this can be generalized to higher dimension as well
+[1362.00s - 1365.00s] Let's say we have a 1D image that has 5 pixels, and we want to convolve it with this hash size 2 convolution
+[1365.00s - 1368.00s] What that looks like is, what that's doing is basically averaging each pixel with its neighboring pixels with the weight of 1 fourth, and then it gives a weight of half for the pixel in the middle
+[1368.00s - 1371.00s] But you can think, you can just write that whole operation as a simple matrix operation
+[1371.00s - 1374.00s] This is our input image
+[1374.00s - 1377.00s] We create this matrix that is now algebraic representation of that filter, as an algebraic representation of the convolution operation for that matter
+[1377.00s - 1380.00s] And then we can multiply this by input image to kind of get an output of what that looks like
+[1380.00s - 1383.00s] So you can think about each convolution operation can also be represented as a matrix operation that is a particular size
+[1383.00s - 1386.00s] So as we get bigger, as we get bigger convolution patch sizes, this matrix is going to get bigger
+[1386.00s - 1389.00s] And this is how you can also think about the complexity of these operations
+[1389.00s - 1392.00s] So let me ask like if we had a, if we had a, if our filter size was not 3, but it was size 5
+[1392.00s - 1395.00s] What would be the equivalent matrix that we would need to to derive to compute this filtering operation? Is that it? Exactly
+[1395.00s - 1398.00s] So the matrix, like now we run from a 5 by 5 matrix, so a 7 by 7 matrix
+[1398.00s - 1401.00s] And as you guys recall, matrix multiplication operations, they're proportional to the to the size of the rows and columns of those matrices in a quadratic sense
+[1401.00s - 1404.00s] So compute this 5 by 5 matrix multiplication, you would have to pay 5 by 5 by 5
+[1404.00s - 1407.00s] by one
+[1407.00s - 1410.00s] So you would have to pay 25 flops of operation
+[1410.00s - 1413.00s] With 7 now you have to do almost 49, so you double the, so you double number the computational costs by just expanding your total size by a lot
+[1413.00s - 1416.00s] So larger filters usually leads to much more complex
+[1416.00s - 1419.00s] Is there a reason that we scaled the matrix so that it has integer values? Good question
+[1419.00s - 1422.00s] So it has to do with..
+[1422.00s - 1425.00s] So because of referring the 8th domain, then if you have some kind of, you have to populate them, you also populate your filters with similar inputs like you have your images
+[1425.00s - 1428.00s] So they're usually also encoded in this sense because here we have these fixed filters so you can make them integer values and then scale them afterwards
+[1428.00s - 1431.00s] But in convolutional neural nets, you would usually need to transform everything into a double or a single, and then you can add whatever values you want
+[1431.00s - 1434.00s] But if you have these fixed filters, it usually is more computationally efficient to have them integer values
+[1434.00s - 1437.00s] So the operator will do it
+[1437.00s - 1440.00s] And then you can do the scaling afterwards
+[1440.00s - 1443.00s] Okay, so..
+[1443.00s - 1446.00s] Each filter can be written as a matrix operation
+[1446.00s - 1449.00s] And once we do so, we can use this as a tool to analyze the complexity of these filtering operations
+[1449.00s - 1452.00s] If you have many, many filters that are composed, you can also think about them as composed, like if you had two convolutions, you would have another matrix here that takes this as an input and then multiply it again
+[1452.00s - 1455.00s] So you can compute the complexity of all these stacked filter operations using the complexity of each filter on its own, like, stacked together
+[1455.00s - 1458.00s] And that wasn't this thing, so stacking filters
+[1458.00s - 1461.00s] So if we can see that each filter can be part of the matrix operation, if you have two filters, there'll be another matrix here
+[1461.00s - 1464.00s] But if you have two matrices, then you can pre-multiply them and have another filter that is pre-computed
+[1464.00s - 1467.00s] And then that can be the new filter that you buy to your input image
+[1467.00s - 1470.00s] So if you have two Gaussian, instead of taking an image and filtering by the first Gaussian, and then taking the output of that and filtering by the second Gaussian, a quick and shortcut is to simply compute the composed Gaussian, which is another Gaussian, and then just apply that to our image
+[1470.00s - 1473.00s] And if you do that, you save a lot of time in terms of computational processing
+[1473.00s - 1476.00s] And another nice thing about Gaussian is that if you know the parameters of these Gaussians, you don't even have to do the solid multiplication itself because you can theoretically derive what the third Gaussian is going to be if you know the properties of the first two Gaussians
+[1476.00s - 1479.00s] I already compute that without even having to multiply these two derivatives together
+[1479.00s - 1482.00s] Another property that I think helps in terms of computation complexity is separability
+[1482.00s - 1485.00s] So Gaussian, if you notice, symmetric along all directions
+[1485.00s - 1488.00s] It's just a ball that has no bias toward any particular direction in space
+[1488.00s - 1491.00s] And because of that, and that kind of stems from the fact that this thing here, you can treat that as two Gaussian's that are multiplied along with it
+[1491.00s - 1494.00s] One along x direction, one along the y direction
+[1494.00s - 1497.00s] But that being said, if you have a regular Gaussian filter that has values like this, or something that resembles that, we can split it into two one-dimensional filters
+[1497.00s - 1500.00s] The two-dimensional filter that we had before can be thought of as two one-dimensional filters that are composed of one another
+[1500.00s - 1503.00s] And the reasoning for that, why we want to do that, is that So to compute this, if you have a 2x2 filter, you would have to create a matrix that is this size, 5x5, and then I'm out like that
+[1503.00s - 1506.00s] Whereas if we had these two one-dimensional filters, we can..
+[1506.00s - 1509.00s] Sorry, so here, essentially, this one has nine values
+[1509.00s - 1512.00s] You would have to create a..
+[1512.00s - 1515.00s] 11 by 11 matrix that kind of parametrizes that whereas if it composes and decomposes into two smaller filters Each of those filters could be represented by a matrix operation of a 5x5 matrix and that one is much two 5x5 matrices are going to be less costly than one 11 by 11 matrix So you can, if you have a Gaussian filter first, what you can do is you can blur it along, you can blur an input image along the x direction, which represents this first filter
+[1515.00s - 1518.00s] And then you blur it along the y direction
+[1518.00s - 1521.00s] And you would get the same output as if you had done everything all at once, but a fraction of the computationally
+[1521.00s - 1524.00s] Separability is another property that allows you to gain some computational advantage when you have these types of parameters
+[1524.00s - 1527.00s] So exactly what I just said is about, Instead of computing your filter, applying that to image in one step, you can apply two smaller filters which are going to have O n complexity instead of one, O n squared complexity
+[1527.00s - 1530.00s] And that will give you a much faster output
+[1530.00s - 1533.00s] So several filters, Gaussian filters
+[1533.00s - 1536.00s] I guess are things that you can repeat much more efficiently than filters that are not separable So we might show up later in the exam You might have to show us a couple of filters and you might ask you which ones are not separable Which ones are not separable which one are complexity question is box filter Can you think of can the box filter be represented as a separable filter? What do you guys think? No So yeah, like box with um So these types of separable filters, if you think about it, it's a rank 1 matrix
+[1536.00s - 1539.00s] Actually, box filter would also technically be rank 1
+[1539.00s - 1542.00s] So if it's rank 1 matrix, you should still be able to represent it
+[1542.00s - 1545.00s] You should be able to write it as a separable filter
+[1545.00s - 1548.00s] Who does next? So an example of separable filter is box filter
+[1548.00s - 1551.00s] Like this, even this filter that we have here, These edge filters that we use, all of these can be represented as As set of equal filters and this this shows you the primitive
+[1551.00s - 1554.00s] This shows you the one of those factors that I use and in all these cases These these filters are composition of this one D filter, but Composer itself going over the direction all these can be represented as Two one D filters
+[1554.00s - 1557.00s] Okay question so far Can I see the mouse? Yeah, are there any growth thumb to to distinguish whether this filter is separable
+[1557.00s - 1560.00s] Yeah, so the rule of thumb, rule of thumb is, if you were to do, so if you have a little bit of linear algebra session today, but the rule of thumb is, if you have a matrix, but first is, if you can represent your, first you wanna represent your filter as a matrix, like what we have there, and once you can represent your filter as a matrix, Can you take that matrix and decompose it as two one-dimensional factors or two lower-dimensional factors? So can you factor your matrix into two smaller parts? And you can do that by doing some kind of, I guess, there are techniques for doing matrix factorization
+[1560.00s - 1563.00s] Sometimes you can see it just from top of your head
+[1563.00s - 1566.00s] Or you can, if you did, how many are familiar with things like PCA? If you do a PCA of this matrix, you would find that there's one component there
+[1566.00s - 1569.00s] And that'll be, and you can factor your, you can factor your information into these, into this one factor that's rank 1
+[1569.00s - 1572.00s] The question is, yeah
+[1572.00s - 1575.00s] If, can you decompose the complex matrix into two one-dimensional vectors? If so, then it becomes separate
+[1575.00s - 1578.00s] So I guess that'll be the exercise to do it to see if it's coming separately or not
+[1578.00s - 1581.00s] I can't think of how in my head in terms of like how if I saw a matrix can I be as well as inseparable or not
+[1581.00s - 1584.00s] I would probably try to factor that matrix because it's factorable then it's there
+[1584.00s - 1587.00s] Okay, so questions? So far yeah, we treat filters as things that are separate than images
+[1587.00s - 1590.00s] Like we have images and we have filters and we convolve them or we cross correlate them to get something
+[1590.00s - 1593.00s] But filters, if you think about it, they're just small images themselves
+[1593.00s - 1596.00s] images look like agencies, so do the filters
+[1596.00s - 1599.00s] There's smaller versions of this
+[1599.00s - 1602.00s] There's tiny micro images, and we just take two images and they're just convolved in one another to get a third image
+[1602.00s - 1605.00s] We can think about that way
+[1605.00s - 1608.00s] So, and we can kind of go beyond small filters
+[1608.00s - 1611.00s] The filters can be the exact same size of the image, and the filters themselves can be the image itself
+[1611.00s - 1614.00s] So what happens when we take an image and filter it with itself, and that touches back on the the notion of cross-correlation
+[1614.00s - 1617.00s] That we talked about earlier
+[1617.00s - 1620.00s] So if you recall, a filter, a signal is maximally cross-correlated with itself, like when they're, so a signal and another signal are maximally cross-correlated, they're exactly same two signals
+[1620.00s - 1623.00s] People use cross-correlation as a way of measuring similarity between things
+[1623.00s - 1626.00s] So if you want to, let's say we have some kind of image, and you want to find where that image appears somewhere else, what we would do is we would take this template that we care about, and cross-correlate it with another image so we can locate where that template lies within one image
+[1626.00s - 1629.00s] Because at the point where they've maximated similar, you would get a very high cross-correlation, everywhere else you would get a very low cross-correlation
+[1629.00s - 1632.00s] So, and this is the key point in terms of using filters for doing pattern matching
+[1632.00s - 1635.00s] So a signal has a maximum response to a filter
+[1635.00s - 1638.00s] The filter is the signal itself
+[1638.00s - 1641.00s] So that's the major takeaway
+[1641.00s - 1644.00s] So if the filter and the signal are exactly the same, you get a maximum cross-correlation value
+[1644.00s - 1647.00s] And you can use this fact to..
+[1647.00s - 1650.00s] as a very primitive object, or like object detector
+[1650.00s - 1653.00s] If you're trying to detect something, try to cross-correlate that within the other image that you're trying to detect it in, and look for places where you get a very high cross-correlation filter output
+[1653.00s - 1656.00s] What I mean by that is, let's say you have this image like this
+[1656.00s - 1659.00s] Let's say you have this big image and a bunch of shapes
+[1659.00s - 1662.00s] And you're trying to look for this particular shape in this image, which is basically question five of your project
+[1662.00s - 1665.00s] The other question goes, So this is this this this this stop motion is heavily featured in your first project But can we find can we do some pattern matching? Can we find this pattern in a larger? Canvas of many patterns and the way you do that is you can take this it can take this larger image Let's say and you call that your image and you call the smaller one your filter and you would cross-correlate this Filter over on top of this larger image and you would get some output like this and what this tells us is As we cross-correlated that small template across this image, in a couple of locations, we had these hotspots, which tells us that pattern really matched these regions really well
+[1665.00s - 1668.00s] Once you cross-correlated them at this position, you get a very high output
+[1668.00s - 1671.00s] And then you can threshold this and then use that as a way to do that for that template
+[1671.00s - 1674.00s] Do we cross-correlate or combo? Because you will combo here
+[1674.00s - 1677.00s] Yeah, so you can, if you cross correlate versus convolve, you just have to be careful where
+[1677.00s - 1680.00s] So that's a great question
+[1680.00s - 1683.00s] If you cross correlate, if you cross correlate, this will you'll get a, the output image is going to be in the same space as your input image
+[1683.00s - 1686.00s] You'll convolve it, what you're going to get is this thing will be flipped upside down on left to right
+[1686.00s - 1689.00s] So you just have to be careful where your indices are
+[1689.00s - 1692.00s] So you should, I should correct this, you could, good cache, second cache
+[1692.00s - 1695.00s] So what else correlate? So this example shows what it looks like if you did cross correlation
+[1695.00s - 1698.00s] If you did convolution, this output will be flipped and upside down
+[1698.00s - 1701.00s] But then you can still get the same information
+[1701.00s - 1704.00s] You just have to be careful about where the coordinates are that you're getting
+[1704.00s - 1707.00s] I'm just going to have one of the questions in your project
+[1707.00s - 1710.00s] We have a very high-res image of a galaxy
+[1710.00s - 1713.00s] And we're asking you to find different star systems in the galaxy
+[1713.00s - 1716.00s] Anything is pattern matching to locate where the stars are
+[1716.00s - 1719.00s] And it'll be up to you to do that in a more efficient matrix you want to have class
+[1719.00s - 1722.00s] so we can comb off all we want, but obviously convolution is still a linear operation
+[1722.00s - 1725.00s] And linear operations are going to have limits, especially when the data we have has very nonlinear noise patterns
+[1725.00s - 1728.00s] So here's a So this is an image of, I believe, it's in the retina
+[1728.00s - 1731.00s] I think it's like the back of our eye
+[1731.00s - 1734.00s] And it's very noisy
+[1734.00s - 1737.00s] Real-life images are very noisy
+[1737.00s - 1740.00s] And this is the output of a kind of a deep learning-based nonlinear filtering that people learn
+[1740.00s - 1743.00s] So if the particular noise that we have in image doesn't really match what we think the noise looks like, so it's a Gaussian noise or if it's some kind of salt and pepper noise like we saw before
+[1743.00s - 1746.00s] If we do these linear filters, we're not going to get a good result
+[1746.00s - 1749.00s] We need to do some more nonlinear operations
+[1749.00s - 1752.00s] If the noise patterns are nonlinear and also not distributed evenly across the image, we're going to get artifacts if we apply very naive filters to these images
+[1752.00s - 1755.00s] So how do we combat that? So that's why we need to develop some nonlinear filtering
+[1755.00s - 1758.00s] So nonlinear filtering is..
+[1758.00s - 1761.00s] The kind of first move that we did actually is a nonlinear filter
+[1761.00s - 1764.00s] But kind of going back to it, this is a very famous image people use in image processing spaces
+[1764.00s - 1767.00s] So let's say we have salt and pepper noise here
+[1767.00s - 1770.00s] If we did any of these filters that we talked about before, like box filter, or mean filter, or any kind of convolution filter, no matter what we do, we're going to get some type of We're not going to get rid of this noise completely because the way the noise is distributed is there's a smooth image And then all of a sudden there's this like high amplitude or very low amplitude noise and then it goes smooth again So the noise is not really distributed in a Gaussian way So if you apply some kind of Gaussian filter or a mean filter It's just gonna blur out the noise but not completely get rid of it Whereas if we did something like a median filter here that the outliers that we think about can be removed because median filters oftentimes get rid of outliers
+[1770.00s - 1773.00s] Whereas means do not get rid of outliers, they just incorporate outliers into their means
+[1773.00s - 1776.00s] So look, so median filter that I talked about before, you have to think about this as, like when you do filtering, don't do it enough
+[1776.00s - 1779.00s] in a, I guess, uninformed way
+[1779.00s - 1782.00s] Always try to have some kind of knowledge about what your input data looks like, what type of noise you expect in your data
+[1782.00s - 1785.00s] So in your data, if you have some kind of outliers like this, if you did a mean filtering, what that's gonna do to your image is, again, it's gonna create some smoothing to the image, even in parts that you don't want there to be smoothing
+[1785.00s - 1788.00s] Whereas we did a median filtering, because we know that our noise pattern is kind of, you know, is very outlier driven rather than systemic, then we can get rid of those outliers using a median filter rather than some kind of filter that's derived from convolutions or some kind of linear filtering
+[1788.00s - 1791.00s] We know if data comes from a particular source, would it be sort of internal noise or it causes an internal noise? Right, so I think that's an important question
+[1791.00s - 1794.00s] If we know what the source of data is, can we tell whether this is supposed to have exploded or not? Or caution, I'm sorry
+[1794.00s - 1797.00s] Yeah, so yeah, that's so in reality it's usually both
+[1797.00s - 1800.00s] So like how many of you have taken like high like how many of you have like high res like SLR cameras that you take and then like when you process these images, when you look really closely you do see a lot of noise, especially when you take pictures at night you see a lot of noise if you look at some of the pictures Those people usually assume that to be Gaussian noise
+[1800.00s - 1803.00s] And you can compute these noise statistics, by the way
+[1803.00s - 1806.00s] So you can focus around black region image and then plot histogram for what the pixel values look like
+[1806.00s - 1809.00s] If they follow some kind of a Gaussian distribution, then you can assume that the noise plan is all the Gaussian distribution
+[1809.00s - 1812.00s] But other times, if you have really old SLR camera, what happens when your camera is really old? And you took 1 million shots with your sensor
+[1812.00s - 1815.00s] you start to get dead pixels
+[1815.00s - 1818.00s] How many of you have seen dead pixels in your cameras? But when you overuse sensors, eventually those sensors, the silicon, those sensors die
+[1818.00s - 1821.00s] So always outputs either a zero or a 255 value
+[1821.00s - 1824.00s] And then those kind of constitute noise like this
+[1824.00s - 1827.00s] So based on, you usually get both
+[1827.00s - 1830.00s] That's why you need to kind of have design filters that can take care of the form types of data
+[1830.00s - 1833.00s] But yes, that's actually a million dollar question
+[1833.00s - 1836.00s] Like how do you know what type of noise there is in the data? Or do we even know it's noise or is it actually signal? And that's where the part of data science kind of comes in, like rather than science
+[1836.00s - 1839.00s] So there are seriously ways to determine what type of noise there is in your data by looking at histogram and stuff
+[1839.00s - 1842.00s] But oftentimes, experience will tell you So this is one type of noise
+[1842.00s - 1845.00s] For this type of noise, median filtering, for example, might be a better approach than doing a mean filter because of assumptions we know about noise and also assumptions we have about what the image looks like
+[1845.00s - 1848.00s] And assumptions on what the image looks like is the entire crux of the problem, which is, what is an image? We assume there's some type of quality of that thing is something in image, versus something that is noise
+[1848.00s - 1851.00s] So we kind of get rid of things that are not image-like
+[1851.00s - 1854.00s] So maybe we just make a little thing and keep everything up
+[1854.00s - 1857.00s] And one of the biggest assumptions we make, I think, as humans, when we look at images, is some type of piecewise flatness
+[1857.00s - 1860.00s] When we look at a scene, we assume there are regions within the image that are kind of continuous, that are unchanging, and then they change another thing, and then so on and so forth
+[1860.00s - 1863.00s] Different objects, each object has some different properties that we assume do not change that much within the boundaries of that object
+[1863.00s - 1866.00s] So we use..
+[1866.00s - 1869.00s] We assume some type of flatness in an image
+[1869.00s - 1872.00s] If there is no flatness, it just looks completely random, and it's as good as looking at white noise
+[1872.00s - 1875.00s] So images have some structure to have some type of flatness
+[1875.00s - 1878.00s] So this goes into now these models of images
+[1878.00s - 1881.00s] How do you model what a general image looks like from a more perception perspective? And just kind of summarizes overall what we assume images look like
+[1881.00s - 1884.00s] There are different objects, there are different regions within an image, but within those regions you have some kind of flatness, some kind of sameness within those regions
+[1884.00s - 1887.00s] And then where those regions end, What you have are these boundary areas, which we call edges
+[1887.00s - 1890.00s] So they're edges in the image
+[1890.00s - 1893.00s] And there's also corners
+[1893.00s - 1896.00s] When two edges touch, they create a corner
+[1896.00s - 1899.00s] So this is a very primitive way to think about it
+[1899.00s - 1902.00s] But each image can be thought of as a composition of flats, edges, and corners
+[1902.00s - 1905.00s] And if you think about it that way, we can start to design filters that can highlight those, such that we can perceive them and do higher order operations
+[1905.00s - 1908.00s] But the thing is, once you see an image, if you don't exactly know where these boundaries are, can we learn where they are? Or can we design filters that can tell us where the boundaries are, where the flats end, and where the edges begin, where the corners are? And this is where the lecture one stuff ends
+[1908.00s - 1911.00s] And now we're starting to go into more high order perception
+[1911.00s - 1914.00s] So before here, we're just looking at very low level filtering operations on our images
+[1914.00s - 1917.00s] And now we can start to go on higher level objects within images, which kind of models how our visual cortex
+[1917.00s - 1920.00s] If you think about it, our retina just sees color and light and stuff, but then it passes that information to parts of our brain that takes that and tries to perceive edges, corners, cats and dogs, and other meanings of life later on
+[1920.00s - 1923.00s] So now we can go to the second level
+[1923.00s - 1926.00s] Then you're filtered to the first level, now we can go to the second layer, where you have to compose filters to get more higher order perceptions
+[1926.00s - 1929.00s] And this kind of summarizes where we're going
+[1929.00s - 1932.00s] So we started pixels, talked about patches today, and we're still gonna talk about patches a little more
+[1932.00s - 1935.00s] And then now we're gonna go to more low-level vision, like edges and corners, and then these edges and corners can also be composed together to perceive higher order things like entire objects, And then once we have segmentation, we can segment different objects that we can take multiple objects and then start to perceive different scenes and then locate what objects are, what they're doing, or they're moving
+[1935.00s - 1938.00s] And that becomes much more higher level of vision that we'll cover after that
+[1938.00s - 1941.00s] And this core structure, we try to design such that it mimics like a journey through the visual cortex of our brains
+[1941.00s - 1944.00s] So today we're in visual cortex
+[1944.00s - 1947.00s] So the middle cortex, as you can see there, is the back of our head and has six areas usually
+[1947.00s - 1950.00s] So today, last week we're in E1, V2, first layer of the middle cortex, and now we're going to slowly start to ascend to other areas of our brain
+[1950.00s - 1953.00s] Okay, so intermediate computation, intermediate computation of brain is, yeah, like once we can perceive different pixels and like maybe denoise them a little bit in our retina, your task is on to selecting different layers in our visual cortex such that we can start to perceive things like edges or corners or different textures in image to make sense of them and going back to what i was talking before we can in terms of making modeling easier we can think about three major regions or key points within an image which are like flat regions or that these factors have to be textured, but they still have the same overall texture
+[1953.00s - 1956.00s] They can think about corners where different edges intersect, and they have edges where one flat region or one texture ends and another texture medium
+[1956.00s - 1959.00s] So how can we design, going back to filtering, and what it did, how can we design filters that don't just get rid of noise and stuff in an image, but then it's hard to help us perceive these different image boundaries, image regions
+[1959.00s - 1962.00s] So I think a good teaching point is, so, these corners, right, and all the edges, but we'll talk about both
+[1962.00s - 1965.00s] One thing, one observation we can make about all these regions is that, let's say we're in a flat region, and we did some kind of filter in that flat region, and we get some output, and then we shifted that filter slightly, and we looked at the output there, we assumed that the output of the filter should not change up that much
+[1965.00s - 1968.00s] If we're within a flat region, and if it goes to another part of the flat region, they should both more or less yield the same output
+[1968.00s - 1971.00s] If we're an edge, what we can think about is that if you had a filter on an edge, and you've moved that filter perpendicular to the edge, we can assume that since if it's truly an edge, And if you're moving along the edge, the output of that filter should not change if you move along the edge, which should change a lot if you go from this part of the edge and then go outside
+[1971.00s - 1974.00s] So there should be a quite drastic change if you go from inside the edge to outside that edge
+[1974.00s - 1977.00s] And then the corner is, you can think about it as a, even a more advanced edge
+[1977.00s - 1980.00s] When you're in a corner, no matter which direction you move your filter, you should expect to see a lot of change in terms of the output of that filter evaluated at that position
+[1980.00s - 1983.00s] So given the assumption, how can we design filters that can detect change? I guess what you see in common for all these things is change
+[1983.00s - 1986.00s] How can we detect change in an image? And I kind of had a slide on that much earlier, thoughts on how you can detect change in a very simple, using a very simple linear filter
+[1986.00s - 1989.00s] See how this slides look, right? So you can design filters that compute differences between neighboring pixels
+[1989.00s - 1992.00s] And that kind of goes back to the, you can design filters that are not only have non-negative values, but also have positives and negatives as a way to kind of compute differences
+[1992.00s - 1995.00s] So if you design a filter that takes the value of a pixel, and then takes the difference of that with the neighboring pixel, and then it takes the device I2, you can think about this as a very, like a discrete way to compute a derivative along a function along a particular direction
+[1995.00s - 1998.00s] So if you have an image like this, if you take the partial derivative of this respect to the x direction, so if you take a pixel and then take a difference with the pixel next to it, give an image like this
+[1998.00s - 2001.00s] You take, if you do the exact same thing but not going like top to bottom, like up down, you get another image like this
+[2001.00s - 2004.00s] This one gives you a change along the x direction of this image and this one gives you a change along the y direction
+[2004.00s - 2007.00s] And you can design these, you can have these derivatives with more sophisticated ones, but in most primitive sense you can compute an intermediate directional derivative by just computing the pixel lengths and the difference of these immediate variables
+[2007.00s - 2010.00s] And this can be used to design a very primitive cornered picture
+[2010.00s - 2013.00s] So this by itself can be used as a way to detect edges
+[2013.00s - 2016.00s] So when there's change, you can think about it as an edge
+[2016.00s - 2019.00s] And as we're going back here, if you assume there's change in all possible directions, sometimes you can say it's a corner
+[2019.00s - 2022.00s] So what we want is if you take these two images, if you take the change along the x direction and change along the y direction, if there's a lot of change in both directions, then we can deduce that that's probably a corner
+[2022.00s - 2025.00s] It has only changed around one direction that it's most likely
+[2025.00s - 2028.00s] And that's what this old-school corner detector, like it's the most primitive coin detector that's probably just used a lot already integrated to our phones when we try to detect boundaries of objects
+[2028.00s - 2031.00s] If you're an input image, first you take this directional derivative to compute edges along this image, and then you compute the square of these things, of the edges
+[2031.00s - 2034.00s] This basically tells you the magnitude of these edges, how strong are these edges along each direction
+[2034.00s - 2037.00s] And once you, if you combine these two, The points along the image where direction observers are large in both x and y directions, in all possible directions, you get this type of final filter, which is a composition of these filters, that gives you these hotspots where there's supposedly edges
+[2037.00s - 2040.00s] And then the final step is you threshold this, and then you say anything that passes certain thresholds are where we presume the edges, other corners are, right? So, and we can use these types of edge detection to, again, detect some kind of discontinuity within the images
+[2040.00s - 2043.00s] And this is used a lot in random segmentation
+[2043.00s - 2046.00s] But nowadays segmentation is done using much more sophisticated things
+[2046.00s - 2049.00s] But if you want a very simple segmentation, like in one of your assignments coming up, you can take an image, you can do an edge detection
+[2049.00s - 2052.00s] And once you have an edge detection, what you can then do is you can..
+[2052.00s - 2055.00s] This is going to be another homework question
+[2055.00s - 2058.00s] Within each detected set of pixels that constitute edge, you can compute the number of pixels that lie within that boundary
+[2058.00s - 2061.00s] And I separate that from everything else outside
+[2061.00s - 2064.00s] And then that will give you a very basic segmentation of that image into these regions that are trapped by edges all around
+[2064.00s - 2067.00s] And then we can do that to do some very primitive things, cells like rotation or object segmentation
+[2067.00s - 2070.00s] Yeah, so edge, edges can be thought of as some position of maximum change
+[2070.00s - 2073.00s] So if you hear an image like this, and you think about it as a one-dimensional function, once again, you can think about this function having a very low value and then suddenly ramping up and then having a high value and staying there
+[2073.00s - 2076.00s] You can think about edge as positions
+[2076.00s - 2079.00s] as places where it is derivative
+[2079.00s - 2082.00s] Derivative of this function is maximum
+[2082.00s - 2085.00s] And the way you compute, the way you can compute a derivative in any function is again, you take the difference of the function evaluated at two neighboring points and then divide by some difference of how big that step is, you get a derivative
+[2085.00s - 2088.00s] But you can think about this derivative as simply a filter that takes a different, that's constructed in a way that takes a difference of neighboring pixels
+[2088.00s - 2091.00s] So going back to the earlier, where we had filters that take the averages of pixels, you can design these filters to take differences and that will give us this derivative very efficiently if you apply it to an image
+[2091.00s - 2094.00s] So if you have an image like this, and you come bothered by this difference filter, now you get this gradient image that comes to the output
+[2094.00s - 2097.00s] So here's an example of a thing that's not redundant
+[2097.00s - 2100.00s] You can implement it like this, and then you put a, by a horizontal derivative on it, you compute all the positions in the image that are horizontal edges
+[2100.00s - 2103.00s] You do this exact same thing, but now you transpose, you transpose your, and the filter shape, now you get the, I get verticals
+[2103.00s - 2106.00s] I just move your shape
+[2106.00s - 2109.00s] Right, so then another thing is, but, so, some of these are hard work
+[2109.00s - 2112.00s] Okay, yeah, so here's, so what I want to say is, instead of computing these, like, discrete, instead of computing a discrete difference operator that is the absolute filter, oftentimes our images are noisy, so unlike, so, okay, unlike a smooth image like we saw before, like this example, Unlike an image like this, oftentimes images have noise associated with them
+[2112.00s - 2115.00s] So if you have noise associated with them, if you were to compute the difference between every pixel and its neighboring pixels, you get some kind of a value like this
+[2115.00s - 2118.00s] So if you did a very naive difference filter on this image, this would be the alpha of Even though we have a very clear patch here, you kind of get very high derivatives all over the place, which would be useless if you want to use this as an area detector
+[2118.00s - 2121.00s] So what we do instead is we will smooth this image first
+[2121.00s - 2124.00s] We can smooth the image by some kind of a Gaussian to kind of get rid of this noise for it
+[2124.00s - 2127.00s] And then apply this difference operator to detect where it's edges, and you get some value like this
+[2127.00s - 2130.00s] But the question is, like, as we talked before, if you had a noisy image and you smoothed it first and then applied this edge detection filter on it, what is, can you guys think about something we talked earlier in terms of making this process more efficient? Can we stack these together? Yeah, right
+[2130.00s - 2133.00s] We can combine the Gaussian and the edge filter
+[2133.00s - 2136.00s] Exactly
+[2136.00s - 2139.00s] So instead of filtering our image first and done, I'm doing an edge detector next, we can do them all in one step by We can take our edge filter like this, and we have a Gaussian filter that we can pre-compute and then compose them together
+[2139.00s - 2142.00s] And now we get this edge filter that's already convolved with this Gaussian filter
+[2142.00s - 2145.00s] And these are called the difference of Gaussian surgery
+[2145.00s - 2148.00s] So you can have these edge detectors that are smoothly changing rather than abruptly changing, such that they're going to be more robust on the line noise
+[2148.00s - 2151.00s] Can I just repeat, this one is for vertical edges? This one will be for horizontal edges
+[2151.00s - 2154.00s] Because yeah, like since you're trying to take difference between, wait, when I say, sorry, sorry, this would be for vertical edges
+[2154.00s - 2157.00s] So like if you have, let's say you have an image bound image that has some high values and then As you go left to right, it becomes high below
+[2157.00s - 2160.00s] If you were to convolve it with this filter, you'd get a large change in the direction
+[2160.00s - 2163.00s] Whereas if you do this, you will not get a larger change
+[2163.00s - 2166.00s] So this filter would capture edges that go top, that go top to bottom, like vertical edges, and this one will capture edges there, horizontal
+[2166.00s - 2169.00s] We'll give a maximum response
+[2169.00s - 2172.00s] This one will give a maximum response with a vertical edge, and that one gives a maximum response with a horizontal edge, even in
+[2172.00s - 2175.00s] So now that the slides are kind of in the wrong order, kind of going back here, this is all this..
+[2175.00s - 2178.00s] So going from this Harris edge detector to this Canyard detector, only difference between the two is Kind of going back, sorry for the cool flip order
+[2178.00s - 2181.00s] But here, we're just competing in these very naive detectors that are just competing the differences without the Gaussian
+[2181.00s - 2184.00s] And then taking their magnitude together to come up with the corner locations
+[2184.00s - 2187.00s] In this case, with candy, you can't, instead of using, instead of using this discrete edge operator, use this Gaussian blur edge operator, such that now you can tune, you can tune the width of the Gaussian
+[2187.00s - 2190.00s] And what that does is, as you guys recall, if you have a bigger Gaussian that you're convolving this edge filter with, you're gonna try to capture maybe edges that span larger spaces
+[2190.00s - 2193.00s] So like if you had, let's say you have objects that has large flat areas or just smaller flat areas, the size of the Gaussian filter that you use is going to be able to detect edges that are in the boundaries of smaller objects versus larger objects
+[2193.00s - 2196.00s] And that's kind of what you see here
+[2196.00s - 2199.00s] If you design this difference of Gaussian filter, which is composition of Gaussian with an edge detector
+[2199.00s - 2202.00s] As you increase the standard deviation of the Gaussian, you're going to start to not detect edges, for example, in this part of the image
+[2202.00s - 2205.00s] These little fine gratings that we see here They're only captured with very fine level edge detectors, whereas edge detectors that take into account differences of larger groups, larger areas of regions are not going to highlight those finely textured edges as much
+[2205.00s - 2208.00s] So you can use this to detect different boundaries and different flat regions where they have a slight level Okay, so edge detectors, we can smooth them out in case, and almost always our underlying image is noisy, and we can still detect edges nicely
+[2208.00s - 2211.00s] Once we detect, we can compute edges along the x direction, we can compute edges along the y direction, and once we have these two sets of images that captures different types of edges, we can take the composition of these by taking the magnitude of how much of an edge is present of each pixel, whether it's x or y, by taking the square of these two images and then summing them and then taking the square root
+[2211.00s - 2214.00s] And you get this direction invariant representation of edges
+[2214.00s - 2217.00s] And note that While these operations up to here are linear, this Gaussian thing is a linear
+[2217.00s - 2220.00s] It's a composition of two linear filters, and that's combative image that's also linear
+[2220.00s - 2223.00s] This final step is non-linear
+[2223.00s - 2226.00s] You have these two linearly, two linear filters that give you these outputs, but you want to combine them with some squaring and square rooting operation, that final step is what breaks the nonlinear
+[2226.00s - 2229.00s] And now we can only detect these types of edges using a nonlinear filter that is not decomposable to be a product of a bunch of linear filters
+[2229.00s - 2232.00s] So the I-X-I is for the horizontal edge detected
+[2232.00s - 2235.00s] Exactly, so sorry
+[2235.00s - 2238.00s] So I of X is this one
+[2238.00s - 2241.00s] So this is the horizontal edge detections that we got using this Gaussian filter, Gaussian filtered edge detector, difference of Gaussian
+[2241.00s - 2244.00s] And then if you did this along the, the y direction, you get another image of the same size, but this one is sensitive to edges that are along the horizontal direction
+[2244.00s - 2247.00s] So as you can notice there, the magnitudes of that image is proportional to how strong the edges
+[2247.00s - 2250.00s] As you can see, like the left and right sides of objects are highlighted there, whereas here, the top parts and the bottom parts of objects are highlighted, which kind of gives you an idea that which direction of edges we're staring at
+[2250.00s - 2253.00s] We can combine the Gaussian and the horizontal edge detector or the vertical edge detector, but we won't combine a vertical edge detector with a horizontal edge detector
+[2253.00s - 2256.00s] So is there some sort of mechanism to figure out which filter should be combined and which not? Yeah, I mean that's a great question
+[2256.00s - 2259.00s] We're essentially combining them here, but using a nonlinear operation at the end
+[2259.00s - 2262.00s] But like, if you were to compose the x-directional edge detector without a y-directional detector, without doing that fine nonlinear operation, what would you get? Just a blank screen
+[2262.00s - 2265.00s] Just like a blank screen
+[2265.00s - 2268.00s] You might get a blank screen exactly
+[2268.00s - 2271.00s] It might just..
+[2271.00s - 2274.00s] you might not highlight any edges, but just blur everything altogether
+[2274.00s - 2277.00s] You can compose those things
+[2277.00s - 2280.00s] So this non-linear operation ensures that you don't just, if you were to compose these things, that would just look like a blurring filter
+[2280.00s - 2283.00s] Now, instead, by doing this non-linear operation, you get this, you start to highlight the magnitude of these
+[2283.00s - 2286.00s] In this case, it's probably might be obvious that these are completely opposite of each other
+[2286.00s - 2289.00s] It's not really some sort of guideline to save the, Is it more based on experimental nature, like, or not with external value? Oh, yeah, so that's a good question
+[2289.00s - 2292.00s] So technically, you can design the direction of these filters to be not just like X or Y, but it can be like diagonal, for example, or any other direction
+[2292.00s - 2295.00s] But in two-dimensional space, you just need two directions to span the entire possibility
+[2295.00s - 2298.00s] So you just need two orthogonal directions to capture all the things
+[2298.00s - 2301.00s] But yeah, in terms of experimentation, what we need to experiment with is not the direction in which we're computing these edge filters, but the stand deviation in which we're computing the Gaussian that is used to create this noise robust
+[2301.00s - 2304.00s] So that's kind of what I talked about earlier
+[2304.00s - 2307.00s] Like in everything we do
+[2307.00s - 2310.00s] There's a lot of parameters
+[2310.00s - 2313.00s] And this is, even though there's all very simple models, here the critical parameter is the standard deviation of a Gaussian in which we're using to compute these edge detectors
+[2313.00s - 2316.00s] So for example, edge detectors are just a simple difference filter convolved with a Gaussian
+[2316.00s - 2319.00s] But the size of this Gaussian matters in terms of what kind of edges and what kind of flat regions in the image we're going to highlight
+[2319.00s - 2322.00s] So if I want to make a difference of quotient for x, but there is number deviation and one with y, with non-negative and combined with, would that significantly occur? Yeah, that's actually, that's a good, you didn't think about that, but yes
+[2322.00s - 2325.00s] So technically, yes, you can have a different standard deviation from the y that enters the vector versus the x
+[2325.00s - 2328.00s] And you would usually use that if you make some, if you have some knowledge that these images are not equally sampled along the x and y directions
+[2328.00s - 2331.00s] So sometimes the Because of optical systems, for example, you can have some weird lens design where the resolution along the X direction might be different than in the Y direction
+[2331.00s - 2334.00s] You might have like stretching an image, for example
+[2334.00s - 2337.00s] Yeah, let's say we know our image is not equally sampled, but it's like some kind of a compressed version of it of a real image
+[2337.00s - 2340.00s] Then we probably want to use different amount of weights in terms of the edges we want to detect along the X direction versus the Y direction
+[2340.00s - 2343.00s] So that goes into this whole concept of isotropy
+[2343.00s - 2346.00s] Isotropy means that the signal has equal properties in all directions, and isotropy means that the signal has different noise levels, for example, if you look at it one direction versus the other
+[2346.00s - 2349.00s] And in those cases, you might want to have different types of filters
+[2349.00s - 2352.00s] And all these things that you're mentioning, like, is the case if you need to design these types of filters by hand, And later on in class where we treat these as learnable things
+[2352.00s - 2355.00s] If you have lots of data, both the width of the galaxy and all these other things can be implicitly learned by the convolutional neural networks
+[2355.00s - 2358.00s] But right now we're trying to not learn anything but use our own brains to kind of design these And how we design these things reflects what we know about data, because we've seen this data at a time
+[2358.00s - 2361.00s] But in machine learning systems, you let the model, you showed lots of data in the model, and then it learned itself what kind of properties you expect from the data
+[2361.00s - 2364.00s] If it has different noise levels in x and y directions, it would automatically learn filters that could handle that
+[2364.00s - 2367.00s] So again, going back to this, We can design this thing with equal saturation on both directions because we assume that this image doesn't really bias towards x or y directions
+[2367.00s - 2370.00s] And then we can get this type of general detection of edges
+[2370.00s - 2373.00s] And..
+[2373.00s - 2376.00s] Once we have that, now we get these great, for input image, now we have a map of where the edges are in the image
+[2376.00s - 2379.00s] And then we can use, the final step is always some kind of thresholding, saying, okay, here's an edge, here's not an edge
+[2379.00s - 2382.00s] You want to have a binary decision on, is this pixel an edge, or is this not an edge? Which would allow us to, which would require some sort of thresholding
+[2382.00s - 2385.00s] But in this case, the edge is very thick
+[2385.00s - 2388.00s] So if you did a thresholding operation, you would have multiple pixels next to each other that would be an edge
+[2388.00s - 2391.00s] But that violates what it means to be an edge
+[2391.00s - 2394.00s] It means there should be a single pixel as an edge
+[2394.00s - 2397.00s] Anything beyond that is not an edge
+[2397.00s - 2400.00s] How do we handle that? We can do some kind of again, under level of filtering
+[2400.00s - 2403.00s] So if you have a bunch of pixels that count, that are classified as an edge after we do our thresholding, we can look at that pixel and we can threshold, we can like suppress things that are not maximum
+[2403.00s - 2406.00s] So for any pixel, we can look at its neighbors and if it's not the maximum value within a particular neighborhood, we can zero it out, otherwise we can keep the value of that pixel
+[2406.00s - 2409.00s] And then from the smooth output that we get from these edge detectors, we can get a very single pixel edge detection at the entire data's final
+[2409.00s - 2412.00s] maximum is a perfect threshold linear maximum suppression operation
+[2412.00s - 2415.00s] And this itself is another nonlinear operation
+[2415.00s - 2418.00s] So if you have 100 pixels, you would need to look at the values of those pixels and not only keep the one that's maximum value, which is kind of like in spirit similar to the concept of max pooling and stuff that you have in convolutional nets
+[2418.00s - 2421.00s] But we could do this in a more primitive hand design way
+[2421.00s - 2424.00s] How do we know if a neighbor is along the gradient direction? Great question
+[2424.00s - 2427.00s] So you can, so for any pixel, you can compute the, you know exactly what the gradient is along both directions
+[2427.00s - 2430.00s] So for any pixel, you know the magnitude of the gradient along any of x and y directions
+[2430.00s - 2433.00s] And from there, you can determine which is the direction that has the maximum gradient
+[2433.00s - 2436.00s] So you can, as another operation, you can apply these to determine the direction of the maximum gradient and then sample this, so you can calculate this along that direction of maximum gradient executed at each pixel
+[2436.00s - 2439.00s] That's another, that's going to be another step to do here, but like these are oftentimes kind of, they're like standard code kind of
+[2439.00s - 2442.00s] Once you get an idea of how those edge detectors and directional derivatives, what that could be
+[2442.00s - 2445.00s] Maybe I'm not going to cover that here, but that's a simple operation
+[2445.00s - 2448.00s] Once you know the magnitude of the gradient, you can find the direction that that graded changed to maximum for long distance
+[2448.00s - 2451.00s] Okay, so this is what that will look like
+[2451.00s - 2454.00s] So once we take our image to our very first level edge detection, And then we do this non-maximum suppression, then we're not going to get this in that final image
+[2454.00s - 2457.00s] So let's look at that
+[2457.00s - 2460.00s] Even here, even in this case, it's still not a perfect thing
+[2460.00s - 2463.00s] We can still get, there's some boundaries because of noise
+[2463.00s - 2466.00s] In multiple pixels, might still show up
+[2466.00s - 2469.00s] And or sometimes no pixels, sometimes the value of the pixels are not
+[2469.00s - 2472.00s] So when you do thresholding operation, you start to get great senior image
+[2472.00s - 2475.00s] If you get a very high threshold, if you use a very low threshold, you get all types of random objects inside
+[2475.00s - 2478.00s] So you need to kind of set, this is another learned thing, that you need to deploy in your system and how to optimally set these thresholds
+[2478.00s - 2481.00s] So maybe the story here is that we know these servers, even though they look nice in theory, there's still a lot of hyper parameters and you still need to tune them to your system
+[2481.00s - 2484.00s] The final thing is, mostly detect edges, and we're happy with our set of edges
+[2484.00s - 2487.00s] Going back to the earlier example I had about how can we use this to, how can we use it to detect cells and stuff, do some segmentation
+[2487.00s - 2490.00s] Once you have these connected edges, what you need to do is you have to find regions within them that are all connected to one another
+[2490.00s - 2493.00s] And the way you do that is, if you have an image like this and you have these edges that you detect, you say these are edges and everything else is not edge, we go back to the beginning where we compute distances and paths between different pixels
+[2493.00s - 2496.00s] If you take the edges and treat them as paths that you cannot cross in your topology, you want to compute distances between every pixel to any other pixel
+[2496.00s - 2499.00s] So the assumption is that if you have a pixel here and you have a pixel somewhere else and there's an edge between them, the topology will prevent us from computing a path from this pixel to that pixel
+[2499.00s - 2502.00s] Therefore, the distances between those would be infinite
+[2502.00s - 2505.00s] And we're basically going to find sets of pixels such that within that set there exists a path from one pixel to another
+[2505.00s - 2508.00s] If there's no path from one pixel to another, then we would treat that as a completely different component
+[2508.00s - 2511.00s] And that's the basis of these algorithms that we're going to ask in your homework
+[2511.00s - 2514.00s] I think one more question one
+[2514.00s - 2517.00s] Components are..
+[2517.00s - 2520.00s] Okay, one more question two
+[2520.00s - 2523.00s] In the homework question two, you're going to be asked to..
+[2523.00s - 2526.00s] I have a set of edges and then from within those complete connected components by measuring some kind of, is there a path between a pixel or not within that set of pixels that are broken by edges? And you can use that as, you can use this to detect individual components in the image and segment objects
+[2526.00s - 2529.00s] So you can determine different cells or different continuous objects with a gauge
+[2529.00s - 2532.00s] So to bring this all together, so the CANDYAR detector called is, here's an image, You can filter this image, the filters I've talked about, so edge detector filter and a Gaussian that's combined with it to make a robust noise
+[2532.00s - 2535.00s] You can use that to get your first pass of edges that are detecting the image
+[2535.00s - 2538.00s] You can filter this a little bit to get rid of noisy bits and not maximum bits
+[2538.00s - 2541.00s] You want to thin your edges
+[2541.00s - 2544.00s] And then you do some kind of, you link your edges together, such that
+[2544.00s - 2547.00s] try to patch together, try to patch together continuous edges
+[2547.00s - 2550.00s] And then once you have that, the final step could be to detect connected components here to determine continuous objects that are constantly just single celled
+[2550.00s - 2553.00s] Questions? And I won't do a lot, just to kind of make it on time
+[2553.00s - 2556.00s] Questions about so far? So one of the images you showed, like, on these different types of objects have the same color, was that the first? Yes
+[2556.00s - 2559.00s] What we try to show here is that if they're the same color, that means you do another level of connected components
+[2559.00s - 2562.00s] You try to link edge pixels that belong to the same edge
+[2562.00s - 2565.00s] And they belong to the same edge if they're all connected to one another
+[2565.00s - 2568.00s] If there's a path between this orange pixel and that orange pixel, that means they're part of the same edge
+[2568.00s - 2571.00s] Otherwise, they're not part of the same edge
+[2571.00s - 2574.00s] So you try to detect unique edges
+[2574.00s - 2577.00s] each unique edge and interior of a unique edge, if it's a closed object, would be constituted as single different object
+[2577.00s - 2580.00s] But there are different objects with the same orange, but are they kind of in the same sense? Oh, it's like talking about this orange and that orange
+[2580.00s - 2583.00s] Yeah, so here, obviously you run out of colors
+[2583.00s - 2586.00s] So we try to color different objects with different colors, but obviously there's redundancy to the colors
+[2586.00s - 2589.00s] And we should have a code for just either this code lab or maybe last year's code lab
+[2589.00s - 2592.00s] We can share
+[2592.00s - 2595.00s] We should have this type of operation, basic operation
+[2595.00s - 2598.00s] Okay, so to recap of today, I mean like out of all this stuff you talked about, what I want you to take away from this is that everything we do in computer vision is going to be some sort of filtering
+[2598.00s - 2601.00s] And filtering is just nothing but taking a small image or something, some small matrix, which could be an image itself, and then convolving it with the target image that you want to filter
+[2601.00s - 2604.00s] So everything, almost every filtering that we do here, if it's a linear filtering, can be thought of as a series of conclusions
+[2604.00s - 2607.00s] If it's nonlinear, then that adds a little bit of complexity to things
+[2607.00s - 2610.00s] So it's also advantageous, especially when we do these edge detection things, to kind of take both, go on to the linear filtering, and combine those kind of nonlinear operations to get some hyper-level information image, which is what we need to do to, for example, detect edges and corners in an image
+[2610.00s - 2613.00s] And each filter, based on maybe what we saw today is each filter based on the values of these filters, they can extract a piece of information from an image
+[2613.00s - 2616.00s] And I think that should be the foundational intuition here
+[2616.00s - 2619.00s] We can design filters to get different types of images
+[2619.00s - 2622.00s] But later on, we're going to learn how to get, we're going to learn these filters because they're coming from data
+[2622.00s - 2625.00s] We want to get a lot of data
+[2625.00s - 2628.00s] And we know what we want to get out of this data
+[2628.00s - 2631.00s] Each filter has its own implicit like inductive bias and target information is trying to extract from it
+[2631.00s - 2634.00s] So it makes it very open for treating out the machinery from later on
+[2634.00s - 2637.00s] OK
+[2637.00s - 2640.00s] So we'll take a break here
+[2640.00s - 2643.00s] I'll take questions
+[2643.00s - 2646.00s] In the years, we'll probably take questions about the project and homework
+[2646.00s - 2649.00s] I'll take a break
+[2649.00s - 2652.00s] Yeah, so you have five questions
+[2652.00s - 2655.00s] Out of which, the first four, we expect a Jupyter notebook which will upload on Brightspace
+[2655.00s - 2658.00s] This, it doesn't matter in the sense that we don't have a base solution
+[2658.00s - 2661.00s] We wanted to see your approach
+[2661.00s - 2664.00s] And the resources for that are provided in the PDF file itself
+[2664.00s - 2667.00s] So for the most part, you have topics like histogram matching, histogram equalization, star counting
+[2667.00s - 2670.00s] The second question is even a bit open-ended
+[2670.00s - 2673.00s] So we want to see, for your case, does histogram equalization make it better or worse in counting stars? And then, yeah, we have a simple sliding window template matching
+[2673.00s - 2676.00s] That's an image from Indusat Gargant's work
+[2676.00s - 2679.00s] And as you keep going, we might see that basic sliding window doesn't work anymore
+[2679.00s - 2682.00s] So we would like you to try out different techniques, whatever works best, and see, you can use this first four questions kind of to play around
+[2682.00s - 2685.00s] And obviously the fifth question is the competitive part
+[2685.00s - 2688.00s] So for that, please register yourself on Kaggle and join the conversation
+[2688.00s - 2691.00s] Please use your NYU emails
+[2691.00s - 2694.00s] We kind of did that so that, you know, we don't have so many personal emails coming in and submitting
+[2694.00s - 2697.00s] So if you, even if the previous Kaggle username you submitted was not with your NYU, that's fine
+[2697.00s - 2700.00s] Just make it your NYU one
+[2700.00s - 2703.00s] Yeah, so the basic challenge for question five is, you have to detect what kind of constellation is in the image
+[2703.00s - 2706.00s] And we will essentially be provided a sky file like this with the image of the night sky
+[2706.00s - 2709.00s] And the original annotations kind of look like this
+[2709.00s - 2712.00s] So what we've done is given you patches of specific stars like this
+[2712.00s - 2715.00s] And you won't know where they come from
+[2715.00s - 2718.00s] You'll have to template matches onto the image and find the coordinates and kind of figure out what kind of pattern is in that conversation
+[2718.00s - 2721.00s] Now, one thing I want you guys to be careful of is there are erroneous patches
+[2721.00s - 2724.00s] So I will show this on Cavalier here as well
+[2724.00s - 2727.00s] You can find the data here
+[2727.00s - 2730.00s] I've tried to do my best to explain most of the data
+[2730.00s - 2733.00s] If you still have doubts, feel free to contact me on Slack or come to my office hours
+[2733.00s - 2736.00s] Yeah, so You can just have a look here
+[2736.00s - 2739.00s] So you have these patterns as well
+[2739.00s - 2742.00s] These will be your labels, which you have to classify
+[2742.00s - 2745.00s] There's 88 constellations in the known sky, but there's only like around 40 here
+[2745.00s - 2748.00s] So when we take your final dot file, we will run it on unseen labels
+[2748.00s - 2751.00s] So make sure your code is just not, you know, like works on just on this data
+[2751.00s - 2754.00s] It should be a constant provider
+[2754.00s - 2757.00s] And since this is, You're free to use anything, but ideally since this is not a deep learning problem kind of thing, so there's no like the train and validation are just for your sanity
+[2757.00s - 2760.00s] Like the train shows a kind of distribution that might be there for the constellation
+[2760.00s - 2763.00s] So like for example, this is Mensa, but you can see there's a few erroneous classes from other constellations like Colorado which should not, which you should reject in your template mapping process and you should only return the coordinates for the ones that might actually belong to the constellation
+[2763.00s - 2766.00s] So that's one thing, definitely go through, for example, this file
+[2766.00s - 2769.00s] It's a sample template file for you to see what kind of results you have to output to Kaggle
+[2769.00s - 2772.00s] The patches for the validation set will be unseen
+[2772.00s - 2775.00s] As you can see, you don't have the labels for that
+[2775.00s - 2778.00s] And your patches are also just, you don't need the coordinates for them
+[2778.00s - 2781.00s] This entire process, if you have any doubts, definitely go through the overlay file and the details on Kaggle and if you still have any doubts, select the key
+[2781.00s - 2784.00s] And the entire scoring system is also mentioned here
+[2784.00s - 2787.00s] So your template match coordinates will be only 50% of the score and the 50% will come from the classification
+[2787.00s - 2790.00s] So you need to do both
+[2790.00s - 2793.00s] You can't just template match them either
+[2793.00s - 2796.00s] Yeah, I mean, if somehow you get lucky for validation and somehow something happens, but that shouldn't be the case because as I said, we will have a separate test set to check it on
+[2796.00s - 2799.00s] That's my question
+[2799.00s - 2802.00s] Fire any doubts? That's great
+[2802.00s - 2805.00s] Limits on how many catalogs? Yeah, oh yeah, let me go actually
+[2805.00s - 2808.00s] Let me go through that already
+[2808.00s - 2811.00s] You can make teams up to two
+[2811.00s - 2814.00s] I think on Kaggle, so that's the maximum limit you can send each other invitation things
+[2814.00s - 2817.00s] And for submissions, it's two per day
+[2817.00s - 2820.00s] Two per day maximum until the deadline
+[2820.00s - 2823.00s] So yeah, you can't like keep submitting and try to overfit or something
+[2823.00s - 2826.00s] So
+[2826.00s - 2829.00s] Yeah, any more of those? Yeah, just to speak with each other
+[2829.00s - 2832.00s] And then we'll keep track of, like, the teams by your submission file should have your net ID
+[2832.00s - 2835.00s] Yeah
+[2835.00s - 2838.00s] And, like, the underscore of the other net ID of the second person there is the second member
+[2838.00s - 2841.00s] Yeah
+[2841.00s - 2844.00s] If you want to do the project on your own, just put your net ID underscore the same net ID twice
+[2844.00s - 2847.00s] So that's going to be how we're going to..
+[2847.00s - 2850.00s] to submit it
+[2850.00s - 2853.00s] Yeah
+[2853.00s - 2856.00s] And just, again, just for, like, this is how your folder should, like, your folder level should be, like, like, submissions, your NetID folder and your NetID.py and your reserves, because that's how I've done it on my end
+[2856.00s - 2859.00s] I'll take all of your submissions and I'll just run a bad script on a different test hit
+[2859.00s - 2862.00s] So, your .py file should be able to take the root folder as an argument and the folder name from the root folder on which the, uh, you know, the, the, the, the, the, the, the like test will not
+[2862.00s - 2865.00s] And yeah, this is, I've just given, this is kind of like to start you guys off, this is, on Kaggle at least, this is how your submission file will look like
+[2865.00s - 2868.00s] I've just blanked out all the values
+[2868.00s - 2871.00s] So obviously for cases that you reject it, give minus one and for coordinates that exist, give the x and y coordinates, and the last column will be the conservation prediction
+[2871.00s - 2874.00s] So, yeah, that's all for this
+[2874.00s - 2877.00s] In terms of evaluation, like I mentioned before, we're going to break the class right now as 82 students into three sections, like three equally sized partitions
+[2877.00s - 2880.00s] So like top third will get all 25 points for this question
+[2880.00s - 2883.00s] Or 20 points
+[2883.00s - 2886.00s] We haven't decided in the scale of the course, but there's a score
+[2886.00s - 2889.00s] It's just a four-digit character
+[2889.00s - 2892.00s] It's a plus in the back
+[2892.00s - 2895.00s] I see
+[2895.00s - 2898.00s] So yeah, we're going to give the top scores and top performing team or individual in this class, in this thing, and then we'll have a sliding gradient drop off on the top and the bottom
+[2898.00s - 2901.00s] But if you do this question right, if the thing works, you'll still get about six points, but then you're basically fighting for the rest of the points
+[2901.00s - 2904.00s] So you've got to do the rest of the rest of your..
+[2904.00s - 2907.00s] And yeah
+[2907.00s - 2910.00s] I'm sorry, is it a credit point or? It's not actually credit points
+[2910.00s - 2913.00s] So like the first four questions are going to be how many points? Yeah
+[2913.00s - 2916.00s] Yeah, so first four questions are 80 points and this last question is 20 points
+[2916.00s - 2919.00s] So if you're a top performer in the class, you will get 20 points
+[2919.00s - 2922.00s] And the second best performer in the class, you're getting 99, or like 19 points and so on and so forth, until a ceiling of about six points
+[2922.00s - 2925.00s] But if you don't participate in this, it will still affect your..
+[2925.00s - 2928.00s] If you don't submit anything at all, then it'll give you a few points
+[2928.00s - 2931.00s] Because if you just do the first four questions, the baseline, it will get you out for people that were it
+[2931.00s - 2934.00s] Yeah, I agree
+[2934.00s - 2937.00s] So if you just do the first four questions and don't do the competition questions, you might land it on you
+[2937.00s - 2940.00s] I mean, there's, again, different competitions, so if you don't want to participate in one, all that
+[2940.00s - 2943.00s] But yeah, like you, it's incentivized to do this to get the job
+[2943.00s - 2946.00s] Yeah, yeah
+[2946.00s - 2949.00s] So then that also brings up the issue of ranking
+[2949.00s - 2952.00s] So there's a possibility that everyone, or a lot of people in this class will get all the constellations correctly
+[2952.00s - 2955.00s] So the tiebreaker would be your .py file execution time
+[2955.00s - 2958.00s] We're going to execute your code like maybe 10 times and take the average runtime one, like a standard machine
+[2958.00s - 2961.00s] And the tiebreaker would be, what is the fastest code that does the most actions, however you're going to do it
+[2961.00s - 2964.00s] I mean, this is, although it sounds a bit daunting, like this is kind of what a lot of other classes in while you're adopting, and also around the country too
+[2964.00s - 2967.00s] So a deep learning class here
+[2967.00s - 2970.00s] Who's taking deep learning this year? Is there a competition for, do you guys get your assignments yet for that? There's also a competition format for some of the projects there
+[2970.00s - 2973.00s] So the reason we do this is to kind of get it more spread in terms of, the grades for those students
+[2973.00s - 2976.00s] But don't worry about that
+[2976.00s - 2979.00s] Eventually, if you find our grading to be too harsh, there'll be a curve at that
+[2979.00s - 2982.00s] You just want to get an idea of who is more efficient at coding or not
+[2982.00s - 2985.00s] And yes, this is not exactly a detailed question
+[2985.00s - 2988.00s] You can't get 100 plus an accuracy in this
+[2988.00s - 2991.00s] So this one should be much more doable than
+[2991.00s - 2994.00s] And this is also the study out for the other projects
+[2994.00s - 2997.00s] So projects we're going to redesign them, especially progressively more difficult
+[2997.00s - 3000.00s] The last question you guys are going to do is going to be like a geogesser kind of implementation with New York City images
+[3000.00s - 3003.00s] That's going to be quite a challenging thing, so we expect a bigger spread
+[3003.00s - 3006.00s] But we just want you to get used to this competition format because..
+[3006.00s - 3009.00s] One last thing I just wanted to highlight in case any of you do end up So I just marked, so this is Andromeda
+[3009.00s - 3012.00s] I just marked out the stars that would have been provided to you as patches
+[3012.00s - 3015.00s] But these two come from A's
+[3015.00s - 3018.00s] So these will be like erroneous patches
+[3018.00s - 3021.00s] And I've also put in the same two stars, but from a different image, sky image
+[3021.00s - 3024.00s] So you should not accept those
+[3024.00s - 3027.00s] And then I would also put some patches which don't belong in this image at all
+[3027.00s - 3030.00s] You should reject those as well
+[3030.00s - 3033.00s] So finally, say you would have these 18 points
+[3033.00s - 3036.00s] And with the help of the patterns, you should still be able to say that you should not, you should still say that the main constellation is Andromeda and you should not be deviated by this Ares
+[3036.00s - 3039.00s] So be careful of that
+[3039.00s - 3042.00s] Just be careful, like, yeah, just don't go in blind, like understand what you're doing step by step
+[3042.00s - 3045.00s] And then obviously, yeah, this
+[3045.00s - 3048.00s] So like the Ares ones can come from here, but that's the Andromeda image on which I would ask you to template match it
+[3048.00s - 3051.00s] Again, if any of these things are like daunting and kind of confusing, that's why we're here
+[3051.00s - 3054.00s] So we'll have office hours four times next week and four times in the following
+[3054.00s - 3057.00s] So OTAs and myself will be able to walk you through if you have any
+[3057.00s - 3060.00s] And yeah, obviously your coordinates will be scored based on the secret in this sense and this kind of scoring system that we come up with
+[3060.00s - 3063.00s] So finally, yeah, it's like 0.5 for your template match coordinates and 0.5 for your classification
+[3063.00s - 3066.00s] That's the problem
+[3066.00s - 3069.00s] I'll take it quickly, go over the code lab
+[3069.00s - 3072.00s] Question
+[3072.00s - 3075.00s] Yes, sir
+[3075.00s - 3078.00s] Does each image have one full constellation and other erroneous patches? I'm sorry, can you comment? Is there a possibility, I'm not sure if I understand, but is there a possibility that an image would have two constellations? Yeah, so, no, it won't have two full constellations
+[3078.00s - 3081.00s] Yeah, just erroneous matches
+[3081.00s - 3084.00s] Yeah, that might come from other constellations in the same image
+[3084.00s - 3087.00s] So, for, like, I haven't made it so weird that where it's like, if a constellation has four stars, I've given you four other stars or something, even though that's not the whole constellation
+[3087.00s - 3090.00s] But you should still be able to get the signature of the main constellation
+[3090.00s - 3093.00s] So there'll just be few here and there, which..
+[3093.00s - 3096.00s] don't really have to throw you off, but they're just there so that it's not so easy as to..
+[3096.00s - 3099.00s] Because if I gave you the only these 16 passes from Andromeda, you can just go through which constellations have 16 vertices
+[3099.00s - 3102.00s] And then it's a trivial problem
+[3102.00s - 3105.00s] Yeah, that's it
+[3105.00s - 3108.00s] Any other questions? Not again, like, you're not restricting what types of approaches you want to have here
+[3108.00s - 3111.00s] We kind of want to see how creative you get in terms of solving this in a more efficient and in a great way
+[3111.00s - 3114.00s] Obviously, like people want to use deep learning methods, your fear to do so
+[3114.00s - 3117.00s] Only catch is that, you know, if you're going to deploy a deep learning system, we have to execute it from scratch
+[3117.00s - 3120.00s] That means you have to import all the libraries you're calling and all the training and stuff
+[3120.00s - 3123.00s] That's going to take a huge computational time
+[3123.00s - 3126.00s] So some other team that does the whole task in 10 seconds
+[3126.00s - 3129.00s] might beat you because just the priming aspect
+[3129.00s - 3132.00s] So priming is also a best asset to shoot in the car to learn
+[3132.00s - 3135.00s] Okay, let's just quickly go to the code lab
+[3135.00s - 3138.00s] I won't go over this much basics of what is a vector and all
+[3138.00s - 3141.00s] I have it here in Q
+[3141.00s - 3144.00s] You can go through it if you want
+[3144.00s - 3147.00s] But how many of you guys know? Three blue, one brown
+[3147.00s - 3150.00s] Three blue, one brown
+[3150.00s - 3153.00s] All right
+[3153.00s - 3156.00s] Yeah, it's a very good YouTube channel
+[3156.00s - 3159.00s] They have a library called MMM
+[3159.00s - 3162.00s] You can use those to create some really good visualizations whenever you want
+[3162.00s - 3165.00s] If you don't, like you cannot even do it, there's some of the linear algebra stuff which can be a bit abstract, which is what we provided you in this code lab as well
+[3165.00s - 3168.00s] You can go through it whenever you want
+[3168.00s - 3171.00s] Like yeah, basic vector addition, subtraction, dot product, cross product
+[3171.00s - 3174.00s] So if any of you guys have an issue with these parts, maybe just come see me in the officers or just bring me on Slack
+[3174.00s - 3177.00s] I'll just emphasize certain important parts in this program which might be helpful for your project and homeworks
+[3177.00s - 3180.00s] So yeah, cross product
+[3180.00s - 3183.00s] Yeah, so in matrix multiplication the I mean matrix multiplication by itself is kind of I think all of us know how it works But we will use these things as building blocks for SVD as we move towards it
+[3183.00s - 3186.00s] So before that this two kind of transformations that we should know rotation and translation
+[3186.00s - 3189.00s] Rotation is with these kind of orthogonal vectors where the dot product of the vectors like the these ones will be zero here and then When you add them up, their value will be a unit vector essentially
+[3189.00s - 3192.00s] So that's rotation
+[3192.00s - 3195.00s] You can see how you can just rotate by a certain angle that these values come from like 1 by root 2 and stuff like that
+[3195.00s - 3198.00s] And scaling is a diagonal matrix
+[3198.00s - 3201.00s] So your opposite two corners will be 0 and then you have a scale
+[3201.00s - 3204.00s] These now will..
+[3204.00s - 3207.00s] can be seen as matrices that are essentially operations on a vector
+[3207.00s - 3210.00s] Now, if we remove the perspective of the vector and go to the perspective of the matrix, You can apply that matrix on the entire span of vectors, and it would knock off those vectors by a certain amount
+[3210.00s - 3213.00s] But there will be some imposters that won't get knocked off
+[3213.00s - 3216.00s] They will retain their span, they might just change in scale
+[3216.00s - 3219.00s] So these essentially, in a very layman language, are the eigenvectors, and the scale by which they translate are the eigenvalues
+[3219.00s - 3222.00s] We just have a small animation here that just make it easier
+[3222.00s - 3225.00s] It gives you an increase with values
+[3225.00s - 3228.00s] So you can see that your play transformations, all of them can get knocked off in different directions but V1 and V2 will just get scaled
+[3228.00s - 3231.00s] They'll stay in the same direction and the way you do it is by calculating this determinant area
+[3231.00s - 3234.00s] So whenever that determinant is 0, that means no knockoff has happened so the determinant stays 0 and that's how you find the eigenvector in the room
+[3234.00s - 3237.00s] There's many algorithms to find that we won't go into that, but just know that they exist so that the next part of singular value decomposition and PCA is easier
+[3237.00s - 3240.00s] This is another just animation
+[3240.00s - 3243.00s] We'll just put these here to make it easier if anyone needs it
+[3243.00s - 3246.00s] Okay, so yeah, I've linked the important videos here
+[3246.00s - 3249.00s] So 3Blue1 runs linear algebra
+[3249.00s - 3252.00s] They have an entire playlist for linear algebra
+[3252.00s - 3255.00s] It's like really good
+[3255.00s - 3258.00s] You can just go through that whenever
+[3258.00s - 3261.00s] Okay, so now how many of you know single value? Single value? Okay, that's what I'll go into a bit of detail for that then
+[3261.00s - 3264.00s] So I think someone had asked about rank one matrices earlier, like how you would decompose to that
+[3264.00s - 3267.00s] All kinds of things that we're going to deal with here, it's nice to bring them down into smaller parts so that we can extract the information we need and we don't need
+[3267.00s - 3270.00s] And that's kind of what single value decomposition does
+[3270.00s - 3273.00s] So if we have any matrix, you can kind of split it into like a set of rank 1 matrices that kind of give you an idea of how important certain dimensions in this matrix are
+[3273.00s - 3276.00s] So this is done through a entire mathematical process
+[3276.00s - 3279.00s] I can represent that the best with this
+[3279.00s - 3282.00s] It's not a symbol, but what essentially this does is, I need you to understand this, this is a kind of a scaling, this is a kind of a rotation, and this is a kind of a rotation Now before I get into this, when I talked about eigenvectors, I told you that these guys, these vectors don't change their rotations, right? But so say if we had an n by n matrix, the upper bound of the number of eigenvectors you could get for that matrix is n
+[3282.00s - 3285.00s] So these would be n just vectors that can be in any like orientation at any angles to each other
+[3285.00s - 3288.00s] But if it's a symmetric matrix, these will be orthogonal
+[3288.00s - 3291.00s] in the higher dimension
+[3291.00s - 3294.00s] So if you have like three eigenvectors for a symmetric matrix, that means they would be at right angles to each other
+[3294.00s - 3297.00s] So what the importance of this is that when we get symmetric matrices, these eigenvectors can help us get these dimensions and we can use these to break it down into smaller bars
+[3297.00s - 3300.00s] So how do we get these? So these two are symmetric matrices
+[3300.00s - 3303.00s] How do we get these? There's a simple property for matrices where if you multiply it with its transpose, it becomes symmetric
+[3303.00s - 3306.00s] So we do this for here, and then we do the reverse, a transpose dot a
+[3306.00s - 3309.00s] This gives us two symmetric matrices
+[3309.00s - 3312.00s] So say this is a matrix of m cross n
+[3312.00s - 3315.00s] this becomes our m cross m and this would become n cross n
+[3315.00s - 3318.00s] So once that is done, you get a set of n eigenvectors from here, and a set of m eigenvectors from here
+[3318.00s - 3321.00s] Now, again, the neat part is both of these are orthogonal, and since they come from the same symmetric operation, there will be an overlap between the M and the N eigenvectors
+[3321.00s - 3324.00s] So that's what, and when you take the square root of those, you get this kind of scalar operation
+[3324.00s - 3327.00s] So if I had to break this down, this essentially would look like these three matrices
+[3327.00s - 3330.00s] Can you guys see this? So the eigenvectors that would come from here would be like u1, u2, un
+[3330.00s - 3333.00s] And since this is a transpose, they would be like in this way v1, v2, vn
+[3333.00s - 3336.00s] These are all eigenvectors
+[3336.00s - 3339.00s] And then, as I said, this is scaling
+[3339.00s - 3342.00s] So it will be a diagonal matrix where you'd have sigma1, sigma2, and the rest would be The rest would be a 0
+[3342.00s - 3345.00s] So what does this do, right? Like there's just like three random matrices
+[3345.00s - 3348.00s] But when you break it down, you can get these kind of shapes
+[3348.00s - 3351.00s] Sigma 1, U 1, V 1 transpose
+[3351.00s - 3354.00s] This is a rank 1 matrix, which we had talked about earlier
+[3354.00s - 3357.00s] So this becomes one of the dimensions
+[3357.00s - 3360.00s] And you can get n such dimensions for these
+[3360.00s - 3363.00s] So once you have these, you can, based on the value of sigma, you can kind of gauge that whether this dimension is important or not, and you can use those dimensions specifically to make your problem easier
+[3363.00s - 3366.00s] This is what, how dimensionality reduction is done, and it's kind of at the core of PCA, it's at the core of SVD, and I think if I can just clear this video here, the visualization will probably make it better
+[3366.00s - 3369.00s] SVD, singular value decomposition is a grand final algebra
+[3369.00s - 3372.00s] On one hand, it combines all important concepts
+[3372.00s - 3375.00s] The moment I've been waiting for, the visualization, the matrix A here, by so, applies a complicated linear transformation from R3 to R2
+[3375.00s - 3378.00s] But we know using SVD, it can be perfectly understood as sequentially applying the three simple matrices used on the right
+[3378.00s - 3381.00s] The blue matrix, or V transpose, is an orthogonal matrix which applies a rotation such that the right singular vector is returned to the standard basis
+[3381.00s - 3384.00s] To more precisely, the singular vector with beta singular value lands on the x-axis, the singular vector with the second big singular value goes on the y-axis, and so forth
+[3384.00s - 3387.00s] The matrix sigma is rectangularly diagonal, and it is essentially a square-diagon matrix composed with a dimension razor
+[3387.00s - 3390.00s] The dimension razor is removed in the third dimension, and so that the diagonal matrix stretches x and y-axis based on the singular value
+[3390.00s - 3393.00s] So that's how the final shape comes
+[3393.00s - 3396.00s] So you are essentially making a matrix that can be used as a transformation
+[3396.00s - 3399.00s] You're breaking it down into multiple steps
+[3399.00s - 3402.00s] So that's kind of how the essence of SVD works
+[3402.00s - 3405.00s] Go through the studio if you still want to know more about SVD
+[3405.00s - 3408.00s] it's important
+[3408.00s - 3411.00s] Now the next two concepts are FFT and the POG operator that the professor talked about
+[3411.00s - 3414.00s] These are actually important to your project
+[3414.00s - 3417.00s] We are short on time but I can go through this later also in the office hours or yeah anytime if you just tell me I can go through this
+[3417.00s - 3420.00s] But essentially it's still in the same essence of FFT just like how SVD breaks down this this kind of data into smaller dimensions
+[3420.00s - 3423.00s] FFT does that for frequencies
+[3423.00s - 3426.00s] So any signal can be broken down into like its component frequencies and you can do a time to frequency domain transformation
+[3426.00s - 3429.00s] And this is very important for images because you can treat, you can do FFT on images and it makes your life easier
+[3429.00s - 3432.00s] So maybe just go through this code and try it out in your project and homeworks
+[3432.00s - 3435.00s] That is one and maybe just to show you the essence of how it would look
+[3435.00s - 3438.00s] plot here of Spice-Speak, if you guys want
+[3438.00s - 3441.00s] But you can see, you can kind of do a different kind of high pass and low pass filtering
+[3441.00s - 3444.00s] And you can see how you can detect these edges
+[3444.00s - 3447.00s] And you can also, with a low pass filter, you can kind of just blur it out
+[3447.00s - 3450.00s] So that's that
+[3450.00s - 3453.00s] And then for difference of gaussians, if I do the same, like, I mean, this is what Professor was talking about
+[3453.00s - 3456.00s] If you do that for the same image, you will get something like this
+[3456.00s - 3459.00s] So you can clearly see the edges, you can see different scales of motions, or one, two, yeah
+[3459.00s - 3462.00s] So yeah, just go through the bulletin book
+[3462.00s - 3465.00s] And you know also about the project or any concepts in here, just, yeah, you can contact us
+[3465.00s - 3468.00s] Sorry if you're short on time, I'll probably rusted.

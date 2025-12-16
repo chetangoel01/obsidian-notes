@@ -1,0 +1,779 @@
+[0.00s - 3.00s] You see a bunch of microcosm in these images
+[3.00s - 6.00s] There's a video in the beginning of some kind of live video of a brain, and you see a bunch of cells, and then people take that same brain, dissect it, and take another picture of how that tissue is in microcosm
+[6.00s - 9.00s] And the goal is to find the same cell you saw in the first video in the dissecting of microcosm
+[9.00s - 12.00s] So it's another kind of matching thing
+[12.00s - 15.00s] So if you have bunch of cells like what we see there, you want to match them to a different picture of the cell
+[15.00s - 18.00s] Maybe one of the two markers go, same brain, and find the same cells that you might not be using
+[18.00s - 21.00s] This is similar to what I'm trying to have to make a pattern of dying in the same place
+[21.00s - 24.00s] All right, so how do we do this in practice? Just to kind of hit some kind of a first step to have some model that explains the data
+[24.00s - 27.00s] To do some modeling, we need three things
+[27.00s - 30.00s] We need a data
+[30.00s - 33.00s] So the data are the key points that we have
+[33.00s - 36.00s] The model is how you relate
+[36.00s - 39.00s] So is there some kind of way we can explain data points using a much more compressed parametric field? And once we have that model and we have the data, the last thing that we need to do the fitting is some kind of objective function
+[39.00s - 42.00s] So how do we know that we have all the possible models in our space? How do you know which is the best one? And so once we learn the best model that explains our data, that's going to presumably give us the transformations or other types of information we're trying to extract from these images
+[42.00s - 45.00s] So just like a very like basics just for those people just to kind of orient you guys
+[45.00s - 48.00s] So let's say we have a bunch of data points as such, n coordinates, y coordinates, and we have these four data points
+[48.00s - 51.00s] So we just have a set of points
+[51.00s - 54.00s] the possible models
+[54.00s - 57.00s] One model could be, hey look, the y-axis here, the y-coordinates of each of these points, it's some kind of a linear combination or a linear regression of the x-coordinates
+[57.00s - 60.00s] So you can have a model that says y is equal to some kind of mx plus b
+[60.00s - 63.00s] So each y-coordinate is x-coordinate with some slope and some intercept
+[63.00s - 66.00s] Another very simple model
+[66.00s - 69.00s] And our objective function here is we want to find a fit of the model
+[69.00s - 72.00s] So this is our model, and we have our data
+[72.00s - 75.00s] So we want to find a model that gives the least error out of all the models
+[75.00s - 78.00s] The only thing that's unknown in this model are these parameters w
+[78.00s - 81.00s] So we would need to find these weights such that weights times x-borne is here, the theta we have here gives minimum error to the observed one
+[81.00s - 84.00s] Otherwise, we want to find the weight
+[84.00s - 87.00s] defined by W that gives the minimum error
+[87.00s - 90.00s] Those are very simple
+[90.00s - 93.00s] We squares example of data, model, and objective function triplet
+[93.00s - 96.00s] And you can have more complex models and objective division faster
+[96.00s - 99.00s] Just to figure out how to skip this really quickly, but yeah
+[99.00s - 102.00s] So just how you solve it is, and I guess I won't skip it, because it's kind of a loop to how we're going to solve RAND's calculator, which is a model we're going to use to match it
+[102.00s - 105.00s] So we say the setup here is that if you have these data points x and y, those are given
+[105.00s - 108.00s] We can't change those
+[108.00s - 111.00s] The only thing we can change are w's to explain the relationship between x and y
+[111.00s - 114.00s] We say our model is y is equal to w transpose x, and our objective function is the error that we pay on the fit of y with the transform x
+[114.00s - 117.00s] You can define a parameter space that is two things, slope and intercept, doing a nice derivative for this equation, local minimum is
+[117.00s - 120.00s] So in this case, local minimum is
+[120.00s - 123.00s] So if we can compute the gradient equation and set to zero, we find this nice equation that tells us the solution for it, the unique solution for our W that minimizes the standard
+[123.00s - 126.00s] And so there's two ways to do this
+[126.00s - 129.00s] So you can either, once we have this gradient, Once you have this gradient set to zero, we can solve this explicitly in one go
+[129.00s - 132.00s] Or if you're lazy, like what most modern least learning methods are, you can just do gradient
+[132.00s - 135.00s] If you have the gradient, you can do gradient descends and find a point until the gradient doesn't, until your gradient reaches zero
+[135.00s - 138.00s] You can start from a random initial point
+[138.00s - 141.00s] And now you can iterate this equation so you can find a new point in the solution space with your gradient that you solve from before you take a step along that gradient until your gradient vanishes in a specific form
+[141.00s - 144.00s] So one example of this, so here's another example of this
+[144.00s - 147.00s] The coordinates, y coordinates, just the one-dimensional data
+[147.00s - 150.00s] This equation gives us a perfect fit
+[150.00s - 153.00s] But this is where things kind of start to get here
+[153.00s - 156.00s] So I just want to just motivate this
+[156.00s - 159.00s] This is boring stuff for us
+[159.00s - 162.00s] how to figure out how to fit these squares equations
+[162.00s - 165.00s] These squares equations, they start to fail, but we have outliers
+[165.00s - 168.00s] So you have these set of points, but now you have this one random point that appeared that doesn't fit the trend
+[168.00s - 171.00s] If you were to fit a least squares equation here, you're going to get a very bad fit to your data
+[171.00s - 174.00s] One outlier can offset your exclusion because we pay square the cost of errors
+[174.00s - 177.00s] So this is a huge error
+[177.00s - 180.00s] So our model is now trying to fit this as much as possible, ignoring all these smaller errors, paying, and therefore skewing ourselves greatly
+[180.00s - 183.00s] Why do I make this up? I make this up because when we kind of go back to the beginning, not the beginning but to maybe this feature from here
+[183.00s - 186.00s] What we're essentially going to do is we're going to detect bunch of key points and we're going to say these key points are some kind of transformation of these other key points
+[186.00s - 189.00s] So we're going to do another, if there are no outliers and everything match perfectly, we can do these squares equation like I showed before and then everything will be perfectly fit
+[189.00s - 192.00s] But there's going to be a lot there
+[192.00s - 195.00s] with occlusion, with noise in the data, it's very imperfect
+[195.00s - 198.00s] So there's gonna be a lot of mistakes in terms of which points you match to one another
+[198.00s - 201.00s] If you have one mistakenly matched point, and if you solve the least squares equation, the transformation from this image to that other image is gonna be completely thrown off
+[201.00s - 204.00s] So that's kind of, that's kind of that makes us here
+[204.00s - 207.00s] So there's a 1D example, but you can also imagine these were dimensional points
+[207.00s - 210.00s] And say, X coordinate and Y coordinates represent where the coordinates of all the different key points between images
+[210.00s - 213.00s] And we want to learn some kind of transformation between the X coordinates, which represent key points
+[213.00s - 216.00s] One image to match the Y coordinates, the Y which represents the coordinates in another image
+[216.00s - 219.00s] There's one mismatch
+[219.00s - 222.00s] You're going to pay a lot of price for it
+[222.00s - 225.00s] You're going to have much more than one mismatch in practice
+[225.00s - 228.00s] So, again, you're very careful how it handles
+[228.00s - 231.00s] So I guess that's kind of the gist of, so when you have these least squares equation, like if you have, let's say you have one big error, one big error is going to be worth, let's say you have error of 100 in terms of the model
+[231.00s - 234.00s] That's going to, that one error is going to be worth, that much error squared in terms of the smaller errors that you can tolerate
+[234.00s - 237.00s] So if you have an error of 100, that's worth 100 points
+[237.00s - 240.00s] So there's a big trade-off between large errors
+[240.00s - 243.00s] If you're going to use these types of least square objective functions, natural sets of points
+[243.00s - 246.00s] So this is kind of what I'm talking about
+[246.00s - 249.00s] So like this is single outlier by i
+[249.00s - 252.00s] now and still work with data
+[252.00s - 255.00s] But in reality, we're going to get things like this in computer vision
+[255.00s - 258.00s] If we were to kind of do a one-dimensional representation of our key points and their matches in two digits, we're going to get like the scatter of other points
+[258.00s - 261.00s] Although you kind of see this dominant trend in these kind of points that don't depend on prior knowledge, but you have more mathematical way to take data like this and help us fit some kind of a trend that is robust
+[261.00s - 264.00s] For all these, sometimes even more than 50% of our points could be outliers
+[264.00s - 267.00s] Reading something that's robust enough
+[267.00s - 270.00s] Questions, so an example
+[270.00s - 273.00s] I guess the next example demonstrates what I'm talking about
+[273.00s - 276.00s] So let's say we have these two views of this church or something as a church found 500 page image
+[276.00s - 279.00s] Let's see if it's a location on this corner
+[279.00s - 282.00s] And then for each of these points, we have features that we detect using stick
+[282.00s - 285.00s] Your favorite feature is your favorite
+[285.00s - 288.00s] Let's say we do our math
+[288.00s - 291.00s] We try to find a set of points in this image that match the corresponding points in the other image using those sort of features
+[291.00s - 294.00s] And we can draw the correspondences using these lines
+[294.00s - 297.00s] As you can see, some of these features are correctly assigned, so you kind of see left to right vector in the source point to the target match point
+[297.00s - 300.00s] But you see a lot of outliers
+[300.00s - 303.00s] You see these crisscross points, which indicates that maybe you'll slip and do some kind of feature matching
+[303.00s - 306.00s] There's still a lot of mistakes
+[306.00s - 309.00s] So we can't
+[309.00s - 312.00s] And if we're going to start with this as our set of points that we want to transform, we want to take these points, the points in the circles, and match them with their targets, which are the endpoints of these blind segments
+[312.00s - 315.00s] It's a really huge transformation of these things
+[315.00s - 318.00s] So what do we want? We want a model that doesn't try to explain every single point, because in life there's nothing that's perfect
+[318.00s - 321.00s] We want to have a model that explains most of the points quite well, instead of trying to explain every single point in our data
+[321.00s - 324.00s] We want to explain most of them
+[324.00s - 327.00s] And don't make big errors
+[327.00s - 330.00s] I think our priority is try to sacrifice the number of points you match with not making big errors
+[330.00s - 333.00s] So our new objective that we can think about is, so least squares tries to fit everything all at once
+[333.00s - 336.00s] Now I'm going to give a new objective
+[336.00s - 339.00s] We're not going to change our data
+[339.00s - 342.00s] Our data is our data
+[342.00s - 345.00s] We're not going to change our model
+[345.00s - 348.00s] Our model is still there's some kind of linear transformation
+[348.00s - 351.00s] What we're going to change now is our objective function
+[351.00s - 354.00s] So instead of least squares, we want to design an objective function such that the error is small, or as many points as possible
+[354.00s - 357.00s] So that's in words
+[357.00s - 360.00s] How can we make this more mathematically formal? These folks did this back in the day, and this algorithm is still quite used, even in modern systems
+[360.00s - 363.00s] It's called Ransack, which sends from a random sample consensus
+[363.00s - 366.00s] And we'll talk about how that works
+[366.00s - 369.00s] Okay, so back to that 1D example
+[369.00s - 372.00s] The way the Ransack works is initialize your algorithm with just like a null solution
+[372.00s - 375.00s] You say, you're trying to find two things
+[375.00s - 378.00s] You're trying to find the best line that explains your data and how many data points that line explains
+[378.00s - 381.00s] So that reflects this objective that we kind of put in words
+[381.00s - 384.00s] We want to find a model in which the error is small for as many data points as possible
+[384.00s - 387.00s] So we need a model of small error
+[387.00s - 390.00s] And we need to have a count of how many points that model explains
+[390.00s - 393.00s] So we need to count two things
+[393.00s - 396.00s] And that's kind of what we're keeping tabs off here
+[396.00s - 399.00s] Best line is like the line that, you know, is an error of that line
+[399.00s - 402.00s] And best count tells us how many points does that line explain
+[402.00s - 405.00s] Alright, and we initialize this with, there's no best line yet, and our best count with minus points
+[405.00s - 408.00s] So we don't have any points that that line explains
+[408.00s - 411.00s] And now what we do is, the algorithm in long story short, what it does is randomly sample many, many lines within your image
+[411.00s - 414.00s] You randomly sample many lines in your image
+[414.00s - 417.00s] And for each time, you count how many points of your data that model explains
+[417.00s - 420.00s] And then you keep doing this a certain number of times until you can probabilistically state that you found the best line possible, given some kind of random probabilities of what you expect to be
+[420.00s - 423.00s] So if you iterate through much a random file, that's where the random, the ran, or the ran side comes from
+[423.00s - 426.00s] You randomly sample different lines
+[426.00s - 429.00s] And to do that, to randomly sample lines, what you do is you choose random subsets of points in your data
+[429.00s - 432.00s] And in two-dimensional space, how many points do you find on it? Two
+[432.00s - 435.00s] Two
+[435.00s - 438.00s] So in two-dimensional space, yeah, you need two points
+[438.00s - 441.00s] In three-dimensional space, you need three and so on and so forth
+[441.00s - 444.00s] It's better if you have dimension plus one, actually
+[444.00s - 447.00s] This works a bit more robust
+[447.00s - 450.00s] But yeah, you choose..
+[450.00s - 453.00s] the n number of points and then from each of those points you find the best fit line
+[453.00s - 456.00s] And then that best fit line you see how many other points in your data that the best fit line explains
+[456.00s - 459.00s] And the way you do that is once you fit your line you count the distance of these other points to that line and then if it's below some certain threshold you say those points you're spaying by that line, otherwise they're not explained by that line
+[459.00s - 462.00s] And after you do so, you now do some bookkeeping
+[462.00s - 465.00s] So for that particular line, you count the number of points that fall within that line, and you update your best count variable
+[465.00s - 468.00s] And then you keep doing this until you can no longer best your best count
+[468.00s - 471.00s] And then you keep the line that explains those numbers
+[471.00s - 474.00s] This algorithm sounds really dumb because you're just randomly sampling a space
+[474.00s - 477.00s] But the nice thing is that we can prove that this algorithm, after a certain number of iterations, can guarantee with certain probability that you actually want the best one, because of the properties of the input sample
+[477.00s - 480.00s] And we'll talk about that
+[480.00s - 483.00s] I just want to, like, we'll go into the math of that
+[483.00s - 486.00s] But I just want to just give you guys like a work example to that real conclusion
+[486.00s - 489.00s] I think that's just about just the overview of it until I go to the wrong group
+[489.00s - 492.00s] How do we decide the number of iterations there? That's a good point
+[492.00s - 495.00s] You can determine the number of iterations by setting some kind of probability threshold, which we're going to talk
+[495.00s - 498.00s] Like I think it's going to come up later in the slides
+[498.00s - 501.00s] But we can show, we can prove that with some assumptions, that if you did n number of trials, you would find the best of finding with some kind of probability
+[501.00s - 504.00s] And that probability, monotonicly goes up
+[504.00s - 507.00s] So as you can imagine, if you were to exhaustively go through every single line here, which is going to be, so if you have endpoints and you're sampling two of them at a time, how many possible lines are there? and choose which is going to be the n squared order
+[507.00s - 510.00s] If you were to go through all the n squared of them, you would find the best line
+[510.00s - 513.00s] But you don't need to go through all the n squared of them
+[513.00s - 516.00s] So we can show that before the n squared factor, you put some high five, you're going to find the best of the line eventually
+[516.00s - 519.00s] Yeah, also in the same train of thought, how do you pick the size of the subset? Is that also random? Yes, exactly
+[519.00s - 522.00s] That's very critical that the subset has to be random
+[522.00s - 525.00s] If you don't, by using the randomness of the subset, you can efficiently cover the solution space quite well
+[525.00s - 528.00s] If you were to not do this randomly, then you would be greedy about it, then you might take longer numbers, more iterations, but theoretically guarantee you find the best ones
+[528.00s - 531.00s] Yeah, but is the number of points you select to make your least squared subset? Also random or is it a constant? So that's a good question
+[531.00s - 534.00s] So if you were to so you can be smart about it So the the random number of points to solve your least squares equation you can use more than two points But then there's just many more combinations So if you're if you're at a sample three points then you have to do the hand choose three all combinations You can say a two data points
+[534.00s - 537.00s] So I will lose the minimum possible number of points on computation
+[537.00s - 540.00s] Yeah, if you really want to, you can sample 10 points at a time
+[540.00s - 543.00s] You get a really good d-square solution every time, but now there's so many x10, like, tuples of points near data
+[543.00s - 546.00s] So the random space, the sampling space here, might be much bigger
+[546.00s - 549.00s] So like we can also show the different number of points, the number of samples you need to draw from this thing is going to grow larger
+[549.00s - 552.00s] It's guaranteed the same product in this
+[552.00s - 555.00s] There's no, there's no..
+[555.00s - 558.00s] there's no benefit in the middle of the group
+[558.00s - 561.00s] I think that's going to be, later on, we have an analysis of how many samples you can draw
+[561.00s - 564.00s] And that's the number of points you draw factors of that
+[564.00s - 567.00s] And that's probably going to be one of the exact questions
+[567.00s - 570.00s] Okay, so let's start with this work example
+[570.00s - 573.00s] So this is our data
+[573.00s - 576.00s] This is our trial one
+[576.00s - 579.00s] We don't have a best model yet
+[579.00s - 582.00s] We don't have any team lawyers yet
+[582.00s - 585.00s] We sample these two points
+[585.00s - 588.00s] We sample these two random points and they define a line
+[588.00s - 591.00s] This is the line they define
+[591.00s - 594.00s] It's a graphy line, but it's a line down to the left
+[594.00s - 597.00s] From there, we can count..
+[597.00s - 600.00s] we can compute the distance of all these points to this line
+[600.00s - 603.00s] And all the points that are within certain distance, so that's not a parameter you need to set, like this optic margin parameter
+[603.00s - 606.00s] Everything that's within a certain margin, we say those points lie within the line defined by these two things
+[606.00s - 609.00s] And let's say we set some thresholds that small, 14 points satisfy that criteria
+[609.00s - 612.00s] So for this line, our best count is now going to be just less than halfway here
+[612.00s - 615.00s] So we have one line, let's expand 14 points
+[615.00s - 618.00s] There are many more, there's much more than 14 points, so this is probably not the best thing we can do, and we only sample one point, so it's a key point
+[618.00s - 621.00s] It's kind of like, it's like, it's like a rule that you have to keep rolling your dice until, you know, you're happy with what the outcome will be
+[621.00s - 624.00s] So like one, one roll of the dice by another
+[624.00s - 627.00s] Let's do another one
+[627.00s - 630.00s] This time we rolled our dice, we found these two points
+[630.00s - 633.00s] This one, this line probably has a little bit more
+[633.00s - 636.00s] 10 liars than the previous one, and this one has 22
+[636.00s - 639.00s] So this line beats the previous line
+[639.00s - 642.00s] Still not a great line, but it beats the previous one
+[642.00s - 645.00s] So we can update our best count to 22, and now we have this best line so that we keep in our memory
+[645.00s - 648.00s] We keep going another time
+[648.00s - 651.00s] This one has 10 liars
+[651.00s - 654.00s] This one is worse than what we so far had, so we don't..
+[654.00s - 657.00s] We sample this, we count it, but then we get rid of it
+[657.00s - 660.00s] And we keep doing this many, many times, and I'm going these old
+[660.00s - 663.00s] At some point, we did inject our future C-Spoon point
+[663.00s - 666.00s] I explained this line with 76 different in the waves
+[666.00s - 669.00s] So now this becomes our first possible line
+[669.00s - 672.00s] And now we keep doing this 100 times
+[672.00s - 675.00s] And after doing 100 times, we found some line
+[675.00s - 678.00s] We found another line
+[678.00s - 681.00s] I've heard of the previous ones
+[681.00s - 684.00s] And we can keep doing this
+[684.00s - 687.00s] We can do this forever, or we can stop
+[687.00s - 690.00s] Because at some point, we can prove that, you know, if we give it a number of points we have, and given a number of trials, we kind of sample our space, you're not going to get better than the best thing we have with some project
+[690.00s - 693.00s] Obviously, if you sample everything here, you're actually going to find the best one
+[693.00s - 696.00s] We can stop our algorithm already before them
+[696.00s - 699.00s] know that some very high probability we've got
+[699.00s - 702.00s] So, and then after you run an algorithm for 100 iterations, which you can predetermine, this is the number of iterations we need to have 99% probability defined in the right line
+[702.00s - 705.00s] We output the vested line and the inliers that we have in our data
+[705.00s - 708.00s] And then we use that as our transformation between the points, our source points, or our point that we're trying to transform from there
+[708.00s - 711.00s] It's a one-dimensional example, but again, the intuition is the same
+[711.00s - 714.00s] Instead of these points being just like x coordinates just being one-dimensional and y coordinates being one-dimensional, imagine each of these points could be like xy coordinates in one image, and then other part of that coordinate could be the xy coordinates of a matching point in another image
+[714.00s - 717.00s] And you have many possible matches
+[717.00s - 720.00s] And you try to find a transformation that's one-to-one image
+[720.00s - 723.00s] given that a lot of these match points are wrong, but there's a core of them that's wrong
+[723.00s - 726.00s] All three are exactly right here
+[726.00s - 729.00s] Mathematics, the theoretical guarantee is the same in two dimensions as it is
+[729.00s - 732.00s] So key parameters, like so, like students ask, but if you can't hear how many times we have to sample, this is a number of trials, this is a key parameter, the subset size points to be sampled at a time to find points that means that we have a much larger space to sample from the spectral
+[732.00s - 735.00s] How do you know that seven points are explained by a line, and that's going to be also pretty checked with
+[735.00s - 738.00s] And once we find the best with line, the final product that you have is after you find all the inliers, then you do one final fit of your model with all the points that you found
+[738.00s - 741.00s] And now you have a, that you can know for sure those points are near line, and how they're more robust than anything
+[741.00s - 744.00s] Exactly, yeah
+[744.00s - 747.00s] So Once we have a subset, the major assumption of that subset is that we assume everything in that subset is an in-layer
+[747.00s - 750.00s] Try to make sure we get at least twice, right? Because we know that should be explained
+[750.00s - 753.00s] That should be explained in the wild
+[753.00s - 756.00s] And that's actually the key intuition
+[756.00s - 759.00s] So the key intuition's algorithm is that we're trying to sample these small subsets of points until we find one subset that's 100% in-layer
+[759.00s - 762.00s] That's the key idea
+[762.00s - 765.00s] So if you have, let's say you have a data set with a certain out-layer ratio, And I'm going to draw endpoints from those set of points
+[765.00s - 768.00s] The times do I need to draw from that sample
+[768.00s - 771.00s] All the endpoints that I sample are in life
+[771.00s - 774.00s] So you can kind of do the mental math here
+[774.00s - 777.00s] So let's say I had 100 points, and only one of them is an outlier
+[777.00s - 780.00s] How many times do I need to sample from those 100 points, two of them, until I find two points that are inliers, so the probability of 29% or up? There's probably one
+[780.00s - 783.00s] If I divide this, if I have 100 points in one outlier, in my first guess, I'll try with 99% probably really out of order
+[783.00s - 786.00s] In 100 points, I have 50 of them that are outliers
+[786.00s - 789.00s] Then there's a chance in my first draw
+[789.00s - 792.00s] There's a chance that, there's a 25% chance, Both of the draws, both of the points I have are outliers
+[792.00s - 795.00s] 24% chance one of them is going to be inlier, one of them is going to be outlier
+[795.00s - 798.00s] Actually 50% chance
+[798.00s - 801.00s] So 55 data is 50-50
+[801.00s - 804.00s] And we had 25% chance that my first draw, both of them are going to be inlier
+[804.00s - 807.00s] So I have to keep speeding up process on colliding it, ensure both of my points are inlier
+[807.00s - 810.00s] And we're going to do some analysis next
+[810.00s - 813.00s] But that's the intuition
+[813.00s - 816.00s] So here's the analysis
+[816.00s - 819.00s] And let's start with the count from that 80% of our data are outliers, and we want to choose two of them
+[819.00s - 822.00s] And we run this random sampling n times, let's say our n is 500
+[822.00s - 825.00s] We calculate the number of points that we draw, and what we're getting
+[825.00s - 828.00s] What's the probability that if you want to choose s points such that none of them are outliers, the probability that all of them are not outliers is going to be 1 minus the probability of being outlier, so s power
+[828.00s - 831.00s] We assume all these points have equal probability of everything
+[831.00s - 834.00s] So if our value ratio is 80%, so 20% is our chance, is our probability of the inlier
+[834.00s - 837.00s] Everyone choose two of them
+[837.00s - 840.00s] So it's 20% to the times squared
+[840.00s - 843.00s] Is our probability of choosing both of them to be inliers
+[843.00s - 846.00s] That's quite low actually
+[846.00s - 849.00s] 20% squared is 0.5%
+[849.00s - 852.00s] So if this is our probability that both of the points are not outliers, what's the probability that these points that we selected are outliers? So this is basically the rule of..
+[852.00s - 855.00s] Conditional probability? Yeah, there's non-conditional probability of complement
+[855.00s - 858.00s] So like if this is a probability of an event, you're actually asking the probability of the complement of that event happening, which is going to be 1 minus 5%
+[858.00s - 861.00s] So 1 minus 5% is not the probability that any of these points that we have
+[861.00s - 864.00s] like this very high probability in our s points is going to be an outlier now what's the probability that all the n times every n all the n trials that we have every one of them is going to be bad if this is the probability of one of these trials being bad all of them being bad is going to be this the nth power so although so this is a low probability this is a high probability but this is still not a probability of one so even if you have a high probability If you want this high probability to happen every single time, if n is very large, even this is going to go to zero
+[864.00s - 867.00s] And that kind of way they can't choose bad apples every single time
+[867.00s - 870.00s] That's the major problem
+[870.00s - 873.00s] So probably choosing bad points every single time for n trials diminish to zero as n
+[873.00s - 876.00s] Let's do like a worked example
+[876.00s - 879.00s] And so these are all bad trials that also probably that at least one of these is going to be good is going to be this, among minuses
+[879.00s - 882.00s] This is going to be a very small number and it's very large
+[882.00s - 885.00s] If you do one minus a very small number, this will be, this will guarantee eventually we're going to take one good apple out of many, many bad ones, if you take lots of apples
+[885.00s - 888.00s] Okay, so let's do numbers
+[888.00s - 891.00s] So for this example, you have a 4% chance that any point, any set of points that you draw is good
+[891.00s - 894.00s] Four percent chance that..
+[894.00s - 897.00s] not have any outliers at all
+[897.00s - 900.00s] That means 96% chance every time we're going to have some kind of corruption in our fee
+[900.00s - 903.00s] Through this process, 50, the probability that all the points we have are bad is going to be 13%
+[903.00s - 906.00s] If you do this 500 times, the probability that everything that we selected is bad is going to be 10 to the minus 10
+[906.00s - 909.00s] Therefore, if you do this 500 times, 99.9999% probability, we know we have a reasonable quantity to say a lot of penalizers, which is all we need
+[909.00s - 912.00s] So there's obviously no need to pay for this in terms of sampling randomly
+[912.00s - 915.00s] And let's think about the last year, if I put the question to your question about how many points that we draw
+[915.00s - 918.00s] If you were to draw more points than two, then this goes down
+[918.00s - 921.00s] Let's say you have 20% chance of being a good point
+[921.00s - 924.00s] If you want to choose two points that are good, that gives us a 4% chance
+[924.00s - 927.00s] If you want to find three points that are good, So choosing more points is going to produce this number, which is done in the end, is going to make this number go up if you want to guarantee 99.99% probability of being good
+[927.00s - 930.00s] So that's a trade-off
+[930.00s - 933.00s] Questions? So this is an example in 2D
+[933.00s - 936.00s] So this is an example in 1D
+[936.00s - 939.00s] So if the set of points they have in our 1D as set is within one dimension, and a set of points that we have in other days and in other days I'm also in one dimension, we need two points to explain a one-dimensional line
+[939.00s - 942.00s] In two dimensions, let's say we have images where we have x-y coordinates instead of just x-coordinates instead of just x-coordinates, then we just choose four points
+[942.00s - 945.00s] Oh, sorry, we need to choose three points to explain a line in two dimensions
+[945.00s - 948.00s] The number of the ambient dimensions in terms of the to be able to explain the point
+[948.00s - 951.00s] That's what's going to factor to that S parameter
+[951.00s - 954.00s] So if you're on the graph side, you have higher dimensions
+[954.00s - 957.00s] You need to sample more points because if you just have two points in two dimensions, that's not enough to define a line
+[957.00s - 960.00s] You need an extra point to be able to define it
+[960.00s - 963.00s] So here's some kind of like, this is kind of what those curves look like when you, with different outlier ratios
+[963.00s - 966.00s] So R here is our outlier ratio, how bad is our data, and how many points that we mean, how many points we're trying to sample
+[966.00s - 969.00s] The x-axis here shows us the number of trials we need to have, and the y-axis tells us it's supposed to probably be like having like one one liar
+[969.00s - 972.00s] So just that y-axis is our probability of success
+[972.00s - 975.00s] If you do this many number of trials, the thing you can see is that it's a terrible case of like 90% of our data is full of outliers, We need to have many more trials until we reach like a tolerant, like 99% probability of success
+[975.00s - 978.00s] If the RBA is clean, then we don't have, we have only 10% outliers or less, we need far fewer trials to be able to get the sumo
+[978.00s - 981.00s] This one's done
+[981.00s - 984.00s] This one is not done
+[984.00s - 987.00s] This one is when you sample multiple, more than one point
+[987.00s - 990.00s] So with more points, we need to hit more trials to get it with one set of inliers
+[990.00s - 993.00s] And this also gives you an idea why, like you can use more points, but you're just gonna have, you'll pay much more computational cost
+[993.00s - 996.00s] You want to set up one good, to get one good set of new layers
+[996.00s - 999.00s] And it's not worth that
+[999.00s - 1002.00s] It's not worth that
+[1002.00s - 1005.00s] Well, not, yeah, so the morphism analysis
+[1005.00s - 1008.00s] So I was kind of talking about it verbally, but I like made it for this installment, like always tries to use a small set of possible set of points for fitting the line in whatever the mesh value you're So if we're in one dimensional space, and I say one dimensional, like x coordinates or one dimensional, y coordinates are one dimensional
+[1008.00s - 1011.00s] You need two points, by the way
+[1011.00s - 1014.00s] If you're in our dimensional space, where each of our points represents like a two dimensional point, or three dimensional points, then you need more points
+[1014.00s - 1017.00s] So it'll be the number of points you need for like three dimensional
+[1017.00s - 1020.00s] So we put our number, whatever your, whatever dimensionality you're in, it's one more point than that to explain some kind of In one dimensional space, a plane is like three dimensional space, two dimensional space, it's three dimensional space
+[1020.00s - 1023.00s] You just need whatever number of empty dimensions is, you just need one more point than that to be able to uniquely define a line
+[1023.00s - 1026.00s] Otherwise there's multiple solutions for a line in one dimension
+[1026.00s - 1029.00s] If I only had one point in one dimension, there are divinely made lines that couldn't go through it
+[1029.00s - 1032.00s] There's only one line that can go through two points in one dimensional space
+[1032.00s - 1035.00s] There's two-dimensional space
+[1035.00s - 1038.00s] There's nearly many planes that go through two points, but there's only one plane that goes through three non-collinear at the minimum number of points
+[1038.00s - 1041.00s] Therefore, in high dimensions, Grand Sack gets more computation expensive
+[1041.00s - 1044.00s] So people usually use this for like two or three-dimensional problems
+[1044.00s - 1047.00s] For higher-dimensional problems, there are some other approaches for people
+[1047.00s - 1050.00s] I find this kind of neat in terms of the probability Okay, the other analysis is something that we mentioned, but we kind of like swept this on the road
+[1050.00s - 1053.00s] This one is a bit trickier to select
+[1053.00s - 1056.00s] Like number of points to some subset
+[1056.00s - 1059.00s] Like this is kind of based on geometry of data, not the threshold
+[1059.00s - 1062.00s] This one is a bit more hand wavy, and this is something that you need to consolidate
+[1062.00s - 1065.00s] But you kind of select the threshold out to reflect the noise level in your data
+[1065.00s - 1068.00s] So even within the inlier, you expect some noise
+[1068.00s - 1071.00s] And you don't know what that noise is ahead of time
+[1071.00s - 1074.00s] So you need to be able to estimate this from your data
+[1074.00s - 1077.00s] So this is something you can, when you have some training data that you know, for example, the correct set of matching points, you can tune this until a branch site finds those inliers that you know for sure are inliers
+[1077.00s - 1080.00s] This is something you do about your problem there
+[1080.00s - 1083.00s] All right, so let's, so here's a, than matching points in images, but let's say we have, we can also use this to structure a little bit, right? Let's say we have these particular pixels
+[1083.00s - 1086.00s] From this, we wanna detect all the potential points
+[1086.00s - 1089.00s] How do we do that? We use the same concept that we just talked about
+[1089.00s - 1092.00s] So one thing we can do is, let's say you're on Ransak and it finds that this set of points is the maximum set of points that lie within a line
+[1092.00s - 1095.00s] You can take all these pixels that are found to be corners, you can take your x and y coordinates
+[1095.00s - 1098.00s] And with exact same equation, we have to try to find a line that explains the y coordinates, coordinate coordinates using a linear equation
+[1098.00s - 1101.00s] And after doing RASAC, finds this one line and saying this is the best line with the maximum number of inliers
+[1101.00s - 1104.00s] After you do that, with some certain number of iterations, you can take that line and just remove all the points that lie within it from your image
+[1104.00s - 1107.00s] in your data, now your left foot was left
+[1107.00s - 1110.00s] And then you run it again until you find another line that's fit with the maximum number of inliers
+[1110.00s - 1113.00s] And you see that's another one
+[1113.00s - 1116.00s] And you do this process until there's no way left
+[1116.00s - 1119.00s] And now you explain the data that you have on two lines
+[1119.00s - 1122.00s] And everything else here, I'm not explaining my lines, at least with not enough inliers, so you're just remarkable
+[1122.00s - 1125.00s] So this is a very dumb way to use Ransak, but you can use this to detect lines and use some feature or some kind of straight edges
+[1125.00s - 1128.00s] So advantages
+[1128.00s - 1131.00s] You can use Ransak for things like just finding lines, or you can use it for, again, these points
+[1131.00s - 1134.00s] I just abstractly represent them as one-dimensional features, which one of them
+[1134.00s - 1137.00s] But each of these points can have multiple-dimensional features, so
+[1137.00s - 1140.00s] some examples, each of these dots could represent two-dimensional points in space
+[1140.00s - 1143.00s] Or if you're using the feature descriptors from last time, each of these dots could represent a very high-dimensional space
+[1143.00s - 1146.00s] It describes the SIFT feature or some kind of high-dimensional feature descriptors for different team points
+[1146.00s - 1149.00s] And I mean, you can use that
+[1149.00s - 1152.00s] I mean, you generalize, you translate to higher dimensions, although after a certain number of dimensions, it becomes kind of computationally
+[1152.00s - 1155.00s] It's just relied on actually theoretically calculating
+[1155.00s - 1158.00s] But this event, you have lots of outliers
+[1158.00s - 1161.00s] It's just you're trying to find one good apple
+[1161.00s - 1164.00s] If your outlier is very high, then it keeps happening forever until you're trying to get very corrupted problems
+[1164.00s - 1167.00s] This is probably not going to be the best thing to do
+[1167.00s - 1170.00s] And we like problems that will add up
+[1170.00s - 1173.00s] do the analysis, like can estimate the off-lire ratio on some problem and say, hey, maybe this is the off-lire ratio is so high, this might, that might not be the way to approach this problem, that you can, that you can focus on like getting rid of off-lires first, but try to clean up your data before putting it in the right side to kind of reduce your off-lire ratio
+[1173.00s - 1176.00s] Questions? And then, so I have another technique that can handle outliers as a bit more, So a little bit more complicated
+[1176.00s - 1179.00s] Okay
+[1179.00s - 1182.00s] I'll try to be one
+[1182.00s - 1185.00s] Okay, well
+[1185.00s - 1188.00s] Okay
+[1188.00s - 1191.00s] Slide there
+[1191.00s - 1194.00s] Okay, good
+[1194.00s - 1197.00s] All right, so Grand Sack is an approach that has an explicit model between two sets of points and then tries to find the best kind of inliers that can, you know, hit some kind of blind single two sets of points or it could be some other transformation
+[1197.00s - 1200.00s] How Transform kind of does it inversely? So instead of trying to solve for a quite good one, consider all possible models that can be used to observe your data and use the data points to vote on which models are a bit more likely than others
+[1200.00s - 1203.00s] So here's an example of that
+[1203.00s - 1206.00s] So let's say we have these four points and these four points are just But there's many possible lines that can go through these points
+[1206.00s - 1209.00s] And all these possible lines that can go through these points, they can be explained by two parameters
+[1209.00s - 1212.00s] Like the center points in two-dimensional space is parametrized by their slope, or kind of intercept
+[1212.00s - 1215.00s] So all possible slopes and intercepts
+[1215.00s - 1218.00s] We can count the number of points
+[1218.00s - 1221.00s] This sounds exhaustive, but in practice it can make this a bit more attractive
+[1221.00s - 1224.00s] This is a very abstract example
+[1224.00s - 1227.00s] But like I say, each of these y coordinates tells us a different slope
+[1227.00s - 1230.00s] And each of these x coordinates here, each of these bins tells us different intercepts or different points
+[1230.00s - 1233.00s] And this one, let's say there's one line, like this particular line
+[1233.00s - 1236.00s] So this one has some kind of slope and intercept
+[1236.00s - 1239.00s] This line explains four points
+[1239.00s - 1242.00s] So we say, OK, this one explains four points
+[1242.00s - 1245.00s] But there's another line, for example, that goes like this
+[1245.00s - 1248.00s] Like only goes through one of these points
+[1248.00s - 1251.00s] That is defined by a slope and intercept
+[1251.00s - 1254.00s] And that will be another point in the space
+[1254.00s - 1257.00s] And we say, that line explains one point
+[1257.00s - 1260.00s] So if you can sample through all the possible lines that span this space, you can count the number of data points that are explainable by those
+[1260.00s - 1263.00s] And after doing so, if you were to enumerate this space of models and how many data points they explain, you can find the maximum one
+[1263.00s - 1266.00s] You say, hey, this one particular model that explains the maximum number of points
+[1266.00s - 1269.00s] So let's do a more work example
+[1269.00s - 1272.00s] And this is called transform because in one space, kind of become a single point in another space
+[1272.00s - 1275.00s] So let's say there is this line y equals to mx plus b, or m0, b0, some kind of argument value values of m and d
+[1275.00s - 1278.00s] All the points, like this line spans infinite number of points
+[1278.00s - 1281.00s] This line can be represented as a single point in this parameter space, where the y-axis represents a slope, sorry, the intercept x-axis explains the slope
+[1281.00s - 1284.00s] And on converse, let's say we have a single point
+[1284.00s - 1287.00s] Let's say we have a single point in our index
+[1287.00s - 1290.00s] What is this going to look like in our parameters? And the way we think about this is we have to think about all the possible lines, that can go through this point, and it's infinitely many
+[1290.00s - 1293.00s] And there's this one line like this, another line like this, and the one like this
+[1293.00s - 1296.00s] And if you were to collect all the slopes, and you could solve the lines that can pass through, that corresponds to a line, a possible slope, a very possible slope, and a particular point that goes with it, that can define a line here
+[1296.00s - 1299.00s] So point, or particular slope, so we know this, and let's say we set our slope to be something, no other y-coordinate, infinitely many for every single for every single slope we're gonna find a new industry set of lines that can fit to that point can be explained by a line in this parameter space where the x-axis corresponds to slopes and y-axis corresponds to an extent is that clear is that any questions about that okay so this is a little bit off the top it's a transformation from points and add it to a parameter space that can, that explain all the lines that can go through that
+[1299.00s - 1302.00s] The thing is we're gonna have many, many points in our space
+[1302.00s - 1305.00s] Let's say in our image we have more than one point
+[1305.00s - 1308.00s] Each point is gonna lead to another line
+[1308.00s - 1311.00s] And these lines are gonna cross over some point
+[1311.00s - 1314.00s] So if you have many, many points, each one of these points corresponds to a different line in our whole graph, we're gonna look at the places where these lines cross, means this line explains more than one
+[1314.00s - 1317.00s] So you see a few lines here
+[1317.00s - 1320.00s] and they cross over a certain point, that means the crossover point is a place where there's a line that can explain two points in our original scale
+[1320.00s - 1323.00s] And let's say we have 100 points here, and if they all line a line, there's going to be one point where 100 different lines cross
+[1323.00s - 1326.00s] And that's going to be where, that's going to be the intersection point, but be the one line that can explain 100 points
+[1326.00s - 1329.00s] Intuition, right? We're basically going to..
+[1329.00s - 1332.00s] Take our image and convert that and look for points who are many, many lines
+[1332.00s - 1335.00s] That's exactly what I mean
+[1335.00s - 1338.00s] So we have a second point
+[1338.00s - 1341.00s] We have a second point
+[1341.00s - 1344.00s] What was the original line was this one, the one that's going to the bottom right from the second point that we added
+[1344.00s - 1347.00s] All the lines that cross through it can be parametrized by these new parameters M and V that while I want this slightly more horizontal line
+[1347.00s - 1350.00s] So now you just realize they cross over at some point
+[1350.00s - 1353.00s] The point where they cross over is painful
+[1353.00s - 1356.00s] This point has many lines that cross through it
+[1356.00s - 1359.00s] This point also has many lines across through it
+[1359.00s - 1362.00s] There's one line that can cross through both of these points
+[1362.00s - 1365.00s] And that line is parametric along the intersection
+[1365.00s - 1368.00s] In this process, if you have n points in an image, That's going to correspond to end different lines in our half transform space
+[1368.00s - 1371.00s] Then we just need to just look at where it intersects the most to find the lines that are the most popular
+[1371.00s - 1374.00s] What's the issue with this? The issue with this is what happens if these two points are vertical? Let's say the coordinate, well these two points were the same
+[1374.00s - 1377.00s] And they're very slow
+[1377.00s - 1380.00s] Exactly
+[1380.00s - 1383.00s] So then you would need to have a point that's like we have something that's infinity at the x-axis, which would be ideal
+[1383.00s - 1386.00s] So again, our primary space, if we were to define lines using slope and intercept, this is unbounded
+[1386.00s - 1389.00s] Fine, requires some values of slope, they're evident, computation, track
+[1389.00s - 1392.00s] So how can we do this? So instead, we can represent each line by a polar coordinate
+[1392.00s - 1395.00s] Instead, it's annoying, but at least it gives us a more bounded parameter space
+[1395.00s - 1398.00s] So every single, I can, I argue that any single line in two-dimensional space, even the vertical ones, even the vertical ones, can be parameterized by two parameters, angle and radius
+[1398.00s - 1401.00s] So let's kind of, so thinking about it this way, one of them is the the angle of the, on the zero, like if zero the angle is a perfectly horizontal line, an angle of 90 The angle of zero would be a perfectly vertical line, and an angle of 90 would be a perfectly horizontal line
+[1401.00s - 1404.00s] We can parametrize all possible lines this way, and the second parameter tells us how far from the edge is left
+[1404.00s - 1407.00s] And I'm arguing that this can parametrize all possible lines in a finite 2D plane
+[1407.00s - 1410.00s] It's nice to have a minus minus 5 minus 5 range
+[1410.00s - 1413.00s] And so if the line lies within our image, this row parameter also has to be finite
+[1413.00s - 1416.00s] It has to be within the bounds of our image
+[1416.00s - 1419.00s] And if you recall, this is just a, if you can kind of work out that every single point along this line and respect this equation
+[1419.00s - 1422.00s] So in order to do this, then the problem is that it becomes more straightforward
+[1422.00s - 1425.00s] So for every point that we have in our image, that every single feature point, What we need to do is we still need to solve what the role and data are
+[1425.00s - 1428.00s] But obviously for every point, every point in our imprimatur space, it's going to correspond to a line in our cross-platform space, even in this domain
+[1428.00s - 1431.00s] In this case, that line might not be a straight line, and it looks like a curved line
+[1431.00s - 1434.00s] but what we do is we take our point xy and then we set a particular angle that we care about and say we start with that and an angle of zero and our x and y coordinate that we know we just solve for what the the row parameter and whatever that value is we we start uh we create this little histogram we create this bins of all the possible values of data and row And whatever roll-down that we get from our x, y, and our current data, we add one more value to it
+[1434.00s - 1437.00s] So for this particular data, let's say if roll 3 was the one that was solved by its equation, we add a plus on there
+[1437.00s - 1440.00s] So for that particular data, we have one possible value of rho
+[1440.00s - 1443.00s] And then we go to another value of theta, and that's going to correspond to another value of rho
+[1443.00s - 1446.00s] And we keep doing this for every single point
+[1446.00s - 1449.00s] We sample through all the possible data until we find, and then we account for the rho values that are generated from this equation
+[1449.00s - 1452.00s] Yes
+[1452.00s - 1455.00s] Is there an example of a, I think I asked at this program
+[1455.00s - 1458.00s] And after we populate this space, of the data's in rows that from our current set of points, we go to the next point
+[1458.00s - 1461.00s] Let me keep doing this until we cover all the points in our data and all the angles that we consider for each one
+[1461.00s - 1464.00s] Then I kind of skip through the slide, then I come back
+[1464.00s - 1467.00s] Let's look at a little bit
+[1467.00s - 1470.00s] Let's start with this
+[1470.00s - 1473.00s] Let's say we have these set of points
+[1473.00s - 1476.00s] All of you then would take, let's say if we take the first one, we want the top left one
+[1476.00s - 1479.00s] And for the top left point, we would go through different data values and then find the corresponding row value, which is uniquely defined by the equation that we just showed
+[1479.00s - 1482.00s] And we add a plus one to that in this case
+[1482.00s - 1485.00s] And then go to the next value of data and find the corresponding row and then put a plus one to that point in our domain
+[1485.00s - 1488.00s] And I keep doing this
+[1488.00s - 1491.00s] And what you see here is actually for this part, it corresponds to one of these curves
+[1491.00s - 1494.00s] X axis here was theta, the angles, and then the Y axis was the radius of these, of those radial, the polar coordinate equations
+[1494.00s - 1497.00s] For each point we would see a difference, some kind of like sinusoidal line
+[1497.00s - 1500.00s] And then we go to the next second point
+[1500.00s - 1503.00s] It will correspond to another sinusoidal line, and so on and so forth
+[1503.00s - 1506.00s] We go through all these points
+[1506.00s - 1509.00s] But what you see here is that there's some kind of hotspot
+[1509.00s - 1512.00s] That this hotspot is a particular, angle and radius in which all these, all the curves that originate from these points, they all cross over there
+[1512.00s - 1515.00s] That's the unique, that point defines a line and that line is going to be the line that explains all these points on the case
+[1515.00s - 1518.00s] Kind of like how we did with Ransack, but we kind of arrived at it from the opposite perspective
+[1518.00s - 1521.00s] We don't consider inliers or outliers here
+[1521.00s - 1524.00s] We treat everyone as a potential inlier
+[1524.00s - 1527.00s] model that all these points quote is correct
+[1527.00s - 1530.00s] That's the basic intuition
+[1530.00s - 1533.00s] And then, so the annoying thing is that, yeah, the costly thing is you have to iterate through all the points, iterate through some kind of discretization of one of your brackets
+[1533.00s - 1536.00s] That's going to be a kind of like a computational policy procedure
+[1536.00s - 1539.00s] There's some short steps
+[1539.00s - 1542.00s] One short step is that if you recall from, if you recall from, uh, a few lectures ago where we can find different edges in images
+[1542.00s - 1545.00s] Each edge we can compute is gradient
+[1545.00s - 1548.00s] For the gradient information, we can estimate the angle of that edge by looking at the next gradient, y gradient, and then we use the planar tangent to find the direction of the gradient at that point
+[1548.00s - 1551.00s] So instead of sampling through all possible angles, For points that we detect, we can only consider the gradient orientation at that point using filters that we can calculate and then use that as a single point and then calculate the corresponding row value of the gradient that you have at that point and the coordinates of the point
+[1551.00s - 1554.00s] And that will give you the gradient of the bar that crosses over there
+[1554.00s - 1557.00s] But by doing this procedure, you can't put it on before
+[1557.00s - 1560.00s] It'll loop through every single point
+[1560.00s - 1563.00s] If you use some smart gradients, then you don't need to do it with points
+[1563.00s - 1566.00s] So they do some time
+[1566.00s - 1569.00s] And this is the resulting product
+[1569.00s - 1572.00s] For this particular example, this is our transforming
+[1572.00s - 1575.00s] And you look for the hot spring that explains these points
+[1575.00s - 1578.00s] How does this look like for real images? And what that is the source form
+[1578.00s - 1581.00s] A lot of times people use this for Again, like we talked about edge detection before edges are edge detection that we talked about earlier Usually like very Unprincipled set of edges that lie in image sometimes if there's a corruption in an image edges could be broken Is there a hot tracks going here? First, we can filter this image based on potential edges, potential corners and edges in the image
+[1581.00s - 1584.00s] So we can reduce the number of pixels we need to consider
+[1584.00s - 1587.00s] So let's say these are the set of pixels that pass our total filters with some magnitude
+[1587.00s - 1590.00s] So these are considered for edges
+[1590.00s - 1593.00s] And it was kind of like, this is, if there are hot channels from on this image, it would give us this map
+[1593.00s - 1596.00s] And another thing you can see here is that this allows us to explore multiple possible models
+[1596.00s - 1599.00s] So there can be multiple spots in these hot trends forms that are local maximum estimates of the set of lights in our image that explain lots of points
+[1599.00s - 1602.00s] So let's say we did it as some kind of a threshold
+[1602.00s - 1605.00s] Let's say we give all these points that exceed some value, which means higher the values
+[1605.00s - 1608.00s] That means more points are explained by these lines in our..
+[1608.00s - 1611.00s] And then once we have these hotspots in our transform, we can kind of explore what these mean
+[1611.00s - 1614.00s] They can analyze it
+[1614.00s - 1617.00s] So like the ones in the middle, that corresponds to angle zero
+[1617.00s - 1620.00s] What is that going to be? The vertical lines
+[1620.00s - 1623.00s] The ones over here are going to correspond to more horizontal lines on image and everything else in between are going to be something
+[1623.00s - 1626.00s] We take these and map them back to our image
+[1626.00s - 1629.00s] Oh yeah, give you one more level of..
+[1629.00s - 1632.00s] I can map these back to our image to find all set of..
+[1632.00s - 1635.00s] And now we found this robust way to find all these vertical, horizontal, and diagonal lines
+[1635.00s - 1638.00s] I don't know what these are
+[1638.00s - 1641.00s] So this is precisely even off-transforms
+[1641.00s - 1644.00s] There's still a bit of filtering you can do, and you can still, if you, after doing this procedure, you might still pick up points that are outliers
+[1644.00s - 1647.00s] So these, all these red lines, everything else looks kind of easy
+[1647.00s - 1650.00s] So back-to-back gator space and all the possible lines near the shore
+[1650.00s - 1653.00s] Questions? How do we get this out of the way? Good point
+[1653.00s - 1656.00s] I think it's, we have lots of outliers
+[1656.00s - 1659.00s] We have lots of outliers
+[1659.00s - 1662.00s] Let's think about this example
+[1662.00s - 1665.00s] Let's say you had an image
+[1665.00s - 1668.00s] Every single pixel was significant
+[1668.00s - 1671.00s] Like the entire, every single pixel in our image, we would consider it in a hot transform
+[1671.00s - 1674.00s] What would a hot transform look like if everything was uniformly important? Because the whole space in the field, right? That means like it would cover all the possible lines
+[1674.00s - 1677.00s] So there'll be no significant points in here
+[1677.00s - 1680.00s] But if you have some kind of structuring image, if you have some structuring image, then you're gonna start to see some kind of local maxima emerge in this map
+[1680.00s - 1683.00s] But another thing you can see here is that, like in this example, maybe precisely why we see lots of outliers
+[1683.00s - 1686.00s] I don't see any set of points that are really much greater than what's around it
+[1686.00s - 1689.00s] So we can say this image is this transformation, and especially this representation
+[1689.00s - 1692.00s] Because the whole transform is based on this representation of the key points in the image
+[1692.00s - 1695.00s] This key point representation is probably not good enough
+[1695.00s - 1698.00s] Therefore, it gives us many outliers, many possible bias that are fit through these random points
+[1698.00s - 1701.00s] So one thing we can do is we can do better filtering on detecting amongst the ability that leads to off-transform with more confident local models
+[1701.00s - 1704.00s] But, yeah, so in terms of, this is about finding local maximum here
+[1704.00s - 1707.00s] So if you don't see any clear local maximum, then you can't assume that there's a lot of off-life
+[1707.00s - 1710.00s] So that might prompt you to go back to your, you know, to find more
+[1710.00s - 1713.00s] So it really actually gets a great question
+[1713.00s - 1716.00s] If I had this image, I probably would not do this type of filtering
+[1716.00s - 1719.00s] I might do a different set of filtering to find maybe a sparser set of key points than what it's trying to do
+[1719.00s - 1722.00s] And that might be to a better alt transform
+[1722.00s - 1725.00s] So if you want to have an alt transform that's much more as many more local maps and all the time overseas
+[1725.00s - 1728.00s] Sorry, for key point detection, how is this kind of invariant to rotations and translations? Because it feels like since we're doing everything in this space, it shouldn't be necessarily invariant
+[1728.00s - 1731.00s] Yeah, that's actually a great question
+[1731.00s - 1734.00s] It's like that's probably one of the questions we have or exam questions we have
+[1734.00s - 1737.00s] But yeah, if you think about this, if you want to rotate your image, if you want to rotate your image 9 degrees, hold that distance in place to rotate
+[1737.00s - 1740.00s] by 10 degrees, what would your half transform? Your image would rotate by 10 degrees, what would happen to your half transform? It would shift
+[1740.00s - 1743.00s] It would shift left, right
+[1743.00s - 1746.00s] Yeah, so half transform is on an invariant rotation, but rotations in the image space leads to translations in the half scales
+[1746.00s - 1749.00s] And what about if you were to scale your image, if that scale image would be to amplitude, roll value, or not? Yeah, that's a great, it's a great observation
+[1749.00s - 1752.00s] So this is not rotation invariant or scaling invariant
+[1752.00s - 1755.00s] But I just want to just like, I think I just want to just think about the soft tracks from the concept
+[1755.00s - 1758.00s] But it's a model, it's an algorithm to consider all possible models, infinitely set of models
+[1758.00s - 1761.00s] I can explain
+[1761.00s - 1764.00s] of those models and it makes it makes you basically generate some kind of votes which is the most likely model out of all in particularly possible models that can explain set of points and in this particular example our model is lines we're trying to find a set of lines that explains our data data points but you don't have to you don't have to have We don't have to explain our data about right lines
+[1764.00s - 1767.00s] We can have other complex shapes
+[1767.00s - 1770.00s] And that's kind of where the class we go into segmentations about later on
+[1770.00s - 1773.00s] Let's say we want to find circles, you know
+[1773.00s - 1776.00s] Let's say we have a bunch of images
+[1776.00s - 1779.00s] Let's say we have an image with a bunch of circular shapes
+[1779.00s - 1782.00s] And we want to detect all the possible circles in an image
+[1782.00s - 1785.00s] We can do the exact same thing
+[1785.00s - 1788.00s] Instead of looking for lines, that explains, and for circles that explain this
+[1788.00s - 1791.00s] That requires us to be able to parametrize every circle as a function some parameters and the points those circles go through
+[1791.00s - 1794.00s] So here's an idea of that
+[1794.00s - 1797.00s] So let's say we have a bunch of x, y points in an image
+[1797.00s - 1800.00s] We want to see all the, we want to consider all the different circles that pass through x and y
+[1800.00s - 1803.00s] Those circles can be represented by two things
+[1803.00s - 1806.00s] The radius of a circle and the centroid of a circle, right? Each point here, there's infinitely many circles that goes through it of different radii
+[1806.00s - 1809.00s] I can think about this small presenting another some kind of curve, if hot space, where now parameters are radii and centroid
+[1809.00s - 1812.00s] So here, this will be a very good example for there, I don't want to use too much
+[1812.00s - 1815.00s] You can generate any shape you want
+[1815.00s - 1818.00s] Basically, if you have any kind of parameterization of a shape, you can find different shapes that can explain the different points that you have in your data
+[1818.00s - 1821.00s] So let's say we have this image of these four circles
+[1821.00s - 1824.00s] Now our x coordinate could be the centroid of these circles, and the y coordinate could be the radius
+[1824.00s - 1827.00s] Sorry, so here, so the circle actually gets a bit complicated
+[1827.00s - 1830.00s] Our centroid in two-dimensional space has to be characterized by two parameters, and we have a radius
+[1830.00s - 1833.00s] Now, so now, all of a sudden, instead of lines that require two parameters in half space, circles require three parameters
+[1833.00s - 1836.00s] We explain the problem with this
+[1836.00s - 1839.00s] So what we're seeing here is the realization of this transform for a particular radius value
+[1839.00s - 1842.00s] But now our off-transform is gonna be a 3D tensor
+[1842.00s - 1845.00s] And now we're just gonna get a single slice of it
+[1845.00s - 1848.00s] So a particular radius r, and these x and y coordinates here are the centroids that are all possible circles with that radius with different centroids
+[1848.00s - 1851.00s] And these, what you're seeing are all the possible circles that pass through all the points that we see here
+[1851.00s - 1854.00s] And what you're seeing are, and you see some hotspots
+[1854.00s - 1857.00s] So if this radius was the correct radius for all these circles, what you'll see is, you'll see, you know, four different hotspots with centroids that explain four different circles that explain the most number of points
+[1857.00s - 1860.00s] This is a slice, but in reality, like, yeah, this is a small transform circle space
+[1860.00s - 1863.00s] It's going to be a 3D tensor
+[1863.00s - 1866.00s] Now you would have centroid coordinate 1, centroid coordinate 2, and then the third value
+[1866.00s - 1869.00s] The parameter is basically the radius
+[1869.00s - 1872.00s] For every single point, every single point in our image would be a cone in this three-dimensional space
+[1872.00s - 1875.00s] And if you have any points, it's going to be intersection of all these cones in three-dimensional space
+[1875.00s - 1878.00s] And that will give you most likely circles of different radii
+[1878.00s - 1881.00s] And it is the same process
+[1881.00s - 1884.00s] So you create a three-dimensional table of all possible centroids, centroid coordinates, and radii
+[1884.00s - 1887.00s] And then each one of them, or I guess if I have two of them, you would find It would fix, for example, if you have the data points that you have, and that'll give you this unique solution for the radius that explains that specific point
+[1887.00s - 1890.00s] If you had a plus one to that table, and then it would go to another combination of centroids, and then find the radius that goes through that point
+[1890.00s - 1893.00s] As you can see, as you go to higher dimensions, this also becomes quite burdensome
+[1893.00s - 1896.00s] Because now, in the wide space, we just need to do a for loop over angles, all possible angles, and then find the corresponding radius
+[1896.00s - 1899.00s] Now you do a double for loop on all possible centroids and find the radius that that point goes through
+[1899.00s - 1902.00s] Think about it with computational complexity
+[1902.00s - 1905.00s] The circles is going to be one over higher And as you can see, this is a nice thought exercise, but if you want to find more and more complex shapes, it suddenly becomes computationally practical
+[1905.00s - 1908.00s] You want to find all the stars and all triangles that require some of the shape
+[1908.00s - 1911.00s] More parameters are required to describe these shapes
+[1911.00s - 1914.00s] Therefore, you're going to have to go forward with many more examples in the past
+[1914.00s - 1917.00s] So here's an example of, let's say, we do circular house truss problems
+[1917.00s - 1920.00s] And in old school days, this is how those coin counting machines would work
+[1920.00s - 1923.00s] into a version of hop transforms embedded in them
+[1923.00s - 1926.00s] So you take this image, find the edges, and then sort of the hop transform here
+[1926.00s - 1929.00s] Yeah, so if you were to do the hop transform with you, you'll get some result like this
+[1929.00s - 1932.00s] You'll find the zoological maxima and then map them back to surface
+[1932.00s - 1935.00s] Then I'll come over with it
+[1935.00s - 1938.00s] I think we've got an example of the file itself just like here
+[1938.00s - 1941.00s] Last, last, last, last, last, last, last, last, last, last, so again, froze
+[1941.00s - 1944.00s] Hough transform can have multiple models
+[1944.00s - 1947.00s] So like the one annoying thing about Ransack is that you can find one model at a time
+[1947.00s - 1950.00s] So you can subtract, you can find the best model
+[1950.00s - 1953.00s] So it's a little more robust than Ransack
+[1953.00s - 1956.00s] So you get a lot of noisy data
+[1956.00s - 1959.00s] And Ransack might do so many samples that might be fit in practical
+[1959.00s - 1962.00s] You can do a Hough transform
+[1962.00s - 1965.00s] There's no sample of the Hough
+[1965.00s - 1968.00s] It's a fully deterministic algorithm
+[1968.00s - 1971.00s] So you just have to cover your space a little closer
+[1971.00s - 1974.00s] But going through all the models requires you to fit in the parameters of those models
+[1974.00s - 1977.00s] So how finding, how finding and discretizing parameters
+[1977.00s - 1980.00s] between all these different parameters about how you how you discretize your models and also there's no theory here so there's no theory guarantee I'll transform the nice transform but there's no guarantees that it's gonna work whereas Ransak is at least some theory attached to it so it's some probability there's some assumptions all the data looks like guarantee some results I'll transform this one will guarantee any results just like you can't guarantee the corners and edges of the image
+[1980.00s - 1983.00s] Like you just apply some filters and you open the rest by taking the local maximum, half transfer, the kind of stuff
+[1983.00s - 1986.00s] If they go half times, they'll look at very advanced filter like we did in the earlier lectures
+[1986.00s - 1989.00s] But this filter is now a specific shape to a very large filter
+[1989.00s - 1992.00s] Yeah? Going back to the pointy counter
+[1992.00s - 1995.00s] So we likely have different hotspots for every module and then we'll have to work with it
+[1995.00s - 1998.00s] Yeah, yeah, so what this should show is that You have different R values
+[1998.00s - 2001.00s] So you can think about your HOP transform that's going to be a 3D tensor
+[2001.00s - 2004.00s] And you can have a local maximum 3D space that corresponds to a particular radius
+[2004.00s - 2007.00s] That particular radius and a particular centroid
+[2007.00s - 2010.00s] And you can map that to a unique circle
+[2010.00s - 2013.00s] So this is a slice of this 3D HOP transform, or circles, where the different X and Y axes tells us the centroid, where the center of the circle is
+[2013.00s - 2016.00s] And this slice is a particular radius
+[2016.00s - 2019.00s] If you go to a different slice, you're going to see, you might see different, fine, like, so that's another interesting thing
+[2019.00s - 2022.00s] So let's say all these are equal to the exact same size
+[2022.00s - 2025.00s] And in this slice, you see these three hotspots
+[2025.00s - 2028.00s] If you go to a different slice with a slightly different R, you would see, I don't think, you might not see any circles
+[2028.00s - 2031.00s] Because there might not be any circles that are slightly different radius than one, and we're looking at
+[2031.00s - 2034.00s] Imagine like a 3D space, it's gonna each x and y corners of those do that 3D space tells you where the center is the circle and the z axis tells you about how big the circle
+[2034.00s - 2037.00s] We're just looking at a particular disease
+[2037.00s - 2040.00s] Yes, yes, it is
+[2040.00s - 2043.00s] So it's the hop transform this, but for, for the sake of, we can't put 3D things here
+[2043.00s - 2046.00s] I mean, I guess we could put multiple slices here, or this example going to one slice with the correct radius
+[2046.00s - 2049.00s] So let's go back here
+[2049.00s - 2052.00s] This is kind of what the hop transforms look at
+[2052.00s - 2055.00s] So for every single point, every single point in 2D space, If we're looking for all transforms for circles, that's going to correspond to a cone in three-dimensional space
+[2055.00s - 2058.00s] So what you're seeing in that image, what you're seeing in that image here, is this cone sliced at a particular range
+[2058.00s - 2061.00s] If you go above or below, there's also going to be a, it might be another circle
+[2061.00s - 2064.00s] at a slightly higher radius and slightly less radius
+[2064.00s - 2067.00s] But at some particular point in the z-axis, you're going to have a little bit less
+[2067.00s - 2070.00s] At one radius, you're going to have more volts than any other radius
+[2070.00s - 2073.00s] I wish I could draw this, but I can't draw that well
+[2073.00s - 2076.00s] So what you're seeing is one slice in a 3D volume up down
+[2076.00s - 2079.00s] So, yeah
+[2079.00s - 2082.00s] very very special I know that corresponding to a particular pattern so it is this level but like here what it looks like it's signed by X1 so here this is the almost straight balance imagine there are different values and so now this is going to tell us any character next part in all this I'm showing here is the Y part of the thing I'm just doing so Imagine these different slices, they're slightly different values
+[2082.00s - 2085.00s] But it's not what it is in the chart
+[2085.00s - 2088.00s] X-portion
+[2088.00s - 2091.00s] So this is an X-centroid
+[2091.00s - 2094.00s] A few things define a circle, right? If I give you a centroid, X-Y forms of a centroid
+[2094.00s - 2097.00s] If it's the radius, that gives you a unique circle
+[2097.00s - 2100.00s] So we're considering all possible..
+[2100.00s - 2103.00s] We have all the circles that are being imagined
+[2103.00s - 2106.00s] And some of these circles cover more points than others
+[2106.00s - 2109.00s] Yeah
+[2109.00s - 2112.00s] And then my question is, given all this, what do we select from this transform to make, also what local maxima do we find or what looks a maximum? Do we threshold something like this? Yeah, exactly
+[2112.00s - 2115.00s] So you can threshold, just like you can threshold in 2D, you can also threshold in 3D
+[2115.00s - 2118.00s] You can think about this as like a three-dimensional image, like a Y-dimensional image
+[2118.00s - 2121.00s] Yeah
+[2121.00s - 2124.00s] And then we keep only the hotspots? Exactly
+[2124.00s - 2127.00s] We keep the hotspots in 3D
+[2127.00s - 2130.00s] And then you represent them again in the original
+[2130.00s - 2133.00s] Exactly
+[2133.00s - 2136.00s] So let's say like, um, they do a more art here
+[2136.00s - 2139.00s] This is, I'm going to make these like, make them interesting
+[2139.00s - 2142.00s] You put them in text bar
+[2142.00s - 2145.00s] Okay, let's, let's say like this part, let's say one of these in the middle has like higher intensity than others
+[2145.00s - 2148.00s] That's one part together
+[2148.00s - 2151.00s] So, like, that means if you shoot with this one point, and so if you did a three-dimensional local maximum, and then we found that at, let's say, at this value, how the triplet, you find triplet, that's a local maximum in this three-dimensional
+[2151.00s - 2154.00s] This is a particular circle
+[2154.00s - 2157.00s] Circle that's around those points and that is part of your radius
+[2157.00s - 2160.00s] And then you would map that back to your image
+[2160.00s - 2163.00s] Okay, yeah
+[2163.00s - 2166.00s] So it's like, give me one circle
+[2166.00s - 2169.00s] Yeah, so if you had a donut that has two circles, you would find two different groups
+[2169.00s - 2172.00s] Exactly
+[2172.00s - 2175.00s] If you had a donut, you might have, like, one of these slices has a hotspot and another slice also has a hotspot
+[2175.00s - 2178.00s] So you'd find two hotspots
+[2178.00s - 2181.00s] Yeah, yeah
+[2181.00s - 2184.00s] Exactly
+[2184.00s - 2187.00s] Or not even a donut, but, like, this example that we had before
+[2187.00s - 2190.00s] Points
+[2190.00s - 2193.00s] Oh, yeah
+[2193.00s - 2196.00s] I think it was a sketch
+[2196.00s - 2199.00s] Yeah, so in this case, like we have these four circles, each of them leads to a different They would be each of these four circles since they're the same radius
+[2199.00s - 2202.00s] Their hotspots all are along the same z-axis in our odd transform, but they're different things like the correlation
+[2202.00s - 2205.00s] So if there are different radius or circles, then you might only have, I would say that two circles of small radius and two circles of big radius, in this case you might only have two hotspots and a different one you might have
+[2205.00s - 2208.00s] So that's the summary of graph sampling
+[2208.00s - 2211.00s] So we can use both of these to kind of find models that explain the most points in our data
+[2211.00s - 2214.00s] Two different styles of doing so
+[2214.00s - 2217.00s] One is more probabilistic
+[2217.00s - 2220.00s] This other one is more group force
+[2220.00s - 2223.00s] With some more efficient tricks to make it do less group force
+[2223.00s - 2226.00s] And both of these can give us a set of models that can match sets of points or find some kind of lines in an image, which is also the same thing as time
+[2226.00s - 2229.00s] Let's say you're multiplying lines or like coordinates, and if you want to explain that those points lie on another, they are on a line, then you say the x coordinate on this image is explained by the linear transformation of the y coordinates, or vice versa
+[2229.00s - 2232.00s] And then you can find the best possible model to explain that
+[2232.00s - 2235.00s] But we can use this idea to include more complex models, actually, which is going to be the subject of next class
+[2235.00s - 2238.00s] So yeah, so like now like, yeah, this is kind of where we are at
+[2238.00s - 2241.00s] It's like we started pixels, patches, more low level features
+[2241.00s - 2244.00s] Now we're like talking about last lecture, we talked about edges and corners
+[2244.00s - 2247.00s] Now we're talking about some more specific edges
+[2247.00s - 2250.00s] Like instead of just brute force edges that like thresholds and values of edge, like some kind of gradient filters, we're talking about edges that are Let's say a bunch of points in the image can be explained by a line, even though that line might be drawn
+[2250.00s - 2253.00s] And using transference like what we have today, it's absolutely very bad
+[2253.00s - 2256.00s] Another thing we talked about today is if you have two sets of images, if you have again points along those images, you can use the same concept that are used to find lines, spherical and stuff, even image, all sets of points
+[2256.00s - 2259.00s] We can detect features, we can match features, and with this circle example kind of gives you an idea
+[2259.00s - 2262.00s] We can also start to learn filters that learn general features
+[2262.00s - 2265.00s] That's where segmentation is all that kind of stuff on the replay, which is mostly concerned to be mid-level, which is video
+[2265.00s - 2268.00s] And the high-level vision is giving the same old stuff like objects, like emotions and stuff in videos
+[2268.00s - 2271.00s] That's going to be a more high-level vision
+[2271.00s - 2274.00s] So far, we're almost complete with low and middle of religion
+[2274.00s - 2277.00s] And next week, when there are final things, it'll be stitching
+[2277.00s - 2280.00s] So let's say we have ways to model points in images and find the explains one set of points
+[2280.00s - 2283.00s] Being a transfer on another set of points, how can we use this without geomesh? How can we use images to create more complex? And that's kind of the final steps
+[2283.00s - 2286.00s] We can find these two, let's say you have two sets of points, we can find the best model that can fit set of points with another set of points
+[2286.00s - 2289.00s] If we have that, once we have this transform, how can we use this to get it? So that's going to be the subject of an assumption
+[2289.00s - 2292.00s] I guess what we'll cover is the very abstract way we talked about how we can learn models that can..
+[2292.00s - 2295.00s] I can explain correspondences of points in our images with minimum error, but also for mid-liers
+[2295.00s - 2298.00s] For about outliers
+[2298.00s - 2301.00s] So we're going to generalize this to a more high dimensional representation of the surface
+[2301.00s - 2304.00s] I know the two sets of points and I make an initial assumption about where the camera is placed and how the camera location and view angle and stuff
+[2304.00s - 2307.00s] Give me different perspective of images to experiment with transforming the city and resampling
+[2307.00s - 2310.00s] It's going to be subject to the next lecture
+[2310.00s - 2313.00s] Okay, so let's take a five minute break
+[2313.00s - 2316.00s] 1245
+[2316.00s - 2319.00s] I think it's about 15
+[2319.00s - 2322.00s] Is it okay? It's hard to say
+[2322.00s - 2325.00s] I move through
+[2325.00s - 2328.00s] .
+[2328.00s - 2331.00s] I've gotten it to a bunch of points where like it works for a bunch but not some of it seems like it obviously should You change it and then it works for some others that it obviously should not the original one I don't think all of the circles here are like just circling How me? There's not there's not really it's just You don't think? So I have not to
+[2331.00s - 2334.00s] Let's see
+[2334.00s - 2337.00s] Hello.

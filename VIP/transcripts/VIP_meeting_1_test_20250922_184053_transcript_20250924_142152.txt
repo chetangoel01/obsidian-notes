@@ -1,0 +1,278 @@
+[0.00s - 3.00s] and start together
+[3.00s - 6.00s] And that's why maybe if you meet together in person, it's even better
+[6.00s - 9.00s] Okay? We can use whiteboards here and think about the problem that you can do
+[9.00s - 12.00s] To us, all of us, we can think about it
+[12.00s - 15.00s] It's fine
+[15.00s - 18.00s] Okay? So that's what I'm looking at
+[18.00s - 21.00s] Like a quant, we read a paper in the morning and a book, and he or she will try to do the math in the board and try to implement it
+[21.00s - 24.00s] So that's a quant job
+[24.00s - 27.00s] Okay, so feel free to bring questions on the board on our weekly meetings if you want and we can all Think about this collectively
+[27.00s - 30.00s] Okay, so that's that's the first half Now we will move to go by like question a presentation We will have a midterm which is every Two presentations 10% each but since it's hard to give everyone to talk on your own and summarize what you are doing
+[30.00s - 33.00s] They will just submit slides on a Google Slides format, some of it will share with you so they can have something unified
+[33.00s - 36.00s] Very blank
+[36.00s - 39.00s] Basically it will be blank, white, no, fancy stuff
+[39.00s - 42.00s] Just blank Google Slides and 10% each
+[42.00s - 45.00s] Summarizing your work that you read on this work document summarize them in a very nice manner and this is also something a quant will report to the boss in one month the quant she will give will try to present each thing to the boss to show the progress so that's something also a skill that you will do in this in this VIP search on your own and present and you have two presentations and and here you will learn how to make this right and this is also graded actually when show you how to present and you can share maybe some example of what i'm looking for you know if it's only bullet points text and not it's not good it should be more visual nice presentations something like that and it's also been graded okay so if you want to learn more how we should present i have something show you this in one of the meetings next week, we can ask him, because those presentations will be maybe in three weeks or two weeks from now
+[45.00s - 48.00s] For the first one, and the last one will be in week five
+[48.00s - 51.00s] And this will be 10% each, so now we have 70%
+[51.00s - 54.00s] And this is also individual
+[54.00s - 57.00s] So 70% of the work is individual
+[57.00s - 60.00s] So everything belongs to you
+[60.00s - 63.00s] Okay? Do you have any question, go back on that? Yeah, and it should be concise and nice and that's it
+[63.00s - 66.00s] Basically summarize what you did so far
+[66.00s - 69.00s] And then the second one, you will pick on the first one
+[69.00s - 72.00s] It's not something new
+[72.00s - 75.00s] You will keep the first one and take remarks from the reader, As-Salam-A'ai, and then you can add what you did and then have a new presentation, summarizing your thoughts
+[75.00s - 78.00s] So now it's all about learning and how to present things as a quant
+[78.00s - 81.00s] Now the last piece, And now we are done with the first half, like learning and presenting stuff
+[81.00s - 84.00s] Now we move to the last five years
+[84.00s - 87.00s] Last five years will be who is taking this VIP with credit? And it's one or two credits or three credits? One, one, five or one? One, okay
+[87.00s - 90.00s] Okay, I think we can check later
+[90.00s - 93.00s] And all of you are taking this for zero credits
+[93.00s - 96.00s] Okay, so for you, for those who are taking this from credit, you must implement..
+[96.00s - 99.00s] something like we have a bunch of papers you will cover and you will select top five and then you can pick one and implement it or something like that and then you have to submit a Jupyter notebook with the markdown text get a report within the book and then you have your code explanation showing your findings That's necessary, and this is like a final exam for those
+[99.00s - 102.00s] Now for those taking this for zero credits, we have two options
+[102.00s - 105.00s] The first one is do the same as what I said right now for those with credits
+[105.00s - 108.00s] Or the other option would be to collect all these Word documents from everyone, or at least collect yours five ones
+[108.00s - 111.00s] they make a structure on the five and they make a story and every and then you will talk with your peers how everyone's story of five papers can be merged in a coherent way to have a strong review of the landscape and and then you guys all get to submit a report report that is worth 30% as well and this is your final exam but it can be done collectively but based on your individual and should be coherent and nice fit not like I'm just putting my stuff then I'll put it and you will put it it should fit which means it will require you to meet here or outside to decide how to merge your your timings and your conclusion and your analysis
+[111.00s - 114.00s] And basically do a table clustering or taxonomy and even to cluster the field
+[114.00s - 117.00s] You know, after seeing all these papers, we as analysts, we think the field should be categorized into three main categories
+[117.00s - 120.00s] And this is the categories and the names and these are the papers
+[120.00s - 123.00s] And make a story
+[123.00s - 126.00s] and submit it and then at least at the end of the ETIP you will exactly..
+[126.00s - 129.00s] the minimum thing I want is you have a depth understanding of the field
+[129.00s - 132.00s] That's the minimum
+[132.00s - 135.00s] But you can also implement if you want
+[135.00s - 138.00s] Or for those who want to take things short, we can do this for the first half and next semester you can spend time more on implementation
+[138.00s - 141.00s] That's also feasible
+[141.00s - 144.00s] But if you implement, let us know in the second half
+[144.00s - 147.00s] But basically that's it
+[147.00s - 150.00s] Do you have any questions from online? Yes, I should
+[150.00s - 153.00s] Should it be just in the beginning of the paper or do we have to very long it? Okay, so usually from my experience I was ambitious in the past for VIPs
+[153.00s - 156.00s] From first semester we tried to create something new but I realized that we have different body, we have different things and it's difficult past
+[156.00s - 159.00s] So, yes, the aim is to reach what we are doing, but I think it's better first to understand the whole landscape first in depth
+[159.00s - 162.00s] And then paper implementation to get hands-on and then we can create our own solution
+[162.00s - 165.00s] Maybe if you're fast enough you can do it at your heart
+[165.00s - 168.00s] or maybe next semester, but I'm open for those who move fast
+[168.00s - 171.00s] Because I know some of you have a very busy schedule, some don't, some are finished in the graduation, and they have only one class
+[171.00s - 174.00s] There's plenty of time
+[174.00s - 177.00s] So it's not because you're smarter or less
+[177.00s - 180.00s] No, no, it's because of time, that constraint
+[180.00s - 183.00s] And for those who have enough time, of course they can do this
+[183.00s - 186.00s] They can spend as many hours as they want and implement a paper quickly and say, I have found these limitations, I'm proposing this to overcome these limitations
+[186.00s - 189.00s] And this can lead to something very interesting
+[189.00s - 192.00s] Very interesting, we can also, I mean, there's other stuff we can do
+[192.00s - 195.00s] It's one hour
+[195.00s - 198.00s] do some research real properly and go to a conference or something, we can even support that
+[198.00s - 201.00s] That's to let you know
+[201.00s - 204.00s] I mean, the ball is on your side now
+[204.00s - 207.00s] I'm fine
+[207.00s - 210.00s] But the minimum to pass is what I said
+[210.00s - 213.00s] The minimum to pass
+[213.00s - 216.00s] Because even if it's a zero credit, it's a pass or fail
+[216.00s - 219.00s] Because why I'm doing this, again, not to make it harder, is because in the past, we realized that if you have a cohort of students, If there is no partial fail and we have a group work at the end
+[219.00s - 222.00s] So before we have more group work, now I'm trying to get it towards the end
+[222.00s - 225.00s] Because I realize we have different faces, but also in a group, if people are not serious and not coming, people is zero credit and there is no gray, it will impact others who want to work
+[225.00s - 228.00s] Many people were frustrated because they lost motivation
+[228.00s - 231.00s] I want to work
+[231.00s - 234.00s] For homework, no one learn, but there is no one with main degree
+[234.00s - 237.00s] So people lose motivation easily
+[237.00s - 240.00s] And that's not fair for others who want to learn
+[240.00s - 243.00s] So that's why we did this part of fail, just to ensure consistency and learning
+[243.00s - 246.00s] But most of the grade is independent, as you see
+[246.00s - 249.00s] And for those who are taking credit, it's purely on their own
+[249.00s - 252.00s] If they have an A, A-, and so on and so forth, it's on their own if you take a credit
+[252.00s - 255.00s] So it should be your grade
+[255.00s - 258.00s] But for those with your credit, 70 points is on you only
+[258.00s - 261.00s] And then 30% if you want to do this landscape, you meet with tears and you make a story about the landscape
+[261.00s - 264.00s] And that's what is the minimum requirement
+[264.00s - 267.00s] And the pass or fail is not 50%
+[267.00s - 270.00s] I will submit five per present and I am passing
+[270.00s - 273.00s] It's something I will adjust
+[273.00s - 276.00s] It depends
+[276.00s - 279.00s] I think the Aabsemanai will see the first batch of summaries and we will make the..
+[279.00s - 282.00s] Sometimes it was 70, 75, 78 to pass
+[282.00s - 285.00s] And if you're below the threshold, you fail
+[285.00s - 288.00s] Okay? That's to make it..
+[288.00s - 291.00s] Because if you don't summarize the paper, let's say, and ask, okay, I will submit only one out of five and then you lose 40%, right? And then you want to work with the group in 30 point and then have, okay, I have 30 points of the group plus 10% for one presentation and 10% for a paper
+[291.00s - 294.00s] It's 50 and plus, it's not the case because you're impacting others
+[294.00s - 297.00s] Why? If you don't summarize the other papers, of course, this is impacting the final 30%
+[297.00s - 300.00s] It's lacking
+[300.00s - 303.00s] So it's impacting others as well
+[303.00s - 306.00s] So it will be like this
+[306.00s - 309.00s] But again, don't see this as a as a punishment or just a structure that forces incentives to learn
+[309.00s - 312.00s] Please, if you're not having joy to learn, maybe don't take it
+[312.00s - 315.00s] I'm insisting you have to find joy of learning
+[315.00s - 318.00s] Find, read and learn and be happy or learn
+[318.00s - 321.00s] And I guess that's what you sign for zero credit
+[321.00s - 324.00s] If it's zero credit, it's not because it's for those who really want to learn
+[324.00s - 327.00s] They are here because for some reason
+[327.00s - 330.00s] not because they want to put on the CV
+[330.00s - 333.00s] Even if you put it on the CV, people will notice that you don't understand what you're talking about
+[333.00s - 336.00s] If I'm an interviewer, I'll see this in the CV, I will ask you the first question and you are not answering me
+[336.00s - 339.00s] It's clear that it's a fail
+[339.00s - 342.00s] Okay? So, last recap, and I won't repeat myself, we have two big phases
+[342.00s - 345.00s] The first phase is paper readings
+[345.00s - 348.00s] paper summaries and presentations
+[348.00s - 351.00s] It's fully individual and it's 70% of the way
+[351.00s - 354.00s] 10% for paper summary in one special structure format
+[354.00s - 357.00s] 10% for first presentation, 10 for the second one
+[357.00s - 360.00s] And it's on Google slide with some speaker notes
+[360.00s - 363.00s] to explain your understanding, you know what I'm talking about from PPTA, because if I give you slides and no explanation, it's pointless
+[363.00s - 366.00s] I will just say images
+[366.00s - 369.00s] Try to explain each slide and your understanding
+[369.00s - 372.00s] So your slides will be shared with others in one folder on Brightspace
+[372.00s - 375.00s] So if Mason slides, and you go and then open his slide and then you read the speaker notes, then you understand what he did
+[375.00s - 378.00s] And then you learn also from him, not only from you
+[378.00s - 381.00s] If you read his Word document, you can understand the summary of what he did
+[381.00s - 384.00s] Right? Not necessarily go on with all people and learn not only from you, but only from others
+[384.00s - 387.00s] So you have common knowledge shared in a very proper structure
+[387.00s - 390.00s] That's the goal
+[390.00s - 393.00s] So, and I said that you put the first half, As I said, we share all the dates, where you guys have made the presentations
+[393.00s - 396.00s] But for the one report, the weekly basis, it should be very concise
+[396.00s - 399.00s] Not a report, just a summary of what you did
+[399.00s - 402.00s] And once a week before we moved on Tuesdays
+[402.00s - 405.00s] And then the second half will be implementation of stuff for those who want to do it
+[405.00s - 408.00s] For those who want to do this landscape, they will format a group and work on it
+[408.00s - 411.00s] in a very structured manner
+[411.00s - 414.00s] So that's the VLP
+[414.00s - 417.00s] That's how you can learn slowly on your own pace
+[417.00s - 420.00s] And I think it's fair pace
+[420.00s - 423.00s] I think one capability is not big, it's just look
+[423.00s - 426.00s] And hopefully by the end of this VLP, if you do all these tasks, you can see that your level increased and you can engage serious discussion with people, experts in commodities
+[426.00s - 429.00s] Why this topic? Because it's something of interest
+[429.00s - 432.00s] of me, but also it's a topic that is growing, even in hiring
+[432.00s - 435.00s] I have friends working on banks, JP Morgan and Barclays and stuff, and they are on the commodity desks, and they said, as opposed to equity market and stuff, it's less mature into the AI and the other finance
+[435.00s - 438.00s] They use very, very, very simple, old-fashioned ways of doing things
+[438.00s - 441.00s] So there's a big room of getting into this niche and getting exposed to how you can use AI to sell a land, whatever it is, into this niche
+[441.00s - 444.00s] That will be on your advantage
+[444.00s - 447.00s] The goal also is to prepare you to get in positions at the job market
+[447.00s - 450.00s] It's less crowded than equity
+[450.00s - 453.00s] And you get in the same positions, one also
+[453.00s - 456.00s] And also it's more difficult
+[456.00s - 459.00s] It's not because it's, if people don't do that, it's because it's more difficult
+[459.00s - 462.00s] We have less data, sparsity, very, because in equity, if it's liquid, we have a lot of data and stuff, but for these markets are difficult
+[462.00s - 465.00s] And it's a market prone to a lot of uncertainty and noise, like oil and war and stuff
+[465.00s - 468.00s] So it's very critical stuff
+[468.00s - 471.00s] It's very unstable, which means it's harder and more challenging
+[471.00s - 474.00s] And that's nice
+[474.00s - 477.00s] And also we have a room because the market is trying to find people having a background on AI and then on commodity markets
+[477.00s - 480.00s] Does this make sense? Does everyone agree with this kind of strategy? If you have a better way of doing things, please let me know and all of them
+[480.00s - 483.00s] But the goal is to maximize your journey and you'll be happy and you can talk about your knowledge with experts whenever the chance Alright, so raises
+[483.00s - 486.00s] Okay? So, it's time to ask questions about the structure
+[486.00s - 489.00s] It's clear
+[489.00s - 492.00s] So, Abstain, can you summarize all of this in an email later? So, we have a footprint on Brightspace
+[492.00s - 495.00s] Okay, Abstain, we'll do an email recap of all this
+[495.00s - 498.00s] It will share an Excel spreadsheet with week 1, week 2, week 3, 4, week 5 on the tabs
+[498.00s - 501.00s] Some papers, some, but then feel free to add those you want
+[501.00s - 504.00s] and put your name on one paper per week
+[504.00s - 507.00s] Don't put more than one
+[507.00s - 510.00s] If it's taken, please don't..
+[510.00s - 513.00s] Just leave this space for your peers
+[513.00s - 516.00s] All papers should be equally important
+[516.00s - 519.00s] Okay? And so you have a plan for the weekly and also I have somebody share with you the template structure that you will be using to summarize the paper every week
+[519.00s - 522.00s] In a couple of days with Absalom, he will share a second email sharing the dates to submit the slides
+[522.00s - 525.00s] We have two dates
+[525.00s - 528.00s] And this will be the neutral stuff
+[528.00s - 531.00s] But again, I don't like this term with neutral
+[531.00s - 534.00s] It's not that here to watch or to judge
+[534.00s - 537.00s] You just to make sure that you are growing
+[537.00s - 540.00s] If you keep it free, there is no incentive
+[540.00s - 543.00s] And even people won't come again in the session
+[543.00s - 546.00s] Yes, you have some questions
+[546.00s - 549.00s] These terrifying citations are probably the foundation of the section
+[549.00s - 552.00s] implementation is that if you have a paper let's say that let's say there is no no GitHub no repo whatever we want to check whether what they claim is true or not just check and if if not that's fine again if you don't have the same result as late build it's common and that's a daily job from quant it builds a lot of papers they report to the management oh you know what this paper is not claiming or it's fixed
+[552.00s - 555.00s] And in both cases you can say, share your analysis, or even your critics
+[555.00s - 558.00s] Maybe it's not working because of A, B, C, maybe
+[558.00s - 561.00s] Or share your thoughts
+[561.00s - 564.00s] That's a..
+[564.00s - 567.00s] If you do this, then you are okay
+[567.00s - 570.00s] I love it
+[570.00s - 573.00s] Sort of, yeah
+[573.00s - 576.00s] Yeah, so that's also..
+[576.00s - 579.00s] It depends on the papers
+[579.00s - 582.00s] The papers we will select will be the papers where we think we can have data
+[582.00s - 585.00s] either from their source of link or from our like lab or channel, because here we have some Bloomberg terminals, we will know that based on what they claim, you can get papers, get data from the terminal
+[585.00s - 588.00s] So the paper will be selected in a way that we don't have this visual data
+[588.00s - 591.00s] Okay, all good guys? If no question, then I thank you guys for coming
+[591.00s - 594.00s] We will share everything today and next week we will see your problems
+[594.00s - 597.00s] We will see your first paper
+[597.00s - 600.00s] It's impossible for you to do the lectures like 15, half an hour earlier because at 5 I've come to the class of all great martial arts, great arts, that's just getting a little close
+[600.00s - 603.00s] You know, I was hoping you can help me to find a niche or convince everyone and Even we have six people I couldn't find
+[603.00s - 606.00s] It's so strange because in the past we have 30s in VIP and we were able to find 30s overlap
+[606.00s - 609.00s] But this time it wasn't the case
+[609.00s - 612.00s] So if your teammates are okay, I'm fine with it
+[612.00s - 615.00s] How about the Zoom? Yeah
+[615.00s - 618.00s] No objection
+[618.00s - 621.00s] No objection
+[621.00s - 624.00s] No
+[624.00s - 627.00s] Go for me
+[627.00s - 630.00s] Yeah? I actually have all three
+[630.00s - 633.00s] So, and the one you want us to start? Just like actually 15 minutes ago
+[633.00s - 636.00s] Can you talk to the last 10 or a year, 10 or so? Sure
+[636.00s - 639.00s] Yeah, good computer
+[639.00s - 642.00s] The good computer, so 10, 30
+[642.00s - 645.00s] Yeah, thank you
+[645.00s - 648.00s] Yeah, no? Or, yeah, 10, 30 should be
+[648.00s - 651.00s] Okay, sounds good
+[651.00s - 654.00s] So 10, 30
+[654.00s - 657.00s] Yeah, I think it's easier when we meet in person rather than having a company
+[657.00s - 660.00s] Yeah, some kind of links to here
+[660.00s - 663.00s] Okay, awesome
+[663.00s - 666.00s] Sometimes I will have meeting and faculty meetings and committees on staff
+[666.00s - 669.00s] I won't be here, but I have time with you here
+[669.00s - 672.00s] But I will read all your summaries
+[672.00s - 675.00s] I will read them online in the morning
+[675.00s - 678.00s] I have time with you here to guide and steer
+[678.00s - 681.00s] The first part is more on you
+[681.00s - 684.00s] Okay? Some questions
+[684.00s - 687.00s] Could you please hear or let me share with this answer, Dr
+[687.00s - 690.00s] Green, and wait for me
+[690.00s - 693.00s] We will see how it goes, but there is, I know there's a lot of other papers out there
+[693.00s - 696.00s] So this was just to give you a sense, not to give you a wrong signal about M&A
+[696.00s - 699.00s] I wanted to make sure that it's going to be commodity, but then the paper is denser, it can change, it can be other papers
+[699.00s - 702.00s] We have a lot of papers, which is Google, like commodity machine learning, we've done it a lot
+[702.00s - 705.00s] So feel free to search and add the one that you feel that you will be enjoying reading
+[705.00s - 708.00s] So again, you have to learn something and be happy if you want to learn something
+[708.00s - 711.00s] If someone wants to learn about reinforcement learning, so search paper on that and put it and learn it and read it
+[711.00s - 714.00s] If someone want to learn about El Adan using Commodity, then search for El Adan and use it there
+[714.00s - 717.00s] Because you want to learn about this stuff too
+[717.00s - 720.00s] Okay? So we will check Excel
+[720.00s - 723.00s] Please feel free to put your name on it
+[723.00s - 726.00s] If that's the case, then I will see you all at 10.30 next week in person
+[726.00s - 729.00s] One more thing is the experience
+[729.00s - 732.00s] What do you say to people and what do they think they appreciate? Yeah, I think what people usually do is, again, quark charge
+[732.00s - 735.00s] You will wake in the morning, you will take a coffee, it will either take a textbook or a paper
+[735.00s - 738.00s] So textbooks using AI in commons, I couldn't find them
+[738.00s - 741.00s] So that's why we will focus on papers
+[741.00s - 744.00s] But if you have other resources, I don't know, like, video or seminar which they're talking about the research in a YouTube seminar put the link and watch it and then summarize it but it should be research driven okay and not like more research academic stuff okay or a chapter in a book that there is a IML in common So if it's like a chapter or a section in a book, I'll put the link in the section and do it
+[744.00s - 747.00s] Any readings, any material on AI, ML, data science, or commodity markets? Okay? Make sense? Yeah
+[747.00s - 750.00s] Amazing
+[750.00s - 753.00s] All good guys
+[753.00s - 756.00s] Last question, do you all agree with the structure and you like it? Do you think it's fine like this? Okay, so it's learning by the way
+[756.00s - 759.00s] It's on its way
+[759.00s - 762.00s] It's basically you will learn to learn something
+[762.00s - 765.00s] And hopefully at the end of semester you will be on high
+[765.00s - 768.00s] And we are here to steer this and even guide you
+[768.00s - 771.00s] Okay? I will see you all next week
+[771.00s - 774.00s] And thanks very much for coming
+[774.00s - 777.00s] Thank you
+[777.00s - 780.00s] And please email us if you have any questions anywhere
+[780.00s - 783.00s] Don't wait until we meet next week
+[783.00s - 786.00s] Send us email
+[786.00s - 789.00s] Okay
+[789.00s - 792.00s] Hello
+[792.00s - 795.00s] Which VIP are you in? Okay, second one
+[795.00s - 798.00s] Sounds good
+[798.00s - 801.00s] Okay, yeah
+[801.00s - 804.00s] Yeah
+[804.00s - 807.00s] Hey
+[807.00s - 810.00s] Thanks
+[810.00s - 813.00s] Just trying to check my friend is one from fine, doesn't it? No, he wants the same one
+[813.00s - 816.00s] Oh, no, I'm gonna get some..
+[816.00s - 819.00s] Should be fine
+[819.00s - 822.00s] Very proud, only the FRI student will do his credit
+[822.00s - 825.00s] Good
+[825.00s - 828.00s] Same data as mine
+[828.00s - 831.00s] Thank you, my friend
+[831.00s - 834.00s] Thank you, guys.

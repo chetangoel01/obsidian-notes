@@ -1,0 +1,512 @@
+[0.00s - 3.00s] So today's class, intrinsic models that are intrinsic interpretable
+[3.00s - 6.00s] So we are on this left side
+[6.00s - 9.00s] And then we'll be going to them and we're going to kind of give you enough why they intrinsically
+[9.00s - 12.00s] Next class, we're going to be doing black box interpretability
+[12.00s - 15.00s] So if you have a model, it's hard to know what's inside the model
+[15.00s - 18.00s] And then there are some techniques for us to try to understand how to interpret those
+[18.00s - 21.00s] Okay, so the models that we're going to be going through today are on the board
+[21.00s - 24.00s] And then after I'm done with the comments in the lecture, I have Pari here, I go and have a lab where you guys can actually try these things out
+[24.00s - 27.00s] Okay, so let's just go through this
+[27.00s - 30.00s] So we've all seen these linear models, right? So you're trying to predict a variable out of a set of features x1 through xn
+[30.00s - 33.00s] The idea here is this part under this
+[33.00s - 36.00s] And then from this, we can then do the predictions
+[36.00s - 39.00s] So why are these things considered interpretive? Because things like data are generally real numbers
+[39.00s - 42.00s] And you can represent real numbers in real ways
+[42.00s - 45.00s] So I guess it doesn't have to be dimensions
+[45.00s - 48.00s] I think, I mean, it's a little, it's even a bit more than that, right? Is that these numbers, like, because it breaks, it breaks this prediction into the sum of, into this direct sum of the feature vectors
+[48.00s - 51.00s] So you can look at, for instance, if one of those feature vectors, if one of those beta there is like a thousand, and the other one is one, okay? And if you imagine that the feature vectors are on the same range, so they are normalized in some way
+[51.00s - 54.00s] You can imagine that one feature is much more important than the other
+[54.00s - 57.00s] So you can actually..
+[57.00s - 60.00s] And I'm going to make this..
+[60.00s - 63.00s] So, you know, these linear models just to remind us, there's this feature space here, x1, x2, and then we're trying to predict them, okay? So these are the..
+[63.00s - 66.00s] The way that these models usually work is that those beta define what this hyperplane is, right? And we compute that by doing some kind of minimization of these residuals using least squares optimization
+[66.00s - 69.00s] So let's look at, it's useful to actually look at a real example here
+[69.00s - 72.00s] So imagine that you have a model to interpret a house price
+[72.00s - 75.00s] So for instance, like Zilla has that
+[75.00s - 78.00s] That's..
+[78.00s - 81.00s] we can imagine how Zillow does this thing
+[81.00s - 84.00s] So, and it's probably much more sophisticated than this, in the end you might have something that says, these are the features, number of bedrooms, bedrooms, square footage, rooms, right? All those things
+[84.00s - 87.00s] And then this stuff here, so you can imagine that these are the features, okay? And what are these things here? Those are our betas, right? So effectively, Those are the betas we had there
+[87.00s - 90.00s] And then you would multiply the things out and then get our model prediction
+[90.00s - 93.00s] So that's kind of like how, so the reason that this thing is interpretable is that kind of like you can, you know, you can kind of make an argument
+[93.00s - 96.00s] It's like, oh, you know, something that has three bedrooms
+[96.00s - 99.00s] It's kind of like, you know, every bedroom, you know, increases your price by, you know, effectively $19,000 there
+[99.00s - 102.00s] So it's kind of interesting if you think about it, if you guys ever talk to a real estate agent, I think that in their mind, they probably think this way
+[102.00s - 105.00s] It's like, hey, if you have an extra bedroom in this apartment, you know, it will increase the price by a certain amount, right? You know? And so
+[105.00s - 108.00s] Why are total rooms native, the beta? So I can have a guess, but that might be a minus
+[108.00s - 111.00s] the number of rooms that we have to do, the number of other rooms that's not added to that
+[111.00s - 114.00s] I imagine that maybe what happens is that, you know, as you have more total rooms, it's just like you're subdividing the space, you know, in much, much smaller subdivisions
+[114.00s - 117.00s] Maybe, right? So, it's whatever you know someone got those that are just regressing some some variable right so so what I mean if you're doing this in practice actually notice that maybe a lot of these numbers you would need to take into account the actual location you might actually have different such variables for different types of units, right? So you would separate maybe apartments from house units, right? So this problem of actually, I would say like this house price model is actually extremely complicated
+[117.00s - 120.00s] I'll just tell you something that is going to come up in a couple of slides
+[120.00s - 123.00s] So one of the problems when we want to actually give meanings to those different beta, okay, in a linear model, One of the things that we want is for the betas to be in that manner of each other
+[123.00s - 126.00s] Unfortunately, a lot of times here and now, for instance, probably a number of rooms and square footage are going to be related
+[126.00s - 129.00s] There's going to be a high value of coloration because you cannot just increase the number of bedrooms and not increase the square footage otherwise because the like a bedroom has a certain you know kind of a minimum size to it, right? And this is actually one of the problems that one has with these linear models
+[129.00s - 132.00s] Okay, so the interpretation is somewhat straightforward
+[132.00s - 135.00s] An increase of feature xj by one unit increases the predation by bj
+[135.00s - 138.00s] That's what we just saw, right? So that's the bj there
+[138.00s - 141.00s] But so in a way, the interpretation is supposed to be simple
+[141.00s - 144.00s] But then the problem, as I said, is that, you know, they might not be realistic sometimes
+[144.00s - 147.00s] So like in the housing example, you might, you know, maybe square footage might be related to the other things
+[147.00s - 150.00s] Some of the coefficients might be scale dependent
+[150.00s - 153.00s] Okay
+[153.00s - 156.00s] So all these things are actually problems
+[156.00s - 159.00s] These are strong assumptions
+[159.00s - 162.00s] So important assumptions are interpretation here
+[162.00s - 165.00s] So linear models make strong assumptions, linearity
+[165.00s - 168.00s] The effects are additive, right? So no interactions unless explicitly added
+[168.00s - 171.00s] Independence features are not correlated
+[171.00s - 174.00s] We assume a constant error of variance on these things
+[174.00s - 177.00s] No multicolinearity
+[177.00s - 180.00s] So kind of like a regulation does, square footage and number of rooms
+[180.00s - 183.00s] So actually there is this term called various inflation factor, VIF
+[183.00s - 186.00s] It's actually something that you can define and compute to check for these correlations
+[186.00s - 189.00s] And when it's larger than certain amounts like N, these things, the intermediate coefficients are minimal
+[189.00s - 192.00s] When we're trying to evaluate a linear model, I think we've seen this before
+[192.00s - 195.00s] we use these R squared measures where what we do here, we look at the predictions, right? So this is the average prediction, oh, average of the actual values, and then we look at the average of the predictions and we compute this formula
+[195.00s - 198.00s] So this tells us the closer this to one, the better the model is
+[198.00s - 201.00s] So I'll show you some examples of these
+[201.00s - 204.00s] I actually put this paper in the recommended list of papers to read
+[204.00s - 207.00s] So I'll mention a few things a lot
+[207.00s - 210.00s] So what this guy's designed is actually really neat
+[210.00s - 213.00s] It's a tool for helping analyze linear regression
+[213.00s - 216.00s] And in their case, I think that the application was to analyze a system, if I remember correctly, for oil consumption or fuel consumption in a city
+[216.00s - 219.00s] And some of the tools that they use, so that they use some of these metrics that we just talked about there, they are true and related things
+[219.00s - 222.00s] You have to read the paper to see, but one of the things that they did, that it's kind of neat is they wanna understand how well the model fits
+[222.00s - 225.00s] Sorry, I should have added a zoomed in very close as well
+[225.00s - 228.00s] Now they want to understand how well the model actually, the linear model actually fits
+[228.00s - 231.00s] What they use is, they use this idea of actually partitioning the features
+[231.00s - 234.00s] So what you do is, let's say that this is one, these are different features, but then in each feature actually, they split the interval
+[234.00s - 237.00s] that feature and then they refit just for those for those intervals right so what does this do then you can see how well it fits in much smaller intervals right so so it allows you to then have an idea for instance where the features actually fit well and where they don't okay and this is I couldn't find a video of this
+[237.00s - 240.00s] If someone finds a video, please send it to me
+[240.00s - 243.00s] I selected this paper also because it won a best paper award at 2013
+[243.00s - 246.00s] Okay, so linear models, they're, they interpret actually has an interpretive in a way
+[246.00s - 249.00s] Okay, one of the things that we're gonna notice, you know, as we go forward here and in the next class, is we're gonna, in a way, we're gonna use going to borrow from the way that we try to analyze the linear models where remember that that house example that we set number of rooms and all that stuff right so when we get to black box models we're gonna try to do something similar we're gonna try to effectively use the black box model and find a way to determine how how it actually relates to a certain feature I'm gonna get ahead of myself but it's not even like a similar approach so we're gonna try to figure out how sensitive it is to all the features that we have on the data but you know but one of the things that are in terms of actually like a model like the issue with linearity is that you cannot obviously it's linear so you cannot capture nonlinear relationships right and the other problem is that As I mentioned, you cannot have correlated, it doesn't account for actual correlations between the terms
+[249.00s - 252.00s] So it breaks there
+[252.00s - 255.00s] So what happens when the data set does not follow these assumptions? And of course, what happens here is that we need better models
+[255.00s - 258.00s] So one such model are these generalized additive models called games
+[258.00s - 261.00s] I'm going to try to break this up in, I'll show you an image that shows this by the way
+[261.00s - 264.00s] But the idea here is a problem
+[264.00s - 267.00s] You're trying to predict why, okay? Forget about this for now
+[267.00s - 270.00s] You're going to say that y is going to be, there is a beta zero here, plus a sum of some functions
+[270.00s - 273.00s] So it's just an additional function, okay? So effectively each one of the fj's is going to tell us how much the model depends on a certain feature
+[273.00s - 276.00s] Is this clear, right? No
+[276.00s - 279.00s] So one hard thing is to actually figure out how to break this up into that, okay? But let's assume that we did that
+[279.00s - 282.00s] The other thing is this
+[282.00s - 285.00s] So this G here is called, I think it's called a sync function, sorry, sync this, or the link function, okay? So what this is gonna do effectively, this thing is going to change the way that we use this for, depending on the distribution
+[285.00s - 288.00s] So for instance, if G is a log, okay, you know, you can, you can, effectively this G here allows us to model a distribution function that then uses this as the threshold function for the distribution
+[288.00s - 291.00s] I think we're gonna have our example, So the idea is to replace the betas with these flexible functions
+[291.00s - 294.00s] The functions are going to be learned from the data
+[294.00s - 297.00s] I will show you a two-minute video that shows how much it's done
+[297.00s - 300.00s] And then the idea is that you mix this linear and nonlinear
+[300.00s - 303.00s] So that we can compare, right? In the linear model, you have this bj xj
+[303.00s - 306.00s] In the GAMPS, you use a function, okay? And everything is like in the function, right? So how do we know how the functions behave with respect to the feature? We do this to this thing called a partial dependency plot
+[306.00s - 309.00s] Have you guys heard of partial dependency plots before? I would explain to you what it is
+[309.00s - 312.00s] So here's, each one of these is a partial dependency plot
+[312.00s - 315.00s] So there's a lot of information this slide
+[315.00s - 318.00s] So this is actually a specific example of a GIM
+[318.00s - 321.00s] Okay? So let's go to this little
+[321.00s - 324.00s] So we are saying that wage, this is what we're trying to, to, we're trying to guess somebody's wage based on, okay, their age, okay, their education, I don't remember what actually year it says, maybe it's just the thing is here
+[324.00s - 327.00s] But, so based on age, let's look at this
+[327.00s - 330.00s] So when they're very young, so this year, and we're going to look at this in more detail later, what a partial dependence function is as a fault
+[330.00s - 333.00s] Imagine that you have a whole bunch of variables, x1, x2, x3, as in this page here, you have year, age, and education
+[333.00s - 336.00s] And I want to know my function varies with age
+[336.00s - 339.00s] But notice that I might not only have age
+[339.00s - 342.00s] So, I mean, in this case here is just age, right? It's actually of age, right? But imagine that I actually want the F, here is wage
+[342.00s - 345.00s] The wage here depends on year, age and education, right? But I want to know, a wage depends on age
+[345.00s - 348.00s] How would I do that? You fixed everything else and then you changed wage
+[348.00s - 351.00s] You marginalize, right? So we're going to look at exactly this in like two slides
+[351.00s - 354.00s] But this is the idea of this partial PDP
+[354.00s - 357.00s] It's the term for this
+[357.00s - 360.00s] What a game is doing is that it's separating this function, this prediction of wage into a collection of separate functions, okay? The idea here is that, you know, one of these components is age
+[360.00s - 363.00s] So if someone is 20, you know, we add a minus 30 to their wage
+[363.00s - 366.00s] Okay? And then as they get older, increases, okay, and then it plateaus at 40 or something, right? You know? And then it tends to decrease
+[366.00s - 369.00s] So one of the things that are, and this here is not a partial infinity plot, but it's similar
+[369.00s - 372.00s] One of the things that is actually important when you look at these things, do you see how? So what is actually being shown here, these are the individual samples
+[372.00s - 375.00s] So why is this important? You have little sample density somewhere you're guessing
+[375.00s - 378.00s] Exactly
+[378.00s - 381.00s] So you don't want to predict things, you don't want to believe on something that you don't have any data for
+[381.00s - 384.00s] So maybe, do you see here, These here are estimates of our uncertainty
+[384.00s - 387.00s] Okay? Right? So what happens is that the more data you have, okay, the smaller the uncertainty is for your prediction
+[387.00s - 390.00s] So all these things in the end are important
+[390.00s - 393.00s] So in this case here, the uncertainty seems to be somewhat constant, at least that that's why we're really glad to believe here
+[393.00s - 396.00s] While here, you have much higher uncertainty in certain areas than others
+[396.00s - 399.00s] Okay? So effectively what we do in a game, okay, a game breaks up, breaks up our big prediction into a set of sums of things that are, that we can understand
+[399.00s - 402.00s] Any questions on this? Yes, no
+[402.00s - 405.00s] Why is that addition? Why is it not like multiplication or its potential? Why? That's a good question
+[405.00s - 408.00s] Can someone else? What are guesses? Why would you prefer addition versus multiplication? It's easier to differentiate
+[408.00s - 411.00s] It's easier to understand, right? So, you know, sums are absolutely treated
+[411.00s - 414.00s] They just add to each other
+[414.00s - 417.00s] Actually, I'll show something to this effect in the visualization of our two or three slides
+[417.00s - 420.00s] So hopefully, you know, the whole list is going to hold us to my point
+[420.00s - 423.00s] But the reason is that sums are easier to understand
+[423.00s - 426.00s] whatever is the intrinsic fundamental is that kind of exponential or like popular? So what happens is that that gets encoded into the actual functions
+[426.00s - 429.00s] So what you're actually doing is that, so I mean we do this all the time, right? If we have something that has equations, what do we usually do? We take logs and then we turn them into sums
+[429.00s - 432.00s] That's how we do things like model-based systems
+[432.00s - 435.00s] Okay, so, games are cool
+[435.00s - 438.00s] Okay, one of the things, and I bear the interpretable, you can visualize them independent
+[438.00s - 441.00s] The shape functions, they can be less intuitive than just linear coefficients
+[441.00s - 444.00s] See, like, you saw it there, they can be kind of like fairly complicated, right? computing them, and we're going to see later
+[444.00s - 447.00s] It's actually really computationally expensive
+[447.00s - 450.00s] And actually, these kinds of games that I just showed you, they cannot account for correlations, but there's a version of them that can account for correlations
+[450.00s - 453.00s] And these are actually these things here
+[453.00s - 456.00s] There's this thing called explainable boosting machines
+[456.00s - 459.00s] This is a variation of gum, where the gum that I just showed you was just this, right? Okay? These, they also have terms that depend on two variables
+[459.00s - 462.00s] Okay? Yes? Just out of curiosity, it's like the time complexity for calculating it, like something to the end because of like something to the amount of features or like functions that you're trying to hide
+[462.00s - 465.00s] So..
+[465.00s - 468.00s] It's like if you have, if you want to do like four functions, it's like a quadruple for you
+[468.00s - 471.00s] I'll show you the way that you can estimate this, but I'm just thinking of your question in terms of this
+[471.00s - 474.00s] Just our curiosity is..
+[474.00s - 477.00s] So effectively what you need to do, what those functions are, is you..
+[477.00s - 480.00s] Are you familiar with splines? What? Splines
+[480.00s - 483.00s] Splines
+[483.00s - 486.00s] No, I don't think so
+[486.00s - 489.00s] The way you think about splines is when a linear regression, you have a fixed set of points
+[489.00s - 492.00s] you try to fit through your data, right? I-spline is a special kind of function
+[492.00s - 495.00s] You have a basis that usually has a certain neighborhood
+[495.00s - 498.00s] And then what you do is you effectively have to select a set of samples
+[498.00s - 501.00s] You can do something that is somewhat similar to this, but I'm not going to be able to tell you about to do this complexity
+[501.00s - 504.00s] I'll go into that
+[504.00s - 507.00s] No, I'll look it up
+[507.00s - 510.00s] Okay, sorry
+[510.00s - 513.00s] With this term here, these things, this adds a lot of complexity, okay? And when you have, in terms of competition complexity
+[513.00s - 516.00s] So let me actually, I'm going to run this for two minutes, and this is actually going to show you..
+[516.00s - 519.00s] Always stop
+[519.00s - 522.00s] There was a trade-off between model accuracy and intelligibility
+[522.00s - 525.00s] Well, you're not going to want a message like..
+[525.00s - 528.00s] One second
+[528.00s - 531.00s] One second
+[531.00s - 534.00s] Why is this? Let me see if I can put the audio in the right
+[534.00s - 537.00s] We're going to display this for just two minutes
+[537.00s - 540.00s] Always tough
+[540.00s - 543.00s] There was a trade-off between model accuracy and intelligibility
+[543.00s - 546.00s] Well, you're not going to want to miss this special build edition of the AI show, where we'll get to hear from Richard Kawadano, senior principal researcher on the Microsoft research team
+[546.00s - 549.00s] He is the creator of something called Explainable Boosting Machines
+[549.00s - 552.00s] They go through the science and tell us how it works
+[552.00s - 555.00s] Make sure you tune in
+[555.00s - 558.00s] I'm Rich Carwana, a scientist at Microsoft Research in Redmond, and one of the inventors of the EVMs, explainable booster
+[558.00s - 561.00s] You may have seen a graph like this, which suggests that there's a trade-off in machine learning between accuracy and intelligibility
+[561.00s - 564.00s] That is, the learning methods that are more accurate are low intelligibility, and the models that are more intelligible have low accuracy
+[564.00s - 567.00s] I'm happy to say that this is not true for EBMs
+[567.00s - 570.00s] EBMs sit up here in the right-hand corner where they have all the accuracy of methods like boosted trees, random forest, and simple neural nets, but because they're a complete glass box learning method, they're even more intelligible than models like linear and logistic
+[570.00s - 573.00s] Let me give you a sketch of how we train EBMs
+[573.00s - 576.00s] Imagine that you've got N features
+[576.00s - 579.00s] We go to the first feature and we train a very small tree on that feature, and that tree can only use feature one
+[579.00s - 582.00s] In boosting fashion, we then update the residual, and now we go to feature two, and we train the small tree that can only look at feature two
+[582.00s - 585.00s] We update the residual again, we go to the third feature, train a small tree, and we do this for each of the features
+[585.00s - 588.00s] So this is a round-ropping pass through all of the features, and each of these trees can only look at one feature at a time
+[588.00s - 591.00s] Now the learning rate is so small that it doesn't really matter what order these features are in
+[591.00s - 594.00s] We're going to have to do many, many passes through the features
+[594.00s - 597.00s] So we go back, we go to feature one, and we grow a second small tree
+[597.00s - 600.00s] Continue to update the residual, go to feature two, another small tree that can only look at feature two
+[600.00s - 603.00s] Do that for all the features
+[603.00s - 606.00s] That's iteration two
+[606.00s - 609.00s] We do this for more iterations, three iterations, four iterations
+[609.00s - 612.00s] We're going to do this as many as 5,000 or even 10,000 times
+[612.00s - 615.00s] Now at the end of that, we have 5,000 or 10,000 trees which were only trained on Featured 1
+[615.00s - 618.00s] So it turns out you can summarize that as a graph
+[618.00s - 621.00s] And we do that by asking all of these trees what they would predict for each value on the graph
+[621.00s - 624.00s] Once we have the graph, we've captured the prediction of all of these trees, and we no longer need the trees, so we can delete them
+[624.00s - 627.00s] Now we can go and generate a graph for feature two in exactly the same way
+[627.00s - 630.00s] And once we've generated a graph for feature two, we can throw away all the trees for feature two
+[630.00s - 633.00s] And we can do this for every one of the columns of features
+[633.00s - 636.00s] For every feature, we can throw away all of the trees
+[636.00s - 639.00s] And all of these graphs, all of these models, were trained in parallel because we keep cycling through all of the future
+[639.00s - 642.00s] In the end though, we throw away all of the trees and what we're left with is just a series of vectors of graphs, and that is the model
+[642.00s - 645.00s] Let me show you how this kind of model can be a new knowledge
+[645.00s - 648.00s] So you can watch the rest of you
+[648.00s - 651.00s] Okay, so
+[651.00s - 654.00s] Here's a, going back to partial dependency plots
+[654.00s - 657.00s] So this is actually pretty important, right? So let's say that we have a model and we want to know how the model behaves with age
+[657.00s - 660.00s] So what we do is what our friend, what's your name? Ivan
+[660.00s - 663.00s] Huh? Ivan
+[663.00s - 666.00s] Okay
+[666.00s - 669.00s] So Ivan, so does
+[669.00s - 672.00s] You, let's say if there were a bunch of other features, what we do is that we effectively, marginalize them so we integrate all of them right into into this what you what you have is this is our Y okay and this is H and then you get you get whatever the you know the response is for this one variable and then you just you would have one for each one of these variables here okay so that's how you get effectively what this is is the average response to that value out of all the data that you got
+[672.00s - 675.00s] So PDPs are pretty useful
+[675.00s - 678.00s] I'll show you, let's see here
+[678.00s - 681.00s] So this is somewhat similar to what we looked at it before
+[681.00s - 684.00s] Remember that wage equals that gap, right? But this here is a PDP, right? So again, here you have the density of S
+[684.00s - 687.00s] So where this is, you know, that was the age, and then here's the score, whatever, if you're functional, right? So these things here were computed, you fix age, let's say like this one here, you fix age 39, and then you take all your other data, right, and you average out for data for what the prediction is for data 39 okay and then that's that's what you get is it is the is the average score okay for um when you when you you just fix that age 39 but then you let everything else varies okay I mean, you know, this is only mean point where you have data, right? So where do you start to have no data? These things here, you know, that's kind of becomes a lot meaningless
+[687.00s - 690.00s] And so it's important for you to know
+[690.00s - 693.00s] So that's why like what you see a lot
+[693.00s - 696.00s] So, I mean, this is an example of this
+[696.00s - 699.00s] There's a lot of this for categorical data, right? But where you have a lot of data, these predictions are good, okay? And you see like here, we're putting the confidence right to him on the pages there because where you don't have
+[699.00s - 702.00s] Okay, this actually is a, I only spent a couple minutes on this wall
+[702.00s - 705.00s] So this paper here, you know, I put this on the, this data is a version of our house pricing
+[705.00s - 708.00s] Okay, so year new model, total basement square footage, yeah
+[708.00s - 711.00s] first floor square footage, year build, miscellaneous value, right? So for each one of them, for each one of these graphs, notice that we have occurred, okay? Notice that there is a distribution here that shows us where that value is, right? And here is how it affects the price of this house
+[711.00s - 714.00s] Makes sense, right? So this variable would affect the price of the house according to this curve, okay? These guys, this is actually, as far as I'm concerned, this is computed using explainable BUSI machines
+[714.00s - 717.00s] So as the third order here is that it is reach Karana and explain, They compute all those curves for all the different variables using the technique that he described there
+[717.00s - 720.00s] And so each one of these curves here, you have whatever the curve is of that thing, and it's all affecting our prediction variable
+[720.00s - 723.00s] They develop a system that actually allows you to go through each one of the data points and see what the results
+[723.00s - 726.00s] That's actually one of the things that is very, very important
+[726.00s - 729.00s] Here we are looking at two different instances
+[729.00s - 732.00s] So in these instances, you see you have the prediction of what the model thinks should be the right price
+[732.00s - 735.00s] So this prediction is what? So this prediction is you go into this, here's ID 639
+[735.00s - 738.00s] And what is actually happening is that it's taking each one of those layers, looking it up into this thing here
+[738.00s - 741.00s] Going and looking up at what that thing would be, like, you know, would it be increasing by a certain amount or decreasing, right? And then it would be summing, okay? Let's look at this part of the plot
+[741.00s - 744.00s] Anyone knows what the plot is? This is, we usually call this a waterfall plot
+[744.00s - 747.00s] So, here are the variables
+[747.00s - 750.00s] Here is the intercept
+[750.00s - 753.00s] If you guys remember that we have like the average price of all the houses
+[753.00s - 756.00s] that's the intercept so that this and this started the same place these are two different houses but it started the same question so what we do is notice that each one of them you started this thing here so you you effectively you'll be summing them up so so this thing here is telling us that it actually decrease by a certain amount okay decrease this by a certain moment
+[756.00s - 759.00s] You'll see like sometimes it's negative, sometimes positive
+[759.00s - 762.00s] And then other times it increases
+[762.00s - 765.00s] So each one of these, and what you're doing effectively, is that you sum up each one of the features, and this is telling us, this is telling us our prediction
+[765.00s - 768.00s] So this is the model predicts this price for this house
+[768.00s - 771.00s] This is exactly the sum
+[771.00s - 774.00s] of all the different gradations
+[774.00s - 777.00s] Does that make sense? Is the interest of just beta 0 or something else? Is the interest of beta 0 or something else? So beta 0 is interest
+[777.00s - 780.00s] Far ahead
+[780.00s - 783.00s] Yes
+[783.00s - 786.00s] So it's the average of..
+[786.00s - 789.00s] So if you..
+[789.00s - 792.00s] Beta 0 would be..
+[792.00s - 795.00s] Yeah, you would average out every single feature for every single model
+[795.00s - 798.00s] So there's some things that are kind of cool here, right? So one of them is..
+[798.00s - 801.00s] The size of these things here, okay? it tells us how important that feature is right so the bigger the feature the like this thing here so this feature is more important than this one so remember like a few minutes ago i was talking about how you want people to focus on a few different things right so here the moment that you look and notice that this is two different houses um you know probably this thing here is really important but because it's the the one that is but some of the other things might change from house to house right you know so these things just seem to be important here but not important there why why this might be the case exactly what we are talking about i was like for an apartment maybe there is a certain thing that is important and then for for a single family home is another thing right so you can actually one of the cool things about these waterfall plots is that they can tell you you can look at them and then you can very very quickly kind of like you know realize what would be important and then hypothesize how you change this right makes sense yeah so so so one uh yeah any questions on this but this is actually pretty important right and so you you have your your features here and then you can really clearly see i'm sure what's up um I don't have time to show you a video of this, but there are videos of Visalik
+[801.00s - 804.00s] Actually, this talk here that you can get to it by clicking on this thing here
+[804.00s - 807.00s] I should just show you this because I'm not going to play the video really, but..
+[807.00s - 810.00s] I'm Steve Drucker
+[810.00s - 813.00s] I'm a partner in ResearchNet
+[813.00s - 816.00s] This is an awesome talk
+[816.00s - 819.00s] It actually would go and explain the whole concept of visualization and all that stuff, even stuff, you know, in the At around 40..
+[819.00s - 822.00s] Yeah, okay
+[822.00s - 825.00s] So maybe I just let him show a piece of this here
+[825.00s - 828.00s] So you guys can see kind of like..
+[828.00s - 831.00s] Dead rooms doesn't have permission from that
+[831.00s - 834.00s] So where does visualization come in? Again, visualization has a bridge between the raw data, the models, the predictions, and the user
+[834.00s - 837.00s] And again, that user could be the lay user or it could be the expert user
+[837.00s - 840.00s] something you might have heard is black models and white box model a little bit similar to jiggle about this so in this case we're going to be looking at some real estate data lots of people buy houses and uh so sort of people understand uh you know you might buy a house and yes there might be location but it's also might be things like um how many bathrooms and bedrooms as you have year and there's all these different features and all these features combined together to give you what the value of that house
+[840.00s - 843.00s] And when you look at it like that, it really is pretty simple
+[843.00s - 846.00s] If you build a certain type of model, it's kind of general additive model, just add up all these features
+[846.00s - 849.00s] So essentially this is just adding up all these features for house number 550
+[849.00s - 852.00s] House number 550 sold for what we predict that it will sell for $190,000
+[852.00s - 855.00s] It's primarily..
+[855.00s - 858.00s] You know, the negatives about this is that it's a pretty small lot
+[858.00s - 861.00s] So we actually, from the overall average house for all the houses, yes, we took away a bunch
+[861.00s - 864.00s] We took away $8,000 because it's a really small lot
+[864.00s - 867.00s] And it doesn't really have a second floor square footage
+[867.00s - 870.00s] So we take away some more money
+[870.00s - 873.00s] built fairly recently
+[873.00s - 876.00s] And again, all of these things end up adding and subtracting together to produce a final result
+[876.00s - 879.00s] It's great
+[879.00s - 882.00s] Simple visualization
+[882.00s - 885.00s] People can understand that
+[885.00s - 888.00s] You might have another house that sells for a similar amount
+[888.00s - 891.00s] And it turns out that..
+[891.00s - 894.00s] It has a curve that looks similar in a small lot area and a couple other things, but there's some differences
+[894.00s - 897.00s] We can actually highlight those differences and visualize those differences
+[897.00s - 900.00s] So if we actually go down here and you can see that some of the big differences, it's a little hard to see, but the biggest difference is the overall quality
+[900.00s - 903.00s] The overall quality for this model was much better than the overall quality for this model
+[903.00s - 906.00s] It was an eight versus a six
+[906.00s - 909.00s] So this adds 22,000 and takes away 14,000 from that
+[909.00s - 912.00s] Again, that's an explanation for why these two houses were sold for different amounts
+[912.00s - 915.00s] You can also look at the year it was built
+[915.00s - 918.00s] That's another reason that offsets that
+[918.00s - 921.00s] So you can see that these things all help understand the model
+[921.00s - 924.00s] So we built an interactive tool
+[924.00s - 927.00s] This interactive tool not only lets us examine these individual cases, but it looks at what's the trend of overall quality and how much does that impact the house, the price house
+[927.00s - 930.00s] So let me show you that last demo here
+[930.00s - 933.00s] You can load a bunch of different data sets, load in the housing data set here, and you can see just what I was looking at before
+[933.00s - 936.00s] So again, one of the nice things about this is that you can see that a lot of area makes a really big difference when we're, when we're, when we're, what else is, that it starts to make less and less of a difference
+[936.00s - 939.00s] Likewise, as long as you've got sufficient living area, it seems fine, and then it starts going up in value quite a bit more
+[939.00s - 942.00s] And again, we can look at, as I hover over these things, you can see that this particular house, house number, let's just do house number zero, you can see is a relatively small area, and therefore we take away a bunch of predicted price
+[942.00s - 945.00s] But it's got, it was built fairly recently, so we can look at where the, you know, the we can be scenarios, you can look at all, you can look at the greater living area, again it's a less living area, first square footage is also negative, and you can look at all the different qualities
+[945.00s - 948.00s] One of the nice things I find is that we can say let's compare house numbers zero to house number six, we can get both these curves, you can see exactly how they differ, and they can sort these
+[948.00s - 951.00s] So you guys got the idea, I mean it's really cute to have the tool isn't it? Like you, because I just want to caution one thing, right? Is that there is a model underneath
+[951.00s - 954.00s] When we are looking at these things here, at these plots, the plots are telling us something about the model, right? So for instance, if you have one of these blue curves and it's flat, it's like, okay, it doesn't matter what that feature is, right? And then so, I'm just telling you this so that you understand
+[954.00s - 957.00s] I mean, it is a super cool tool, but depending on how you build your model, you know, this is really encoding what the model is, right? It's not..
+[957.00s - 960.00s] So, but this is kind of cool because, you know, you take a tool like this and you..
+[960.00s - 963.00s] I mean, it's actually fairly straightforward for you guys to build it, right? I mean, this is a trivial tool
+[963.00s - 966.00s] You have a list of whatever your items are, once you build your model and your functions there, this plot is trivial, these plots are trivial, and then some of the really nice things about the system is it allows you to see the difference between what the predictions are, right? If you put two of them there, you can kind of like obviously see where they differ, right? Again, this is a way to, interpret your model okay so so that's kind of like the whole reason and I like this because it just showed like the whole reason that that you know we're kind of showing this you know that they stuff in this class is is that okay and and again all these lines have nodes they are all clickable you know It took me like 10 hours to get them to this form even with clothes
+[966.00s - 969.00s] So I hope you have fun with them
+[969.00s - 972.00s] Think of my lecture more as an advertisement for all the cool materials you guys can spend on getting on this
+[972.00s - 975.00s] So this is really cute
+[975.00s - 978.00s] One thing that there's a version of this tool that I'm not going to really be talking about called Game Changer
+[978.00s - 981.00s] In this one, it even lets you edit the model
+[981.00s - 984.00s] So this way you can say like, I don't agree with this
+[984.00s - 987.00s] This is how the price should be
+[987.00s - 990.00s] And then you can edit them and then see how it changed
+[990.00s - 993.00s] That is really cool
+[993.00s - 996.00s] Okay, so we started with linear models
+[996.00s - 999.00s] We went to games
+[999.00s - 1002.00s] Okay, I want to show you a little bit of another couple models before I pass it on to Pari
+[1002.00s - 1005.00s] So one of them is decision tree
+[1005.00s - 1008.00s] So what is a decision tree? I think most of you have seen decision tree, right? So it's the scene on the left there
+[1008.00s - 1011.00s] So you're trying to make some prediction, usually you have a tree of decisions
+[1011.00s - 1014.00s] So let's say that you're trying to predict whether someone is diabetic or not based on their glucose level and other variables
+[1014.00s - 1017.00s] So you're supposed to say, like, this person's diabetic or not
+[1017.00s - 1020.00s] You have a bunch of features, for instance, glucose, BMI, age, all that stuff
+[1020.00s - 1023.00s] So what you do is, you can imagine, the thing about the decision tree is that, you can organize it any way you want
+[1023.00s - 1026.00s] And we're going to see this later
+[1026.00s - 1029.00s] Like, H should be here, and these things could be lower
+[1029.00s - 1032.00s] So the difference is, depending on how you organize it, it's going to vary the size of the tree and the accuracy of the tree
+[1032.00s - 1035.00s] But effectively, once you have a tree, effectively, what happens is this
+[1035.00s - 1038.00s] Decision tree is a way to, you can follow the decision tree to the leaf, and then you have your prediction
+[1038.00s - 1041.00s] So obvious in terms of being interpretable because it's very natural
+[1041.00s - 1044.00s] You have a sort of, it's very trivial to follow what the tree is, right? Depending on how you build your tree, it can mimic what it is in you, okay? So as I'm going to tell you later, what is the problem with these trees? As you can see, when they grow in size, then they get very hard to understand
+[1044.00s - 1047.00s] So like these trees are kind of like, you know, they're pretty cool when they're not like this
+[1047.00s - 1050.00s] They're kind of like, you know, small size
+[1050.00s - 1053.00s] You look at them
+[1053.00s - 1056.00s] They're all nice
+[1056.00s - 1059.00s] But then, you know, if they are large, it's tough
+[1059.00s - 1062.00s] So I'm just showing you here some trees
+[1062.00s - 1065.00s] I'm actually going to show you a little video of this one
+[1065.00s - 1068.00s] It's really cute
+[1068.00s - 1071.00s] This here, this example is actually of a different type
+[1071.00s - 1074.00s] This is looking at random forests, okay? So, because you have, and those are kind of like easy to understand if they're small
+[1074.00s - 1077.00s] But random forests are different because you have collection of trees
+[1077.00s - 1080.00s] You have a forest of trees and you're making the decision by actually creating multiple trees and then doing an average, right? So it's much more complicated so people have written papers on how to do it
+[1080.00s - 1083.00s] And by the way, I think I mentioned this to you guys
+[1083.00s - 1086.00s] I put these references here so that it can guide you
+[1086.00s - 1089.00s] So think about some bounded amount of time you spend reading
+[1089.00s - 1092.00s] So you should go through these slides again and then click on some of these things and then just take a look at them
+[1092.00s - 1095.00s] So as you can see, some of these things, it should be easy to see
+[1095.00s - 1098.00s] you, you know, so let's look at what have people in visualization done that is kind of cool
+[1098.00s - 1101.00s] So I think one of them is actually this kind of stuff
+[1101.00s - 1104.00s] I was sure there's actually one that I read it like later
+[1104.00s - 1107.00s] Another thing that I think is really cute is this idea of the human should drive the process
+[1107.00s - 1110.00s] Okay, so because if you use a machine learning algorithm, it's usually going to build the decision tree automatically for it
+[1110.00s - 1113.00s] A couple of things
+[1113.00s - 1116.00s] One is, is like, I mean, all of us can read an algorithm to create a tree, as I think most of us have
+[1116.00s - 1119.00s] But then it's kind of useful if you actually was able to interactively build one, because it will give you an intuition for how these trees are built
+[1119.00s - 1122.00s] So in this paper by Ellen and Van Schaik, from about 10 years ago
+[1122.00s - 1125.00s] They developed a system called Baba View, okay? And this is one of those videos that you can actually not find on the internet
+[1125.00s - 1128.00s] I asked one mic for the video, so let's see here
+[1128.00s - 1131.00s] This has no narration, but you guys are gonna see because it has annotations here on the bottom
+[1131.00s - 1134.00s] So they developed this really cool system
+[1134.00s - 1137.00s] I don't know if I should be stopping or if it's enough for us to look
+[1137.00s - 1140.00s] I think they go slowly, so
+[1140.00s - 1143.00s] You have data, you have the main view there, you have a visual confusion matrix on the side, there is the data view on the left, oh sorry, here you can see a lot of those
+[1143.00s - 1146.00s] And then actually in their system you can select where you want the three split
+[1146.00s - 1149.00s] And you're going to see it's really well done
+[1149.00s - 1152.00s] When you click, it's going to do like this menu split
+[1152.00s - 1155.00s] You're going to see on the side
+[1155.00s - 1158.00s] So you see like here, the person is splitting all the green stuff
+[1158.00s - 1161.00s] See, they tried to split as much of the green stuff as they could
+[1161.00s - 1164.00s] And you can actually create multiple splits
+[1164.00s - 1167.00s] So it's not a binary tree
+[1167.00s - 1170.00s] When you split, see all the green land this way or most of the green land this way
+[1170.00s - 1173.00s] Okay? And then you can keep..
+[1173.00s - 1176.00s] And then the first thing is split again
+[1176.00s - 1179.00s] So now the predictions on these is kind of like obvious
+[1179.00s - 1182.00s] You would predict the green class there and the predicted blue class in the other one
+[1182.00s - 1185.00s] This is kind of like a more complicated example there
+[1185.00s - 1188.00s] And actually, one of the things that I find is really cool about this, or stop for a sec, it gives you intuition because it shows you the distribution of these things and how they vary around the feature line
+[1188.00s - 1191.00s] It gives you intuition on how the algorithms, after you see this video and you go back and you read about some of these algorithms that create decision tree, they start to make more sense because you can, in your head now, you're like, oh, that's why people split this way again
+[1191.00s - 1194.00s] And I want things to be uniform
+[1194.00s - 1197.00s] You might be using this, right? So that's why it's really useful to see this kind of stuff, right? Let's see just going forward here
+[1197.00s - 1200.00s] There's going to be another, a few other modes that are pretty cool
+[1200.00s - 1203.00s] You guys can see like the strategy that the person is using for kind of like splitting this stuff like this
+[1203.00s - 1206.00s] And then you could even experiment with this in an algorithm for that
+[1206.00s - 1209.00s] And then it's almost like gamifying the process
+[1209.00s - 1212.00s] This so will build, like this had to be for institutional clients, right? There's no way they..
+[1212.00s - 1215.00s] Sorry? This had to be for like an institutional client, right? Like there's no way this so will build
+[1215.00s - 1218.00s] Like the app, like it's desktop too
+[1218.00s - 1221.00s] It might have been built for a client
+[1221.00s - 1224.00s] For sure
+[1224.00s - 1227.00s] I think that..
+[1227.00s - 1230.00s] It's likely, right? So I think that someone was getting a degree out of this
+[1230.00s - 1233.00s] The first author is getting a degree, yes
+[1233.00s - 1236.00s] Which means it's like, does the industry really use this kind of a compact system? Like what about it does it create for enterprise? So I, again, like for this particular one, I don't know the history of this, this tool in particular
+[1236.00s - 1239.00s] I only know that it was a paper and a cool paper
+[1239.00s - 1242.00s] So Van Light does amazing work
+[1242.00s - 1245.00s] He used to work for the power company in the Netherlands
+[1245.00s - 1248.00s] So it's really cool that in the Netherlands they have a very good tradition of using cool tools
+[1248.00s - 1251.00s] A few people here know that Linux, sorry, that Python was done at CWI
+[1251.00s - 1254.00s] Yeah, it's a different person there
+[1254.00s - 1257.00s] So Python is actually something that came from the Dutch, right? It was done by the Dutch and the Dutch have produced really amazing tools
+[1257.00s - 1260.00s] So Van Leip, before he was a professor, he actually, for this governmental company lab, it's a department that build tools
+[1260.00s - 1263.00s] A lot of times when you work at this lab, so at one point I worked at AT&T research, for instance
+[1263.00s - 1266.00s] individual researchers could do pretty much what we could what we want right but there was like a exact expectation that some amount of the work in the lab would lead to innovations in the company because i think that one of the issues with research is you want to give people enough flexibility that can go crazy right but eventually hopefully you want those things to be kind of useful and and and this usefulness sometimes comes from You spend 10 years working on something
+[1266.00s - 1269.00s] Like, I mean, like in real like industry, like, for example, you have a kind of like thousands or millions of parameters that start up for training, like how to visualize that and how to understand the like really complex system
+[1269.00s - 1272.00s] So people have, I mean, we have techniques that scale, right? So a lot of, I actually, There is a paper that I just showed in the not this one, but I'll highlight to you a paper that you should click and look
+[1272.00s - 1275.00s] Actually it's kind of funny that the paper that I'm thinking about that we're going to show you in a few slides The author now also is in the Netherlands
+[1275.00s - 1278.00s] It's kind of a funny, you know, book around here
+[1278.00s - 1281.00s] But I mean, I don't believe that this tool that I'm showing you would scale to extremely large trees
+[1281.00s - 1284.00s] Not this school
+[1284.00s - 1287.00s] I don't think that that was..
+[1287.00s - 1290.00s] It was more a proof of concept
+[1290.00s - 1293.00s] Someone wanted to show these things here
+[1293.00s - 1296.00s] But there is a..
+[1296.00s - 1299.00s] It's cute
+[1299.00s - 1302.00s] I like the animations, the way that they did the animations
+[1302.00s - 1305.00s] The jocular for this one should be insane
+[1305.00s - 1308.00s] It's really neat the way that they did that
+[1308.00s - 1311.00s] and then they're just going to show like some other you know data sets and then some other ways to to show these things again someone oh yeah this is kind of cool too for someone to just look at different ways to draw the same tree and then it gives you different kinds of insights into what it is but what i also like i mean this stuff here is not a tool um you can do something like that in three months okay so it's not like I mean, maybe even less
+[1311.00s - 1314.00s] It's not really super dumb
+[1314.00s - 1317.00s] So the other thing I want to mention is these decision rules
+[1317.00s - 1320.00s] Okay, so the decision rules are related to decision trees
+[1320.00s - 1323.00s] Decision rules are like a simple if-then statement, and then it tells you what the prediction is
+[1323.00s - 1326.00s] One difference in the prediction rules versus prediction trees is that you have a bunch of rules, and multiple rules might fire up
+[1326.00s - 1329.00s] for the same condition
+[1329.00s - 1332.00s] So in a decision tree, you guys remember we go down the tree until we get your leaf, right? Here is as though like many leaves could fire up at the same time, because there is no leaf really
+[1332.00s - 1335.00s] It's just they're just if-then-as, okay? And then you need to have some way to say, okay, how these things are true, then which one of them you want to decide
+[1335.00s - 1338.00s] Maybe you do an average, maybe you select one of them, whatever, okay? they're valuable because you know they're kind of like easy to understand right so if glucose larger than this and so when you start to do this effectively what this one line is is actually encoding a tree right yeah right so so this is like glucose age right so this is kind of like organizing kind of like a tree so you the decision rules are different than those
+[1338.00s - 1341.00s] They have some advantages, they mimic natural language and all that stuff
+[1341.00s - 1344.00s] So here I put the, you know, you guys should go to this
+[1344.00s - 1347.00s] Let's see here
+[1347.00s - 1350.00s] I actually want to show you..
+[1350.00s - 1353.00s] So this is a cool paper
+[1353.00s - 1356.00s] Take a look
+[1356.00s - 1359.00s] This is actually..
+[1359.00s - 1362.00s] by my colleague Enrico Bertini that was here a few years back and Odette Nov is a professor here with their student
+[1362.00s - 1365.00s] Yung, she's not at all, she's cool, she did her PhD here
+[1365.00s - 1368.00s] I suggest you just take a look at the paper
+[1368.00s - 1371.00s] So one of the general ideas in this area of interpretability is this idea that you might have a surrogate model
+[1371.00s - 1374.00s] So the idea here is you have a model, when you take your input data, you build a real model, and maybe that model is really complicated, but then you might actually want to do one that approximates the behavior of the other model
+[1374.00s - 1377.00s] You might even use the model for building the surrogate model
+[1377.00s - 1380.00s] One of the things, a really important thing, is called the fidelity interpretability trade-off
+[1380.00s - 1383.00s] And you saw Rick Caruana mentioned this, right? Is this fundamental challenge in IT's AI of increasing the model interpretability
+[1383.00s - 1386.00s] A lot of times it actually makes you decrease the fidelity
+[1386.00s - 1389.00s] So, and I mentioned this before, so when we look at decision tree, this decision tree is interpretable, and that's what you want, something like this, but often what you get is that
+[1389.00s - 1392.00s] This here is the real decision tree that you get when you put it in an algorithm
+[1392.00s - 1395.00s] So you kind of like have to decide, do you want to understand that or do you want something that is high accuracy? Sometimes you have to play with these things
+[1395.00s - 1398.00s] And so people have been developing tools
+[1398.00s - 1401.00s] So this is another word
+[1401.00s - 1404.00s] Enrico with my colleague Juan B
+[1404.00s - 1407.00s] Chu from Hong Kong where they build a tool for analyzing you know rulers so so this is you guys remember that good stuff right so this is like the building for for rules okay it's really well done and and you can see that in any one of these systems I'm not going to tell you about the system you worked exactly but You need things that show distributions, that show, you know, a lot of these things here, a lot of these constructs, you notice that you've seen in some other tool before, right? So that's why you want to take a look at enough of these systems
+[1407.00s - 1410.00s] get kind of like, I think, to understand what are your design choices when you're designing your own tools
+[1410.00s - 1413.00s] Okay? So, you know, take a plot and say, hey, you know, can I try to understand what is going on in this? And then just spend a few minutes trying to do that, right? Wow, actually
+[1413.00s - 1416.00s] Okay, so this was the paper that I wanted to mention to you
+[1416.00s - 1419.00s] This paper for you, this paper here, it actually, and I'm gonna have a plot of the actual example that has, the real example that has what, the thousands of, they scalable result
+[1419.00s - 1422.00s] But effectively what they propose is something that takes a random forest, so a large collection of trees, okay, and summarizes them a set of pictures that when you actually do this for things that are very large, meaning thousands of, and tens of thousands, it still makes sense, okay? So you can click on that and it's going to take you to the paper
+[1422.00s - 1425.00s] Okay, I'm almost done
+[1425.00s - 1428.00s] So there are other models that are white-level models
+[1428.00s - 1431.00s] Another aspect of this, and I put this paper here, is that people have designed things that you can manipulate
+[1431.00s - 1434.00s] I kind of mentioned this to you before
+[1434.00s - 1437.00s] This paper, not sure if you want to spend a lot of time reading this, but it's kind of interesting
+[1437.00s - 1440.00s] The author makes this point in this paper that for me of the high stake decisions, right? So like financial health care, we should not use black, you know, we should not use models that we don't understand
+[1440.00s - 1443.00s] It's a very hot take
+[1443.00s - 1446.00s] It's a very hot take
+[1446.00s - 1449.00s] Yeah
+[1449.00s - 1452.00s] A lot of abstract
+[1452.00s - 1455.00s] So, again, there's plenty of stuff for you guys to read
+[1455.00s - 1458.00s] There is, I think that this is, we kind of like did a pass over these things here, but I suggest you guys go through this slowly and read
+[1458.00s - 1461.00s] And I try to document the whole thing
+[1461.00s - 1464.00s] So if you go through this, if you..
+[1464.00s - 1467.00s] and you click on the papers, I hope you guys remember this
+[1467.00s - 1470.00s] Now you're going to try to do something in practice with Pari, and I think it's going to help you to understand
+[1470.00s - 1473.00s] Yes, time
+[1473.00s - 1476.00s] So like in practice, what we should use in the decision tree? Do you think that's your decision? Like a linear one of those things
+[1476.00s - 1479.00s] Wow
+[1479.00s - 1482.00s] So most of the time actually in practice, you would not use So linear models are just not powerful enough to account for almost anything that you want
+[1482.00s - 1485.00s] So I would say that some of the models that are actually used in you can things like XG boosts, for instance, it's actually kind of like a random forest with boosting
+[1485.00s - 1488.00s] The models like the one that Vic Carvana showed, as he said, those are practical
+[1488.00s - 1491.00s] So the X-Wingable boosting machines is something that you can use in practice
+[1491.00s - 1494.00s] And it's actually the best way to have it, right? So you're unlikely to be in a situation that you should use in your models
+[1494.00s - 1497.00s] So I'll, you know, yeah, that's probably not what I should do
+[1497.00s - 1500.00s] And Pari is going to cover how to build these models with you
+[1500.00s - 1503.00s] So I'm going to go to the back and he's going to catch me
+[1503.00s - 1506.00s] Any other questions? through these pictures okay so I as you saw I mean sometimes we look at the picture like I'll go back to this we go back to a picture like this oops and I was kind of pointing on things but maybe it wasn't clear to you the richness of that picture right it only really became clear after you saw that video that that that Steven Drucker was was was showing to us and some of those operations okay So, yeah, I mean, so try to do that for the different, you know, this is very visual, right, this class, right, that's, I mean, it should probably be obvious, but, you know, to try to go through those things
+[1506.00s - 1509.00s] It's key to actually try to lose out, right, so both building them and using them
+[1509.00s - 1512.00s] So it's very, very important so that you get a feeling for this
+[1512.00s - 1515.00s] In a way, in the end there's going to be some useful knowledge, but the question here is whether you can actually develop the sense for how this thing should behave and they should be designed
+[1515.00s - 1518.00s] And then the methodologies of how you design them, how you make them that they're usable, how you test them, right? I know we are, this is week five, right? Although it's really week four
+[1518.00s - 1521.00s] Thank you
+[1521.00s - 1524.00s] If you go through the four classes we've gone through, it's actually a lot of material, right? So, yeah, so I suggest, like, it's more like suggesting something for you guys to do and spend the time that you can allocate to this class to learn and yeah
+[1524.00s - 1527.00s] So Pari, you have the floor
+[1527.00s - 1530.00s] I'll sit down there
+[1530.00s - 1533.00s] Should you do the last bit of this? Please take five as we'll be back here at 630
+[1533.00s - 1536.00s] Oh, sorry, 630.

@@ -1,0 +1,939 @@
+[0.00s - 3.00s] So when you do the correct answer, you have to agree that you can do something something and doesn't agree, suggest that we write and this is what we want
+[3.00s - 6.00s] Obviously we will learn with stochastic gradients and I don't think that these things changing anything from a previous equation other than the fact that the number of buses, the number of examples which are used for these gradients are all forming in the mean and bad signs
+[6.00s - 9.00s] B, which you have to..
+[9.00s - 12.00s] determine, which suggests some number that would make sense
+[12.00s - 15.00s] In the section we have some references about mixture of calcium, some kind of visualizations, right, of this kind of problem
+[15.00s - 18.00s] I think it's a fairly straightforward assignment
+[18.00s - 21.00s] I think you will have some fun implementing it, I hope
+[21.00s - 24.00s] And there's some kind of a checklist at the end
+[24.00s - 27.00s] Now, the bad news
+[27.00s - 30.00s] The bad news is that Although this assignment went out last weekend, right? In the TA 126 hours, two people showed up
+[30.00s - 33.00s] I should also tell you that the first assignment is fairly mild, but subsequent assignments may not be so much
+[33.00s - 36.00s] So I think it pays if you have questions
+[36.00s - 39.00s] I'm very early to write down the list of questions and just join the call, or at least open tickets to that
+[39.00s - 42.00s] The TAs can respond
+[42.00s - 45.00s] So answer your questions early
+[45.00s - 48.00s] The typical behavior we see is that, oh, we have time
+[48.00s - 51.00s] And around Friday evening, Sunday at 11.59 is the deadline, people are reporting a lot of catastrophes, like laptop dying, you know, Cats and dogs are dying, a lot of tougher happening this weekend
+[51.00s - 54.00s] No one is going to help you on that weekend, especially me, I'm not going to help, but even the TAs have flights, right? So they are, obviously they're also students, they have other things to do during the weekend too
+[54.00s - 57.00s] I cannot force them to talk to you at 11pm on Sunday
+[57.00s - 60.00s] So make sure that you are following through all these 15 days at the beginning, giving plenty of time to sort this out
+[60.00s - 63.00s] Okay
+[63.00s - 66.00s] Did everybody record that? I pressed it
+[66.00s - 69.00s] Okay, that was very surprising
+[69.00s - 72.00s] All right
+[72.00s - 75.00s] Okay, so that's basically how the assignment was set
+[75.00s - 78.00s] How to submit the assignment is also another source of tickets because people need to be very specific to all how to submit it
+[78.00s - 81.00s] I hope everyone has already followed this approach
+[81.00s - 84.00s] As part of your setting up your development environment, we ask you to make that a bolstering your own and make sure that you when you watch this video on how to lodge the PA as a collaborator you don't go and not the GitHub ID of that EA when the video was shot
+[84.00s - 87.00s] That year, already has graduated
+[87.00s - 90.00s] So make sure you pick up from this store the GitHub IDs over the TAs, both of them that become two other collaborators, and get a forcefully check mark from the GitHub workflow that everything is fine
+[90.00s - 93.00s] So I hope some of you have done that
+[93.00s - 96.00s] All we need to do in the Brightspace is just a URL where all the PTA will do is just click on that URL, go to the specific assignment one, kind of directory, launch a Python notebook there, launch it, meaning it will go to the GitHub and the GitHub passes that Python notebook if you do it in the Python notebook
+[96.00s - 99.00s] Make sure your Python notebooks have saved outputs
+[99.00s - 102.00s] We cannot run your Python notebooks
+[102.00s - 105.00s] There's no time for that
+[105.00s - 108.00s] So you're responsible for showing us all your results
+[108.00s - 111.00s] If, for example, you hate Python notebooks, and I tell you hate them in some instances, and you prefer Python, just pure Python scripts, because it's easy to step through the code with an ID and a lot of that sort
+[111.00s - 114.00s] You need to make sure that you write a Markdown file
+[114.00s - 117.00s] which is also passable by GitHub, with all the PNG images clearly explained at every step
+[117.00s - 120.00s] That's it
+[120.00s - 123.00s] So people can also check your answers
+[123.00s - 126.00s] Any questions? Okay, questions
+[126.00s - 129.00s] Okay, no questions
+[129.00s - 132.00s] Let's turn now on to a little bit more technical setting
+[132.00s - 135.00s] Alright, so last time, we worked, we worked on many things
+[135.00s - 138.00s] Definitely we finished the maximum-maximum likelihood kind of problem, and we saw the probabilistic version of linear regression, and we started by classification with this kind of problem set over here
+[138.00s - 141.00s] If you remember this kind of discussion, we may stray into blocking these two histograms
+[141.00s - 144.00s] Question to you
+[144.00s - 147.00s] How am I going to plot it, but how would you look? Look to the left corner over there, upper corner
+[147.00s - 150.00s] Well, there is a table of x and y there, right? So we have ground rules, right? And so the left histogram will be plotted based on all rows where y is equal to 0, and the right histogram will be plotted based on all rows where y is equal to 1
+[150.00s - 153.00s] Because the left histogram is when we don't have any attack going on, and the right histogram is when we do
+[153.00s - 156.00s] And we do have the x's for those, so we can actually plot what's happening
+[156.00s - 159.00s] So we recognized, based on this kind of discussion, that there is a fore-post-finger that actually happened, like you see here in this confusion around matrix, and we wrote the most problematic ones as post-post and post-negative
+[159.00s - 162.00s] And we try to have a visual understanding of what is actually happening with this choice of the I think the threshold W here is an unfortunate thing
+[162.00s - 165.00s] It could have been fit up, for example, or something else, because definitely we would no longer confuse this W with some kind of parameter of a classifier
+[165.00s - 168.00s] These are two different things, okay? But I somehow wrote it
+[168.00s - 171.00s] Maybe I can change it right now, because I don't think I have..
+[171.00s - 174.00s] Maybe I can change the diagram, so I'll avoid confusion
+[174.00s - 177.00s] So I wrote it over here with this guide, so let me call this for press room
+[177.00s - 180.00s] Maybe we want to go and change this down to theta star and theta
+[180.00s - 183.00s] I don't think I have written anything on these two places
+[183.00s - 186.00s] The time series and the appropriate distribution
+[186.00s - 189.00s] All right, so what we said is that for a given setting of theta, of the first one, the range of x's is divided into two regions, r0 and r1
+[189.00s - 192.00s] And we said that evidently r0 is called r0 because anything to the left of theta is predicted as negative
+[192.00s - 195.00s] And then to the right of it is predicted as positive
+[195.00s - 198.00s] So no question that we will refer to this kind of notation
+[198.00s - 201.00s] we recognized that we were always going to be making mistakes, no matter the choice of theta
+[201.00s - 204.00s] And we wanted to write down the expression or some estimate of the probability of making a mistake
+[204.00s - 207.00s] I mean, the intuition behind it is that at some point, this probability of making mistake probably would be a function of the choice of the expression
+[207.00s - 210.00s] All right, so we wrote the two components of making mistakes, this component and that component
+[210.00s - 213.00s] And we wanted to estimate this probabilities
+[213.00s - 216.00s] Obviously, this probability is a probability of a continuous random variable and canonical estimated only within some interval
+[216.00s - 219.00s] Obviously, the interval here is given with the region R0 on the x-axis
+[219.00s - 222.00s] And we call this a false negative rate because this corresponds to this corresponds to this
+[222.00s - 225.00s] So this is a false negative rate
+[225.00s - 228.00s] And this corresponds to a false positive
+[228.00s - 231.00s] And finally, we started suggesting that someone has to set this theta at some point
+[231.00s - 234.00s] And we wanted to visually recognize that there is a best setting over there in this specific situation
+[234.00s - 237.00s] So we recognize that as we move the theta, for example, to the left, so which one is the green and the purple? Is it a false positive or a false negative? And which one is this horizontal stripe one? Is it a false positive or a false negative? OK, so anything to do with the integral of R1, right? This is the integral of R1
+[237.00s - 240.00s] This is a false positive
+[240.00s - 243.00s] So this guy is a false positive, right? So this is a false positive
+[243.00s - 246.00s] And anything to do with the green and the magenta is the false negative
+[246.00s - 249.00s] So I was writing
+[249.00s - 252.00s] Anyway, let me delete this
+[252.00s - 255.00s] And I was writing in
+[255.00s - 258.00s] Okay
+[258.00s - 261.00s] All right, so as we move the threshold to the left, what is happening? We are shrinking the force negative, but we are increasing the force positive
+[261.00s - 264.00s] But you can see that as we move to the left
+[264.00s - 267.00s] And at some point when we move to the theta star, this is the point
+[267.00s - 270.00s] when we started this kind of movement, we went from an area of making mistakes
+[270.00s - 273.00s] An area is a summation of the probability of making mistakes, a summation of the green, the orange and the purple kind of region
+[273.00s - 276.00s] And we arrived at a point where that region shrunk to pink and orange
+[276.00s - 279.00s] This is the point where we have the minimum probability of error
+[279.00s - 282.00s] And however, someone may say, and we have some, I think, some kind of discussion about it
+[282.00s - 285.00s] If not, I will make the discussion now
+[285.00s - 288.00s] This theta star can be influenced not by only the probability of total error, but maybe want to trade off false negatives or false positives
+[288.00s - 291.00s] I think I mentioned the classic example that I usually use, this cancer diagnostic, where definitely we want to minimize all negatives or all positives
+[291.00s - 294.00s] Because ultimately asymmetry in the response of a patient, we make a mistake on one versus the other
+[294.00s - 297.00s] All right, so let's continue now
+[297.00s - 300.00s] And we actually can write now that, and this is basically the beginning of lecture 3, and this is my I need to mention, I have a logistical constraint today, not because I caused it, but there is an organization called United Nations
+[300.00s - 303.00s] And there is apparently the whole world is here
+[303.00s - 306.00s] Okay? And I do not want a little drive to Boston this afternoon
+[306.00s - 309.00s] So I'll finish at 120
+[309.00s - 312.00s] But I will not take a break
+[312.00s - 315.00s] So I have to go back to New Jersey and drive to Boston
+[315.00s - 318.00s] And so I have a very, very long day today
+[318.00s - 321.00s] So I will just take 10 minutes of your lectures, which I think you were happy about
+[321.00s - 324.00s] All right, so lectures are at 9
+[324.00s - 327.00s] So this is lecture 3 and I like that
+[327.00s - 330.00s] There is a trade-off
+[330.00s - 333.00s] So there is a trade-off between force positive play and force negative play
+[333.00s - 336.00s] Okay, so that is the kind of conclusion of all this kind of discussion we had
+[336.00s - 339.00s] And I wanted to sort of present now some kind of metrics that kind of also are quoted very frequently in classification
+[339.00s - 342.00s] This is CLF metrics and one of them is called through positive rate, also known as recall
+[342.00s - 345.00s] also known as probability of detection, also known as sensitivity, multiple names for exactly the same ratio, which is the true positive divided by the true positive plus false negative
+[345.00s - 348.00s] Now, for us, it's very common to call it recall
+[348.00s - 351.00s] This guy is in electrical engineering circles, and this guy is in..
+[351.00s - 354.00s] And I explained a little bit how to remember that, those relationships
+[354.00s - 357.00s] And the others' composition, to be the ratio of true positive divided by true positive plus false positive
+[357.00s - 360.00s] So recall and precision
+[360.00s - 363.00s] And what do you notice on these two kind of two ratios? Well, we can very safely, I think, say that since there is a trade-off between false positives and false negatives, right? Given everything is the same, we can safely also write that there is a trade-off between recall Recall, precision
+[363.00s - 366.00s] Because everything else is the same
+[366.00s - 369.00s] It's true, positive, it's common in both
+[369.00s - 372.00s] So there is also, I will call it a plot
+[372.00s - 375.00s] There are two plots
+[375.00s - 378.00s] One of them I'm going to plot today
+[378.00s - 381.00s] And this plot, the plots recall versus probability or false positive rate
+[381.00s - 384.00s] And being a first positive rate, rate is a probability, the maximum is 1
+[384.00s - 387.00s] And recall obviously being a true positive rate, the maximum is also 1
+[387.00s - 390.00s] So anything should be constrained within this kind of region that I'm drawing right now
+[390.00s - 393.00s] And the curves are going to look like this
+[393.00s - 396.00s] Each of these curves that I drew corresponds to a different classifier
+[396.00s - 399.00s] And this is C
+[399.00s - 402.00s] So what is the different classifier? We haven't even seen a single classifier
+[402.00s - 405.00s] So think about multiple classifiers here because at some point soon we will see one
+[405.00s - 408.00s] And so this could be what we call a logistic regression
+[408.00s - 411.00s] Maybe this B is something else like a neural network of some sort and C could be something else
+[411.00s - 414.00s] It doesn't really matter what are the classifiers right now
+[414.00s - 417.00s] But what matters is that to tell me which one of the three, A or B or C, would you select to be your desired classifier? Which one is A, B and C? Okay, if it's wrong, sorry, which one? C
+[417.00s - 420.00s] All right, C is the worst possible classifier you can
+[420.00s - 423.00s] And the reason why it's a worst possible classifier, the probability of true positive is equal to probability of false positive
+[423.00s - 426.00s] So that's the worst thing
+[426.00s - 429.00s] So I'm claiming that A is better than B, it's better than C
+[429.00s - 432.00s] And the way to see that is very easily if you draw a vertical line over here
+[432.00s - 435.00s] For the same false positive rate, A is offering a much better true positive rate than B
+[435.00s - 438.00s] And the same argument can make if you draw a horizontal line in order to prove In fact, there is one point in this diagram where I'll call it the academic unrealistic operating point of a classifier, which is offering 100% proposed debate for zero
+[438.00s - 441.00s] And what is really the best? I mean, every single year which is closest to this kind of point is going to be better than the average
+[441.00s - 444.00s] And usually there is kind of an analogy you may want to have in your mind when it comes to this kind of detectors or classification
+[444.00s - 447.00s] Let's assume that here there is a table over here, they are full of gold coins
+[447.00s - 450.00s] Imagine that
+[450.00s - 453.00s] But there is also a banana on the table
+[453.00s - 456.00s] What is your job? Obviously your job is to cut all these gold coins, carry them with you, start running, but leave the banana behind
+[456.00s - 459.00s] The banana is the first pose
+[459.00s - 462.00s] And you want to pick up all the true poses you can take
+[462.00s - 465.00s] You can pick up how
+[465.00s - 468.00s] So this is the trade-off analogy that I'm kind of describing here with ROC curves
+[468.00s - 471.00s] And these points over here, these curves are plotted with specific choices of these operating points
+[471.00s - 474.00s] And the question to you is, how do I plot an ROC curve? What do I change? Well, the only node, the answer is I change the only node that I've got available to me
+[474.00s - 477.00s] which is basically the threshold
+[477.00s - 480.00s] So every single threshold offers a specific force-cost rate
+[480.00s - 483.00s] And of course, the true cost rate is another terrientis kind of a probability distribution that you can easily calculate based on your test data
+[483.00s - 486.00s] And you can have your specific operating point for this
+[486.00s - 489.00s] If you change the threshold, you will arrive here and here and here so that the classifier is going to be set to a specific operating point, no matter what the classifier is
+[489.00s - 492.00s] You don't change the threshold for that specific performance method that you want to achieve
+[492.00s - 495.00s] For this, for the historical kind of reasons, these curves are called receiver
+[495.00s - 498.00s] The receiver was this antenna that was receiving the signal strength operating
+[498.00s - 501.00s] or ROC
+[501.00s - 504.00s] It's an R of C care
+[504.00s - 507.00s] All right, now..
+[507.00s - 510.00s] So what exactly are we using? So we are going to select a threshold so that our detector will have a very specific operating point with respect to force positive and of course the relationship with robust
+[510.00s - 513.00s] Depends on the use case as I said, you may want to do different thresholds
+[513.00s - 516.00s] on the force force
+[516.00s - 519.00s] And of course, there's another curve which I'm not presenting right now, but I'll present it when the time comes when we move to computer vision, which is recall versus precision
+[519.00s - 522.00s] That's another curve that captures also the sort of more explicitly the trade-off between the two matrix
+[522.00s - 525.00s] But the time will come when I do it
+[525.00s - 528.00s] Okay
+[528.00s - 531.00s] One thing that I think we have still..
+[531.00s - 534.00s] on the table is, if you go all the way up to the Vapnik kind of diagram, where is it, over here, we said that we arrived at, after this kind of maximum likelihood of the conditional problem distribution, the maximum likelihood solution of the p-model of y given x, y given x, w for regression, we have replaced this guy with, with what? With, cross, That is the loss function that we said that we were basically done
+[534.00s - 537.00s] Even for regression, you can derive the initial error as a sort of specific instantiation of cross entropy when the P model is gaussing
+[537.00s - 540.00s] That's what I told you and then I also provided, I think, some reference on, if you remember the section, 551, you don't see the derivation
+[540.00s - 543.00s] So we need to find obviously this thing for classification, because obviously I told you at the time that cross entropy is common in both regression and classification
+[543.00s - 546.00s] So we'll start with this general cross entropy formula, which has this minus expectation blah blah law of something, and we also call log loss, and arrive at a specific version of cross entropy for binary classification
+[546.00s - 549.00s] So let's look at this now because this is the loss function
+[549.00s - 552.00s] We have to calculate gradients in order to learn anything
+[552.00s - 555.00s] Okay, so let's now do this thing
+[555.00s - 558.00s] So I'm going to call this kind of section binary cross-entropy
+[558.00s - 561.00s] Okay, so our..
+[561.00s - 564.00s] cross entropy, we make sure that we are in the same page, was the formula minus expected value of x comma y the examples out of the p data hat distribution, log p nugget of y given x comma dot
+[564.00s - 567.00s] Imagine if you are in an interview setting and you can respond not to an interviewer, right? So if they ask you what is the loss function there? But not only you can write it from then, but you can also explain it
+[567.00s - 570.00s] So can someone again remind us what that is? First of all, the one that you need to notice is that every single kind of loss function has this kind of some form of average in common, some form of expectation
+[570.00s - 573.00s] So we can only optimize anything instant
+[573.00s - 576.00s] So we are optimizing average risk in this kind of thing
+[576.00s - 579.00s] Definitely it says that values of the labels and the axes, right, are going to, during kind of experiencing this kind of loss function during kind of training, are going to come out with a big data card distribution, just like what the Voughty diagram was suggesting
+[579.00s - 582.00s] And our loss function will be some function of whatever hypothesis we have made, right? But there's a log in front, and that's why this..
+[582.00s - 585.00s] loss is also known as log loss in the trade
+[585.00s - 588.00s] Now if you take the star fruit here and say okay for regression I have a Gaussian B model here if you remember this simple example
+[588.00s - 591.00s] But for classification I have, can I have a Gaussian B model here? Can I also have a Gaussian and the answer is a big fat
+[591.00s - 594.00s] I cannot have a Gaussian B model because the only other variable here is the Y, the only one variable is the Y, because the X and W are given, right? But the Y in classification is it continuous or discrete? Discrete
+[594.00s - 597.00s] So is Gaussian density an appropriate sort of density for modeling a discrete random variable? Probably not
+[597.00s - 600.00s] Which one for binary classification is the appropriate distribution for modeling what ends up being a coin tossing experiment? The Bernoulli distribution
+[600.00s - 603.00s] So the Bernoulli distribution, so I'm selecting a very convenient for me p-model of x, w, right, given x, w, is equal to Bernoulli
+[603.00s - 606.00s] And I'm going to write, I'm going to pick up from Wikipedia the Bernoulli distribution as a formula, and I actually convert it to y, specific variables we have in our classification setting
+[606.00s - 609.00s] So the formula is y hat to the power of y, 1 minus y hat, What is my big model, the coin tossing distribution? This model, this assumption, right, was my hypothesis
+[609.00s - 612.00s] It is of great interest to me if I just plug in the positive event
+[612.00s - 615.00s] What is results to? Of y is equal to 1, given x comma w is equal to y, y hat
+[615.00s - 618.00s] This is a very important result
+[618.00s - 621.00s] It says the following
+[621.00s - 624.00s] Since your classifier is going to spit out y-hat at the end of the day, you need to interpret this y-hat as a probability, and in fact we call this probability a posterior probability, the posterior event
+[624.00s - 627.00s] Write it down
+[627.00s - 630.00s] The y-hat is the posterior probability of the posterior event
+[630.00s - 633.00s] And obviously, if y-hat, if y is equal to zero, then very easily you can see obviously the posterior probability of the negative to find this one minus y as we would in the experiment
+[633.00s - 636.00s] And since this is the case with a binary classification, it's enough in a binary classifier to just produce a scalar between 0 and 1
+[636.00s - 639.00s] But this scalar has to be interpreted like this
+[639.00s - 642.00s] It's a probability of the positive event
+[642.00s - 645.00s] I produce 0.80, and that's my probability of an attack is going up
+[645.00s - 648.00s] That is in the setting we have seen kind of last week
+[648.00s - 651.00s] Okay, so now let's plug in this p-model into the Gaussian entropy to arrive at a specific formulation of the binary Gaussian entropy, which is a much simpler formula
+[651.00s - 654.00s] Okay, so let's do that
+[654.00s - 657.00s] So after plugging in, I'm arriving at the following formula
+[657.00s - 660.00s] Let me work out on this thing first
+[660.00s - 663.00s] So this is log of y hat to the power of y, 1 minus y to the power of 1 minus y, and I hope you agree that this is log of y hat to the power of y plus log of 1 minus y hat to the power of 1 minus y, which is obviously equal to y log y hat plus 1 minus y log of 1 minus y hat
+[663.00s - 666.00s] Are we in some form of mild agreement on this manipulation here? algebra, basic algebra
+[666.00s - 669.00s] I use always being very long, the log of the progress is the summation of the individual logs
+[669.00s - 672.00s] Then I use this identity to simplify this expression
+[672.00s - 675.00s] Okay, so if we are in agreement, I will then do the following
+[675.00s - 678.00s] I have this kind of expectation which for the finite kind of data set effectively ends up being like the sample mean
+[678.00s - 681.00s] I will approximate it with a sample mean
+[681.00s - 684.00s] So I'll arrive at the binary percent of me now
+[684.00s - 687.00s] which is obviously a function of my prediction and the down truth, which is minus
+[687.00s - 690.00s] I had a minus in front
+[690.00s - 693.00s] So 1 over m, which is the number of examples, summation from i is equal to 1 to m, yi log of y hat i log of 1 minus y hat
+[693.00s - 696.00s] And this thing belongs to, it's a scalar, as I always desire, to have a scalar as a loss
+[696.00s - 699.00s] So that is the central kind of result, but I think it's also kind of good to have a kind of feel of what is really happening with respect to this, I would call it per example loss
+[699.00s - 702.00s] It's a per example loss because there's an i as a subscript there, so that's the example, that's a loss I'm actually going to pick up
+[702.00s - 705.00s] So let's plot this function in the square brackets over here as a function that I wrote of y hat
+[705.00s - 708.00s] and so-called, an example
+[708.00s - 711.00s] Since y hat is what? It's a probability
+[711.00s - 714.00s] The maximum value that y hat can take is obviously 1
+[714.00s - 717.00s] Okay, and if I plug this function, I will arrive at this type of curve, but I also have to fix, to plug it, I have to fix the down curve
+[717.00s - 720.00s] I have to fix that the y is equal to 1
+[720.00s - 723.00s] So I replace y i is equal to 1 here, and I'm just plugging this down
+[723.00s - 726.00s] And I have a classifier, some classifier, that speaks out y hat i equals 0.95
+[726.00s - 729.00s] Which means that I'm 95% certain that there's a positive event going on, because y hat i is associated with a positive event
+[729.00s - 732.00s] And the ground truth, I agree with you, disagrees with me
+[732.00s - 735.00s] I agree with you mostly, right? What is your expectation? going to be over here and therefore the loss I'm going to recap is minimal
+[735.00s - 738.00s] When y hat i is 0.05, I'm saying that I'm 95% certain that there is a positive
+[738.00s - 741.00s] Sorry, I'm saying that there is a 5% certain that there is a positive value
+[741.00s - 744.00s] Therefore I'm 95% certain that there is a negative value
+[744.00s - 747.00s] The ground group disagrees with me strongly
+[747.00s - 750.00s] And therefore I'm picking a very substantial loss
+[750.00s - 753.00s] So the kind of behavior of this kind of a low-blossed, combined classification kind of formula here is that the binary cross-entropy penalizes confident wrong decisions
+[753.00s - 756.00s] Which can also cause decisions which are confident but wrong
+[756.00s - 759.00s] They are usually followed by a lot of people
+[759.00s - 762.00s] All right, anyway, okay, so that's basically the sort of thing I'll..
+[762.00s - 765.00s] I covered everything
+[765.00s - 768.00s] I just don't have any questions on binary percent review whatsoever
+[768.00s - 771.00s] Now the time you ask questions, don't
+[771.00s - 774.00s] It is great
+[774.00s - 777.00s] Oh, and everything is okay? All right, so now that I have the statistical version of my sort of, this version of my loss, I can kind of suggest that if I have, let's say, a predictor over here, which is a classifier, and this predictor splits out the y-hat for a specific value x, then I will plug in the binary cross entropy loss over there, which will give me this scalar, as I just proven, that it's going to be a scalar capital L
+[777.00s - 780.00s] And obviously, Y needs to calculate the gradient of this binary cross entropy, with respect to the parameters W of this kind of classifier to provide that gradient to the parameter update formula, which you all know that has another hyperparameter called learning rate and this hyperparameter here is your mini-batch to update this kind of classifier with the new set of Ws
+[780.00s - 783.00s] And just like I have shown you in the case of mean squared error, if you remember, we can sit down and do the gradient calculation of this binary cross-entropy with respect to the number of parameters, right? And we will do that only, we can only do that only when we have a specific hypothesis in front of us
+[783.00s - 786.00s] So the next kind of discussion here is what could be a very simple kind of classifier that we can invent
+[786.00s - 789.00s] And obviously this question was asked many decades ago, and this very first classifier we're going to see is going to be compliant to the linear regression model, in a sense that it's going to also be linear
+[789.00s - 792.00s] So it would be has some kind of linear component, but obviously we need to do something about the output which has always need to be interpreted as a probability
+[792.00s - 795.00s] So I will be calling this kind of very first classifier logistic regressor
+[795.00s - 798.00s] And despite the name regression over here, this will end up being a classification
+[798.00s - 801.00s] Make sure we see exactly why the regression is there
+[801.00s - 804.00s] Of course, there are two ways of presenting logistic regression
+[804.00s - 807.00s] There is one way is to suggest that I have this kind of intuition of I'm receiving this kind of x
+[807.00s - 810.00s] Then what I was doing also in the regression kind of setting, I was building some features out of that x
+[810.00s - 813.00s] which if you remember, were in this kind of polynomial and basis function
+[813.00s - 816.00s] And this set of features were participating in a dot product function
+[816.00s - 819.00s] We're coming in with parameters
+[819.00s - 822.00s] That's the way for the physics, if you like
+[822.00s - 825.00s] And then I had my regression curve or regression kind of hypothesis
+[825.00s - 828.00s] Now let's try to see what's happening in this case if we have to solve the regression
+[828.00s - 831.00s] So this is my x, my y
+[831.00s - 834.00s] Remember how the data were all over the place in this kind of sign? So they'll kind of shape in the regression kind of setting
+[834.00s - 837.00s] But over here I don't have anything like that because my y is discrete
+[837.00s - 840.00s] And therefore I will have x's only when the y is either 0 or 1
+[840.00s - 843.00s] So if you remember this kind of sigma strength kind of analogy over there, this example, when the reflections were not very strong, I mostly have negative events
+[843.00s - 846.00s] So I am expecting to see some kind of a cluster of points over here
+[846.00s - 849.00s] I hope you agree that this is basically what I'm showing you see
+[849.00s - 852.00s] And I had positive events when the reflections or when my x's were very strong, very large numbers
+[852.00s - 855.00s] So I'm expecting to see something like that
+[855.00s - 858.00s] And so if someone goes ahead and kind of produces some hypothesis, right now I'm going to draw it as a kind of a straight line
+[858.00s - 861.00s] You saw, to pretend that this is a regression problem, just pretend it's a regression problem, what could be a most reasonable hypothesis, right? A straight line that goes to the middle of this kind of class
+[861.00s - 864.00s] Obviously we have some school-use things over here, right? It can happen, right, in between
+[864.00s - 867.00s] But definitely we have these kind of two classes there because of the distribution of my target variable
+[867.00s - 870.00s] If this is the This is exactly what this thing will do
+[870.00s - 873.00s] This linear combination of features will draw the line
+[873.00s - 876.00s] However, as you can imagine, this kind of hypothesis was used to do predictions
+[876.00s - 879.00s] If you go here, over there ends up being also numbered smaller than 0, which is logistic regressor or any bioregiveness is fine to produce always number between 0 and 1
+[879.00s - 882.00s] So if I call A the scalar that is resulting out of this dot product, I will go ahead and attach to it another block that I conveniently designed to suppress all possible numbers, to always think you need
+[882.00s - 885.00s] Of course, you can say, well, why don't you click the number? You can do this sigmoidal function as we will plot it right now is kind of a softly doing guy
+[885.00s - 888.00s] And this is 0.5 and this
+[888.00s - 891.00s] Yeah, it's a nonlinear function
+[891.00s - 894.00s] Why this function is nonlinear? Because obviously if I have a sigma of 10 million, it would be a 1, and a sigma of 1 would be 0.7
+[894.00s - 897.00s] So there's an anomaly here, definitely behavior in this kind of function
+[897.00s - 900.00s] In the limit, this function may start having a very, very steep slope, and in the limit will become almost like a switch
+[900.00s - 903.00s] And this is almost like a switch in a sense that it is..
+[903.00s - 906.00s] clipping stuff always to zero, right, when it is in this direction and always to one when it is positive
+[906.00s - 909.00s] And this approximation, I would call it, of this kind of sigmoid, or this version of this kind of a steep sigmoid, was called Pesetron back in the 60s
+[909.00s - 912.00s] And this Pesetron was designed by Rosenblatt, gave rays to the neural networks that we have today
+[912.00s - 915.00s] And maybe some of you may have heard the expression of multi-layer perceptrons, or MLBs, that survives from this era
+[915.00s - 918.00s] Obviously today's multi-layer perceptrons don't have the original perceptron activation function, as we call it
+[918.00s - 921.00s] So basically bottom line is that the Wi-Fi here, after the application platform Sigmoid, will result into a hypothesis that is always like this
+[921.00s - 924.00s] It will always return numbers between 0 and 1, as I always described in the first slide
+[924.00s - 927.00s] So in one of my videos in the queue, if you want, you can see the more elaborate derivation of this log diagram that starts with the Bayesian rule and kind of ends up in making some kind of linearity arguments in that kind of rule setting in this kind of probabilistic kind of setting and ends up with justifying the shape of this kind of log that I'm going to do at the end of the day, we will be calling a single neuron, because a single neuron is identical to this log And over it, obviously, we will be passing the manual visualization from the set
+[927.00s - 930.00s] We have a linear component, a program we want to recognize
+[930.00s - 933.00s] So this is a linear unit here, and followed by a non-linear unit that we also need to design
+[933.00s - 936.00s] So now that we have a block diagram, I have the hypothesis, in other words, in my mind
+[936.00s - 939.00s] If we assume that this hypothesis is, if we assume that this hypothesis is this, we can actually go ahead and plug in the sort of numbers with respect to this simple element, the sigmoid linearity followed by the sigmoid del Toulomb unit, and come up with the specific version of the gradient for that specific simple block diagram
+[939.00s - 942.00s] And this is basically what we need to do in this block diagram, in this block diagram, to train
+[942.00s - 945.00s] Okay, you'll like this expression over here, and then this thing will start working after all this kind of training samples that someone gave you, and it will result in very less fire
+[945.00s - 948.00s] I think hopefully we'll have good metrics as we presented
+[948.00s - 951.00s] We're not going to sit here and write everything I have on the side
+[951.00s - 954.00s] For those who are interested, they can follow the discussion there and they can arrive on this kind of equation on their own
+[954.00s - 957.00s] All right, so now that we have seen what we'll call from now, by the way, this thing in some textbooks is called a generalized linear model
+[957.00s - 960.00s] It's a linear model, but it's generalized because we have this kind of sigmoidal unit over here
+[960.00s - 963.00s] That's one and another version of this same thing that you will see
+[963.00s - 966.00s] And now that we have this kind of sigmoidal unit, let's go to just see how it will behave
+[966.00s - 969.00s] Okay, so in this kind of block diagram here, I have a basic model with a block diagram
+[969.00s - 972.00s] And I have a simple kind of binary classification data, which obviously here I have two classes
+[972.00s - 975.00s] And I have how many, what is my smaller than n? How many features do I have? Two features, I have X1 and X2
+[975.00s - 978.00s] Every point, every X here has an X coordinate and a Y coordinate
+[978.00s - 981.00s] They have two features
+[981.00s - 984.00s] Every point is a two vector
+[984.00s - 987.00s] Okay, so hopefully everyone is fine with that
+[987.00s - 990.00s] So, okay, here's the two features, X1 and X2, that are coming in, right? And they are going to be linearly combined with some set of weights
+[990.00s - 993.00s] That means obviously need to be calculated by using this gradient expression by a stochastic gradient descent, which is hidden behind the block
+[993.00s - 996.00s] So not everything is shown
+[996.00s - 999.00s] And if I press the play button, then very nicely the loss function is going to very easily converge
+[999.00s - 1002.00s] And a nice decision boundary will be produced
+[1002.00s - 1005.00s] And this discriminative, as we call them, kind of classifiers, are going to perform very, very well
+[1005.00s - 1008.00s] As you can see, the training laws and the test laws are very close to each other
+[1008.00s - 1011.00s] No, we're fitting everything
+[1011.00s - 1014.00s] Life is beautiful
+[1014.00s - 1017.00s] Okay? All right
+[1017.00s - 1020.00s] So now someone gives you another binary classification data set, which is like this
+[1020.00s - 1023.00s] As you probably noticed, I haven't really done, by the way, I didn't even set the activation function to be sigmoid previously, but nothing will change
+[1023.00s - 1026.00s] Let's assume that someone is sort of giving you this kind of data set
+[1026.00s - 1029.00s] I don't have anything else to do here because I cannot really change the loss function and it doesn't really make any sense to change it
+[1029.00s - 1032.00s] And the only thing I can do in this kind of setting that I am is to just press a play button
+[1032.00s - 1035.00s] Okay, that's the only thing I can do
+[1035.00s - 1038.00s] I can start seeing how this hypothesis, because at the end of the day, This thing, there's an equation
+[1038.00s - 1041.00s] What is the equation? That's the answer for question to you
+[1041.00s - 1044.00s] What is the equation behind this thing? There's an equation
+[1044.00s - 1047.00s] There's an equation
+[1047.00s - 1050.00s] Go back to the block diagram we just drew, and tell me what is y hat
+[1050.00s - 1053.00s] Through a block diagram, what is the y hat? It is sigma of w transpose x, let's say
+[1053.00s - 1056.00s] That is the equation
+[1056.00s - 1059.00s] That's the kind of logic
+[1059.00s - 1062.00s] In linear regression, we have another equation
+[1062.00s - 1065.00s] Now we have an equation
+[1065.00s - 1068.00s] And this thing is finding some doubt and strata for us
+[1068.00s - 1071.00s] Drag into the equation to do classification
+[1071.00s - 1074.00s] Well, this thing is trying, as you can see, right? And it's evident to me at least that Similar to what we have seen earlier in the regression mode setting where I started the discussion of producing a hypothesis parallel to the x-axis for the house price prediction problem, what situation we have equivalent here we have a situation which is called underfitting
+[1074.00s - 1077.00s] Underfitting our hypothesis is simply too simple for the specific p-data cut, because this is the p-data cut here
+[1077.00s - 1080.00s] The empirical problem distribution of our examples, the joint problem distribution of x and y is this one
+[1080.00s - 1083.00s] So what did we do in the linear regression setting to address, to move away from underfitting? I'm glad we arrived overfitting, but here we probably only want What did we do? We started increasing the number of parameters, right? And we increased the number of parameters by effectively creating more complicated hypothesis function
+[1083.00s - 1086.00s] Okay? So this is what I'm going to do now next
+[1086.00s - 1089.00s] I'm going to suggest that there is a specific way that it's going to be like, look like a network of these neurons, that I will increase the hypothesis complexity here with their help
+[1089.00s - 1092.00s] Okay? So, We're going to title this kind of discussion the simplest neural network
+[1092.00s - 1095.00s] The simplest neural network is going to look like this
+[1095.00s - 1098.00s] It's going to take an X like the one we've seen earlier with two features, let's say
+[1098.00s - 1101.00s] Now behind these square blocks, behind these square blocks are..
+[1101.00s - 1104.00s] A single euro, a third product followed by non-unarity, the sigmoidal non-unarity behind each and every of these square blocks
+[1104.00s - 1107.00s] I'm fitting the X
+[1107.00s - 1110.00s] neuron 1 that obviously has a weight vector w1
+[1110.00s - 1113.00s] At the same time, I'm feeding it to neuron 2 that has a weight vector w2
+[1113.00s - 1116.00s] And the output of these neurons, which are always these scalars, and they are scalars, and actually, in addition to being scalars, they're also numbers between 0 and 1, are combined by a third neuron, which obviously has parameters, parameters, parameter variables
+[1116.00s - 1119.00s] I call this output Y, is going to be a number between 0 and 1
+[1119.00s - 1122.00s] So I went from a very small number of parameters in the previous kind of case I had a single neuron, right? And I didn't tell you that, but even on the single kind of neuron, when we move from this kind of setting, we will explicitly call out bias
+[1122.00s - 1125.00s] In the regression setting, which one was the bias? Which parameter was the bias? W? 0
+[1125.00s - 1128.00s] Remember the straight line, W0 plus W1x, right? So now we will call out this bias explicitly, we'll call it small letter B
+[1128.00s - 1131.00s] We'll denote it as small letter B
+[1131.00s - 1134.00s] So my hypothesis, right, for a single neuron, will be W transpose x plus b
+[1134.00s - 1137.00s] As you can imagine, this is just a notation and nothing changes what we have said earlier
+[1137.00s - 1140.00s] So if one neuron has three parameters, We have now three neurons and therefore we have now nine parameters, three and three and three
+[1140.00s - 1143.00s] So we managed to increase the number of neurons to three, okay, to the number of parameters to three
+[1143.00s - 1146.00s] But over here I just want to write the expression of the y hat as an equation so that we know what's happening
+[1146.00s - 1149.00s] So I will consider this vector over here to be h and this vector will be y hat 1 and y hat 2
+[1149.00s - 1152.00s] This is the output of the first neuron and the output of the second neuron
+[1152.00s - 1155.00s] I'm lumping together into a vector H
+[1155.00s - 1158.00s] And I'm writing the white hat as sigma of W3 transpose what? H is equal to sigma
+[1158.00s - 1161.00s] W3 transpose is W1 3, W2 3
+[1161.00s - 1164.00s] transpose
+[1164.00s - 1167.00s] Well I have, I'm not adding the biased terms, it doesn't really matter
+[1167.00s - 1170.00s] H is what? H, not H, but y hat 1 and y hat 2, right? This is exactly the same equation I wrote earlier
+[1170.00s - 1173.00s] I just expanded the terms
+[1173.00s - 1176.00s] And therefore I have, I have what? Sigma of w1 3 y hat 1 plus w2 3 y hat 2
+[1176.00s - 1179.00s] Everyone is making agreement here or..
+[1179.00s - 1182.00s] They just make..
+[1182.00s - 1185.00s] yes, go here
+[1185.00s - 1188.00s] Oh, because I'm expanding this W term into the two parameters, effectively
+[1188.00s - 1191.00s] I forgot what the..
+[1191.00s - 1194.00s] I don't have the bias term explicitly quoted here
+[1194.00s - 1197.00s] That's why they're not free
+[1197.00s - 1200.00s] Right now there's two
+[1200.00s - 1203.00s] But I told you about the bias
+[1203.00s - 1206.00s] Okay, so don't be confused by the lack of the bias terms here
+[1206.00s - 1209.00s] They don't change what I wanted to say
+[1209.00s - 1212.00s] But I hope you agree with the manipulation here
+[1212.00s - 1215.00s] There's only a manipulation, it's just basically a direct
+[1215.00s - 1218.00s] expression of what is going on here in an equation for it
+[1218.00s - 1221.00s] So it is, this one is w1, 3
+[1221.00s - 1224.00s] What is the y hat 1? Sigma of w1 transpose x plus w2 3 sigma of w2
+[1224.00s - 1227.00s] OK, I don't have space
+[1227.00s - 1230.00s] I try to find space, but I don't
+[1230.00s - 1233.00s] OK, so this is plus
+[1233.00s - 1236.00s] W2, 3, sigma of W2 transpose X
+[1236.00s - 1239.00s] That is the end result of my, the equation of the hypothesis which I will test with three neurons
+[1239.00s - 1242.00s] Okay? I'm waiting for you to write it so I can read some more, but I hope everything is kind of clear with this evolution
+[1242.00s - 1245.00s] So one thing that I noticed is that why earlier I have one non-linearity
+[1245.00s - 1248.00s] Here I have a non-linearity of a non-linearity
+[1248.00s - 1251.00s] So I have some nesting of sigmoids that is going on
+[1251.00s - 1254.00s] So there is some kind of code that this hypothesis is more complicated than everywhere, despite the increase of the number of parameters
+[1254.00s - 1257.00s] But here you notice something even more important, something we have seen in the past
+[1257.00s - 1260.00s] There is some form of a linear combination of features going on here
+[1260.00s - 1263.00s] Where is it? It's inside here
+[1263.00s - 1266.00s] Why before, however, a feature was explicitly designed by us? This guy over here, which is feature one, which is a function of x, and the other guy over there, which is phi two of x, is calculated by a very specific part of this trivial network of just three neurons
+[1266.00s - 1269.00s] The part which is doing this featureization, automatic featureization as it turns out, is which part? Which part? This part
+[1269.00s - 1272.00s] Do you see that? So this part I'll be calling the body of the network, and this part I'll be calling it the head
+[1272.00s - 1275.00s] And I'm claiming that the body is responsible for operating these features
+[1275.00s - 1278.00s] And the head is responsible for combining the features delivered to it by the body and applying the last sigmoidal unit to perform binary classification
+[1278.00s - 1281.00s] So let's write it down
+[1281.00s - 1284.00s] It's that the body delivers features to the head
+[1284.00s - 1287.00s] That's point number one
+[1287.00s - 1290.00s] The other most important point, I mean, a direct consequence of that thing is that at the end of the day, there is going to be a binary cross-entropy loss attached to the head as a formula, in a stochastic rate descent who is going to not change the weight of the body separately from the weights of the head
+[1290.00s - 1293.00s] All of the weights are going to be jointly optimized
+[1293.00s - 1296.00s] So I can definitely suggest that if theta is, and that's not the threshold, that's a parameter vector, W1, W2, W3
+[1296.00s - 1299.00s] And stochastic gradient descent is doing this
+[1299.00s - 1302.00s] The features that the body is delivering to the head are not independent of the head's performance
+[1302.00s - 1305.00s] Because the head is fitting out the white hat finally, but it is fitting it out with the right fit, by considering the right features
+[1305.00s - 1308.00s] So the features are changing over time as the training progresses
+[1308.00s - 1311.00s] So that's another important observation, simple neural network
+[1311.00s - 1314.00s] Are you able to understand that the features are changing as the training progresses? And the combination ways are also changing as the training progresses, so that both of them are collaborating to produce the right way
+[1314.00s - 1317.00s] Professor? Yes
+[1317.00s - 1320.00s] So during the visualization that we had, and we saw that there were like..
+[1320.00s - 1323.00s] Oh, in this guy, yes
+[1323.00s - 1326.00s] So do we get that? Of course, I mean, you can, I cannot really predict what's going to happen, but let's try it
+[1326.00s - 1329.00s] I mean, this is basically what we have just now
+[1329.00s - 1332.00s] And I can try and see if this is going to be the case here
+[1332.00s - 1335.00s] You know, it's depending on the initialization of the weights
+[1335.00s - 1338.00s] If we stay here for a while, we'll see something
+[1338.00s - 1341.00s] I mean, we'll see some attempt
+[1341.00s - 1344.00s] I mean, definitely you can see now that my hypothesis is complicated enough that at the very least radic kind of decision boundary was formed, right? But I did not suggest that only three neurons will solve this specific kind of problem
+[1344.00s - 1347.00s] That may solve it if I start changing activation functions and things like that
+[1347.00s - 1350.00s] I mean, if I start doing hyperparameter optimizations and things like that, or if I wait long enough if we won't stay here until tomorrow, probably could find something, some other local minimum
+[1350.00s - 1353.00s] This guy now obviously has another manifestation
+[1353.00s - 1356.00s] There was some kind of local minimum
+[1356.00s - 1359.00s] If this is able to solve it, this is definitely not a global minimum
+[1359.00s - 1362.00s] That's a local minimum
+[1362.00s - 1365.00s] Just convert to it, stay there for a while
+[1365.00s - 1368.00s] We see the loss function kind of improving very, very gradually
+[1368.00s - 1371.00s] And if we stay long enough here, maybe this guy will close the loop, so to speak
+[1371.00s - 1374.00s] But definitely there is a ways to persuade everyone that if I change a little bit more the hypothesis, then this thing will solve it
+[1374.00s - 1377.00s] Okay? I mean, the other kind of intuition behind this is that we do not really know exactly what's going to happen
+[1377.00s - 1380.00s] We moved from something that we designed, the features that we designed, that we kind of explain what could potentially be happening to something that we cannot really predict what's going to happen
+[1380.00s - 1383.00s] And this is the reason why this is all experiment
+[1383.00s - 1386.00s] You have to try things to see what works, what doesn't
+[1386.00s - 1389.00s] Even sometimes your intuition is not the right thing
+[1389.00s - 1392.00s] But in this kind of simple setting, there is at least some intuition
+[1392.00s - 1395.00s] With that said, now that we've seen the light at the end of the tunnel, we are going to start forming more by suggesting that this thing, this body, is just basically one of the many layers in my attempt to form more complicated neural networks, as I would call it
+[1395.00s - 1398.00s] These neural networks are going to be called fully connected, also known as dense
+[1398.00s - 1401.00s] And they are going to be very expensive because of the density of their connectivity
+[1401.00s - 1404.00s] We'll see now why they are sort of going to be expensive, but nevertheless expensive means computationally wise means that, you know, at least they are able to have a very large representational capacity and we recognize them properly to mimic what we have already discussed
+[1404.00s - 1407.00s] There is a goal to start making them focus to the right sort of decision of boundary or to the right regression function if we want to do that
+[1407.00s - 1410.00s] That's all in the problem
+[1410.00s - 1413.00s] But let's follow this kind of discussion, the fully connected network
+[1413.00s - 1416.00s] So right now we are going to think about it as a kind of a pyramid of some sort, where at the bottom the high dimensional X's are coming in
+[1416.00s - 1419.00s] There is a number of neurons which are accepting this X
+[1419.00s - 1422.00s] Now earlier we had only two
+[1422.00s - 1425.00s] Now we have five, basically
+[1425.00s - 1428.00s] And these neurons are delivering their outputs to another set of neurons over here
+[1428.00s - 1431.00s] I don't block all the connectivity that I can possibly have
+[1431.00s - 1434.00s] Everything is connected to everything else and so on and so on
+[1434.00s - 1437.00s] Until the end, in this kind of hand here, over here, I'm going to get a final combination of these features delivered with by the layer now before it to arrive to my Wi-Fi
+[1437.00s - 1440.00s] So what I drew earlier as a square, and I call it 1, 2, 3, now there are circles
+[1440.00s - 1443.00s] It's easier to draw
+[1443.00s - 1446.00s] And this is the body here
+[1446.00s - 1449.00s] Obviously, I cannot really continue drawing
+[1449.00s - 1452.00s] I have to have a mathematical expression that describes a layer
+[1452.00s - 1455.00s] And in a way that describes a layer, I will be able to sort of write down the equation of that thing
+[1455.00s - 1458.00s] So let's see
+[1458.00s - 1461.00s] I will continue, however, to draw the block diagram of a single layer
+[1461.00s - 1464.00s] If you made a mistake, the output is not like that
+[1464.00s - 1467.00s] So this thing is going to be called the dense layer
+[1467.00s - 1470.00s] And if my x belongs to r to the power of an x, in other words, it's a vector with perfect kind of rows, the expression z is equal to wx plus b is definitely present
+[1470.00s - 1473.00s] I have now a matrix Before I had a dot product, now I have a matrix that I've got to multiplication
+[1473.00s - 1476.00s] And I call out explicitly, as I told you, the bias addition
+[1476.00s - 1479.00s] So this is the bias
+[1479.00s - 1482.00s] And finally, the dimensioning of this kind of matrix is kind of interest
+[1482.00s - 1485.00s] If I have nz by one vector at the input of these functions, I will take the place of my sigmoid
+[1485.00s - 1488.00s] I'll explain the reason why
+[1488.00s - 1491.00s] The dimensions of this matrix
+[1491.00s - 1494.00s] are what should be the dimension so that the multiplication makes sense
+[1494.00s - 1497.00s] The output should be nz by 1, therefore the matrix will be nz by nx
+[1497.00s - 1500.00s] If the matrix is nz by nx, a dense matrix as it turns out, then the multiplication, this equation kind of makes sense
+[1500.00s - 1503.00s] This equation is just a linear part, right? wx plus b is just a linear operation
+[1503.00s - 1506.00s] And what I have finally is my h is going to be relu of z
+[1506.00s - 1509.00s] That's the second equation that completes the pictures to what is going on here, but we don't know what relu is
+[1509.00s - 1512.00s] This relu is a form of nonlinear function that was empirically found out and performs fairly well
+[1512.00s - 1515.00s] And if this is z, relu of z is a plot like this
+[1515.00s - 1518.00s] So any negative z is clipped, and any positive z is past a z
+[1518.00s - 1521.00s] That is the form of relic
+[1521.00s - 1524.00s] Now, you can say, okay, why do we move away from the sigmoids? Okay, so all the sigmoids are replaced from an area called discussion
+[1524.00s - 1527.00s] And the answer is also a big fat node
+[1527.00s - 1530.00s] Not all the sigmoids are replaced
+[1530.00s - 1533.00s] There is a very specific sigmoid that cannot be replaced
+[1533.00s - 1536.00s] Can you tell me in this simple network which sigmoids can be replaced? The ones that are forming only
+[1536.00s - 1539.00s] You cannot replace the sigmoid with the red loop because that sigmoid, if you replace with the red loop, then you cannot guarantee that the output of Y hat or the H is..
+[1539.00s - 1542.00s] So in the head, I mean, we always maintain the sigmoidal unit at this thing here, at the head of the network
+[1542.00s - 1545.00s] maintains in the liquid
+[1545.00s - 1548.00s] But in terms of forming non-linearities in the body, we are free to replace it with redou, with gelou, with whatever other fashionable non-linear unit you can find in the literature
+[1548.00s - 1551.00s] That makes some sense
+[1551.00s - 1554.00s] So this is a dense layer for the body and the At the end of the day, for binary classification, let's say, we are not going to have a density layer here
+[1554.00s - 1557.00s] We're going to have just a single neuron at the time
+[1557.00s - 1560.00s] We just need to define how many features this signal that neuron will combine
+[1560.00s - 1563.00s] So we'll see an example in a moment
+[1563.00s - 1566.00s] And the question kind of remains, how is this equation relates to what we have seen kind of earlier? Let me give you an example and also explain also the shape
+[1566.00s - 1569.00s] The same is a pyramid because some dimensionality reduction is going up
+[1569.00s - 1572.00s] You can see the number of atoms go up, the number of neurons that we use goes down
+[1572.00s - 1575.00s] So obviously this has to do with projections, as we call these kind of operations
+[1575.00s - 1578.00s] are not the projections you may have seen from things like principle component analysis, which is some of you may have looked at in the past, all the international reduction
+[1578.00s - 1581.00s] These are all linear projections
+[1581.00s - 1584.00s] Here we have nonlinear threshold, nonlinearities, but definitely we would like to go into lower dimensional spaces as we are calling in to form the final feature set that the head will combine to give us the nice white
+[1584.00s - 1587.00s] And the reason rational for that is that you can think about it in a visual kind of setting, in a, as I said, kind of analogy, we are definitely are exploiting the fact that data live in some kind of manifolds as we call it, which have lower dimensionality than row data
+[1587.00s - 1590.00s] So if row data has an image, Therefore, as you look at me now, this image consists of pixels
+[1590.00s - 1593.00s] There is definitely, however, strong spatial correlations in the image that you see right now
+[1593.00s - 1596.00s] The color, the feature here, and the feature there is exactly identical to each other
+[1596.00s - 1599.00s] So this, the fact that the data are not in some kind of an object, it's not broken up to a billion pieces, is enough to persuade you that, yes, there is some proof to it
+[1599.00s - 1602.00s] And this kind of manifold can be..
+[1602.00s - 1605.00s] formally kind of defined in terms of gradients and partial derivatives, manifold are spaces where we have smoothness locally
+[1605.00s - 1608.00s] And I think I used smoothness as an assumption when I was presenting linear regression
+[1608.00s - 1611.00s] I mean, that's a mild assumption for his reason
+[1611.00s - 1614.00s] So the question still is there
+[1614.00s - 1617.00s] If I go in other words from, so always here we will see not always but in this kind of setting we'll see that NZ is less than NE's
+[1617.00s - 1620.00s] The output in other words of that kind of dense layer is going to be less than nx
+[1620.00s - 1623.00s] And this non-linearity accepts a vector, reduces a vector, but applies the non-linearity element-wise
+[1623.00s - 1626.00s] So let's write this down
+[1626.00s - 1629.00s] RELU, that I have mentioned, what RELU is, and all activation functions are applied element by element
+[1629.00s - 1632.00s] So if I have Z is equal to Z1 and Z2
+[1632.00s - 1635.00s] H would be RELU Z1 of Z2
+[1635.00s - 1638.00s] The equation for RELU, by the way, there's an equation which is max
+[1638.00s - 1641.00s] There's 0, 0, 0, 0 plus 0, 0
+[1641.00s - 1644.00s] So let's do an example here with NZ is equal to NZ is equal to 3
+[1644.00s - 1647.00s] So Z1 and Z2, I refer to W, which is, you told me the W will be 2 by 3 now, that's what you call me
+[1647.00s - 1650.00s] It will be W11, W12, W13, W21, W22, W23, X3, X3, right? Plus B1, B2
+[1650.00s - 1653.00s] That is what Z is by definition
+[1653.00s - 1656.00s] Okay, so as you can see here, Z1 and Z2 are simply W1X1 plus W12X2 plus W13X3 plus B1
+[1656.00s - 1659.00s] And the same thing goes, something similar goes on the bottom as well
+[1659.00s - 1662.00s] Okay? That's not really my fault
+[1662.00s - 1665.00s] However, it's kind of an identical kind of situation
+[1665.00s - 1668.00s] Which means that H1 and H2 are going to be relu of a dot product plus bias, right? This is a dot product plus the bias term, and another value of another dot product
+[1668.00s - 1671.00s] So I hope now that we're persuaded that what we did earlier with this kind of trivial, three-neuro network is actually happening over here because at the dense kind of layer forms effectively two features for us, H1 and H2, which is before we had sigmoid, so it's a sigma of a dot product
+[1671.00s - 1674.00s] That is what we had earlier
+[1674.00s - 1677.00s] We have three neural networks
+[1677.00s - 1680.00s] We still have the same thing
+[1680.00s - 1683.00s] It's just that now we are able to pack more neurons
+[1683.00s - 1686.00s] How many sigmoidal neurons, if we had sigmoidal here, we are able to see here? How many? This is a two-neural situation
+[1686.00s - 1689.00s] This is one that, this is the feature that the first neuron delivered, right? And this is the feature that the second neuron
+[1689.00s - 1692.00s] Exactly identical we had earlier, it's just that now the the sort of non-linearness have changed
+[1692.00s - 1695.00s] Any questions? All right, so yes, we're in
+[1695.00s - 1698.00s] How do we decide when we are designing this project? Okay, that's a kind of long, I mean, this is a kind of a straightforward question, but it is, there's only one answer, experimentally
+[1698.00s - 1701.00s] We will comply to certain patterns and only experimentally will give us the right answer
+[1701.00s - 1704.00s] There is some kind of intuition that we are definitely going to observe number of neurons two degrees as we go up the pyramid, but there is no, I will call it a silver bullet that you can just follow, right? It's just experimental
+[1704.00s - 1707.00s] And of course there is also the hyperparameter optimization thing that now you will become, because as you can see now, because the hypotheses have shot up
+[1707.00s - 1710.00s] Now we see an example with thousands and thousands of parameters to do classification problem in Python
+[1710.00s - 1713.00s] So you understand that, you know, there are lots and lots of parameters in the architecture side
+[1713.00s - 1716.00s] However, it has to be fixed to form a hypothesis
+[1716.00s - 1719.00s] Hopefully the hypothesis would be complicated enough that they can support their training
+[1719.00s - 1722.00s] I mean, that's another
+[1722.00s - 1725.00s] Okay, so let's look at these
+[1725.00s - 1728.00s] Okay, so over here we have a kind of a trivial multi-class classification
+[1728.00s - 1731.00s] From binary classification to multi-class classification, we have now 10 classes of partial items
+[1731.00s - 1734.00s] Earlier in the many years ago we found hundreds and tons of visits, but because this data set that was already, the MNIST was, you know, the critical output, and they reached 0.99 classification IPLC, it stopped being a good data set for benchmarking so they can keep the images as gray scale, 28 by 28 pixels, very simple kind of images, but replace them with fashion items that apparently they are far more difficult to find in the images
+[1734.00s - 1737.00s] Alright, so that's the data set
+[1737.00s - 1740.00s] We have 10 classes, similar as to 100 if you have 0.9
+[1740.00s - 1743.00s] Here we have 10 classes that you can see here
+[1743.00s - 1746.00s] Alright, so as you can see, The architecture in terms of Python code is very, very simple
+[1746.00s - 1749.00s] I'm going to draw some version of, and I'll contrast it with a Python code
+[1749.00s - 1752.00s] So I'm drawing this kind of, so multi-class classifier
+[1752.00s - 1755.00s] All right, so we have an image of 28 by 28
+[1755.00s - 1758.00s] So this is a, oops, I'm sorry
+[1758.00s - 1761.00s] Okay, so we are feeding, this could be calling it X prime
+[1761.00s - 1764.00s] So 20% is really denser
+[1764.00s - 1767.00s] We are feeding it into a block called Flatten, converted into a vector x, because we have not really seen how we can exist because if we get convolutional networks, we do that in the next lecture
+[1767.00s - 1770.00s] But right now we have this fully connected dense networks that will be introduced, so they accept vectors
+[1770.00s - 1773.00s] Then we have a first layer
+[1773.00s - 1776.00s] I'm not drawing the underline under the capital letters because they are soon to be matrices
+[1776.00s - 1779.00s] Plus we have some kind of a bias
+[1779.00s - 1782.00s] The bias obviously is a vector
+[1782.00s - 1785.00s] And because we're going to have two things going on here with terms of W and P, I have to qualify them with one
+[1785.00s - 1788.00s] And this is another one
+[1788.00s - 1791.00s] And then I have the relevant
+[1791.00s - 1794.00s] And I'm forming my vector H1
+[1794.00s - 1797.00s] And then I can have a number of these layers falling off, stacked
+[1797.00s - 1800.00s] We'll see them in the Python code
+[1800.00s - 1803.00s] But in this kind of a specific example, I will continue here
+[1803.00s - 1806.00s] I'm going to have the head straight ahead
+[1806.00s - 1809.00s] I have just one linear unit, one dense layer as I drew earlier
+[1809.00s - 1812.00s] And this will use a combination of this guy over here, as you can imagine
+[1812.00s - 1815.00s] add explicitly a bias as we always do, and pass it into a new block that is called soft map
+[1815.00s - 1818.00s] To form the white hat which is right now for us today..
+[1818.00s - 1821.00s] We have 10 classes
+[1821.00s - 1824.00s] We don't have a positive or a negative event, and therefore the white hat from a scalar that represented the probability of the posterior event, is becoming now a probability distribution and it's going to be called a posterior probability distribution of the labels, of the classes
+[1824.00s - 1827.00s] We'll draw all that, just telling you what's going to happen
+[1827.00s - 1830.00s] OK
+[1830.00s - 1833.00s] So what really remains to happen now is dimension
+[1833.00s - 1836.00s] So evidently, being 28 by 28, this guy here is 784 by 1
+[1836.00s - 1839.00s] And it's up to us to define the dimensioning of the H, which serves us here as features
+[1839.00s - 1842.00s] So I will claim that the dimensioning right now is 128 by 1, something smaller than the row data, 784 by 1
+[1842.00s - 1845.00s] So mind you that the body right now is like just a single layer over there
+[1845.00s - 1848.00s] And this is the head
+[1848.00s - 1851.00s] Notice that in the head I don't have a relevant head
+[1851.00s - 1854.00s] I mean the head I have the generalized sigmoid that I will call softmax
+[1854.00s - 1857.00s] If you remember in the binary we had sigmoid, here we have a generalized version of that sigmoid, I'll call it softmax
+[1857.00s - 1860.00s] In the Python code, however, you see far more number of layers than this one
+[1860.00s - 1863.00s] Definitely you see the flattening bit
+[1863.00s - 1866.00s] This guy, A, the 784, puts a dense layer of down to 300
+[1866.00s - 1869.00s] So that's the first layer
+[1869.00s - 1872.00s] 300 is a number of neurons by counting that dense layer
+[1872.00s - 1875.00s] Here my 3x2 example, as I just told you a few moments ago
+[1875.00s - 1878.00s] In other words, the W matrix is what? 300 by 784
+[1878.00s - 1881.00s] But if not 300 by 784, what is the result? Do it
+[1881.00s - 1884.00s] I can't do it
+[1884.00s - 1887.00s] Of course, you need to do it
+[1887.00s - 1890.00s] Let's do it
+[1890.00s - 1893.00s] That's like in the many, many thousands
+[1893.00s - 1896.00s] 200,000? All right
+[1896.00s - 1899.00s] You mentioned it already
+[1899.00s - 1902.00s] The upper density of from 300 down to 100
+[1902.00s - 1905.00s] And the head is a combiner with the activation being soft max
+[1905.00s - 1908.00s] And this cannot be anything I understand, because I'm done
+[1908.00s - 1911.00s] I need to form, I need to combine my features and make it easier
+[1911.00s - 1914.00s] So if I have a multi-class problem with 1,000 classes, because this one exists, this one in 1,000 here
+[1914.00s - 1917.00s] But definitely, the most likely the number of input row data will be much less than 784
+[1917.00s - 1920.00s] It's a pyramid as we are going further up, we are increasing, decreasing the number of..
+[1920.00s - 1923.00s] ...periodically limited and predominantly to be more than the..
+[1923.00s - 1926.00s] Okay, let's have a bit of a..
+[1926.00s - 1929.00s] Of course, there are ways and there are directions where the exact opposite is coming, but for now, for this specific setting we are in these lectures, That's the assumption
+[1929.00s - 1932.00s] We are going from a row data space where everything, all this kind of, we are dealing with pixels effectively at a row data space, 784 pixels, to a lower dimensional space because definitely in this kind of data set all the constrained to be in some kind of specific shapes, right? In some specific sort
+[1932.00s - 1935.00s] So later on, when we do with computer vision, we will see that these networks are able to tell us a little bit more about the specific shapes and the texture and the associated color of these kind of objects, perhaps in one of your assignments
+[1935.00s - 1938.00s] But right now, we are, we So believing on that thing that data is even a lower dimensional number
+[1938.00s - 1941.00s] Okay, so what are we going to do next? Well, apparently we are going to, first of all, before we go next, the number of parameters suddenly became 266,000
+[1941.00s - 1944.00s] And one byproduct of this kind of explosion is that in order to gain this thing, we have to calculate the gradient
+[1944.00s - 1947.00s] Well, calculating the gradient needs to prove in a kind of, unless we find a way that we can significantly accelerate this calculation of the gradient with respect to 266 parameters, we have to estimate a 266 dimensional vector, right? Because we have 266,000 parameters
+[1947.00s - 1950.00s] We will see that there is a method for backpropagation that accelerates that limitation
+[1950.00s - 1953.00s] We'll see that in a moment
+[1953.00s - 1956.00s] But I want to just see here the output
+[1956.00s - 1959.00s] I just want to show you the y-hat
+[1959.00s - 1962.00s] And the y-hat turns out that it is a very nice probability distribution
+[1962.00s - 1965.00s] And this probability distribution was generated at the output of this softmax thing that we need to describe
+[1965.00s - 1968.00s] So I hope everything up to the point of the diagram where the softmax is there is understood in terms of equations and stuff like that
+[1968.00s - 1971.00s] And the question normally is that difficult
+[1971.00s - 1974.00s] But softmax, there is an equation for the softmax which requires some kind of justification
+[1974.00s - 1977.00s] So the softmax of, let's say, this guy is a Z here
+[1977.00s - 1980.00s] Remember, Z
+[1980.00s - 1983.00s] In this case, it's the one upon right two
+[1983.00s - 1986.00s] So the shock mass is, as you can see, is a vectoring, vector output function
+[1986.00s - 1989.00s] The dimensionality of z is 10 by 1
+[1989.00s - 1992.00s] The dimensionality of y hat is also 10 by 1
+[1992.00s - 1995.00s] So the z sub k, which I will write down for the specific kf class, so this is the index of the class, is equal to e to the power of zk, summation, of j is equal..
+[1995.00s - 1998.00s] We're very short from over j of e to the power of zj
+[1998.00s - 2001.00s] That's a general formula of soft loops
+[2001.00s - 2004.00s] Just like everything, we need to understand why the following line is the way it is, and why does it do? First of all, there is a numerator and denominator
+[2004.00s - 2007.00s] We expect the numerator, why on earth are we raised to the power of e? And the answer to this is, if we notice over here, there is, again, there's no relu
+[2007.00s - 2010.00s] The output of these relu units are either positive numbers or zero, which means, depending on the setting of my bias curves over there and the parameters under the kind of matrix, we will definitely have the possibility that some of the logics that we have will be negative numbers
+[2010.00s - 2013.00s] So e to the power of negative converges to a positive
+[2013.00s - 2016.00s] The power of positive maintains the positivity of that
+[2016.00s - 2019.00s] What the denominator is doing? The denominator is dividing
+[2019.00s - 2022.00s] by these positive numbers of all the classes, right? In order to satisfy the major requirement that at the end of the day, the summation over all classes k of my y hat sub k should be equal to 1 because I want to always form at the output a proper posterior probability
+[2022.00s - 2025.00s] So this guy is normalizing so that this requirement is satisfied
+[2025.00s - 2028.00s] Bottom line is that we are, in general neural networks, we are sometimes thinking what we need
+[2028.00s - 2031.00s] Our output, we design kind of our head, our losses and things like that
+[2031.00s - 2034.00s] And then in the body, typically we'll find some really heavy compute
+[2034.00s - 2037.00s] Really heavy compute
+[2037.00s - 2040.00s] Right now it's a MLB, later on it will be a transformer, whatever
+[2040.00s - 2043.00s] But that's in a way that we are kind of trying to disassociate it
+[2043.00s - 2046.00s] A lot of them is on the loss functions, right, in a way that we learn, whether we have labels or not, the outline, so on
+[2046.00s - 2049.00s] But a lot of the things that are the hidden and kind of things that but what kind of features will be delivered in the body are not included
+[2049.00s - 2052.00s] They are what it is
+[2052.00s - 2055.00s] Obviously, we have some intuition of what operations we want to cause in the body as well, but we see them gradually as it happens
+[2055.00s - 2058.00s] Right now, everything is connected to everybody else
+[2058.00s - 2061.00s] And it's very difficult to find what was called inductive bias
+[2061.00s - 2064.00s] So right now, the inductive bias is not evident in this kind of sense
+[2064.00s - 2067.00s] But later on, as we specialize into specific applications, computer vision, natural language processing, these inductive biases will be a bit more stronger
+[2067.00s - 2070.00s] OK, bottom lines are we're going to have a very nice probability distribution, OK, over k of my y hat, which is obviously the probability
+[2070.00s - 2073.00s] And we are going to select the plus that corresponds to the maximum posterior probability
+[2073.00s - 2076.00s] obviously being a probability, this selection will be conveyed to us also the confidence we have about this class
+[2076.00s - 2079.00s] Now this is where the things are becoming a very interesting because if you have a lot of confidence about this class, this means that you have much less confidence about the other ones, right? So there is some kind of competition going on with softmax in terms of the values
+[2079.00s - 2082.00s] If the softmax or the unit is also behaving in another way kind of way
+[2082.00s - 2085.00s] If you have another class which is almost as strong as this guy, then this guy is obviously suppressed in terms of percentage confidence, right? So you are conveying this kind of information, hey, the other class almost won the competition and you know, you're suppressing the confidence under the drug of that fact
+[2085.00s - 2088.00s] Okay, let's see now the example and see the numbers that are coming out
+[2088.00s - 2091.00s] Okay, we are good training, not done as you want
+[2091.00s - 2094.00s] So we go to our test data set, we take up three images
+[2094.00s - 2097.00s] Now the longer has been trained
+[2097.00s - 2100.00s] We do not predict MFI for these specific images, and we produce the three posterior probability distributions, the three workouts for each image
+[2100.00s - 2103.00s] We go to the specific kind of K and we pick up the category and we look at the category and the premium distribution results
+[2103.00s - 2106.00s] organizing on this kind of thing, but it's, and the problem is kind of solved
+[2106.00s - 2109.00s] I mean, at a specific kind of setting that is the..
+[2109.00s - 2112.00s] We will check, of course, for overfitting, all this kind of stuff, because we have large number of parameters, right? But also the data set and the data, someone giving us in the many, many thousands, like, I think, 70,000, so we are good
+[2112.00s - 2115.00s] So the question now, we left an answer, is that when we do the stochastic rate descent during this kind of training operation, the gradient computation has to be explained, how we do it
+[2115.00s - 2118.00s] How the framework actually helps me not spend a lot of time during the gradient computation
+[2118.00s - 2121.00s] That's the way we do it
+[2121.00s - 2124.00s] And this discussion is associated with a procedure, which is a very technical discussion
+[2124.00s - 2127.00s] In back propagation, back propagation has been with us many, many things
+[2127.00s - 2130.00s] From space exploration of the 60s, there were lots of people who all were in and speculate derivatives
+[2130.00s - 2133.00s] In fact, NASA has always employed these people
+[2133.00s - 2136.00s] They had a job function, was called calculator
+[2136.00s - 2139.00s] Surprisingly, or perhaps not surprisingly, there was two of women in this calculator kind of job function at the time
+[2139.00s - 2142.00s] And there is a Netflix movie, by the way, who shows actually the reason why they are called women, is that the women tend to pay a lot of attention to the details as compared to men
+[2142.00s - 2145.00s] That's a statistic
+[2145.00s - 2148.00s] But there was a Netflix movie, I forget the movie
+[2148.00s - 2151.00s] first of all, that one that was in electric, made the first NASA engineer
+[2151.00s - 2154.00s] He did that
+[2154.00s - 2157.00s] He did it
+[2157.00s - 2160.00s] Ah, the movie, yes
+[2160.00s - 2163.00s] That's right
+[2163.00s - 2166.00s] I think it is worth watching it
+[2166.00s - 2169.00s] But the recent calculations these guys were doing, because I'm going to pretend that we are back in that era and we have a very simple function in front of us
+[2169.00s - 2172.00s] We took a late gradient of the future
+[2172.00s - 2175.00s] This function will have only two parameters
+[2175.00s - 2178.00s] We'll describe up propagation in this simple function, and then we'll extrapolate into what's happening in neural net
+[2178.00s - 2181.00s] All right, so I hope you have a brand new page
+[2181.00s - 2184.00s] because in the next exactly half an hour, which I have to disappear from here, I'm going to describe that back radiation end point for that specific function, and next time I will tell you the formulas for the neural networks
+[2184.00s - 2187.00s] Okay, I'm not going to derive the formulas, but show you where to find the derivation of those formulas
+[2187.00s - 2190.00s] As it turns out, we will be looking up things a lot in a symbolic space, even within the white orcs and the dance of those on the board
+[2190.00s - 2193.00s] but gradually we are going to come to that conclusion
+[2193.00s - 2196.00s] Okay, so the function here is f of x, y is equal to x plus sigma of y divided by sigma of x plus x plus y squared
+[2196.00s - 2199.00s] How many parameters do we have in this function? Therefore our question, which is basically give us the gradient of f, with respect to the two parameters is effectively this one
+[2199.00s - 2202.00s] I hope you all agree that that's basically the question
+[2202.00s - 2205.00s] Because the SZD just requires this guy to do the minimumization
+[2205.00s - 2208.00s] All right, so what we'll do first is we will draw what is called a computational kind of graph that will consist of nodes
+[2208.00s - 2211.00s] The nodes will represent elementary functions, and the edges over the edges, tensors will load
+[2211.00s - 2214.00s] that's where our tensor node can aim from
+[2214.00s - 2217.00s] Okay, so over here at the bottom I have the tensors X and a tensor Y
+[2217.00s - 2220.00s] Obviously they're scalar now, but in general it will be tensors
+[2220.00s - 2223.00s] And I'm just drawing
+[2223.00s - 2226.00s] Okay, so what's going on? Okay, so draw if you want what I'm drawing
+[2226.00s - 2229.00s] Okay, so for every drawing, for every elementary function which I'll be calling a gate from now on
+[2229.00s - 2232.00s] I'm going to write its output in a Python-like proper name, xty, it's a variable name in Python, that I'm going to just call that the output answer of this gate, which is an addition right now
+[2232.00s - 2235.00s] So I am going to have another gate
+[2235.00s - 2238.00s] As you can see, the gates are elementary
+[2238.00s - 2241.00s] Over here I'm going to have sigma of y
+[2241.00s - 2244.00s] Over here, I'm going to have sigma of x
+[2244.00s - 2247.00s] And already, with this addition gate, I have formed my denominator of my function
+[2247.00s - 2250.00s] If you see it, I hope you agree
+[2250.00s - 2253.00s] The tensor here is sig x
+[2253.00s - 2256.00s] The tensor here is sig y
+[2256.00s - 2259.00s] And I can take now sig y from what I can see here, and add it to x
+[2259.00s - 2262.00s] and perform the number 8
+[2262.00s - 2265.00s] I think the remember is x plus sigma of 1
+[2265.00s - 2268.00s] I hope you're following that
+[2268.00s - 2271.00s] That comes out really complicated
+[2271.00s - 2274.00s] But instead of doing division, I prefer to do first an inversion and hold the tensor in the known
+[2274.00s - 2277.00s] And finally, as you can imagine, I want to do multiplication of the tensor known and in the norm to form the final function f, to calculate the final function f
+[2277.00s - 2280.00s] So the computational graph is a computational graph because it gradually calculates the value of the function f given the inputs x and y
+[2280.00s - 2283.00s] I hope everyone recognizes that fact
+[2283.00s - 2286.00s] So the above propagation consists of two passes
+[2286.00s - 2289.00s] The first pass is trivial and it's called forward pass
+[2289.00s - 2292.00s] And in the kind of the forward pass, what I'm gonna do is I'm gonna start from the bottom of this diagram, from the input in other words
+[2292.00s - 2295.00s] and I'm going to gradually calculate, write down a number of equations that do the calculations
+[2295.00s - 2298.00s] And when I'm writing these equations, I'll be reducing results from earlier
+[2298.00s - 2301.00s] Okay, from the previous equations
+[2301.00s - 2304.00s] So I have, the only rule I have to comply is I cannot start from here
+[2304.00s - 2307.00s] Because this guy depends on this guy and depends on this guy and so on
+[2307.00s - 2310.00s] So I'm going to start from, I have three options
+[2310.00s - 2313.00s] I can start from this guy
+[2313.00s - 2316.00s] I can start from this guy or this guy
+[2316.00s - 2319.00s] All we recognize that these three options that I'm pointing right now, the cx, cy and xpy are all possible to start with, because they don't depend on anything other than x and y
+[2319.00s - 2322.00s] So I have cypy
+[2322.00s - 2325.00s] If I pick another one, I will have exactly the same result
+[2325.00s - 2328.00s] That's really much
+[2328.00s - 2331.00s] So because I have a minus cy, I will start from here
+[2331.00s - 2334.00s] So 1 plus 1 plus e to the minus y
+[2334.00s - 2337.00s] And this is equation number 1
+[2337.00s - 2340.00s] Equation 2, num, is equal x plus sig y, that's equation 2
+[2340.00s - 2343.00s] Sig x is equal to 1 divided by 1 plus sig minus x
+[2343.00s - 2346.00s] That's equation 3
+[2346.00s - 2349.00s] Notice that in equation 2, I did not expand on sig 1
+[2349.00s - 2352.00s] I reduced the previous result for the calculation
+[2352.00s - 2355.00s] In equation 1, I have now a number for sig y
+[2355.00s - 2358.00s] It's in my memory and I use it
+[2358.00s - 2361.00s] So then we have..
+[2361.00s - 2364.00s] xpy is equal to x plus y, that's equation 4
+[2364.00s - 2367.00s] I'm writing in a final fast page because this is trivial
+[2367.00s - 2370.00s] xpy times xpy, that's equation 5
+[2370.00s - 2373.00s] And the norm is equal to sig x plus xpy sqr, that's equation 6
+[2373.00s - 2376.00s] And in the norm is equal to 1 over the norm
+[2376.00s - 2379.00s] That's equation 7
+[2379.00s - 2382.00s] And f binary is num times in the num
+[2382.00s - 2385.00s] How I manage to calculate the function f at this moment in time? There's a number behind the variable f
+[2385.00s - 2388.00s] OK, who's not following? Do you want to repeat what's happening? The num is following
+[2388.00s - 2391.00s] What I have done here
+[2391.00s - 2394.00s] The for our bus is just gradually calculate the value of the function f from whatever input I'm providing But over here, the forward pass is this direction here
+[2394.00s - 2397.00s] The backward pass is the opposite direction, and the backward pass is the most complicated step
+[2397.00s - 2400.00s] But calculus has given us a tool called the chain rule, and the chain rule that will write it as a kind of a form of a template
+[2400.00s - 2403.00s] We will start from the top of the..
+[2403.00s - 2406.00s] So back we start with equation 8, then we go to equation 7, 6, 5
+[2406.00s - 2409.00s] Our sequence in the backward pass already has been defined via the forward pass
+[2409.00s - 2412.00s] Whatever number you put in the forward pass, you will go in the reverse way in the backward pass
+[2412.00s - 2415.00s] So we start from the top over here for equation 8 and apply the template for every equation we need
+[2415.00s - 2418.00s] It's exactly the same template
+[2418.00s - 2421.00s] So let's write down the template
+[2421.00s - 2424.00s] which is going to be generically written down over here
+[2424.00s - 2427.00s] I am going to write it down over here
+[2427.00s - 2430.00s] I have a gate G in general that I'm making every time, which in the forward pass accepted, let's say, two tensors, X and Y, and produced another tensor Z
+[2430.00s - 2433.00s] And in the backward pass, I'm expecting to receive from someone else, it's not my responsibility
+[2433.00s - 2436.00s] From someone else, what is called an upstream gradient? It's called an upstream gradient because someone else is coming from above, right, in this kind of setting
+[2436.00s - 2439.00s] So this is called an upstream gradient
+[2439.00s - 2442.00s] All my gradients I will symbolize with a small letter d in front of the tensor I have selected to call, to use in the forward pass
+[2442.00s - 2445.00s] So if there is a num tensor, dnum will be the gradient of the tensor num
+[2445.00s - 2448.00s] We'll see now with respect to what
+[2448.00s - 2451.00s] So every gate will deliver to the downstream gates, the so-called downstream gradients
+[2451.00s - 2454.00s] In a similar way, that gate accepted from someone else the dz
+[2454.00s - 2457.00s] It has to deliver the orange things over here that is obviously called dx
+[2457.00s - 2460.00s] and dy by convention
+[2460.00s - 2463.00s] And the chain loop is the equation that provides the value of these tensors, dx is dz, partial derivative of the g with respect to the tensor that we do the calculation
+[2463.00s - 2466.00s] We want to find the dx of, in this case x
+[2466.00s - 2469.00s] And obviously dy is equal to the upstream gradient partial derivative of g with respect to y
+[2469.00s - 2472.00s] This is my template
+[2472.00s - 2475.00s] Notice one thing in the template
+[2475.00s - 2478.00s] All the calculations that I've made are busy, I'm getting from somebody else
+[2478.00s - 2481.00s] And the only thing I have to do as a gate is to calculate my downstream gradients that I have to deliver to somebody else in there
+[2481.00s - 2484.00s] There's no dependency on anyone else under the function that my gate is doing, square in operation, addition, multiplication, division, whatever
+[2484.00s - 2487.00s] And tensors that I have to use are also local because I know them
+[2487.00s - 2490.00s] They're coming in
+[2490.00s - 2493.00s] Any questions on respect to the density? Look, here's a very big word upstream
+[2493.00s - 2496.00s] A female downstream that you..
+[2496.00s - 2499.00s] Okay, well the downstream is the downstream direction, right? And upstream is because this guy is coming from somebody else above us
+[2499.00s - 2502.00s] That's the need
+[2502.00s - 2505.00s] This is called downstream
+[2505.00s - 2508.00s] Okay, let's apply this now to the first equation, which is equation 8
+[2508.00s - 2511.00s] And as you can see, the first equation is associated with which gate
+[2511.00s - 2514.00s] The equation name is associated with a multiple diagram, right? We are at the top of the diagram, right? And all we need, obviously we're expecting an upstream gradient to come from several years, but there's no one else to give us this gradient
+[2514.00s - 2517.00s] So at this very top of the diagram, we have to calculate ourselves
+[2517.00s - 2520.00s] But this gradient is very trivial at this moment, because this guy over here, the df is the partial derivative of f with respect to f, which is 1
+[2520.00s - 2523.00s] It is as if we have a kind of a unit gate over there, right? That doesn't do anything
+[2523.00s - 2526.00s] We just basically say, okay, how the gate will change if I check f? Well, I mean change the rate of change would be 1
+[2526.00s - 2529.00s] So back up, the first upstream gradient is 1
+[2529.00s - 2532.00s] And now the template will be applied
+[2532.00s - 2535.00s] That upstream gradient will be back propagated to form two downstream gradients
+[2535.00s - 2538.00s] This guy and this guy
+[2538.00s - 2541.00s] By convention, this guy is called D-Nu
+[2541.00s - 2544.00s] And this guy is called D-Nu
+[2544.00s - 2547.00s] These are the pensioners I've given up with the D-Nu
+[2547.00s - 2550.00s] Just to distinguish that these are now my downstream gradients, their raw gradients
+[2550.00s - 2553.00s] And our retirement Okay, so I'm planning a template starting with equation 8
+[2553.00s - 2556.00s] With nu, I'm writing d nu is equal to the upstream gradient, what's the upstream gradient? Df, that is the arriving from up towards the gradient times
+[2556.00s - 2559.00s] The function of the gate, what is the function of the gate? Well, it's the equation 8, partial derivative of nu times in the norm
+[2559.00s - 2562.00s] with respect to this guy, num
+[2562.00s - 2565.00s] And this partial derivative is always, consult a lookup table of partial derivatives
+[2565.00s - 2568.00s] This is the situation here is very simple, because if I go and look up, in fact, there is a lookup table in your course site under the calculus review, you should go there to find some equations as partial derivative of A x with respect to x
+[2568.00s - 2571.00s] What is x here? The num or the num? Right, so if I translate this to partial derivative of A x with respect to x, what is the result? A
+[2571.00s - 2574.00s] What is A here? Do I know this kind? How? You can't believe it
+[2574.00s - 2577.00s] It's a 4 or plus
+[2577.00s - 2580.00s] You stored it somewhere in memory in the forerplash
+[2580.00s - 2583.00s] You know specifically the values
+[2583.00s - 2586.00s] So if you repeat exactly the same situation, for the second downstream gradient, this guy, it's exactly analogous to the equation
+[2586.00s - 2589.00s] It's exactly the same gate anyway
+[2589.00s - 2592.00s] So I hope it's not surprised that the d in the node, the second downstream gradient, will be boom
+[2592.00s - 2595.00s] Exactly the same equation, exactly the same lookup
+[2595.00s - 2598.00s] I hope you recognize that, right? I'm done with the first gate
+[2598.00s - 2601.00s] I'm done with gate
+[2601.00s - 2604.00s] Where I go next? Seven
+[2604.00s - 2607.00s] Where is the seven gates? This guy over here
+[2607.00s - 2610.00s] So, applying the gate
+[2610.00s - 2613.00s] I only have one downstream gradient to power my gate
+[2613.00s - 2616.00s] Where is my upstream gradient? Well, the upstream gradient for the gate 7 is the downstream gradient I just calculated
+[2616.00s - 2619.00s] the orange d-inf denom
+[2619.00s - 2622.00s] This one will be acting now as the upstream gradient for this gate
+[2622.00s - 2625.00s] This gate will deliver to the gate below it a gradient called d-denom
+[2625.00s - 2628.00s] Okay, so 7 d-denom is equal to apply the template again
+[2628.00s - 2631.00s] The upstream gradient which was d-inf denom
+[2631.00s - 2634.00s] partial derivative of the gate, which is the gate is 1 over the node, the function of the gate, with respect to the node
+[2634.00s - 2637.00s] Well, in a lookup table of partial derivatives, probably you will never find this, but probably you will see the partial derivative of 1 over x on the spectra x
+[2637.00s - 2640.00s] So this is what? Minus 1 over x squared
+[2640.00s - 2643.00s] You don't have to know it
+[2643.00s - 2646.00s] You just need to be able to look it up
+[2646.00s - 2649.00s] So d in the node is new
+[2649.00s - 2652.00s] from here, I will use an early result of n minus 1 over the known squared
+[2652.00s - 2655.00s] Similar arguments to before, the known squared was calculated in the forward
+[2655.00s - 2658.00s] So, no, and the non-part, no, and the form of multiplication can happen whenever operation there happens
+[2658.00s - 2661.00s] And finally, I will get a number there for the Gaussian gradient of this graph
+[2661.00s - 2664.00s] Now this is the important kind of part
+[2664.00s - 2667.00s] Why, we did already do gains and the question is, why are we doing all this? Where is the benefit? So there are two major things going on here
+[2667.00s - 2670.00s] First of all, I'll go back to the calculations
+[2670.00s - 2673.00s] If a gate here, in a network for example, or in this kind of function, has no dependency on another gate over there, these two operations can be parallelized, in fact massively
+[2673.00s - 2676.00s] So number one advantage that I'm seeing, massive, obviously not for this function, massive parallelization due to locality of template computations
+[2676.00s - 2679.00s] So locality is one thing, but we get another thing which is also important
+[2679.00s - 2682.00s] Because the only computation for the template I have to do, which is of some kind of substance, is this guy over here, the downstream gradient, right? The fact that the gate I selected to be on purpose elementary allows me to do the lookup, if you remember
+[2682.00s - 2685.00s] I was always doing a lookup, right? I can continue to do lookups forever
+[2685.00s - 2688.00s] The basic gauge that I will see in a neural network, like for example, a lookup of matrix by vector multiplication
+[2688.00s - 2691.00s] I will do the computation symbolic with only ones, and I'll do the symbolic computation every time
+[2691.00s - 2694.00s] I'll pick up the formula, line it with my tensors, and I'm done
+[2694.00s - 2697.00s] What's actually going on is that symbolic computation to end UT, nature, look up to the level of combination of dumps of grading
+[2697.00s - 2700.00s] Partial G with respect to X, I use X only
+[2700.00s - 2703.00s] And the third thing that is actually happening, the third thing that's actually happening is that, I forgot it, I will come
+[2703.00s - 2706.00s] There was another thing I wanted to mention, I just remember it, it was just gone now
+[2706.00s - 2709.00s] I'll remember it, I'll mention it next time during the review, but there was, It's gone
+[2709.00s - 2712.00s] It's gone forever
+[2712.00s - 2715.00s] Okay
+[2715.00s - 2718.00s] So, but these are the two major ones
+[2718.00s - 2721.00s] The third one was not as major as this one
+[2721.00s - 2724.00s] Oh, I remember now
+[2724.00s - 2727.00s] It's reuse of earlier computation
+[2727.00s - 2730.00s] At some point you told me, you heard me saying, hey, this gradient was computed, right, from previous views
+[2730.00s - 2733.00s] Nature on the gate
+[2733.00s - 2736.00s] Early computation because the downstream, the upstream gradients were given
+[2736.00s - 2739.00s] That's it
+[2739.00s - 2742.00s] So if we understood this thing, it's enough to now go into our website again
+[2742.00s - 2745.00s] And if you go back into this section called debug propagation, what is this? Introduction to debug propagation
+[2745.00s - 2748.00s] You will actually see in a pseudocode what we have just done together, right? At home, you should go without looking at the solution, barcode A865 and so on and so on
+[2748.00s - 2751.00s] But there's only one catch that you probably need to recall by looking at this kind of diagram
+[2751.00s - 2754.00s] And that's the analogy I wanted to watch this lecture with
+[2754.00s - 2757.00s] At some point, you see these points over here, these junctions
+[2757.00s - 2760.00s] You need to think about, there is a way in the notes to calculate the downstream gradient for this specific gauge, which actually are coming from two names
+[2760.00s - 2763.00s] You want to think the flow of gradients So when the root laws are arriving into a junction, they form a summation
+[2763.00s - 2766.00s] This total law is propagated here
+[2766.00s - 2769.00s] And that's the reason why in the pseudo-cold, you will see a plus-equal sign in some gates
+[2769.00s - 2772.00s] So you will see that over here, plus-equal sign
+[2772.00s - 2775.00s] And also, there is also another junction for the y-network
+[2775.00s - 2778.00s] I will see that plus-equal sign over there
+[2778.00s - 2781.00s] Bottom line, if you do a couple of gates, I think you will get..
+[2781.00s - 2784.00s] gist of the method
+[2784.00s - 2787.00s] And every gate that we have over here is just changing
+[2787.00s - 2790.00s] It's a description that all
+[2790.00s - 2793.00s] It's almost like a valve
+[2793.00s - 2796.00s] Sometimes it is reducing it, sometimes it's swapping with something else
+[2796.00s - 2799.00s] This kind of stuff are actually happening
+[2799.00s - 2802.00s] And finally, D-LIX and DOI will be done later, which is basically the question we try once
+[2802.00s - 2805.00s] That's the original question, giving the dx and d1
+[2805.00s - 2808.00s] In other words, how much the function f changes as I change slightly the parameters x and y of the method
+[2808.00s - 2811.00s] Okay, next time we'll continue a little bit on back propagation for something much or just like 15 minutes, just to show you a little bit what happens when we have neural networks
+[2811.00s - 2814.00s] And then we'll progress into more..
+[2814.00s - 2817.00s] Is that 10? Before 10 minutes?

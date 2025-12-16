@@ -1,0 +1,873 @@
+[0.00s - 3.00s] And I was telling you three things that we take here
+[3.00s - 6.00s] We have a bunch of weak predictors
+[6.00s - 9.00s] One is to introduce some form of diversity, that kind of committee
+[9.00s - 12.00s] Either we have data that you fit in every predictor, even introducing some on purpose randomization, like noise, for example, or using different predictors
+[12.00s - 15.00s] And last net finally, we concluded it is a network is doing the lab
+[15.00s - 18.00s] And of course, the number of really has a number of blocks that you want
+[18.00s - 21.00s] And of course, the other advantage of that is that residents, and may I actually conclude before I close the line to start the lecture today
+[21.00s - 24.00s] The third advantage is that residents exhibit some form of scalability and instability
+[24.00s - 27.00s] Right
+[27.00s - 30.00s] Okay
+[30.00s - 33.00s] So what we mean actually by that is that if you go back to that architectural landscape and you have, let's say, a resonant kind of 50 over there, and you measure your latency, your inferential latency obviously, and you find it to be, I don't know, 25 milliseconds
+[33.00s - 36.00s] and you don't have 25 milliseconds to spend for a feature to be generated, but you have, let's say, 15 milliseconds
+[36.00s - 39.00s] You can very well chop off a good chunk of a network without changing anything
+[39.00s - 42.00s] And after you go back to what we call, let's say, REST-18, and then REST-18 with fewer states, obviously the rate of performance, we review this reduced kind of latency
+[42.00s - 45.00s] So the architecture itself is very flexible to accommodate a variety of stages, and that's why you see very frequently 150, 101, 50, 34, 18 being noted there as standardized sort of architectures to accommodate that flexibility
+[45.00s - 48.00s] And I'm sorry
+[48.00s - 51.00s] So what do you mean I can now? Okay, that's what I was going to do
+[51.00s - 54.00s] Okay, let's see now if this is lecture, It must be fine
+[54.00s - 57.00s] Yes
+[57.00s - 60.00s] So, I don't think I actually wanted to mention that if I go back to your slide, which is good
+[60.00s - 63.00s] I think when we migrated from the dense networks to convolution network, some other constructs that are very common in a variety of architectures
+[63.00s - 66.00s] And I want to mention that in this here
+[66.00s - 69.00s] from what you call the batch normalization
+[69.00s - 72.00s] So if I'm actually suggest what is really batch normalization, it's actually a very typical block that you see even inside blocks of rest nets or even outside or with MLPs in transformers, whatever
+[72.00s - 75.00s] And basically what it does is solves the problem of how important, they call it covariance drift because this domain is full of big difficult terms and they try to impress with this way
+[75.00s - 78.00s] But at the end of the day, it ends up being something extremely simple that you understand with one sentence
+[78.00s - 81.00s] Just to give you the first step that we usually do in any kind of neural network and the impact of if you don't do some form of normalization, over here you are suggesting you're looking at a loss function
+[81.00s - 84.00s] With just how many parameters we have here, parameters W1 let's say and W2 and it turns out that these two parameters have quite different dynamic ranges and the loss function is kind of elongated elliptically along this higher kind of dynamic range and can anyone think of a problem that we will have in this case yes so if we want Remember the stochastic gradient is saying, I was telling you that a noisy kind of gradient here is a kind of local minima
+[84.00s - 87.00s] So over here this shape of this kind of function is affected obviously, if the vacatolos function is like this, it will definitely have the impact on the gradient
+[87.00s - 90.00s] With this kind of shape, we do not have the capability to escape from always pointing, mostly, mostly pointing to this kind of direction, which may be a very, I would call it, convoluted trajectory as compared to a much kind of a shorter path
+[90.00s - 93.00s] This could be here
+[93.00s - 96.00s] So what we do, and kind of some evidence on that, also just to remind everyone, was shown here
+[96.00s - 99.00s] When we did the bar propagation of the simple kind of neuron without bias, we actually realized that we did this calculation and the passive derivative of the output with respect to the W was associated with the input
+[99.00s - 102.00s] That kind of innocent kind of example points us to the following kind of conclusion
+[102.00s - 105.00s] If my input has features with very widely kind of dynamic range, the gradient will be affected
+[105.00s - 108.00s] So the widely different kind of dynamic sort of weights, we met it also in the initial regression problem where you were overfitting
+[108.00s - 111.00s] You remember that we had some weights, which were very small, some other weights which are really huge when we had overfitting conditions and things like that
+[111.00s - 114.00s] So either that input, So the gradients depend on the input
+[114.00s - 117.00s] Think about what happens in the second layer
+[117.00s - 120.00s] What is the input of the second layer? The activation of the previous
+[120.00s - 123.00s] So don't think about only just the very input of the network, but just see also think about it as the activations of this kind of layer before it affect a gradient that you will get in a later stage
+[123.00s - 126.00s] Obviously the example is trivial and you can actually easily do this kind of sort of arguments in a more complicated scenarios or with actual dense layers convolutional and things like that because it's like a very convoluted hypothesis but you can safely do this conclusions by looking at this simple kind of neurons
+[126.00s - 129.00s] Okay, so what we can actually do is, first of all, now, okay, typically for the input, what we do, we first of all zero center the input and normalize it
+[129.00s - 132.00s] So we subtract the mean and divide by the variance
+[132.00s - 135.00s] It's a very typical exercise to do that for the reasons I explained
+[135.00s - 138.00s] the gradient is going to be affected and significant dynamic range between the features affect its trajectory
+[138.00s - 141.00s] No matter what
+[141.00s - 144.00s] So, the other thing, however, this problem, just doing it, the input does not solve the overall program of the second layer, the third layer, things like that
+[144.00s - 147.00s] So the activation of the third layer will obviously be given the activations of the second layer and the activation of the first layer
+[147.00s - 150.00s] And the fifth layer, fourth, third, two, and one
+[150.00s - 153.00s] So every single layer in this specific chain that we have is affected differently by the previous kind of layers and comes uniquely
+[153.00s - 156.00s] So batch normalization does something extremely, I will call it simple
+[156.00s - 159.00s] It just estimates the mean and the variance of the activations that are presented to it
+[159.00s - 162.00s] And the mean and the variance are trainable
+[162.00s - 165.00s] We do not know exactly what should be the right mean and the right variance, obviously, because we have so many dependencies before us
+[165.00s - 168.00s] And a batch normalization does the following
+[168.00s - 171.00s] So we have some additional kind of nodes over here
+[171.00s - 174.00s] It does this estimate over the mini-patch, and does also that over the mini-patch
+[174.00s - 177.00s] This epsilon here, don't be confused by that
+[177.00s - 180.00s] This standard deviation, obviously, but this epsilon is there to not allow easily for this denominator to become very close to zero, and blow up everything
+[180.00s - 183.00s] So after this kind of standardization with the mean of the standard deviation, what we do here we are trying to learn what is the right mean and the right standard deviation
+[183.00s - 186.00s] Let the network find that number
+[186.00s - 189.00s] So we are estimating, right, but these estimates are potentially noisy
+[189.00s - 192.00s] Then they are not necessarily to be trusted
+[192.00s - 195.00s] Let this gamma and beta see a lot of examples over many, many, many batches, right? And set themselves to the right values
+[195.00s - 198.00s] So beta is the location, and location also affects Just to see how location affects the sort of the clicking probability that we have in the realm
+[198.00s - 201.00s] You can see that the realm over here for every layer to create an activation, the activations are either zero or kind of positive numbers if you have actually a realm
+[201.00s - 204.00s] So when you have negative logics, what's going to happen? You're going to see the histogram lots of zeros
+[204.00s - 207.00s] That's why you see this kind of skewed
+[207.00s - 210.00s] Gaussian
+[210.00s - 213.00s] Ideally you want to see some kind of very nice Gaussian, right? But you see some kind of skewed kind of Gaussian here, but this is like almost like not even Gaussian
+[213.00s - 216.00s] It looks like a Laplacian kind of distribution to me, like one-sided Laplacian distribution
+[216.00s - 219.00s] So by sort of putting the mass formalization before the RELU, what you can do is you can control the clipping process
+[219.00s - 222.00s] the part of scaling up
+[222.00s - 225.00s] You want to go back to here? Yes
+[225.00s - 228.00s] Yeah
+[228.00s - 231.00s] So where exactly were you thinking about where do we need that? So we are saying that Okay, I mean that it was the whole point I was trying to make it
+[231.00s - 234.00s] The gradient is a function of the inputs presented to the specific layer
+[234.00s - 237.00s] Okay? If you believe that simple neuron kind of thing
+[237.00s - 240.00s] So if the gradient is a function of this kind of input, what you want to definitely avoid the situation is one of those inputs to dominate directional UI
+[240.00s - 243.00s] So for example, this is a very large dynamic range compared to the other two
+[243.00s - 246.00s] The gradient will not have a lot of opportunity to move so noisy around and escape from low energy
+[246.00s - 249.00s] That's one impact
+[249.00s - 252.00s] The second impact is that even if you have that, you have the previous problem that I was trying to explain with this kind of a longer path to the minimum
+[252.00s - 255.00s] You're whatever it is
+[255.00s - 258.00s] So this was basically why we have mass normalization, to control the dynamic range of these features, right? And to be able to locate the probability distribution in some space which is appropriate
+[258.00s - 261.00s] Okay, and let the network kind of define that space
+[261.00s - 264.00s] So the beta and the gamma learnable parameters
+[264.00s - 267.00s] So beta is the location of this thing and gamma is obviously the strength that we will have
+[267.00s - 270.00s] So this was basically the whole notion of pass-on right now
+[270.00s - 273.00s] And now we see later when we look at transformers we have other normalizations, like layer normalizations
+[273.00s - 276.00s] When for example we have, we don't have a lot of confidence in our estimates of these means standard deviations because our mini batch sizes may be small
+[276.00s - 279.00s] So we have linear normalization to do something there
+[279.00s - 282.00s] We'll see that when we look at this constructs there
+[282.00s - 285.00s] Finally, the regularization we saw in the very first part of the course, right, when we looked at the specific linear kind of regression, and always we apply it here as well
+[285.00s - 288.00s] So you can always, If you have a chain network, which is from bottom over here, the input at the top, you have the loss kind of function
+[288.00s - 291.00s] You can always take the squaring all the Ws and the Bs that you have inside these layers to sum them all together
+[291.00s - 294.00s] It's a penalty factor, and you add it to the lambda coefficient to that mid-square error or percent of reward reward, sort of course
+[294.00s - 297.00s] and the other kind of a very popular regularization approach that I would like to address, although both in this adaptation of the weights and the dropout kind of will not provide the same kind of performance after the production of the legislation, but it's very, it is very common to see that as a, especially kind of in order, is that how can I And if you remember, what was the effect of the L2 regularization is to reduce effectively the model
+[297.00s - 300.00s] So we're about to do this probabilistically by shooting off some neurons and allowing if you like, an error to train and see conversion to some kind of a W star that will not have this overfitting kind of condition
+[300.00s - 303.00s] And that is basically another popular sort of regularization approach
+[303.00s - 306.00s] Okay, so I'll cut out all this extra learning
+[306.00s - 309.00s] So what I want to do now is I want to enter the object detection space
+[309.00s - 312.00s] Okay, so I want to start using the CNN system
+[312.00s - 315.00s] So do we need to do input normalization? I will do input normalization because it's easy and in fact if you, even if..
+[315.00s - 318.00s] you download some pre-trained network hours to have, already we assume that there is a normalization on the specific data set
+[318.00s - 321.00s] They went ahead and calculated this mean and standard deviation and then applied it
+[321.00s - 324.00s] So this pre-trained network already assumes that if you are borrowing it, you do your normalization and use it
+[324.00s - 327.00s] Okay, let's now go to why I came here mainly to do..
+[327.00s - 330.00s] Come on
+[330.00s - 333.00s] Okay, just let me..
+[333.00s - 336.00s] In the two-way perception, I want to start this kind of introduction to see an understanding
+[336.00s - 339.00s] So obviously, in understanding we don't have an understanding
+[339.00s - 342.00s] Today we're trying to, at some point, understand scenes, use a kind of understanding scenes like humans do, what we have seen here kind of recently, especially when we have a lot of perception-wise learning and other kind of more advanced and between learning approaches
+[342.00s - 345.00s] And I don't see it more advanced but different than what we have been taught up to this moment in time
+[345.00s - 348.00s] But sometimes computers perform better perception tasks
+[348.00s - 351.00s] So one of the better perception tasks they can perform because of our bias to focus on the center of the, what is called the field of view that we have in our eyes, The computers don't have this problem
+[351.00s - 354.00s] Obviously they have lenses, but sometimes the lenses are far wider than our eyes, right? So they actually detect very small objects in a kind of a scene, something that we cannot really identify
+[354.00s - 357.00s] But all of us and the computers suffer from one problem that has not been solved, and this is light
+[357.00s - 360.00s] Light is the most important determinant of any computer
+[360.00s - 363.00s] So you probably have seen some videos where some thieves trying to steal a car in the evening, right? And this kind of $500 kind of cameras cannot even distinguish their faces, right? Because they are washed out
+[363.00s - 366.00s] Certain directional lights that are falling on that kind of scene
+[366.00s - 369.00s] So light is really, really important
+[369.00s - 372.00s] In fact, when there's flickering conditions, like if you're driving in the in the countryside there are trees, right? And light goes through the trees and creates this kind of, oh, some, really sunny condition followed by shadow, really sunny condition followed by shadow
+[372.00s - 375.00s] Our eyes are having a lot of problem, you know, on that and we slow down the same thing as..
+[375.00s - 378.00s] So, Obviously, cameras can be tuned, and that's why in robotic applications we have multiple cameras with different settings
+[378.00s - 381.00s] We have light cameras, we have more narrow focus cameras, different settings in split and all this kind of stuff
+[381.00s - 384.00s] But basically what we will do today is we're going to see we're going to be bounding boxes in these kind of objects in the scene for the glasses of interest
+[384.00s - 387.00s] And definitely you can see the flickering and also the classification happens with some kind of confidence in them
+[387.00s - 390.00s] So this is also known as kind of localization, right? So we have, we need to look at an exotology in the scene
+[390.00s - 393.00s] create a bounding box
+[393.00s - 396.00s] Obviously the bounding box is not enough, as we saw in some applications
+[396.00s - 399.00s] Let me refresh your memory
+[399.00s - 402.00s] Why I'm saying this bounding box is not enough? What kind of applications we have that we can kind of easily remember it if someone asks, okay, why you need serial segmentation here? And obviously the reaction is fine
+[402.00s - 405.00s] So imagine that you are a robot, you're kind of a car kind of robot and you are looking at a scene like this picture over here
+[405.00s - 408.00s] And one of the key ingredients of path planning is where is the empty space? Obviously I don't want to try to kill myself or someone else
+[408.00s - 411.00s] So imagine I'm a robot, I'm looking at this road over here and there are pedestrians on one side, pedestrians on the other side and cars
+[411.00s - 414.00s] If I put a bomb in box where the road is, I will include all of those
+[414.00s - 417.00s] So then we need some finer level of granularity in determining what is the specific..
+[417.00s - 420.00s] For pixel, what category belongs, and this is basically what we get out of this a dust insertion called anoptic segmentation
+[420.00s - 423.00s] Anoptic segmentation is every single plus will be different color, and sometimes, like for example in another application, when we are trying to position a laser to do a treatment, We want to definitely position the layer only for the bad portions of that cells and not the good ones as well
+[423.00s - 426.00s] So medical applications actually is also very common and obviously it's also common in..
+[426.00s - 429.00s] in other fields as well
+[429.00s - 432.00s] Sometimes, however, this semantic segmentation is not even that itself enough
+[432.00s - 435.00s] And what we actually need is we need to do what we call instance segmentation
+[435.00s - 438.00s] And instance segmentation goes one step further
+[438.00s - 441.00s] It classifies and therefore puts a different color
+[441.00s - 444.00s] Every single instance of an object class
+[444.00s - 447.00s] So the chairs over there will be different colors
+[447.00s - 450.00s] If I have a camera over here, each one of you will be So you're trying to extract some form of uniqueness in the scene, and that's why this segmentation ends
+[450.00s - 453.00s] And actually this is mostly what the space of deep learning kind of ends, and therefore what you need to do if you want to understand if it's the same person across kind of cameras, you have to do..
+[453.00s - 456.00s] other things as well on top of that
+[456.00s - 459.00s] I think I refer to sometimes vector databases and things like that, right? Where you have a database where you should imagine as a person with this kind of camera walks out of the room
+[459.00s - 462.00s] There's obviously has no data person
+[462.00s - 465.00s] If the same person walks back here, it should not be double counting
+[465.00s - 468.00s] If you do kind of counting, sort of sometimes the application is actually very common in counting of crowds, for example
+[468.00s - 471.00s] but also the most important application, not counting on the crowds, but it is basically a very large number of displays and just a single sensor
+[471.00s - 474.00s] All right, so you may need to create a soft symbol of that person, and maybe I will have to read in a later kind of point when I'm doing something with symbolic representations
+[474.00s - 477.00s] All right, so, okay, fine, we have the task, we understand what we're going to build
+[477.00s - 480.00s] Obviously, we need, in this kind of limited supervised learning process, mode that we are in, we need appropriate kind of data sets
+[480.00s - 483.00s] So out of the many data sets, one data set you need to know very well
+[483.00s - 486.00s] There's no need to know it
+[486.00s - 489.00s] Of course there are much larger data sets than this one, but this one is still manageable
+[489.00s - 492.00s] It has a okay number of classes, around 80, and this is known as the Microsoft Popo data set
+[492.00s - 495.00s] So here is an example of this example of this kind of data set
+[495.00s - 498.00s] So you have And let's take for example, a version over here
+[498.00s - 501.00s] So here you can see some sample images of the category version if
+[501.00s - 504.00s] So you can see evidently there is a data set of instant segmentation that you can do
+[504.00s - 507.00s] While in bounding boxes, the training data set had to have bounding boxes, ground-proof bounding boxes
+[507.00s - 510.00s] We'll start plotting some of that in the iPads soon
+[510.00s - 513.00s] Over here we have to specify polygons
+[513.00s - 516.00s] Someone has to sit and draw a polygonal shape
+[516.00s - 519.00s] That will be my ground-proof
+[519.00s - 522.00s] The network has to use the right shape for a specific pose that the person has, let's say, that the class has
+[522.00s - 525.00s] There are obviously in this kind of scene a variety of other classes and this is what makes the Govind dataset very challenging
+[525.00s - 528.00s] Some of these objects are very small, relative to the overall kind of number of pictures that we have in the scene
+[528.00s - 531.00s] And more importantly, some of these objects have imbalanced presence inside the dataset
+[531.00s - 534.00s] Presence, not presence, presence inside the dataset
+[534.00s - 537.00s] So the number of images where the person is is, you know, 80% of the data set contains person, but a number of images where a die is present is probably like 2%
+[537.00s - 540.00s] So there's a histogram that shows this class imbalance, and that makes this another kind of difficult data set to work
+[540.00s - 543.00s] So it is routinely used for benchmark
+[543.00s - 546.00s] All right, so the other kind of sort of We have a kind of entry in this kind of data set is the fact that they have gone and described the scene in natural language
+[546.00s - 549.00s] So this was the first instance where they attempted to extract from natural language a signal that can allow, and that can improve, which is known today as multi-modal reasoning
+[549.00s - 552.00s] And I'm sure there must be some kind of advanced quantitative vision kind of classes that this thing is being taught
+[552.00s - 555.00s] But definitely that was another thing which is credit, which I think we should know that
+[555.00s - 558.00s] And finally, the tasks that they have, obviously, big ones
+[558.00s - 561.00s] So the tasks, there are some additional tasks that we can actually find on the same number of data set and they have obviously very data for those
+[561.00s - 564.00s] It's when you are in need to estimate a specific proposal for an object, let's say a person, potentially drive different decision making if they're building a robot like a car who moves into this kind of a road it's Probably the car will first of all have to track that person right, but from the pose of the person You can understand if the person waits for the car to pass or it's kind of like this which means that it's they are running Okay, and so that's that's another accommodating in the same place that's enough for the data set I hope you got the idea okay over here I have just some further kind of information and now let's move on to the main topic now we have some kind of data let's now start looking at the object version so of the textualized task we are going to cover a task that will involve two sub tasks one is a classification task and the other is a regression task So what we learn in classification regression, we need to come down together to give us the class ID and the specific common box information we are up
+[564.00s - 567.00s] Okay, so let's start to draw a clear what we are going to do
+[567.00s - 570.00s] Over here, I'm going to assume that have, that are connected local capsule
+[570.00s - 573.00s] Then we call it video analytics pipelines
+[573.00s - 576.00s] And then the output of that is, sort of message block here
+[576.00s - 579.00s] The fourth one over here is a JSON
+[579.00s - 582.00s] What JSON stands for? JSON? You know JSON, right? Okay, JavaScript syntax object notation
+[582.00s - 585.00s] So that's the acronym here
+[585.00s - 588.00s] I hope you know it
+[588.00s - 591.00s] So this protocol here is a real-time streaming protocol
+[591.00s - 594.00s] Let's assume that they are sending it at 30 frames per second
+[594.00s - 597.00s] And also we have compression here, typically 264
+[597.00s - 600.00s] These are video compression standards that are very, very popular to reduce the raw data rate which is required for the video to be sent at this facility
+[600.00s - 603.00s] I told you something about entropy
+[603.00s - 606.00s] These are all entropic and others, and therefore this is exactly the same reason
+[606.00s - 609.00s] Okay, so let's assume that the..
+[609.00s - 612.00s] By the way, the problem over here can escape in many deployments
+[612.00s - 615.00s] Imagine you have an airport, a New York airport, for example, has around 2,500 cameras
+[615.00s - 618.00s] So if you want to do video analytics, definitely you cannot use the OS specific thing
+[618.00s - 621.00s] And they do some of them, they do
+[621.00s - 624.00s] Locally, you have to do all the work locally
+[624.00s - 627.00s] So for example, if you go to the passport control, what do you see? If you look up, you will see lots of cameras, right? And if you just do the multiplication, 2.5 thousand by 30, you arrive at that 75,000 frames per second
+[627.00s - 630.00s] So every second you have to process 75,000 images
+[630.00s - 633.00s] If you want to not do any down sampling out of it, right? And the way that actually they are doing it is they have in the basement some racks of computers with GPU servers
+[633.00s - 636.00s] As I said, you can only ship this pretty large latency to the cloud
+[636.00s - 639.00s] You have to do it across globally
+[639.00s - 642.00s] And they do the inference and to the JSON streams finally end up in a Kafka cluster anyone knows Kafka
+[642.00s - 645.00s] So this is definitely some technology that you should be aware of, especially if you are interviewing message blockier, publish, subscribe, patterns
+[645.00s - 648.00s] These are very common in enterprise systems
+[648.00s - 651.00s] So the JSON stream is sent over to Kafka for whatever number of consumers to retrieve that publications of what objects have been seen
+[651.00s - 654.00s] So what is the JSON needs to transmit? So over here, let's assume that there is an image with the person
+[654.00s - 657.00s] Over here, what you will see is definitely you will see, obviously you're not going to get the image here, although you can superpose the image, but definitely you'll see the following information
+[657.00s - 660.00s] You have to have a bounding box, a predicted bounding box
+[660.00s - 663.00s] These bounding boxes will specify them to be an X comma Y corner of the top left corner, followed by HBB
+[663.00s - 666.00s] BP stands for bounding box
+[666.00s - 669.00s] There's also a prime minister at the quality
+[669.00s - 672.00s] I've got WPP as well
+[672.00s - 675.00s] Sometimes I'm making jokes
+[675.00s - 678.00s] All right, so that's basically the specification
+[678.00s - 681.00s] So we need four numbers
+[681.00s - 684.00s] OK, so we have, so what is my white hat? My white hat now is going to be fairly complex
+[684.00s - 687.00s] So it's going to be the class ID, the confidence, the bound box that involves these four numbers
+[687.00s - 690.00s] So I put in my white hat for one object in the scene
+[690.00s - 693.00s] It could be hundreds of objects
+[693.00s - 696.00s] Obviously, this thing never stops
+[696.00s - 699.00s] The video feeds never stop
+[699.00s - 702.00s] So processing is done constantly
+[702.00s - 705.00s] And this example show massive video surveillance in a radio infrastructure of very, very expensive
+[705.00s - 708.00s] You have to work with the process
+[708.00s - 711.00s] And Kappa over here will take this white hat
+[711.00s - 714.00s] We say as a string, and some subscriber will subscribe to it because some other subscriber will want to take this bounding box information, chop off, let's say, doing face detection over there, that bounding box of the face, create a vector on the fleet, consult a database of persons of interest, bloodline so on
+[714.00s - 717.00s] So there's a lot of stuff on the back end that will happen after a bit
+[717.00s - 720.00s] But up over here, we'll just put a link ourselves to that
+[720.00s - 723.00s] Any questions after this moment? Okay, so before we start, I just want to traditionally help you understand what we call the object detection case
+[723.00s - 726.00s] All right, so we have definitely the usual kind of metric
+[726.00s - 729.00s] It's called a true positive and I'm calling it true positive
+[729.00s - 732.00s] There is going to be some ground truth
+[732.00s - 735.00s] I might kind of bring data
+[735.00s - 738.00s] These bounding boxes would be called VGT and they are typically very tight around the object
+[738.00s - 741.00s] Predictions are going to pose for, in this specific case, have some kind of a green proof
+[741.00s - 744.00s] The bounding box will be, as we said, B-red, okay, for predict
+[744.00s - 747.00s] We have a very valid proof
+[747.00s - 750.00s] Green are the predicted, red are the ground proofs
+[750.00s - 753.00s] or ordering that we apply to
+[753.00s - 756.00s] The second event that can actually happen is there's going to be a car in the scene that we will call person
+[756.00s - 759.00s] Obviously, this is called horse
+[759.00s - 762.00s] Horse
+[762.00s - 765.00s] There's going to be a following kind of event happening where exactly the same guy will be here
+[765.00s - 768.00s] It's nice bounding box around here
+[768.00s - 771.00s] But we don't have a prediction
+[771.00s - 774.00s] the predictor missed it
+[774.00s - 777.00s] And this is called what? It was negative
+[777.00s - 780.00s] Well, definitely we don't have true negatives because in object detection, we are not interesting to tell you this is not a water bottle, but we are just interested to tell you where the water bottle is
+[780.00s - 783.00s] Because we don't have true negatives
+[783.00s - 786.00s] All right, so if we understood these kind of three types of events that we have, The first, I will call it a quantity that I want you to know, is what's called the, that will help us to define the metrics, is called intersection over union, or IOU
+[786.00s - 789.00s] And this is defined as the area overlap between the two bounding boxes and divided by the area, as you can understand, of their union
+[789.00s - 792.00s] And the IOU obviously is a quantity that is between 0 and 1
+[792.00s - 795.00s] And obviously it's going to be 0 when the boxes are quite far away, so there's no overlap at all
+[795.00s - 798.00s] And it's going to be 1 when the two bounding boxes are right on top of itself
+[798.00s - 801.00s] Everyone understands IOU? That's kind of an important component in what we do next
+[801.00s - 804.00s] Yes? Could you repeat just a question? What you said about the two-family model
+[804.00s - 807.00s] Oh, sorry, I'm going to write it as..
+[807.00s - 810.00s] It is supposed to be like changing the cross-correlation and collusion
+[810.00s - 813.00s] Is it essentially the cross-correlation? The intersection of a union..
+[813.00s - 816.00s] ...is like a..
+[816.00s - 819.00s] ...the actual boundary between blocks, ...and the actual boundary points
+[819.00s - 822.00s] ...and the theory of the state we devise
+[822.00s - 825.00s] ...the only the total area
+[825.00s - 828.00s] And obviously, one
+[828.00s - 831.00s] You can't hear me, but that's just accurate
+[831.00s - 834.00s] Yeah, more concatenation
+[834.00s - 837.00s] And so we are definitely are interested in the bodies, as you can understand
+[837.00s - 840.00s] We want our predictions to be very close to the ground rule and also to be in some form of specificity, right? Also a map
+[840.00s - 843.00s] Another place, a boundary box around very much, right? But the IOU captures that as not the right thing
+[843.00s - 846.00s] So we will define a threshold, T we will call it, where for every event which is greater than P, this will be accounted as true positive
+[846.00s - 849.00s] In other words, when I have significant IOU, which means significant overlap, I will say true positive, but for bounding boxes, that are less than t, I'll account it as, which means that even if I predict correctly the class, okay, it is really the IOU that I will determine which bin I'm going to add this event, post positive or true positive
+[849.00s - 852.00s] So that's how I knew I would use the IOU threshold
+[852.00s - 855.00s] Everyone is fine with that, right? So, because obviously over here, If it is less than, let's say, 0.3, let us show that the threshold is 0.3
+[855.00s - 858.00s] In fact, typical values for the threshold are 0.5, 0.75
+[858.00s - 861.00s] I will definitely not have a very nice option
+[861.00s - 864.00s] So I'm penalizing
+[864.00s - 867.00s] I will be penalizing somewhat this based on IQ
+[867.00s - 870.00s] As we'll learn a bit later, the losses in various components of these detectors are a function of that threshold
+[870.00s - 873.00s] this specific threshold, but the IOU, right? Okay, so let's plot now a diagram that we have first kind of understand how we will write
+[873.00s - 876.00s] So our final destination is to write and draw the precision recall curve
+[876.00s - 879.00s] And understand via this precision recall curve, what is the key metric in object detection? Detection called average precision
+[879.00s - 882.00s] That's the final destination, right? But we'll go in steps
+[882.00s - 885.00s] The first thing I want to you to understand is that for every white hat that we will be receiving, right? We will be, need to increment a counter, either true positive, false positive, or false negative
+[885.00s - 888.00s] So, what happened? Okay
+[888.00s - 891.00s] We are still recording
+[891.00s - 894.00s] Okay, we are still recording
+[894.00s - 897.00s] All right, so let's move on
+[897.00s - 900.00s] So this is basically the IOU threshold
+[900.00s - 903.00s] that accepts this value, and as we have just defined over here, we will go to, okay, I will go to, this IOU comparison will help us define if an event is true positive, and if the event is true positive, I will increment a counter cause entity, which is obviously a function of and this condition is IOU greater than T
+[903.00s - 906.00s] This branch is IOU greater than T
+[906.00s - 909.00s] In a branch which is over here, for IOU is less than T, I will categorize as force positive and increment the counter and force positive of T
+[909.00s - 912.00s] The IOU is lesser than threshold, won't it be a force negative? That is, it won't be detected at all
+[912.00s - 915.00s] No, no, I have a prediction
+[915.00s - 918.00s] In a force negative, I don't have prediction
+[918.00s - 921.00s] I'm saying the object is not there and I'm wrong
+[921.00s - 924.00s] That is the definition of force negative
+[924.00s - 927.00s] In the force negative event, I don't have a green box
+[927.00s - 930.00s] Okay, so this one's obviously when I don't have a prediction, there will be another counter
+[930.00s - 933.00s] I know when I don't have a prediction because I'm now training, right? I'm actually, I have a test data set, either I'm training or I have a test data set that I know the ground truth
+[933.00s - 936.00s] So I'll implement another counter for all four negatives called nfn
+[936.00s - 939.00s] And this nfn is not a function of t for sure because I don't have a prediction about the box
+[939.00s - 942.00s] Everyone fine
+[942.00s - 945.00s] I'll do this more in time
+[945.00s - 948.00s] So what we have to do next is go into this kind of a larger kind of box that now we deal with the confidence threshold
+[948.00s - 951.00s] Confidence, let's call it tau and this is a threshold that will compare in terms of confidence that I want to cover
+[951.00s - 954.00s] I want to, I also detect that the person with some kind of confidence, but the confidence is above a certain threshold
+[954.00s - 957.00s] And so definitely the NTP now counter will be definitely affected by this comparison
+[957.00s - 960.00s] Because obviously if I, you know, the threshold is very strict, right? I will not be classifying this as true positives
+[960.00s - 963.00s] Definitely, this threshold will also affect other positives that I'm predicting
+[963.00s - 966.00s] In this case, it is the false positives
+[966.00s - 969.00s] And definitely the false negatives are also going to be affected by this tau
+[969.00s - 972.00s] And I'll explain now what will happen now versus tau for all these counters
+[972.00s - 975.00s] So question from you is the following
+[975.00s - 978.00s] Before I go to this kind of counts, let me just refresh your name with respect to what is a good predictor
+[978.00s - 981.00s] detector
+[981.00s - 984.00s] What is a good detector? We'll pick up, remember the gold coin and the banana analogy, we'll pick up all the gold coins without producing force positives
+[984.00s - 987.00s] The gold coins have a very large red bond, right? It would do NFN is equal to zero in other words
+[987.00s - 990.00s] You can pick up all, you can pick up all ground rules, which means NFN or NFP is zero
+[990.00s - 993.00s] NFN is zero
+[993.00s - 996.00s] NFN0 while avoiding to detect irrelevant objects
+[996.00s - 999.00s] Is it NFN or NFT? NFE is equal
+[999.00s - 1002.00s] That is the ultimate object detector
+[1002.00s - 1005.00s] All right, so question to you, since we know something about true positives, false positives and false negatives, what do you think is going to be the trend of the N? the n true positives as a function of tau
+[1005.00s - 1008.00s] The larger the tau becomes, the stricter I am, what you expect the counter to be, to increase or decrease? So I'm expecting to see something
+[1008.00s - 1011.00s] Good job
+[1011.00s - 1014.00s] So, about this guy, n false positives
+[1014.00s - 1017.00s] Not only the true positives will decrease, but anything that I call positive will decrease
+[1017.00s - 1020.00s] Despite if I'm not strong or not, I call that kind of positive, so I will see something like this also too
+[1020.00s - 1023.00s] How about, however, the force negatives? What's going to happen with the force negatives? Because the positives are decreasing, the force negatives will have an inverse kind of relationship with respect to tau
+[1023.00s - 1026.00s] So if we are to consider this kind of trends and write down the expression of precision and recall, remember there was a precision when we call formula, where it says that precision, which is a function of t comma tau, the summation
+[1026.00s - 1029.00s] This was true courses in the numerator
+[1029.00s - 1032.00s] I is equal to 1 to NTP, to FTP of TPI of T comma tau
+[1032.00s - 1035.00s] The TPI is affected by the ILU comparison and the confidence threshold, obviously
+[1035.00s - 1038.00s] It is this branch, in fact, in the diagram, the upper branch, and divided by something that involves exactly the same term
+[1038.00s - 1041.00s] I'm not going to write it for breadth privity, plus all my false positive events
+[1041.00s - 1044.00s] But instead of writing NFP, I will define a variable called, over here I'm going to write it, as Nd for number of detections
+[1044.00s - 1047.00s] What is the number of detections in an object detector? What is the number of detections in an object detector? Where do I have to get? Where I have this guy and this guy
+[1047.00s - 1050.00s] This is the total number of detections I produced
+[1050.00s - 1053.00s] So it is effectively NTP plus NFP
+[1053.00s - 1056.00s] So I can write the NFP as ND minus NTP
+[1056.00s - 1059.00s] And this is kind of fully justifies the fact that, I mean, this is basically the complete formula
+[1059.00s - 1062.00s] This is the formula
+[1062.00s - 1065.00s] Okay
+[1065.00s - 1068.00s] All right
+[1068.00s - 1071.00s] So how about the recoil? The recoil will also be a function
+[1071.00s - 1074.00s] I am not going to write the numerator because the recall also has common the tip enumerator with precision
+[1074.00s - 1077.00s] Remember the formulas, write tp divided by tp plus
+[1077.00s - 1080.00s] Now I'm going to have to do something about false negatives, right? Because the false negatives are not numerators
+[1080.00s - 1083.00s] So these false negatives, we're using the indexes molecule k nfn of nn sub-script k of tau, which This is the important kind of part
+[1083.00s - 1086.00s] What I'm going to do is look at the denominator
+[1086.00s - 1089.00s] In the denominator there is true positives and false negatives
+[1089.00s - 1092.00s] Okay? Let's go back one and a half months ago when we started to deal with classification
+[1092.00s - 1095.00s] You can see where the MFI is
+[1095.00s - 1098.00s] Right? Do you see where the NFN is? Is there a number of events that define this left, historical left tail of the positive? Where is the true positive? Because I'm adding true positive and false negatives, right? In the denominator
+[1098.00s - 1101.00s] What is it? The right
+[1101.00s - 1104.00s] Everything to the right is true positive
+[1104.00s - 1107.00s] Do you see, this is now is all tau
+[1107.00s - 1110.00s] Do you see any dependency on the summation to the tau? You can..
+[1110.00s - 1113.00s] No, not the summation
+[1113.00s - 1116.00s] The whole, because I'm signing true positive and false negatives, I'm effectively blocking the whole probability solution of the positive event, right? There's no, theta is not affecting the summation
+[1116.00s - 1119.00s] So, which means this has a huge implication
+[1119.00s - 1122.00s] The implication is that the denominator, which I will call nGT, will not have any dependency, will not have, and I'm going to roll it, will not have any dependency on that, on the threshold
+[1122.00s - 1125.00s] What I wrote, however, as a term is called NGT, and it is number of ground proofs of the class of interest, which is equal to NPP plus N, For the class of interest, the class of interest is person, right? So the number of ground rules for person is here and here
+[1125.00s - 1128.00s] That's why I wrote nGT, right? Equal NTP plus nFN
+[1128.00s - 1131.00s] And I did not, based on previous discussion, I didn't write dependency on tau, right? I only have dependency on IOD
+[1131.00s - 1134.00s] We see now where is this dependency coming from
+[1134.00s - 1137.00s] Okay, so the denominator over here is, let me write that down
+[1137.00s - 1140.00s] summation of rise equal to 1 pp, so tpi
+[1140.00s - 1143.00s] So since you've gone with these kind of trends for the individual kind of counters, let me now ask you, let me now ask you, what is the trend of the recall versus travel? This last thing, and this is where the implication will be, recall, this is the recall formula, Because there's no tau dependency in the denominator, it inherits the time of..
+[1143.00s - 1146.00s] So recall versus tau will actually be going down
+[1146.00s - 1149.00s] However, can we say anything about we cannot, because we have a dependency both in the numerator and the denominator
+[1149.00s - 1152.00s] Are you following? So we can't really prescribe a trend for precision
+[1152.00s - 1155.00s] And this is the reason why when you see the precision recall curves, they are going to other kind of zigzag kind of fashion
+[1155.00s - 1158.00s] They are very fairly noisy because of this
+[1158.00s - 1161.00s] So I may have some care like this, whatever that is
+[1161.00s - 1164.00s] I cannot really prescribe the trend
+[1164.00s - 1167.00s] And so now I want to plot
+[1167.00s - 1170.00s] The main hero was after from the very beginning, which is recall
+[1170.00s - 1173.00s] Sorry, this is precision
+[1173.00s - 1176.00s] Pressure to recall
+[1176.00s - 1179.00s] Okay, so this is one, and this is one
+[1179.00s - 1182.00s] Because obviously these are all probabilities
+[1182.00s - 1185.00s] So the maximum true positive rate that you can have is 1
+[1185.00s - 1188.00s] That's also the definition of power 4
+[1188.00s - 1191.00s] And what is the maximum precision that you can have? Well, the maximum precision you can have is when your force force is 0
+[1191.00s - 1194.00s] That's also 1
+[1194.00s - 1197.00s] So somewhere in this will be our curve
+[1197.00s - 1200.00s] So if you start, again, remember the ROC curves, how they're plotted
+[1200.00s - 1203.00s] They're plotted by changing
+[1203.00s - 1206.00s] the first group, which there is what is called tau here
+[1206.00s - 1209.00s] So, you can see something, I told you that is not going to be monodonic, and you'll get something which is, ideally, you wanted to produce this rectangle here, right, in terms of area under the curve, the maximum area under this precision recall curve which is 1.0 however now you get something which is less than 1.0 because obviously you're dealing with a non-idea if i in a geometrical kind of a general so i'll be calling this area under the curve average precision is uh the precision you will call the effectively you will get for various values of that kind of threshold or you will, if we wanted to call it the precision, that you would get average across multiple formats
+[1209.00s - 1212.00s] So basically what we do, however, we do not integrate anything like this, but what we integrate is we integrated intercollect
+[1212.00s - 1215.00s] This is more details of the specific kind of data set and associated kind of benchmarks, but I will just draw the care that we are..
+[1215.00s - 1218.00s] It's effectively a zero order interpolation at values kind of threshold and values points
+[1218.00s - 1221.00s] Sometimes you have 11 points here, sometimes you have a far larger number than this, if I remember correctly, sometimes you have 100 points here
+[1221.00s - 1224.00s] So interpolation is a bit more accurate, right? So effectively you are..
+[1224.00s - 1227.00s] In this interpolation, we are trying to..
+[1227.00s - 1230.00s] have a non-tonically decreasing relationship between precision and recall
+[1230.00s - 1233.00s] And this is the area under the Taylor-Bornesco
+[1233.00s - 1236.00s] So if I now shade it, it will be interpolated
+[1236.00s - 1239.00s] And the final kind of metric I want to sort of explain here is the so-called mean output, sorry, denoted as MAB that we see very frequently
+[1239.00s - 1242.00s] Maybe it may sound something of this not right way, what you mean by mean
+[1242.00s - 1245.00s] Well, the average precision goes here
+[1245.00s - 1248.00s] The mean goes over the number of classes
+[1248.00s - 1251.00s] So you have the summation over the number of classes, over the average decision of each class
+[1251.00s - 1254.00s] And a very typical mistake that people are actually doing, they look at this metric with the main decision of respect to what they've talked to today
+[1254.00s - 1257.00s] So now that I can do, what we need to do is to look at a histogram of our specifications for all the classes that this specific data set is offering you and pick up the detector that is for the specific because this mean average position oversimplifies this for the performance of the detector
+[1257.00s - 1260.00s] It's just one number across eight classes, etc
+[1260.00s - 1263.00s] You want to really see what's happening for the specific classes that you are dealing And in many instances, these classes will not be present in the data set
+[1263.00s - 1266.00s] And this is where you will need to do some form of transferred learning
+[1266.00s - 1269.00s] And hopefully your..
+[1269.00s - 1272.00s] What's your assignment? Okay, I'm sorry
+[1272.00s - 1275.00s] It is an object detector? It is explaining the internals of the CNN? Yes
+[1275.00s - 1278.00s] Oh, make sure you read it, okay? And..
+[1278.00s - 1281.00s] You know, we received approximately 10 tickets on Saturday evening
+[1281.00s - 1284.00s] Okay? They are not answered
+[1284.00s - 1287.00s] Saturday evening, the day before the assignment is served
+[1287.00s - 1290.00s] So make sure you read the assignment and ask the question
+[1290.00s - 1293.00s] If you go to the office hours before, you know, Saturday, let's see
+[1293.00s - 1296.00s] Yes, go ahead
+[1296.00s - 1299.00s] I'm deaf
+[1299.00s - 1302.00s] Yeah, may you speak up? For the interpolated curve? Any under the care? Yes
+[1302.00s - 1305.00s] Yeah
+[1305.00s - 1308.00s] Can you explain that again? Yes
+[1308.00s - 1311.00s] So the area under the curve is effectively, the area under the curve should be ideally one
+[1311.00s - 1314.00s] But because obviously you have false positives and false negatives that affect the precision of the cold, the area under the curve will be less than one
+[1314.00s - 1317.00s] So when you plot it as you change the threshold, you will get this white color
+[1317.00s - 1320.00s] And because they want the ministries to have a little bit less noisy curve to measure, they interpolate it with the zero order interpolation between values
+[1320.00s - 1323.00s] So basically we went around these values, for example
+[1323.00s - 1326.00s] They picked the average, and this is basically a flat line here, and so on
+[1326.00s - 1329.00s] It is decreasing, but it is decreasing monotonically
+[1329.00s - 1332.00s] So for example, in your course site, I have an American example of this thing, which I want you to look
+[1332.00s - 1335.00s] I'm giving you just dual predictions for a data set
+[1335.00s - 1338.00s] And as we show you over here, how to calculate the precision and recall curve
+[1338.00s - 1341.00s] For this specific reference was, as I told you, sometimes they give you 11, sometimes they give you sort of 100
+[1341.00s - 1344.00s] And this is the curve that you will get with this interpolation scheme
+[1344.00s - 1347.00s] In most instances, you will not be doing this interpolation
+[1347.00s - 1350.00s] You will not, obviously, you will be using the dot matrix APIs to produce this thing
+[1350.00s - 1353.00s] These calculations are done, obviously, for you
+[1353.00s - 1356.00s] But you really need to understand what do they represent, what this number represents the average distribution
+[1356.00s - 1359.00s] So this is the area under the here we are measuring, this thing
+[1359.00s - 1362.00s] So the next marks will give you, and also they will give you, you will report for a specific how, whatever is there
+[1362.00s - 1365.00s] I think you're right here notes where you know where you're defining the false positive
+[1365.00s - 1368.00s] I cannot hear you
+[1368.00s - 1371.00s] Like, can you go right to the notes where you define the false positive? The notes, yes
+[1371.00s - 1374.00s] Right? False positive
+[1374.00s - 1377.00s] Here? Yep
+[1377.00s - 1380.00s] Here
+[1380.00s - 1383.00s] So, how would we calculate like the IOU for the false positive? So the IOU for the false positive case, we will look at the prediction, right, and see how much overlap we have
+[1383.00s - 1386.00s] with the ground truth
+[1386.00s - 1389.00s] But like the ground truth here is for a different class? It's a different class, right? And therefore, as we said here, we'll still need to calculate the prediction, right? It could be a different class, but in terms of the regression problem, because there are two things going on in parallel, we need to measure this IOU
+[1389.00s - 1392.00s] Okay
+[1392.00s - 1395.00s] But like for this IOU, like where the car is there, right? Yes
+[1395.00s - 1398.00s] Will that still count as the ground truth or will for this particular class it be zero? No, no, no
+[1398.00s - 1401.00s] This one will count, in the very of the classes we have, we need to count the error you because we're drafting a different branch of my object detector
+[1401.00s - 1404.00s] We'll have to
+[1404.00s - 1407.00s] But Nick, here, if the prediction box fits really well with the ground proof of a different Okay, in this specific case, it's probably me throwing it and perhaps what's happening
+[1407.00s - 1410.00s] So in many cases, what is most logical to happen is that the..
+[1410.00s - 1413.00s] The IOU will also be probably quite off from the ground roof
+[1413.00s - 1416.00s] Even for classes which, you know, comparing class with a human, obviously the IOU will actually be somewhat distant from the car
+[1416.00s - 1419.00s] So it's not such a penalizing kind of event that is happening for performance or driving this object at a corridor to a different point that we will drive
+[1419.00s - 1422.00s] Is he just in your drawing? for the power one, this counted as a true positive one because it's intersecting so well
+[1422.00s - 1425.00s] Yeah, okay
+[1425.00s - 1428.00s] We are counting as a false positive because of the glass difference, right? So each true positive is defined for that particular glass value
+[1428.00s - 1431.00s] So the false positive is here, right? Yes, of course
+[1431.00s - 1434.00s] The false positive here actually will go here, right, as an event, will increment this time
+[1434.00s - 1437.00s] And then we'll compare it against the focus
+[1437.00s - 1440.00s] I understood that part
+[1440.00s - 1443.00s] Yes
+[1443.00s - 1446.00s] While we're counting it as a positive, because the way you draw the boxes, the intersections make good
+[1446.00s - 1449.00s] This is just a drawing
+[1449.00s - 1452.00s] I'm not suggesting that This is going to be the normal case where the ground post will actually enclose a car
+[1452.00s - 1455.00s] I mean, the prediction will enclose a car
+[1455.00s - 1458.00s] But I'll just come to you to understand, you know, what is really the force posted effect, right? The difference between the two labels, right? That's the force posted
+[1458.00s - 1461.00s] I am predicting the class of interest, but it is like a person, and I'm wrong
+[1461.00s - 1464.00s] Like here, the difference of the label will, is why we're calling it a positive and not the right
+[1464.00s - 1467.00s] Yes, that's the first time
+[1467.00s - 1470.00s] But in case our model is in use, and it does end up with a rate for something like this, then it would essentially count as two plus three
+[1470.00s - 1473.00s] No, no, it would
+[1473.00s - 1476.00s] What should I call the cloud? Let me put it in the longest term
+[1476.00s - 1479.00s] Yes
+[1479.00s - 1482.00s] So because linear counting can have PN and TP
+[1482.00s - 1485.00s] We are only looking at the IOU, right? We are looking at the IOU for the classes that we have categorized as true positives
+[1485.00s - 1488.00s] So out of the true positives, right, if IOU is completely messed up, we will add it to the first positive
+[1488.00s - 1491.00s] So out of the true positives, right, we'll account this, anything which is a good result for the box as true positive, and anything which was not a good result, as well
+[1491.00s - 1494.00s] That is what the IU helped us to
+[1494.00s - 1497.00s] Are we okay now? Right
+[1497.00s - 1500.00s] So with that, let us now go into the..
+[1500.00s - 1503.00s] Okay, so we now, we've certainly shown the metrics
+[1503.00s - 1506.00s] Let us now go into the object detectors themselves
+[1506.00s - 1509.00s] What are the architectures that we are going to..
+[1509.00s - 1512.00s] very regularly and there are two types of object detectors
+[1512.00s - 1515.00s] One type is called two stage
+[1515.00s - 1518.00s] So we change now to object detectors
+[1518.00s - 1521.00s] One is the two stage and the other is the single stage
+[1521.00s - 1524.00s] These are the two representative examples of a two-stage detector and a single-stage detector
+[1524.00s - 1527.00s] We are going to be focusing on a two-stage detector here, although of course right contains something about Geolo and there are some more, in fact your website contains the architectures and the details of Geolo v1, but I'm working to produce more and more versions
+[1527.00s - 1530.00s] As you can understand, the object detection kind of literature is infinite and there is a There is a paper that summarized everything that is also linked in your website for object detection in 20 years is of age
+[1530.00s - 1533.00s] So this paper goes back 20 years and starts to teach you or to at least have all the references of what has happened from a classical point of view before even the deep learning revolution to approximately 2019
+[1533.00s - 1536.00s] And definitely we have the faster XNN
+[1536.00s - 1539.00s] In other versions of YOLO, V1, they borrowed certainly something out of the fast, like most of concourse, and they evolved performance
+[1539.00s - 1542.00s] Up to version V4, if I remember correctly, you can use YOLO for a better sale
+[1542.00s - 1545.00s] After version V4, you cannot
+[1545.00s - 1548.00s] So don't go and pick up the V12 and deploy it anywhere if you're working for a company
+[1548.00s - 1551.00s] You have to check with people
+[1551.00s - 1554.00s] And people have some kind of reservations actually
+[1554.00s - 1557.00s] using a later kind of question
+[1557.00s - 1560.00s] As we will see, or perhaps not we'll see in this kind of course, but there are other transformer-based object detectors these days
+[1560.00s - 1563.00s] But obviously we don't know anything about transformers yet, and typically this is..
+[1563.00s - 1566.00s] So I'll be focusing now on CNN-based object detectors
+[1566.00s - 1569.00s] So here I'll be focusing on fast data
+[1569.00s - 1572.00s] So in the next hour, the discussion will be a little bit block diagram oriented
+[1572.00s - 1575.00s] We will be focusing on their blocks and also on the loss factors that are driving the training of the detectors
+[1575.00s - 1578.00s] And typically the exercise that you have at some point you will have an object detector to implement when we go into following objects in the scene
+[1578.00s - 1581.00s] You will get to some experience of following the detectors when we reach this point
+[1581.00s - 1584.00s] immediately after the region, it's going to be done
+[1584.00s - 1587.00s] OK, let's look at the first kind of instance of this faster CNN
+[1587.00s - 1590.00s] Initially, it was called region CNN
+[1590.00s - 1593.00s] So the region CNN had the following kind of approach
+[1593.00s - 1596.00s] It's called RCN
+[1596.00s - 1599.00s] RCN became fast and then faster, which is our final destination
+[1599.00s - 1602.00s] ideas from the previous generation was, so I cannot start from fast or faster
+[1602.00s - 1605.00s] I have to start from RC network space and concepts and then move quickly to the faster system
+[1605.00s - 1608.00s] So the idea about the sort of this kind of detection is to divide this kind of image into pixels
+[1608.00s - 1611.00s] Obviously every image is divided into pixels
+[1611.00s - 1614.00s] I'm going to plot here some kind of a very sparse pixel kind of graph
+[1614.00s - 1617.00s] And this graph is going to be consists of vertices and edges
+[1617.00s - 1620.00s] So vertices are the pixels, and edges we define some kind of similarity metric to group pixels together
+[1620.00s - 1623.00s] So based on base, threshold compiles
+[1623.00s - 1626.00s] If you were worried up to this moment in time about how to set up the learning rate, the meaning batch, and all the other regularization hyperparameters we have seen, and this was worried with you, You haven't seen anything yet
+[1626.00s - 1629.00s] There are lots of other thresholds that we are going to have in parameters of the object detector to the point where you have, I think, 35 hyperparameters, for some sort
+[1629.00s - 1632.00s] Which is almost impossible to find a switch spot because you're always trying to find a place on some input and then you go to the field, the light and the regions are quite different
+[1632.00s - 1635.00s] You know, the whole thing requires a lot of experimentation in the specific field
+[1635.00s - 1638.00s] application space for deployment
+[1638.00s - 1641.00s] You have to have the deployment organized so the performance
+[1641.00s - 1644.00s] So this is yet another question
+[1644.00s - 1647.00s] So this is effectively what we do is we are creating some form of segmentations and these segmentations will end up So what is the similarity to blue pixels? There are various kind of features that we can embed into that similarity comparison
+[1647.00s - 1650.00s] For example, the simplest possible feature is light
+[1650.00s - 1653.00s] So let me show you an example
+[1653.00s - 1656.00s] So this is the input image
+[1656.00s - 1659.00s] And this will actually result out of that segmentation process
+[1659.00s - 1662.00s] There's no semantic association between the segment and anything on the other side
+[1662.00s - 1665.00s] And it just so happens to be for us specific snapshot of this
+[1665.00s - 1668.00s] So what can we do with these kind of segments? What we are finally aiming is to make sure that we don't have very small fragmented kind of segments, but to theoretically group them into a smaller number
+[1668.00s - 1671.00s] As you can see, we're talking about potentially thousands of segments here, and we try to group them into what turns out to be called a progressive
+[1671.00s - 1674.00s] in this, or region, therefore the name of the object detector
+[1674.00s - 1677.00s] This proposal origin says to someone who is the main branch of the object detector, hey, I believe behind this proposal that I have, there is an object
+[1677.00s - 1680.00s] I don't care if it is a car, a car scone, or whatever, there is something there
+[1680.00s - 1683.00s] So we are laying effectively an objectness, confidence, for every single region
+[1683.00s - 1686.00s] And at that time, there were lots of regions that they have standardized object detector to the tune of 2000
+[1686.00s - 1689.00s] So we have, let me write this thing down, and I'll show you what it is kind of done
+[1689.00s - 1692.00s] So we apply, we are coaxing these segments after a procedure we call hierarchical grouping
+[1692.00s - 1695.00s] you'll see the procedure in your notes but i don't want you no one's going to ask me to do it here it's just you don't even have to read it the algorithm per se because as it turns out this method was replaced at the end of the finalist instance but a concept of proposal remained okay so boxes segments after grouping to create to create a regional proposal okay that is the concept i wanted to mention so we have typically 2,000 proposals
+[1695.00s - 1698.00s] Proposals look like this
+[1698.00s - 1701.00s] This is effectively the character kind of grouping, snapshots of that kind of algorithm
+[1701.00s - 1704.00s] The associated proposals, right, at the other stage of the algorithm
+[1704.00s - 1707.00s] The blue boxes are distances of proposals
+[1707.00s - 1710.00s] Behind a blue box there must be an object of some sort
+[1710.00s - 1713.00s] Everyone is following what's happening, right? This is nothing, there are no probabilities here
+[1713.00s - 1716.00s] Everyone should follow this thing
+[1716.00s - 1719.00s] All right, so this is the point we are at right now
+[1719.00s - 1722.00s] And let's see what we do next
+[1722.00s - 1725.00s] We have now the proposals
+[1725.00s - 1728.00s] And the second thing that we have to do, because this was the first thing
+[1728.00s - 1731.00s] The second thing that is actually happening is the extraction of features for each proposal, per proposal
+[1731.00s - 1734.00s] So we have these proposals of one use shapes
+[1734.00s - 1737.00s] Actually, let me color them blue, because I told you blue is going to be the proposal
+[1737.00s - 1740.00s] Let me color them blue, whatever
+[1740.00s - 1743.00s] some comes with a map, whatever
+[1743.00s - 1746.00s] And we are feeding them into, let me call this for a better, it's going to be called, it's going to be a CNN, and with the classification here, you support it
+[1746.00s - 1749.00s] So the CNN is starting, it's pre-trained, imagednet, We met ImageNet when we were presenting CNN with a thousand glasses, and I told you that it's very common to pre-train a network with an ImageNet, even in this text we mentioned it
+[1749.00s - 1752.00s] What we need to do is to extract these kind of features, we will fine-tune the network to classify region proposals
+[1752.00s - 1755.00s] 2K plus 1 classes
+[1755.00s - 1758.00s] Very common to see this plus one thing because we have k classes of objects plus one it's the background so this plus one is background that we treat it as plus or evidently in order to feed the proposals into the cnn we have to decide because the cnn if you remember the discussion has can accept only specific shape of it let's say 224 by 24 480 by 480 whatever the size is we dimension the cnn for the specific image and resize it to that specific state that it accepts
+[1758.00s - 1761.00s] At the time, this was called
+[1761.00s - 1764.00s] But if you are to do this, I'll tell you the same thing
+[1764.00s - 1767.00s] You may just want to pause as, as I call them, classical network induced for virtualization
+[1767.00s - 1770.00s] So in order to do this kind of operation, this kind of classification, we need to create two types of labels, right? Because obviously our ground proof information we have for the data set and closes the person, the car and things like, not the proposals
+[1770.00s - 1773.00s] We don't have the proof, you know, what are we going to classify? We don't have ground proof for the proposal, right? So what we need to have do here is we use IOU to filter proposals as positive
+[1773.00s - 1776.00s] This IOU has again another threshold
+[1776.00s - 1779.00s] This threshold is assumed
+[1779.00s - 1782.00s] Threshold is 0.5, phi, 1 over f
+[1782.00s - 1785.00s] So positive that belong to one capital K classes
+[1785.00s - 1788.00s] The B negative that have a value less than threshold, we call them belonging to the background class
+[1788.00s - 1791.00s] Okay, so effectively we are going and labeling
+[1791.00s - 1794.00s] We are going and labeling the blue boxes with what? The Ion B fresh code as a comparison, a fresh code, not the death fresh code that is of mathematics, but a fresh code that we also have to find through with the ground proof of the object
+[1794.00s - 1797.00s] Every time we have a proposal
+[1797.00s - 1800.00s] that it is sort of does some kind of overlap, strong overlap with the class of interest, right? We call it a positive
+[1800.00s - 1803.00s] And every time we have a proposal, imagine a box over there, or even a passage over there, has not a strong overlap with a class of interest
+[1803.00s - 1806.00s] We say that it belongs to the background
+[1806.00s - 1809.00s] However, if it belongs to yet another class strongly, it's still a positive
+[1809.00s - 1812.00s] So it may not belong to the dog, but it belongs to the cat
+[1812.00s - 1815.00s] It belongs to the cat
+[1815.00s - 1818.00s] And therefore we still go, are we following what's happening? We're trying to now build labels for the classification task
+[1818.00s - 1821.00s] So Professor, this is the training time, right? When are you using the IELTS? I guess
+[1821.00s - 1824.00s] So what do we do during the conference? Okay, so we have a..
+[1824.00s - 1827.00s] The other thing I want to mention is cross-entropy is used
+[1827.00s - 1830.00s] So what do you think is going to be the effect of that? The effect of that is that after this CNN is trained, right, and with that specific classification, again, and that specific labeling that we're doing in the proposals, the CNN will be able to pick up objectness from the scene
+[1830.00s - 1833.00s] objects from the scene
+[1833.00s - 1836.00s] Whatever objects we don't do, whatever class we don't do classification on a class basis
+[1836.00s - 1839.00s] This is common
+[1839.00s - 1842.00s] So we take now, so this is the third step, class, specific, this will be, this would be, it sounds like an anomaly, but it's like class specific classification
+[1842.00s - 1845.00s] While before we're not interested in the specific class
+[1845.00s - 1848.00s] So we abstract
+[1848.00s - 1851.00s] A 4,096, that's a very common number for fissure ice
+[1851.00s - 1854.00s] Sometimes it's 2,000, sometimes it is 4,096, and sometimes much longer, dimensional vector from the CNN
+[1854.00s - 1857.00s] From the CNN in the fine-tuning stage, let me call it two, and replace the head binary with, sorry, a bump Anyway, with a binary classifier, it should not be too detailed, with a binary classifier
+[1857.00s - 1860.00s] I mean, the popular binary classifiers, they could use logistic regression, but they would use some other classifiers for data
+[1860.00s - 1863.00s] Capitalizes the proposal as either background
+[1863.00s - 1866.00s] So basically we say, is this proposal background or class one? Is it proposal background or class two? by grammar, class D, and so on
+[1866.00s - 1869.00s] And now we have at least at the proposal level some notion of classification
+[1869.00s - 1872.00s] What class this object in general belongs to? We have the label
+[1872.00s - 1875.00s] Obviously, we are going to do the second subclass in object detection, which is the regression subclass
+[1875.00s - 1878.00s] So we have the class behind the proposal, but the proposal is not then final We are going to take the portal bounding box and move it and change the shape, the regressor
+[1878.00s - 1881.00s] So we have to solve the regressor problem
+[1881.00s - 1884.00s] We call the bounding box a regressor problem because of the predicting effectively three floating point numbers
+[1884.00s - 1887.00s] And we'll see why they are floating point
+[1887.00s - 1890.00s] I mean, you can say, OK, there are pixels or some sort of indicate numbers
+[1890.00s - 1893.00s] But we think them as floating point
+[1893.00s - 1896.00s] And another reason we think they are floating point is that we are doing regression in terms of relative coordinates, not absolute coordinates
+[1896.00s - 1899.00s] So we have divisions there
+[1899.00s - 1902.00s] So they end up as being floating point
+[1902.00s - 1905.00s] Yes
+[1905.00s - 1908.00s] Over here, when finally we get the probability decided between the background and one of the other, So the binary classifier will do that
+[1908.00s - 1911.00s] So like usually in multi-class classification, we usually decide on one of the classes
+[1911.00s - 1914.00s] But how do we decide if it's the background or like one of the classes? No, no, this is not multi-class classification
+[1914.00s - 1917.00s] It could have been binary classifier
+[1917.00s - 1920.00s] It's a binary classifier
+[1920.00s - 1923.00s] Right, but every class is decided between one of the classes and background
+[1923.00s - 1926.00s] Correct
+[1926.00s - 1929.00s] So say suppose we, so like say suppose for every class we don't get like a really good probability
+[1929.00s - 1932.00s] So it's probably right between finally a background or like one of those
+[1932.00s - 1935.00s] So we pick the class, right, that had the maximum confidence, right? Maybe in a specific class
+[1935.00s - 1938.00s] Out of the K classes
+[1938.00s - 1941.00s] Great, but what? So then when do we classify it? It's going to be one of those classes
+[1941.00s - 1944.00s] Our interest is not to when the background is classified
+[1944.00s - 1947.00s] Well, the why cut is coming out of the binary question
+[1947.00s - 1950.00s] It's going to be the why cut for the post-pandemic? for a specific class
+[1950.00s - 1953.00s] Great
+[1953.00s - 1956.00s] So we are defining it to be one of the K classes based on whichever is the maximum
+[1956.00s - 1959.00s] Yes, absolutely
+[1959.00s - 1962.00s] So but then which one of those gets classified as by block? So when there's an object of background? If it's always the maximum
+[1962.00s - 1965.00s] The binary class, each binary classifier, classifier is with one minus what kind of a parameter? Each binary classifier will classify as what kind of a positive the class specifically
+[1965.00s - 1968.00s] ID or negative, which is the background with one minus one
+[1968.00s - 1971.00s] So if we take the maximum, wouldn't we be classifying every, not if we classify it? We are going to, we are, yes, we are going to, I don't have a date, obtain out of this the proposal with, so we are interested to produce something, right? We're interested to produce something
+[1971.00s - 1974.00s] Now, it may happen that, So let me think about it, because in my mind right now, it comes to the point of when we have a force negative event
+[1974.00s - 1977.00s] When we have a force negative? And the force negative event is when we don't have a prediction period, right? We don't have a bounding box, but let me come back to this one
+[1977.00s - 1980.00s] By the way, in your website you have the information what you're asking
+[1980.00s - 1983.00s] It's just..
+[1983.00s - 1986.00s] The paper is called, this feature here is for accurate policy protection semantic segmentation
+[1986.00s - 1989.00s] It's kind of a 20-page
+[1989.00s - 1992.00s] I'm trying to distill the paper at the same time
+[1992.00s - 1995.00s] However, the section that you are going to be looking at, this section is actually an annexed B
+[1995.00s - 1998.00s] So yeah, I can come back to you because it's a paragraph that answers your question
+[1998.00s - 2001.00s] But there is a polling in the office
+[2001.00s - 2004.00s] All right, so let's see what happens to the regression problem
+[2004.00s - 2007.00s] So this is the force of regression
+[2007.00s - 2010.00s] So we have two x's here
+[2010.00s - 2013.00s] We have the x, b, the predicted x, the predicted y, the predicted w, the predicted height, and we have the x, g, which is the ground truth x, the ground truth y, the ground truth w, and the ground truth y
+[2013.00s - 2016.00s] So they were using linear regression for the task
+[2016.00s - 2019.00s] What is the task? To determine these predicted numbers, right, the four numbers with as close as it potentially can be to the ground truth, right? So remember the regression we had is y minus y hat
+[2019.00s - 2022.00s] And therefore you will see the metric here
+[2022.00s - 2025.00s] So they were using linear regression
+[2025.00s - 2028.00s] hypothesis G of X comma theta, which is theta transpose in some transformation
+[2028.00s - 2031.00s] Remember we have seen exactly that in the linear regression problem
+[2031.00s - 2034.00s] So these features, as extracted, the feature is this problem is out of the S, not there, but anyway, the S-specific layer, the CNN, in step 2
+[2034.00s - 2037.00s] So step 2, remember we were training that kind of CNN to produce a 4096 dimensional feature vector out of which we were extracting the class for the binary classification
+[2037.00s - 2040.00s] So over here we pick someone in the CNN, if I remember right, It is the max pooling layer called pool 5 in the CNN
+[2040.00s - 2043.00s] They have the architecture details
+[2043.00s - 2046.00s] That is a waiver
+[2046.00s - 2049.00s] Somewhere in the CNN, we are picking up that feature vector that corresponds to a proposal
+[2049.00s - 2052.00s] Remember, the input to that CNN were precise proposals
+[2052.00s - 2055.00s] So I'm talking about this guy here
+[2055.00s - 2058.00s] This guy
+[2058.00s - 2061.00s] So and then we have a feature vector there
+[2061.00s - 2064.00s] with obviously the size of that vector is going to affect this size of the theta vector
+[2064.00s - 2067.00s] And finally, if we train with addition loss, argmin over theta from i is equal to 1 to m, where m is the number of propositions that we have anyway
+[2067.00s - 2070.00s] This one will be the target, ti
+[2070.00s - 2073.00s] The target is not the xg
+[2073.00s - 2076.00s] I will explain what it is
+[2076.00s - 2079.00s] minus theta transpose phi of x squared plus lambda theta squared
+[2079.00s - 2082.00s] That's the traditional regularized linear regression for the loss
+[2082.00s - 2085.00s] Can you recognize that? All right, so what is theta here? So first of all, what is the TH and TW? Okay, this is the target vector
+[2085.00s - 2088.00s] Now, the target vector is such to be gx minus px divided dy is equal, gy minus dy divided by p, t w is equal log of gw divided by pw, and th is going to be log of gh divided by ph
+[2088.00s - 2091.00s] So remember I was telling you that Remember I was telling you that at the end of the day we are predicting, we are predicting relative coordinates between the ground truth, sorry this is gx and this is gwh, these are the four numbers that we're dealing with
+[2091.00s - 2094.00s] Yes, please
+[2094.00s - 2097.00s] What, which formula? I can write that
+[2097.00s - 2100.00s] dy is equal gy minus py divided by p, Sorry, yes
+[2100.00s - 2103.00s] So look what's happening over here
+[2103.00s - 2106.00s] Sorry, the color is probably wrong, obviously
+[2106.00s - 2109.00s] The color should have been blue
+[2109.00s - 2112.00s] This is my PX BY, and this is my PWH
+[2112.00s - 2115.00s] I'm trying to do as accurate as I can
+[2115.00s - 2118.00s] So basically what I'll do is is that I want to make this distance smaller
+[2118.00s - 2121.00s] This distance is captured in one coordinate by this, and in the second coordinate by this, right? Notice the normalization with the height and width, right? So that's why I told you that end up being floating point numbers
+[2121.00s - 2124.00s] And I want to also, with respect to the width and height, if I remember correctly, the log was there to analyze large difference between width and height
+[2124.00s - 2127.00s] If I remember correctly, you can read on the paper
+[2127.00s - 2130.00s] And probably I will not ask you
+[2130.00s - 2133.00s] But just for your information to understand what this kind of regression is doing
+[2133.00s - 2136.00s] It's resizing and matching and minimizing this difference between the ground and the blue boxes
+[2136.00s - 2139.00s] To provide some form of prediction
+[2139.00s - 2142.00s] This prediction could be something like that, whatever it is
+[2142.00s - 2145.00s] The green
+[2145.00s - 2148.00s] I cannot do it
+[2148.00s - 2151.00s] It will learn to produce the green for that specific, for this specific project
+[2151.00s - 2154.00s] Okay, so now we have solved the regression problem
+[2154.00s - 2157.00s] We have an IOU
+[2157.00s - 2160.00s] Obviously we have marketing proposals
+[2160.00s - 2163.00s] So if I write, get another, keep the same ground booth and I will get another bounding box over there
+[2163.00s - 2166.00s] I will get yet another green box
+[2166.00s - 2169.00s] So I'm going to have a dictionary
+[2169.00s - 2172.00s] And multiple green boxes, what we'll do with them? I have to come up with one green box
+[2172.00s - 2175.00s] I will apply a method called non-max suppression, an algorithm called non-max suppression, to eliminate one of the green boxes that they have already
+[2175.00s - 2178.00s] OK, so let's see
+[2178.00s - 2181.00s] So the final link, so we get, we can get predictions
+[2181.00s - 2184.00s] We need the suppression algorithm
+[2184.00s - 2187.00s] which is an algorithm that is maintained for subsequent generations even today
+[2187.00s - 2190.00s] The NMS
+[2190.00s - 2193.00s] So what did the NMS algorithm actually do? For each class, what class did? For 2019
+[2193.00s - 2196.00s] And so we have, we rank the predictions there associated with Waihat, the confidence
+[2196.00s - 2199.00s] So if I have, let's say, 0.90, 0.7, 0.95, I am going to select the highest posterior box and calculate the IOU remaining boxes, eliminating all boxes IOU greater than T
+[2199.00s - 2202.00s] So basically the bottom line is that I'm looking at the IOU between the highest probability, posterior probability bounding box, and all the remaining ones, and I'm eliminating everyone who is strongly overlapping with me
+[2202.00s - 2205.00s] But I am more confident in terms of my confidence threshold, in terms of my classifier
+[2205.00s - 2208.00s] So at the end of the day I'm going to keep whoever won that kind of a book
+[2208.00s - 2211.00s] And that's basically the non-max-ablation algorithm that results for each class now we're going to have effectively one bounding box that is game out of order
+[2211.00s - 2214.00s] Yeah, I know it's a big block diagramming oriented, but a lot of procedures happening
+[2214.00s - 2217.00s] This kind of object detector performed fairly well, but it was so slow that it was unimplementable
+[2217.00s - 2220.00s] The reason why it was so slow is that remember we have to do, first of all, the algorithm is non-differentiable and to do
+[2220.00s - 2223.00s] there's no such thing as pressing the play button and this finally object out every day we get an object detector we have to apply separate algorithms at every stage right character grouping we have to apply separate divided training process into a fine-tuning process followed by binary classification process yet another regression kind of process and so it handled all these kind of problems and it was very very slow because we are boring to have 2,000 CNNs to be involved in an inference loop
+[2223.00s - 2226.00s] So it was like tens of seconds for each inference
+[2226.00s - 2229.00s] So they thought about it and said, okay, what can we simplify and what we can do to reduce this kind of latency? Fast RCNN came as a solution
+[2229.00s - 2232.00s] And the faster CNN, I will use now the website mostly, and the faster CNN
+[2232.00s - 2235.00s] What we did is we said, okay, hold on a second
+[2235.00s - 2238.00s] Since I will mean they maintained the exact same argument with respect to proposal generation
+[2238.00s - 2241.00s] The blue boxes came again from a non-differentiable hierarchical grouping algorithm dedicated to it
+[2241.00s - 2244.00s] Having said that, if each proposal needs to go through a CNN, I can take my whole image passing through one backbone C and the pixel level information of each box pixel level to a feature map coordinate at the output of that CNN
+[2244.00s - 2247.00s] So I will, since all the CNNs are producing, I don't know if there is some kind of feature map, right? I will go and that CNN is not a stochastic thing
+[2247.00s - 2250.00s] It maps deterministically
+[2250.00s - 2253.00s] The pixel belongs to that specific feature map
+[2253.00s - 2256.00s] It's mapped, in other words, the specific feature map location
+[2256.00s - 2259.00s] Rather, the pixel does not have a feature map location
+[2259.00s - 2262.00s] So I'm effectively doing the processing of subsequent processing using one feature map that is coming out of the CNN
+[2262.00s - 2265.00s] And that's why this was called the ROI projection
+[2265.00s - 2268.00s] ROI projection is the proposal projection
+[2268.00s - 2271.00s] It's a deterministic processing
+[2271.00s - 2274.00s] So we are going to do that
+[2274.00s - 2277.00s] And then finally they replaced the SVMs of the world and the linear versions with fully connected layers of the data
+[2277.00s - 2280.00s] Both of them are driven by what is called a ROI pooling layer that created two different feature map proposals
+[2280.00s - 2283.00s] We have mapped it to one side
+[2283.00s - 2286.00s] There's a shipment that works to process them as the expected specific size
+[2286.00s - 2289.00s] So that is basically what has changed
+[2289.00s - 2292.00s] Because we eliminated the need for an idea of you know, the CNN, multiple parallel CNNs, the inference performance dramatically improved in the fast RCNN stage
+[2292.00s - 2295.00s] And then lastly, the faster RCNN, I'm going to faster RCN coming up, and now I need to write some stuff down for the faster RCN
+[2295.00s - 2298.00s] Faster RCN is exactly The main branch, the backbone CNN followed by ROR, only followed by the fully connected layers that are doing the classification, the regression, and the head
+[2298.00s - 2301.00s] But now we also replace with a neural network the proposal that the part of data which is given as the blue box is the proposal
+[2301.00s - 2304.00s] So this network is the..
+[2304.00s - 2307.00s] It's a proposal network, which is another CNN that is actually given as the proposals You need to be evaluated by the main points, by the one point
+[2307.00s - 2310.00s] So let me write a little bit some stuff, some details about the regional proposal network
+[2310.00s - 2313.00s] And then tell you something about what you..
+[2313.00s - 2316.00s] So for the last 20 minutes that I have or so, I will just focus my attention to the faster CNN
+[2316.00s - 2319.00s] And..
+[2319.00s - 2322.00s] The first change that they have done, obviously they have done this regional proposals network, but I want to mention the first stage that they have done, which is multi-stage, the ability to do multi-stage, sorry, multi-scale detection
+[2322.00s - 2325.00s] So option one
+[2325.00s - 2328.00s] to do multi-scale detection
+[2328.00s - 2331.00s] What is first of all, multi-scale detection is? As you can understand, the object detector will be able to recognize, to detect the face, whether the student is sitting on this desk or on the last desk of this class, right? So we need to be able to do the job, right? As much, of course, as possible, given the camera pose, or a non-multiple kind of sketch in terms of size or pixels or anything like that
+[2331.00s - 2334.00s] So option number one is to build effectively pyramids of images, pyramids of images
+[2334.00s - 2337.00s] So we have eight and we are creating now an H over two and W over two images and so on and so on
+[2337.00s - 2340.00s] And then we are going to train all of these the same during the presentation that we explained
+[2340.00s - 2343.00s] And obviously it's encouraging to do a little bit
+[2343.00s - 2346.00s] Sorry, we are resizing images
+[2346.00s - 2349.00s] We are going to build CNNs that are effectively tuned to many scales
+[2349.00s - 2352.00s] That's the simplest possible approach
+[2352.00s - 2355.00s] The other approach is option two, is building a pyramid of fields
+[2355.00s - 2358.00s] So these two approaches is related in a sense
+[2358.00s - 2361.00s] Instead of scaling the images, we are scaling The filters, three by three becomes nine by nine
+[2361.00s - 2364.00s] And so we are effectively changing the receptive field that is being seen and therefore we achieve much scale kind of ability
+[2364.00s - 2367.00s] The option however which was adopted finally and then YOLO 50-12 is the concept of anchors
+[2367.00s - 2370.00s] We are going to be building a pyramid of anchors also known as priors
+[2370.00s - 2373.00s] This is the scheme that I want to emphasize a little bit
+[2373.00s - 2376.00s] So the RBN says the same, says the following
+[2376.00s - 2379.00s] You know, you want me to come up with proposals
+[2379.00s - 2382.00s] That's your aim, the blue boxes
+[2382.00s - 2385.00s] Okay, I am going to go around the scene
+[2385.00s - 2388.00s] The scene involves here in this case the giant
+[2388.00s - 2391.00s] And I am going to go around the scene
+[2391.00s - 2394.00s] And I'm putting now dots that this thing applies
+[2394.00s - 2397.00s] At every dot, at every dot, I am going to find k anchors
+[2397.00s - 2400.00s] So I am going to say, okay, this is now, let me put it in the orange now
+[2400.00s - 2403.00s] This is anchor number one
+[2403.00s - 2406.00s] I have anchor number two
+[2406.00s - 2409.00s] I have an anchor which is like this
+[2409.00s - 2412.00s] I have an anchor which is like this
+[2412.00s - 2415.00s] So I'm defining, defining for every sample position of the image, small letter k angles, typically for various scales and aspect ratios
+[2415.00s - 2418.00s] Typically k is equal to small letter k is equal to 9
+[2418.00s - 2421.00s] So there are many many angles as you can see because this sampling is fairly dense in the image
+[2421.00s - 2424.00s] So we are from here we are going there, we are going there, we are going there and so we are placing these kind of angles
+[2424.00s - 2427.00s] For each location, at each location, we produce vectors or features via a CNN
+[2427.00s - 2430.00s] And what they have done, remember there was a Garvoon RCNN from the FastR CNN Galapagos
+[2430.00s - 2433.00s] They said, okay, this RPM can actually share some of the layers of what we've done
+[2433.00s - 2436.00s] backbone kind of CNN, and then do the slightly different kind of job, the blue boxes in other words for the upper layer
+[2436.00s - 2439.00s] So they borrow the lower layers, the paper which is also in the news right, has the details exactly what layers they picked up
+[2439.00s - 2442.00s] And the main start is the green and vitre-like features out of this kind of CNN that we use to determine is there an object behind the same anchor and another tool
+[2442.00s - 2445.00s] What is the best bounding box, which is the blue bounding box, I want to emphasize that, of the object, the anchors that we identify with
+[2445.00s - 2448.00s] The long story short is the following
+[2448.00s - 2451.00s] I am going to obviously answer the first questions in a very similar fashion to the question I asked with the proposals, but in the initial kind of discussion for us, he has
+[2451.00s - 2454.00s] I now need to develop per-anchor data set
+[2454.00s - 2457.00s] I need per-anchor data
+[2457.00s - 2460.00s] What anchor will be called..
+[2460.00s - 2463.00s] positive or negative or neutral, they have three subclasses there, are going to be defined based on the guess what, yet another threshold and yet another IOU of Parisian
+[2463.00s - 2466.00s] Very common pattern
+[2466.00s - 2469.00s] Okay, so if we define, so define a T positive is equal to 0.75, the IOU threshold, this is..
+[2469.00s - 2472.00s] And a T negative of..
+[2472.00s - 2475.00s] So for UNCOs, IOU, IOU between the UNCO and the ground truth, bounding box of the original ground truth that someone gave us
+[2475.00s - 2478.00s] For example, someone gave us this ground truth
+[2478.00s - 2481.00s] I can go ahead and based on this IEO comparison
+[2481.00s - 2484.00s] So for example, this may end up being a negative
+[2484.00s - 2487.00s] This guy may be a positive
+[2487.00s - 2490.00s] go around and put the labels on anchors because I have to do now classification of the anchor depth
+[2490.00s - 2493.00s] For a u with greater than tb, anchors r, for a or u which is less than anchors
+[2493.00s - 2496.00s] And now that I have the barangor kind of theta set, I will define a loss function which is the summation over all my anchors across entropy between the predicted y hat for n4k and yk
+[2496.00s - 2499.00s] So this effectively is used to obtain this value, the ground root for the uncold, because I need the yk label, it's positive or negative
+[2499.00s - 2502.00s] y hat sub k is effectively the probability that an uncold value of all the lambda
+[2502.00s - 2505.00s] Probability that uncold contains plus, plus lambda summation over Anthropos again, YK, Cooper, which I'll explain what it is
+[2505.00s - 2508.00s] So this is the classification
+[2508.00s - 2511.00s] This is the classification
+[2511.00s - 2514.00s] The orange classification draws for the classification branch
+[2514.00s - 2517.00s] The green over here is for the regression branch
+[2517.00s - 2520.00s] So the RPM has heads, the regression and classification head, because it needs to report how confident it is that there is an object
+[2520.00s - 2523.00s] behind a bounding box, it predicts as a proposal
+[2523.00s - 2526.00s] So it will predict the proposal based on that confidence as well and the importance of this proposal will be driven by the green part of that expression, which is what we call the loss
+[2526.00s - 2529.00s] So the loss is simultaneously optimizing both of these
+[2529.00s - 2532.00s] So we may be wondering what is Y-hat is actually doing there in the loss and what is Elkhoover
+[2532.00s - 2535.00s] So Elkhoover is, first of all, kind of, it's an absolute value type of regression loss
+[2535.00s - 2538.00s] In the regression we dealt with mean square error, but also we have the absolute value to create positive numbers of quantity
+[2538.00s - 2541.00s] But the, I've treated the discontinuity here at the bottom that creates some discontinuity in terms of gradient
+[2541.00s - 2544.00s] In order to avoid sort of training kind of issues, so that's the Kuber kind of loss that we did at CET
+[2544.00s - 2547.00s] And this guy basically is there to avoid it, to consider that only positive anchors are penalized in the regression part
+[2547.00s - 2550.00s] There's no point to penalize, so only when YA is one, then we pick up the regression component, because there's no point of penalizing an anchor which is negative, because this anchor will never be suggested to produce a public loss
+[2550.00s - 2553.00s] The faster our CNN paper is actually linked
+[2553.00s - 2556.00s] I'm trying to pick up the most important stuff out of these kind of three papers, convey at least what is modern..
+[2556.00s - 2559.00s] Out of this literature you can actually start extracting certain patterns
+[2559.00s - 2562.00s] There is an infinite number of object detectors, so learning every detector independently is probably not a good study
+[2562.00s - 2565.00s] So after you go through one, two, three, you start recognizing the patterns
+[2565.00s - 2568.00s] So what Jolo did, just to contrast the, at least this is the version one, they divided the image into a grid and they started creating effectively suggestions that are not for the proposals, but the actual detection for each of these grid points
+[2568.00s - 2571.00s] And there is for every grid point, for every grid cell, not point, for every grid cell there is a class probability associated with that as well
+[2571.00s - 2574.00s] And then they produce out of these two final detection
+[2574.00s - 2577.00s] This is basically a single stage thing
+[2577.00s - 2580.00s] It's not like the double stage where RBN has to provide the proposals and then the main grants to evaluate them
+[2580.00s - 2583.00s] It's a single stage process
+[2583.00s - 2586.00s] I don't want to extend the discussion here with YOLO because YOLO does not make any sense to just consider V1
+[2586.00s - 2589.00s] I mean, you have to consider certain evolutions also of YOLO, which I'll do in the future if you want to follow that website
+[2589.00s - 2592.00s] But there are also quite a lot of videos also that you can watch independently
+[2592.00s - 2595.00s] So in terms of YOLO..
+[2595.00s - 2598.00s] The region-based proposal should be inscribed
+[2598.00s - 2601.00s] No one, however, will ask you, as I said, questions that give me some higher group
+[2601.00s - 2604.00s] If you see the examples and questions that I'm actually asking, they are not necessarily sort of memory questions
+[2604.00s - 2607.00s] Obviously, you have your notes in front of you, and I think you should be able to answer them
+[2607.00s - 2610.00s] Most of them, typically the last question is that it's somewhat a bit more difficult than the others
+[2610.00s - 2613.00s] You should be able to answer it
+[2613.00s - 2616.00s] All right, that's all I have for today
+[2616.00s - 2619.00s] I will see you then next week, and we have

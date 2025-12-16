@@ -1,0 +1,950 @@
+[0.00s - 3.00s] As an American, we actually did, as we did with the privatization kind of situation, and solved the problem of the sort of building
+[3.00s - 6.00s] Okay, so we don't have a, our ability to demonstrate an American kind of partnership, which obviously, so we saw something like this, and we basically boxed this kind of main conclusion that this loss is heavily penalizing more than the wrong decision
+[6.00s - 9.00s] see the respect to the white hat
+[9.00s - 12.00s] What is the white hat that represents only? It's a prediction, but whether it's the positive or the positive
+[12.00s - 15.00s] No, it's like this
+[15.00s - 18.00s] And in the future, after we go through the sort of this progression, and we put together this kind of simple, simple neural neurons, right? In what we call our first cellular network, quantum generation
+[18.00s - 21.00s] And the aim of there was to do what? To introduce more complexity into the hypothesis
+[21.00s - 24.00s] And because we saw that this classifier, single neuron one was not able to classify this more complicated kind of data set as we showed in the TensorFlow Playground
+[24.00s - 27.00s] And then concluding on the other discussion was that the network is building features
+[27.00s - 30.00s] while at the same time is working to make decisions
+[30.00s - 33.00s] Everything is jointly optimized
+[33.00s - 36.00s] What features? Imagine how features being a point in a empty emotional space, okay, whatever the emotional space, your network can be
+[36.00s - 39.00s] As training goes, the features are actually moving because they are changing
+[39.00s - 42.00s] So that's the visualization we are able to see
+[42.00s - 45.00s] And of course, this means that the joint optimizer will find a particular star and with that we'll do a difference
+[45.00s - 48.00s] And if the probability distribution that we have with the inference is a little bit further away from the probability distribution that we use to train the thing, obviously we see certain bad behavior, right? So there's always this kind of possible, I didn't explain it, but of three, right? First of all, modernity
+[48.00s - 51.00s] A fully connected network
+[51.00s - 54.00s] So we said that we are going to obviously We should be able to put many neurons to work for us in a layer, as we go
+[54.00s - 57.00s] And also we have multiple layers that are stuck on top of each other
+[57.00s - 60.00s] We form this kind of, we have that kind of shape where at the bottom is my axis, the row data, and at the top is my condition
+[60.00s - 63.00s] And we saw that this is done
+[63.00s - 66.00s] H is in Israel of W version
+[66.00s - 69.00s] That's the equation of the dense layer
+[69.00s - 72.00s] We have shown, if we can prove it, in a critical kind of example, yes, indeed, this layer contains two neurons, which is also my dimension, I look like H, my feature vector, in other words
+[72.00s - 75.00s] That represents what? What always a feature vector represents? It represents VX
+[75.00s - 78.00s] That's what is a representation of X
+[78.00s - 81.00s] We call this the representation of X
+[81.00s - 84.00s] Now obviously every layer is doing its own kind of thing, so it basically projects the input, its own kind of input, but ultimately all of them are building a feature at the top of this network
+[84.00s - 87.00s] This idea, just before they can, if that is dimensionality, let's say, n-prime, we have an n-prime dimensional vector over here which represents x
+[87.00s - 90.00s] And obviously it represents, if it is a classification problem, the specific class
+[90.00s - 93.00s] So when you see a cut during kind of inference, the h vector will be the feature that we extracted from the concept of cut
+[93.00s - 96.00s] Finally, we used this kind of dense kind of layers to build an understanding about what is going to be the white hat of money
+[96.00s - 99.00s] And we presented a softmax
+[99.00s - 102.00s] What was the role of the enumerator in the software? The role of that enumerator is in
+[102.00s - 105.00s] I see that the only one is studying hard during the previous lectures of material
+[105.00s - 108.00s] Anyone watch the video at all? No? I have one last one that I heard that the audio was not there
+[108.00s - 111.00s] Okay? And everyone discovered that in the weekend before the meeting
+[111.00s - 114.00s] Very few things can be done on that one
+[114.00s - 117.00s] So just make sure the audio is there
+[117.00s - 120.00s] Double check
+[120.00s - 123.00s] What is this? This numerator of the coin watch
+[123.00s - 126.00s] So look at the question that I can ask before going there, and then it will be evident what the role is playing
+[126.00s - 129.00s] Can there have any element of CB negative? No
+[129.00s - 132.00s] The answer is yes, it can
+[132.00s - 135.00s] because obviously the relu, the h1, produces either zero or positive elements
+[135.00s - 138.00s] But look what happens after that
+[138.00s - 141.00s] We have a w matrix by vector multiplication
+[141.00s - 144.00s] But we also have the bias addition, and the bias could be a negative number
+[144.00s - 147.00s] And therefore, you can take any positive number that comes over here, and you can add a larger negative number to it, and therefore the elements of z would be negative
+[147.00s - 150.00s] And obviously we need to make them into the power of negative, positive, into the power of positive
+[150.00s - 153.00s] So we have taking care of that kind of thing in the numerator, and obviously we need to satisfy the other constraint, this constraint over there with the denominator
+[153.00s - 156.00s] Yes, no? Good
+[156.00s - 159.00s] Okay
+[159.00s - 162.00s] Finally, we are getting our posterior probability distribution, not distribution
+[162.00s - 165.00s] We are definitely going to report this specific class that won the competition, but at the same time we are going to report the confidence here
+[165.00s - 168.00s] I think I asked a question, maybe
+[168.00s - 171.00s] So, evidently the confidence we have for this class will be affected by these other classes? Yes, it will be affected
+[171.00s - 174.00s] Some people say no
+[174.00s - 177.00s] Some people say yes
+[177.00s - 180.00s] Yes, it will be affected because of the nature of that softmax equation
+[180.00s - 183.00s] In other words, if I had another confident, almost as confident as the winning class next to it, right? And you do the calculation, you will see that the confidence of the class that finally won the competition is actually much smaller than if you have a situation such as this, a nice situation such as this
+[183.00s - 186.00s] In other words, I have distributed weights for confidence is around
+[186.00s - 189.00s] So if I were to buy a competing class last confidence, this means that my confidence also is the winning class
+[189.00s - 192.00s] So you may win a competition, but your confidence may be dependent on what others are
+[192.00s - 195.00s] Okay, finally, so we introduced the multi-plus validation, the binary percentage or the multi-plus
+[195.00s - 198.00s] per cent of least there as a loss function
+[198.00s - 201.00s] But we are basically almost in other observations, we saw that these kind of dense networks are very, very expensive
+[201.00s - 204.00s] We went into, in our example, in your textbook, Python textbook, at least we went, I think, to 266,000 parameters, right? And someone has to do the gradient calculation for 266,000 parameters
+[204.00s - 207.00s] What is the length of the gradient vector? What is the length of the gradient vector for 266,000 parameters? 266,000 because the gradient vector is the derivative, each element, the derivative of the loss with respect to parameter 1, parameter 2, the parameter of 266,000
+[207.00s - 210.00s] We have done this by, I asked this question before, when we're doing even linear regression, the partial derivative of that mean square error with respect to, like I call the cell back then, we had two small number of parameters
+[210.00s - 213.00s] That was the size of the gradient vector
+[213.00s - 216.00s] All right, so I basically suggested that this kind of back propagation over here will be dealt from kind of first principles in a sense that it's a deterministic procedure that existed many years back, but over here is going to be explained
+[216.00s - 219.00s] And the procedure nowadays is obviously precisely done between a very large-scale smart network
+[219.00s - 222.00s] And of course we have many, many complications when we want to expand across multiple GPUs these days and multiple servers within the GPU, within a cluster of compute paths and other kind of story
+[222.00s - 225.00s] And it also a forward pass and a backwards pass
+[225.00s - 228.00s] Okay, so what is the forward pass is doing? It's simply doing what? Okay? It is gradually calculating the value of the function for specific values of x and y
+[228.00s - 231.00s] Specific values of x and y are coming in the input, And it explains in an equation for using primitive gains, as we call these individual kind of computational units, the value of the function f
+[231.00s - 234.00s] That was the easy forward pass
+[234.00s - 237.00s] What was the backward pass was doing? Was using the chain rule, as we said
+[237.00s - 240.00s] We saw it in a template
+[240.00s - 243.00s] fashion over here at the right hand side
+[243.00s - 246.00s] And at every step in the way, starting from equation eight, going to seven, going to six, and so on and so on, we are propagating each gate
+[246.00s - 249.00s] So the chain rule was saying, I have received an absolute gradient
+[249.00s - 252.00s] Okay, plug that in
+[252.00s - 255.00s] That is your DZ in that equation
+[255.00s - 258.00s] And all I need to do is to do what? What is the only operation that has to be done for its data to meet, going from the top of the diagram to the bottom
+[258.00s - 261.00s] The only operation here is this guy, the local gradient calculation
+[261.00s - 264.00s] So the local gradient is pass and deliver of the function of the gate
+[264.00s - 267.00s] When do I pick up the functionality of the gate from the forward equation? So we said that we are going to have a multiplication that's what the gate is doing at the very top of the diagram if you go back to your notes
+[267.00s - 270.00s] But we are going to obviously, to the partial feedback with respect to the port, to the port that I'm doing in the specific stance for the grading annotation
+[270.00s - 273.00s] And then I'm looking at some primitive lookup tables
+[273.00s - 276.00s] Did you print these lookup tables in a paper form? Because of total severity, you're going to come here and read this paper
+[276.00s - 279.00s] You're reading this paper in a physical paper note at that time
+[279.00s - 282.00s] So you need your physical paper notes, and you also need some of the additional things that I mentioned
+[282.00s - 285.00s] So where do you find these things? Where do you find this partial delivery lookup table? I mentioned that, and it is in the website called Math Resources, Math
+[285.00s - 288.00s] And then there is a calculus section in the website
+[288.00s - 291.00s] And in there, there is a lookup table
+[291.00s - 294.00s] OK, let's see
+[294.00s - 297.00s] OK, so courses
+[297.00s - 300.00s] That's your course
+[300.00s - 303.00s] OK, fine
+[303.00s - 306.00s] Okay, so you go to the website and here at the bottom you see calculus, right? Math by now calculus
+[306.00s - 309.00s] So this is your error of simple variable
+[309.00s - 312.00s] Error of simple variable
+[312.00s - 315.00s] Just in case someone asks you a kind of a trivial math provocation question, you need to have that lookup table
+[315.00s - 318.00s] So which entry, if you have a multiplier, like the multiplier equation 8, equation 8, which entry do we pick up from here, from this? You'll see a lot of equations here
+[318.00s - 321.00s] Which one would you pick to consult? That's the thing that you need to be familiar with
+[321.00s - 324.00s] So we have, what was the expression? In the norm? What was that? Varsha derivative of nu, this is, with respect to nu, this one can't be replaced with x
+[324.00s - 327.00s] So x times something scalar in this case, right? With respect to x
+[327.00s - 330.00s] And therefore, you will pick up this guy right here
+[330.00s - 333.00s] There's no x here, but there is a function f
+[333.00s - 336.00s] But if f is equal to x, you have c times the derivative of x with respect to x, which is 1
+[336.00s - 339.00s] Therefore, the answer is c
+[339.00s - 342.00s] Therefore, that's why we wrote that answer in the response here
+[342.00s - 345.00s] And so that this is the answer
+[345.00s - 348.00s] This is the C in the lookup table
+[348.00s - 351.00s] So you have to have this kind of mapping between the tensor and sort of elementary school lookup table
+[351.00s - 354.00s] All right, so the same thing happens with the other port of the multiplication kind of gate
+[354.00s - 357.00s] It's exactly symmetrical at all, but now the C is swapped and you have no
+[357.00s - 360.00s] And then you finally calculate the You go to a place of 7, you go from 8 to 7, you do exactly the same thing
+[360.00s - 363.00s] You will be able to find yet another time, another entry in the, over here
+[363.00s - 366.00s] Which entry will be able to..
+[366.00s - 369.00s] This guy
+[369.00s - 372.00s] This guy
+[372.00s - 375.00s] So it's minus 1 over x squared
+[375.00s - 378.00s] Thank you in some textbooks of calculus
+[378.00s - 381.00s] The prime is derivative
+[381.00s - 384.00s] Probably you know that from either part
+[384.00s - 387.00s] Okay, so the passing, so this is basically the one over the non-square, num times one over the non-square
+[387.00s - 390.00s] Mind you, every step of the way, this is a number
+[390.00s - 393.00s] There's a number behind it, having it in the memory
+[393.00s - 396.00s] Where this num was calculated when I was doing for propagation, I stored these numbers in memory
+[396.00s - 399.00s] So I'm able to retrieve them and use them right now
+[399.00s - 402.00s] When I see this term, I'm just letting them in
+[402.00s - 405.00s] I also calculated this day at some point for a class
+[405.00s - 408.00s] So this term now has a value
+[408.00s - 411.00s] It's not an equation, just numbers
+[411.00s - 414.00s] I just do not have the medics here
+[414.00s - 417.00s] I didn't write
+[417.00s - 420.00s] Okay, so what was the conclusion drawn from just propagation of the two PX? And I asked you, I think I asked you, to go back home and do the patrologation for the remaining case, at least two or three because we get the gist out of it
+[420.00s - 423.00s] So who has done it? Great, David
+[423.00s - 426.00s] You will do great in it
+[426.00s - 429.00s] So what was the main reason of acceleration here? Parallels
+[429.00s - 432.00s] That's the main factor
+[432.00s - 435.00s] Parallels
+[435.00s - 438.00s] Where is this parallelism here in this combination of dust? How did this parallelism manifest? independent branches
+[438.00s - 441.00s] Both of these branches will receive some kind of thousand gradients from someone and therefore local gauge can be parallelized
+[441.00s - 444.00s] The execution of this thousand gradients can be parallel
+[444.00s - 447.00s] What was the second factor? The second factor was we have elementary gauge and this elemental gauge means that we have a look at it
+[447.00s - 450.00s] and be able to symbolically look up
+[450.00s - 453.00s] So we can expand it from a square-in function over here to something that is matrix by vector multiplication
+[453.00s - 456.00s] We can go, do that calculation once, store it symbolically in a lookup table, and every time we have a matrix by vector multiplication, we pick up the value that the symbolic result from the lookup table
+[456.00s - 459.00s] We plug in the previous calculated kind of tensors
+[459.00s - 462.00s] We are done
+[462.00s - 465.00s] And the third thing was obviously the fact that we were able to reuse quite a lot of the results that have separated from the procedure
+[465.00s - 468.00s] Any questions to that trivial example? Do you only do one more example, a single neuron kind of thing? Let's see
+[468.00s - 471.00s] I think I have an example called the macro-variation of..
+[471.00s - 474.00s] So this is one
+[474.00s - 477.00s] This is a lecture
+[477.00s - 480.00s] Is it a five today? Four? Four
+[480.00s - 483.00s] So I have this kind of material
+[483.00s - 486.00s] It's more than normal over here
+[486.00s - 489.00s] And I'm giving you some values for W
+[489.00s - 492.00s] Obviously, this is W0, W1
+[492.00s - 495.00s] I want to use this general W in the calculations
+[495.00s - 498.00s] And also, I'm giving you the specific input x, which is x0, x1, x2, is equal to minus 1, minus 2, plus 1
+[498.00s - 501.00s] And what is the question? The question is, I'm going to write the question here
+[501.00s - 504.00s] So the gradient of white hat with respect to W
+[504.00s - 507.00s] We may have a loss, a binary percent of the loss and obviously we will calculate the gradient of the loss with respect to W, but I want to make this example a little bit easier
+[507.00s - 510.00s] So I'm just putting the notation in more elaborately than the sample sample
+[510.00s - 513.00s] So obviously we don't have a parameter
+[513.00s - 516.00s] How many times is the gradient? Evident because the number of parameters here is, so it is the partial derivative of white hat with respect to Donald said of the W of Wi-Fi with respect to W1, and pass and give the W-Fi with respect to W2
+[516.00s - 519.00s] These are my entries of my gradient
+[519.00s - 522.00s] Okay, so if I go to the forward pass, I have a little bit of a g, in other words, I will start from the point that we say, oh, please be able to see, right? And then today we will have the, So anyone has any ideas? What is the first equation? Z is equal to W transpose X
+[522.00s - 525.00s] Like again, we said that we're going to do gradual calculation
+[525.00s - 528.00s] Okay, that's equation number one
+[528.00s - 531.00s] All right, so and evidently, as we are doing the for computation, we need to obtain a value that we have to store some of it
+[531.00s - 534.00s] So can we calculate Z? Obviously we calculate Z
+[534.00s - 537.00s] If we do the dot product, what you will get? We get 1.0
+[537.00s - 540.00s] Okay, that's the number you'll get with Z
+[540.00s - 543.00s] A scalar problem
+[543.00s - 546.00s] What is the second equation? What is the second equation? Y hat is sigma of Z
+[546.00s - 549.00s] That's the second equation
+[549.00s - 552.00s] And if you do the calculation, it's 0.73
+[552.00s - 555.00s] Are we following what's going on? Okay
+[555.00s - 558.00s] That's a four-hour pass
+[558.00s - 561.00s] That's an easy part
+[561.00s - 564.00s] Okay, so let's write down the back-door pass
+[564.00s - 567.00s] So let me write it over here so I can't do this
+[567.00s - 570.00s] Okay, remember the template
+[570.00s - 573.00s] Your template must be somewhere in your notes, right? Okay, so where do I start? From the end, the last equation
+[573.00s - 576.00s] That's equation number two, and I will do buffer by gate
+[576.00s - 579.00s] So, however, if buffer by gate equation number two, I need a kickstarting gradient, right? Which is the partial derivative of y hat with respect to y hat
+[579.00s - 582.00s] That is one
+[582.00s - 585.00s] Okay, and now I'm able to apply the template, which I have now a gate that is called plus a sigmoid, and that sigmoid has only one input port
+[585.00s - 588.00s] Therefore, I have one downstream gradient that I can write, I can name it, and DZ, so this is the equation
+[588.00s - 591.00s] Downstream gradient is equal to the upstream gradient, which is VY height
+[591.00s - 594.00s] partial derivative of the gate, what is the function of the gate? Sigma of Z, that's a tensor called Z, with respect to Z
+[594.00s - 597.00s] If you go to a look up table in photos from that we saw a few moments ago, you won't find this partial derivative there
+[597.00s - 600.00s] In such a case someone is giving a problem like this, they will give it if you as a formula
+[600.00s - 603.00s] So the partial derivative of sigma is a root, is, first of all this guy is 1, is sigma of z, 1 minus sigma of z
+[603.00s - 606.00s] That's a formula
+[606.00s - 609.00s] That's a symbolic, you pick it up from a lookup table, hypothetical lookup table, and you write down the equation
+[609.00s - 612.00s] Do you have a number thereof? Yes, because I know z, therefore I have a number
+[612.00s - 615.00s] If you do the numbers, the sum would be 0.2
+[615.00s - 618.00s] We recognize I'm not really doing anything intelligent here
+[618.00s - 621.00s] I'm just following blindly the procedure
+[621.00s - 624.00s] So where we go next? Equation, one
+[624.00s - 627.00s] I'm done with equation two
+[627.00s - 630.00s] I'm doing equation one
+[630.00s - 633.00s] Now, at every point you have to also be aware of the question
+[633.00s - 636.00s] Because if you go and write down these, what is the mistake we have done? Just be the mistake
+[636.00s - 639.00s] It's not a catastrophic mistake, but it is a mistake
+[639.00s - 642.00s] We are actually going and calculating downstream gradients and no one is asking us about
+[642.00s - 645.00s] No one asks you anything about these
+[645.00s - 648.00s] The only thing that they ask you is the DW
+[648.00s - 651.00s] So don't make sure that in an exam setting, you don't go out and calculate whatever, right? But you careful what the question is asking
+[651.00s - 654.00s] Okay, so the DW, so that's the only thing we need
+[654.00s - 657.00s] DW is equal to Z, right? With a spec 2, so in the local gradient, is the function of the gate
+[657.00s - 660.00s] What is the function of the gate? Is it not product? with respect to what? Passer derivative with respect to the port, right, which is recalculating the passer derivative of
+[660.00s - 663.00s] What is this? W
+[663.00s - 666.00s] W is a vector
+[666.00s - 669.00s] We moved a little bit away from this scalar world that we were in the previous kind of exercise
+[669.00s - 672.00s] And now we have to sort of know a little bit about sort of variance
+[672.00s - 675.00s] I think I asked you to also review some of the gradients in Khan Academy
+[675.00s - 678.00s] There were also some kind of formulas also on your site
+[678.00s - 681.00s] I'll show you where they are
+[681.00s - 684.00s] But now we have a fascinating idea of a scalar with respect to a vector
+[684.00s - 687.00s] Okay, so let me write it down
+[687.00s - 690.00s] Do we know DZ? Yes, we do
+[690.00s - 693.00s] That is 0.2
+[693.00s - 696.00s] The passive derivative of a scalar with respect to the vector is, I'm going to write down the elements of this expression over here
+[696.00s - 699.00s] Okay, so it is passive derivative of w0 x0 plus w1 x1 plus w2 x2
+[699.00s - 702.00s] Do you agree? With respect to 1? W0
+[702.00s - 705.00s] then we have partial derivative of exactly the same thing, I'm not going to write it with respect to w1
+[705.00s - 708.00s] And then we have partial derivative of exactly the same thing with respect to w, okay? So these are my three element vector now that I need to have today, okay, the partial derivatives
+[708.00s - 711.00s] So I'm going to the lookup table again, and definitely I will see something I already have seen before, even in the previous example, So what's called, what is the simplification parameter? This summation is pass a derivative of w0 x0 with respect to w0 plus pass a derivative of w1 x1 with respect to w0, plus pass a derivative of w2 x2 with respect to w0
+[711.00s - 714.00s] Do you agree? Okay, so this thing is what? Zero, this thing is also zero and the only thing remains here
+[714.00s - 717.00s] is elements such as this, what is this result? If you go to the lookup table, it is results into x0
+[717.00s - 720.00s] So I'm going to do exactly the same manipulation over here, and finally, the end result will be 0.2, x0, x1
+[720.00s - 723.00s] Now this is kind of an example that..
+[723.00s - 726.00s] It's not really entirely kind of innocent in the sense that it does show that certain passenger invadids and gradient flows inside, even a trivial kind of thing, depends on the people
+[726.00s - 729.00s] And so in many textbooks you may see, even in your own kind of textbook, you may see if one of the features of my input dominates the others, what's going to happen? The gradient will be pointing always towards the dominating feature, direction, which means that Even if I can restock the kind of thing, right? I will not be able to move around so much
+[729.00s - 732.00s] And we have not been able to move around in values? In values? We saw that
+[732.00s - 735.00s] We saw that in the..
+[735.00s - 738.00s] What we discussed a week earlier
+[738.00s - 741.00s] I need to move around the scapegoat
+[741.00s - 744.00s] How are we getting the basics? How do we answer that question in your media? Yes, we go
+[744.00s - 747.00s] So is it because one of the features is very dominating? Yes
+[747.00s - 750.00s] So when we have a large dynamic range difference between features, what is a nice thing? So actually, I really using gradient descent instead of the gradient would still always point in the direction of like the minima, right? Even if it is not towards the other people
+[750.00s - 753.00s] Even if the, even if I consider the dominating one
+[753.00s - 756.00s] Yeah, so when you have the stochasticity, right, obviously you have other effects
+[756.00s - 759.00s] You have also the, that's basically where most of the, I mean the noise I'm introducing in the gradient
+[759.00s - 762.00s] But if in each minima, you have something which is very, I will call it systematic, you will not have as much So as a trick to say that like if we were using gradient descent like not the not so asset so we could still like get better results on the grid
+[762.00s - 765.00s] No really because okay in this trivial example maybe I do not know okay but in general no Anyway, some interesting stuff
+[765.00s - 768.00s] Okay, now I hope you got the gist of this thing
+[768.00s - 771.00s] Now you may be a bit shocked about this kind of analytical thing that is going on with respect to scalar with respect to vector, vector with respect to vector, and so on and so on
+[771.00s - 774.00s] So there are certain formulas and calculus, right? You can just treat them as lookup tables
+[774.00s - 777.00s] Okay? We don't need to know all the derivations
+[777.00s - 780.00s] I'll show you all the derivations
+[780.00s - 783.00s] I didn't know how they were derived
+[783.00s - 786.00s] We can accept them as ground proof and just use them in any problem that is involving some more elaborate example that we make after
+[786.00s - 789.00s] So let me show you where they are
+[789.00s - 792.00s] Okay, so if you go to..
+[792.00s - 795.00s] Training
+[795.00s - 798.00s] Okay, if you go to..
+[798.00s - 801.00s] So do you see this kind of link over there? This link, this text
+[801.00s - 804.00s] This is one reference
+[804.00s - 807.00s] This is computing neural network kind of gradients
+[807.00s - 810.00s] It actually goes into calculating how, I will call it more elaborate, for cases that are typically met in neural networks, we're here
+[810.00s - 813.00s] And so if I have, for example, what is this? Vector-magn matrix multiplication with respect to vector
+[813.00s - 816.00s] This is what you store in your symbolic table
+[816.00s - 819.00s] you take the matrix, you transform it, that's basically the other side
+[819.00s - 822.00s] We don't have to do anything if you have something
+[822.00s - 825.00s] There is some kind of hope that not everything is solved, I will call it..
+[825.00s - 828.00s] And I think last week, I think I showed you this last week
+[828.00s - 831.00s] You don't see anything
+[831.00s - 834.00s] You can do it
+[834.00s - 837.00s] Okay
+[837.00s - 840.00s] So this is basically an example of what we have typically, let's say, in a neural network, you have a cross-center belongs, you have a softmax, Before the soft maps you had some kind of a vector of my matrix multiplication
+[840.00s - 843.00s] And if somebody asked you to calculate the gradient of the loss with respect to a tensor here in this case is C, you just take out the prediction vector, subtract it from the y, the ground truth, and turn down
+[843.00s - 846.00s] We don't have to go in every step of the way, in other words
+[846.00s - 849.00s] You just use lookup tables
+[849.00s - 852.00s] That's exactly what's happening inside the table
+[852.00s - 855.00s] Symbolic computation
+[855.00s - 858.00s] If we can, of course, do it
+[858.00s - 861.00s] If we cannot do it, obviously we have numerical ways of doing it
+[861.00s - 864.00s] So anyway, take a look at these exercises also that I have in the site just to be familiar with this stuff
+[864.00s - 867.00s] No one is going to ask you to do something extremely complicated here
+[867.00s - 870.00s] But it may be a question that kind of get you 10 points or so
+[870.00s - 873.00s] All right, so let's now move on a little bit
+[873.00s - 876.00s] So I'm going to, there are some other sections over here which I'm going to skip because I want to go today into convolutional neural networks
+[876.00s - 879.00s] And when we do convolutional networks, we'll go back into those kind of sections because when we look at computer vision, we will see a little bit larger kind of data sets where these kind of things like regularization fast normalization and things like that, this type of elements will be a bit more useful for us
+[879.00s - 882.00s] More useful, but they're still useful in dense networks, but there will be a bit more evidence through the examples
+[882.00s - 885.00s] You know, when you have an institutional network, or when you have a fast normalization of blocks in there, you know, all this type of standards
+[885.00s - 888.00s] We'll understand them when we go to the students
+[888.00s - 891.00s] So this is what I want to do next
+[891.00s - 894.00s] I want to move on into a little bit another application domain, in the computer vision domain
+[894.00s - 897.00s] And this is where we stay for a while
+[897.00s - 900.00s] In fact, the computer vision domain will be assumed all the way until your meetup
+[900.00s - 903.00s] So in the meetup, you would expect to see some convolutional work out questions and whatever will manage to be covered until your before
+[903.00s - 906.00s] So let's do that
+[906.00s - 909.00s] So if somebody is asking you, what is the first thing that we notice when we see a ceiling? The first one
+[909.00s - 912.00s] The taxi
+[912.00s - 915.00s] That's basically where everyone responds
+[915.00s - 918.00s] First of all, by construction, you are focusing on the media
+[918.00s - 921.00s] And also by construction from some force 20 billion years ago, you..
+[921.00s - 924.00s] also not in bright colors, right? Because we are constructed to either find food or to run away from friends
+[924.00s - 927.00s] So if the yellow tiger is coming towards you, you just run away
+[927.00s - 930.00s] And so usually fruits, tomatoes, whatever, are bright colors, right? So you try to identify there's no coincidence for apps except on yellow
+[930.00s - 933.00s] All right, so in fact when we look at this kind of scene, we do two things
+[933.00s - 936.00s] One with a very, very small latency
+[936.00s - 939.00s] We process the full version spread kind of situation
+[939.00s - 942.00s] And then what we do is we start sampling the scene and sort of almost kind of fine-tune our attention to the task that we have on hand
+[942.00s - 945.00s] So for example, when we walk, we're waiting sort of for a person to arrive
+[945.00s - 948.00s] We started focusing on people coming out, cars, people are coming towards us, things like that, right? So probably you have your own experience of all that
+[948.00s - 951.00s] Okay, so that's basically what I wanted to mention
+[951.00s - 954.00s] So if I go and ask you the following kind of trivial questions, just to start this kind of discussion, if someone is giving you, someone is giving you the following kind of problem, an incident in production to polarization, for evolution
+[954.00s - 957.00s] Have some kind of a memory here, and inside this kind of memory there is some form of signal there, some kind of buffer, and someone is asking you the following question
+[957.00s - 960.00s] Is there any way to find the location of this thing which I have shaped it? Is there any way to find its location? We don't know where it is, and there is somewhere in this buffer, but we don't know where it Remember the radar example? That's a classic problem in the radar case
+[960.00s - 963.00s] Also, when we receive the returns from these planes, the returns will be somewhere in this kind of buffer
+[963.00s - 966.00s] It would be obviously not very well constructed, such as this square pulse over there, but it would be something there
+[966.00s - 969.00s] We use exactly the same concept
+[969.00s - 972.00s] So I forgot to mention that someone is also telling you that you know the specific shape of what you're looking for
+[972.00s - 975.00s] So one idea, okay, one idea to say, okay, I have I have some other kind of buffer over here and since you gave me a specific kind of shape I'm going to locate that frame at the very beginning of the buffer, right? And I'm going to execute the following kind of operation
+[975.00s - 978.00s] I'm going to multiply X of T and Y of T and sum the result
+[978.00s - 981.00s] Okay, so what is the, if you do this operation for that specific location, what will be the result? Zero
+[981.00s - 984.00s] So let's now do the following
+[984.00s - 987.00s] Let me try another location where this thing is located
+[987.00s - 990.00s] So I'm sliding this to the right, and I'm doing the same thing
+[990.00s - 993.00s] And I'm doing the same thing
+[993.00s - 996.00s] So obviously I'm getting another zero
+[996.00s - 999.00s] I'm getting another zero, so on and so on
+[999.00s - 1002.00s] At some point, this thing will be somewhere here
+[1002.00s - 1005.00s] It will start to overlap with the x of p, right, contents
+[1005.00s - 1008.00s] I'm going to start getting probably a slightly non-zero value, and maybe a larger value
+[1008.00s - 1011.00s] And right when we have complete overlap, I'm going to get very symmetrically after that this thing will come in
+[1011.00s - 1014.00s] So right at that peak, I'm claiming is the location of the x of t, which makes kind of some sense, visually at least
+[1014.00s - 1017.00s] And there's an associated kind of equation, which I'm going to show you in a moment, that we're doing this now for the..
+[1017.00s - 1020.00s] What if I expand the dimension, not if I have one dimension, like the time dimension or the buffer dimension, two dimensions, right? And in fact, I'm presenting now the case where someone's given you a black and white image
+[1020.00s - 1023.00s] So not axes, that's all I want
+[1023.00s - 1026.00s] We draw many axes
+[1026.00s - 1029.00s] Here, this will draw an image
+[1029.00s - 1032.00s] And in this image, there is going to be a cow
+[1032.00s - 1035.00s] Okay, so this is the cab, it will be there
+[1035.00s - 1038.00s] And I want to tell you now the following
+[1038.00s - 1041.00s] I want to ask you the following question
+[1041.00s - 1044.00s] Can we do something like that in a two-dimensional space? Obviously, if you knew exactly the shape of this frame of the cab, you would do exactly that
+[1044.00s - 1047.00s] You will go around, position this template, right, around this kind of image
+[1047.00s - 1050.00s] Maybe some kind of systematic fashion
+[1050.00s - 1053.00s] Maybe we start from the top left corner and go around
+[1053.00s - 1056.00s] Definitely at a location when we have some overlap or strong overlap, that correlation, because you're correlating the location with the other kind of the signal that we get, the image in this kind of case, you'll get a peak
+[1056.00s - 1059.00s] And then that's basically what you report
+[1059.00s - 1062.00s] Having said that, is there any other thing that we can do if you don't know the specific shape of that peak? And the answer is yes
+[1062.00s - 1065.00s] What we can do is We will, instead of actually having a template of the vehicle, since we do not know it, right, we will adopt a different approach
+[1065.00s - 1068.00s] We will shrink the template to some primitive shape
+[1068.00s - 1071.00s] Okay, so I'm suggesting now a primitive shape that I think will be useful for this type of glasses for vehicles here
+[1071.00s - 1074.00s] First of all, to understand the contents of this kind of small template, which is 3x3, I should explain also a couple of things
+[1074.00s - 1077.00s] Over here we have an image, right? We have an image
+[1077.00s - 1080.00s] Now the image obviously consists of pixels, as we mentioned before
+[1080.00s - 1083.00s] This is a black and white image
+[1083.00s - 1086.00s] So every pixel has a dynamic range
+[1086.00s - 1089.00s] What is a dynamic range? As we mentioned nothing earlier, typically we have 8 bits of dynamic range
+[1089.00s - 1092.00s] In other words, I'm representing the color of a pixel with a binary number that is from zero or a polyglyphalic integer number from zero to 255
+[1092.00s - 1095.00s] 255 is the complete dark, the black, and two, sorry, zero is the dark, gives the black, and 255 is the white
+[1095.00s - 1098.00s] So over here we have numbers
+[1098.00s - 1101.00s] Basically in a single channel kind of image, I think we have a matrix in front of us, right? Some elements of the matrix are zero, some other elements are 255
+[1101.00s - 1104.00s] And, or equivalently someone may go and divide everything by 255 and have numbers, 0 or 1
+[1104.00s - 1107.00s] So one and the same thing
+[1107.00s - 1110.00s] In fact, we typically divide by 255
+[1110.00s - 1113.00s] And so if we have this situation, can someone suggest some population of this template over here that it will detect something in this image? Some population
+[1113.00s - 1116.00s] What is my population? Population of numbers
+[1116.00s - 1119.00s] So I don't want something bigger
+[1119.00s - 1122.00s] The middle one should be bigger
+[1122.00s - 1125.00s] Yes
+[1125.00s - 1128.00s] So this one, if this one is sort of my light, right? I'm going to start again from this location over there
+[1128.00s - 1131.00s] And I'm stuck on a lady
+[1131.00s - 1134.00s] For a lady, I'm going to move over here and so on
+[1134.00s - 1137.00s] At some point, this thing will be right here
+[1137.00s - 1140.00s] Do you see that? It will be right there
+[1140.00s - 1143.00s] At this moment in time, you will get a further stop or attention
+[1143.00s - 1146.00s] And the same thing will happen on the bottom of this vehicle, on the floor of the vehicle, and in the hood or whatever you want
+[1146.00s - 1149.00s] But someone may say, you know what? I think I need..
+[1149.00s - 1152.00s] more than one of these kind of small templates called patches that I can program for example like this
+[1152.00s - 1155.00s] I can program like, I can have the ones over there and the zeros elsewhere and this probably will pick up some features over there and so on and so on
+[1155.00s - 1158.00s] So I can have another one called like this and will pick up some features over there and the wheels I can sort of program something like this
+[1158.00s - 1161.00s] So we kind of reached the following kind of conclusion that we need many patches to pick up features out of the hippopotamians in general
+[1161.00s - 1164.00s] Especially if we do not, we know something about the class, obviously over here and we can intelligently kind of select our patches
+[1164.00s - 1167.00s] But the direction we are going as we progress is that someone will with some procedure that we are familiar with already, populate these numbers inside these patches for us
+[1167.00s - 1170.00s] So this, remember the automatic feature generation that we saw in the dense network earlier? These features are going to be picked up from correlation of appropriate numbers in this template
+[1170.00s - 1173.00s] And this network, we'll see why we call it network, this kind of thing is called a correlation, neural network or a convolutional network
+[1173.00s - 1176.00s] In fact, there is a system operation called convolution that it can be, I think, another course for this image, this guy over here
+[1176.00s - 1179.00s] But if you, if you, if you boiler implementation of A-Rog and so on
+[1179.00s - 1182.00s] The two operations are more or less equivalent, but you get some kind of fluid kind of air
+[1182.00s - 1185.00s] We don't have to go through all these kind of details
+[1185.00s - 1188.00s] But if you go through an implementation, most of the implementation, if not all of the implementation, doing correlation
+[1188.00s - 1191.00s] They're doing effectively a dot product
+[1191.00s - 1194.00s] Let's see how this is happening over here, the example with the dash
+[1194.00s - 1197.00s] This is the image that I gave you just now, the black and white image, right? It's some kind of object in there
+[1197.00s - 1200.00s] And here is your patch
+[1200.00s - 1203.00s] In my example it was 3x3, here we see a 2x2
+[1203.00s - 1206.00s] The pass has some numbers, the image has some numbers
+[1206.00s - 1209.00s] I'm taking my pass, I'm locating over here to scan with, and I'm doing all these of the dots on the program
+[1209.00s - 1212.00s] I'm not familiar with the dot program
+[1212.00s - 1215.00s] Have I done this before? Obviously I move it in one location to the right
+[1215.00s - 1218.00s] I'm doing another dot program, another dot program, and so on and so on
+[1218.00s - 1221.00s] So I'm getting a new image
+[1221.00s - 1224.00s] I'm producing new images
+[1224.00s - 1227.00s] We will be calling these things feature maps
+[1227.00s - 1230.00s] Maps because they are definitely mapping features around
+[1230.00s - 1233.00s] We have this kind of operation
+[1233.00s - 1236.00s] We know the location of features that are keeping up with this correlation operation
+[1236.00s - 1239.00s] And we are definitely going to call these guys
+[1239.00s - 1242.00s] Sometimes we'll call them images
+[1242.00s - 1245.00s] It's at the very beginning of this network, which are raw data
+[1245.00s - 1248.00s] So in the end, we will have an input feature map processed by a rotation operation, producing output feature
+[1248.00s - 1251.00s] One thing that is actually very evident here is that output feature map going to be smaller or larger than the input feature maps
+[1251.00s - 1254.00s] So why is it going to be smaller? Because obviously the only way that this output feature map will be equal in the size of the input feature map if this patch was one by one
+[1254.00s - 1257.00s] Obviously, we have these six networks
+[1257.00s - 1260.00s] We have elements of these neural networks that we're going to study that are the largest size of one by one
+[1260.00s - 1263.00s] And this may not make exactly the same an intuition right now
+[1263.00s - 1266.00s] Yes, please
+[1266.00s - 1269.00s] Can you take feature hubs of inputs that I am accessing? Yeah, so for example, we have this type of networks that are called multimensional convolutional neural networks that are able to do the same operation
+[1269.00s - 1272.00s] Is that the significant level here? I think not
+[1272.00s - 1275.00s] It's more like the actual input sheet is over
+[1275.00s - 1278.00s] Okay, when the input is changing over time, in a sense we have, let's say, some kind of sequence of images or some sort of video
+[1278.00s - 1281.00s] We know we will learn how to process them
+[1281.00s - 1284.00s] Typically what you process them is you're processing with a sampling rate, but you process multi-image at a time
+[1284.00s - 1287.00s] And you stitch together predictions via an outgoing thing
+[1287.00s - 1290.00s] that is called probabilistic graphical memory
+[1290.00s - 1293.00s] We learn after we go to single computer vision task and do the so-called tracking
+[1293.00s - 1296.00s] I don't think I have anything else here
+[1296.00s - 1299.00s] And by the way, this kind of operation we have done over here, it's not something for you
+[1299.00s - 1302.00s] Even when you go into a course, I think there is a course for you
+[1302.00s - 1305.00s] They teach this type of classical computer vision tasks, I think, like filtering things like that
+[1305.00s - 1308.00s] These were known for decades and decades
+[1308.00s - 1311.00s] And everyone who's worked with photography, they must have come across this type of filters, these filters and that filter are changing the sort of processing the light
+[1311.00s - 1314.00s] It's exactly the same
+[1314.00s - 1317.00s] So let's look at this
+[1317.00s - 1320.00s] Let's look at now the..
+[1320.00s - 1323.00s] So remember what we have just discussed
+[1323.00s - 1326.00s] We need multiple of these passes that we can call in now to build a box
+[1326.00s - 1329.00s] If I stack these kernels I create, what is called? How many kernels are needed in each filter we will see? I mean, in general I will need plenty of kernels, but it's kind of a design factor
+[1329.00s - 1332.00s] It's not something that I..
+[1332.00s - 1335.00s] Evidently, I will come to that
+[1335.00s - 1338.00s] This shows some form of..
+[1338.00s - 1341.00s] some two other kind of parameters in this kind of filtering operation
+[1341.00s - 1344.00s] Here the filter consists of just one touch and white cells over there are the white pixels over there is the original kind of image and you notice two things being plotted over here, the so-called striped For example, the strides that we walk with, so if you make a larger kind of stride, you are covering faster and steeply like a space
+[1344.00s - 1347.00s] Here we are skipping, when the strides of two are skipping in this pixel
+[1347.00s - 1350.00s] So the red thing finds itself in the dotted blue thing after just one location to the right here
+[1350.00s - 1353.00s] And normally when the strides is one, we go and correlate with this same area
+[1353.00s - 1356.00s] The other, obviously the skipping has some effects
+[1356.00s - 1359.00s] Okay, so the stride has some effects
+[1359.00s - 1362.00s] So we'll see those effects at the moment
+[1362.00s - 1365.00s] We will also see some operations during the correlation
+[1365.00s - 1368.00s] The other thing that's actually going on here is this gray area around the image
+[1368.00s - 1371.00s] And this area is called budding
+[1371.00s - 1374.00s] This gray things have typically zero values
+[1374.00s - 1377.00s] And the reason why actually we are doing it, there are two reasons
+[1377.00s - 1380.00s] Remember the earlier discussion that our output feature map is going to be smaller than the input
+[1380.00s - 1383.00s] So when we have padding, you will see this kind of animation later on
+[1383.00s - 1386.00s] When we have padding, as you can imagine, that filter operation results into a larger output feature map than when we don't
+[1386.00s - 1389.00s] The second kind of byproduct is that, as the character is located over here at the edges, the kernel has always kind of a fixed way to pick up correlation for it actually located over here
+[1389.00s - 1392.00s] But if we are plugging, the kernel will move in various locations on the edges of the image
+[1392.00s - 1395.00s] This will take up, if you should have some more flexibility in picking up pictures at the edges in an animation
+[1395.00s - 1398.00s] Or for example over here, while before the kernel will actually only go over there, let's say, at the edge, now the kernel can correlate with its..
+[1398.00s - 1401.00s] more cropping of its own kind of cropping, the orange, the last picture, the edge picture
+[1401.00s - 1404.00s] All right, let's move on a little bit
+[1404.00s - 1407.00s] Now, what I'm going to do now next is to answer the following question
+[1407.00s - 1410.00s] What is this operation in a bit more general kind of sense? Because our images are naturally boring
+[1410.00s - 1413.00s] This is so we have how many chapters
+[1413.00s - 1416.00s] We have three chapters that the image will do
+[1416.00s - 1419.00s] where the challenges are much more developed, like satellite imagery and things like that, how potentially several or two more higher approaches
+[1419.00s - 1422.00s] And therefore we have to understand this operation in the, when we, in general case, we receive a volume
+[1422.00s - 1425.00s] and we deliver another volume, right? So we receive a volume, do the correlation to pick up spatial features, and we deliver to the layer of all of us another volume
+[1425.00s - 1428.00s] And so I'm going to draw something that does that
+[1428.00s - 1431.00s] And at the same time, out of this discussion, we'll understand also what is a convolutional neuron
+[1431.00s - 1434.00s] We saw the sigmoidal neuron, we saw the other neuron with the relu, right, and that's kind of layered there
+[1434.00s - 1437.00s] Now we will see what is the convolutional neuron
+[1437.00s - 1440.00s] Let's start the drawing
+[1440.00s - 1443.00s] So I need some kind of real estate to draw this kind of diagram
+[1443.00s - 1446.00s] Show me where we started at the bottom over here
+[1446.00s - 1449.00s] And I have my input feature map, right? So this is my input volume
+[1449.00s - 1452.00s] Obviously the input feature map has a number of pixels
+[1452.00s - 1455.00s] We're just pulling some pixels over here
+[1455.00s - 1458.00s] And it has a depth, mL-1
+[1458.00s - 1461.00s] It has a height, L-1
+[1461.00s - 1464.00s] It has a width
+[1464.00s - 1467.00s] And L, smaller than L there, is just basically an index for the layer that I mean
+[1467.00s - 1470.00s] That's a general kind of thing
+[1470.00s - 1473.00s] So this diagram applies whether we are the very input or the level in this kind of network
+[1473.00s - 1476.00s] So we do some kind of operation over here, this kind of correlation operation, and definitely we are going to define an output feature now
+[1476.00s - 1479.00s] And as we discussed using a 3x3 filter, the number of pixels of this kind of output, which will not be smaller in general than the pixels
+[1479.00s - 1482.00s] So I am going to suggest that if I have a specific..
+[1482.00s - 1485.00s] And the headline of this diagram is the snapshot, the CNN operation
+[1485.00s - 1488.00s] We will observe at this specific snapshot in time what is happening
+[1488.00s - 1491.00s] So if I have, let's say, the filter over here, I have the 3x3 filter in other words
+[1491.00s - 1494.00s] The question for you is, How many kernels do I pack into this filter for this specific input feature map? In other words, what is the depth of the filter? The filter will also be a volume
+[1494.00s - 1497.00s] So the question is what makes sense for this volume to be? Well, there are three options
+[1497.00s - 1500.00s] The filter may stick out, you know, deeper, will be deeper than the input feature map
+[1500.00s - 1503.00s] The second option is that the filter will be shallower than the input feature map
+[1503.00s - 1506.00s] And the third option is that the filter will be exactly the same depth as the input feature map
+[1506.00s - 1509.00s] which of the three makes more sense? So if it is deeper than any good feature now, right? You know, there's no reason why it should be deeper, because, you know, what are we going to do with the additional kernels of the filter? There's nothing for a leak
+[1509.00s - 1512.00s] So when it is shallower, that also does not make any sense, because although it can be shallow, someone could, and honestly call it a shallow kind of filter there, we're going to leave money on the table
+[1512.00s - 1515.00s] I mean, we're going to leave some channels right of the input feature map that don't be correlations
+[1515.00s - 1518.00s] So the only reasonable kind of answer is that the filter is going to be exactly the same depth as the input feature map
+[1518.00s - 1521.00s] That is the only reasonable choice
+[1521.00s - 1524.00s] Okay, so we kind of designed the filter now
+[1524.00s - 1527.00s] We know the number of And obviously, as we saw in the previous kind of figure, at this specific snapshot in time, if I do the correlation, I will create a vector or a scale
+[1527.00s - 1530.00s] What am I correlating now with? If I call this guy, this, if I call this guy, X
+[1530.00s - 1533.00s] So I have a have an extension, which is a volume
+[1533.00s - 1536.00s] Are we also like, so when we take a correlation, we usually get to the case, we saw that we are summing up
+[1536.00s - 1539.00s] Summing up
+[1539.00s - 1542.00s] Yes
+[1542.00s - 1545.00s] So are we also doing it across the, yes? So we get a scalar
+[1545.00s - 1548.00s] Then we get a scalar
+[1548.00s - 1551.00s] Scalar
+[1551.00s - 1554.00s] We always get a scalar out of these dot products
+[1554.00s - 1557.00s] Now the dot product is in a volume, a dot product, not a two-dimensional dot product
+[1557.00s - 1560.00s] So it's a three-dimensional
+[1560.00s - 1563.00s] We'll write the equation now shortly
+[1563.00s - 1566.00s] Let's assume that the filter is coloring something on this location, which is I, J
+[1566.00s - 1569.00s] It has some spatial coordinates
+[1569.00s - 1572.00s] There are two things going on
+[1572.00s - 1575.00s] Special coordinate, I, J, across the height and width, for example, because this is basically the HL
+[1575.00s - 1578.00s] And this is my WL, right? And this is the depth ML
+[1578.00s - 1581.00s] So if I take this kind of column, and rotate it 90 degrees, and give you the pixels in this column
+[1581.00s - 1584.00s] How many pixels can I have in general? I'm going to have ml minus, sorry, not ml, I'm sorry, ml pixels
+[1584.00s - 1587.00s] Because the output of its mark has mL, right? So I'm going to have ml pixels in this column
+[1587.00s - 1590.00s] And I will also define an index called KL, which is going to be definitely between 1 and ml
+[1590.00s - 1593.00s] to be able to answer the question as to what pixel is coloring right now this filter, right? Which one? So I can do the same, by the way, for the filter over here
+[1593.00s - 1596.00s] I can take the first kernel, the second kernel, the last kernel is here
+[1596.00s - 1599.00s] So I took the filter and I rotated 90 degrees and I just write explicitly, draw explicitly each kernel
+[1599.00s - 1602.00s] So how many of these guys do we have? We have ML minus 1
+[1602.00s - 1605.00s] One of these pyramids, as you just told me, coloring one pixel
+[1605.00s - 1608.00s] One pixel
+[1608.00s - 1611.00s] You just told me
+[1611.00s - 1614.00s] So my question to you is that obviously this pixel will be located somewhere
+[1614.00s - 1617.00s] Let's assume it's located over there
+[1617.00s - 1620.00s] So if I do write the equation, the three-dimensional correlation equation, which I promise, so given I'm writing given i comma j comma k l, the index cannot be read
+[1620.00s - 1623.00s] Before I add summation over the indices v and u that are picking up numbers from the kernels, right? So all of these kernels are indexed by u and v
+[1623.00s - 1626.00s] So what are we correlating with overlapping x? Only the overlapping volume with the filter will be here
+[1626.00s - 1629.00s] So this is basically I plus U, J plus V, KL minus 1
+[1629.00s - 1632.00s] Because KL minus 1, I forgot to mention, is the second index that I can define here to tell me about the depth of the input-issue map times
+[1632.00s - 1635.00s] I'm going to call this guy, I don't want to confuse with with the width over there
+[1635.00s - 1638.00s] So I hope you, I'm only using some notation here
+[1638.00s - 1641.00s] I'm not typically the parameter kind of vector I used before
+[1641.00s - 1644.00s] And this is u comma v comma k l, comma k l minus
+[1644.00s - 1647.00s] This is times n times w of u comma v comma k l minus 1
+[1647.00s - 1650.00s] And I claim that this is going to plot a pixel but I need another summation
+[1650.00s - 1653.00s] I need a further summation because I need to sum over all of the kernels
+[1653.00s - 1656.00s] All of the kernels are creating this green pixel, not one, all of the kernels, right? So I need to sum over what? KmH1
+[1656.00s - 1659.00s] I'm summing over KmH1
+[1659.00s - 1662.00s] I'm taking this kernel, relating with overlapping area of the x, right, of the corresponding x, and I'm summing this to the next dot product
+[1662.00s - 1665.00s] So I'm doing this three-dimensional kind of dot product as KL minus one summation of a two-dimensional dot product
+[1665.00s - 1668.00s] This is basically what I did earlier, but only had one depth of one by the way
+[1668.00s - 1671.00s] In the previous work, I only get one out of KL minus one of these patches which I have to produce a dot product
+[1671.00s - 1674.00s] And I will sum this individual dot products into one number
+[1674.00s - 1677.00s] That is going to be called the z
+[1677.00s - 1680.00s] So I'm writing, I'm forming a comma, I'm forming a z of i comma j, comma k l
+[1680.00s - 1683.00s] That is going to be, this is going to be my sort of green picture, which is going to be located at the i comma j special coordinate somewhere inside this column
+[1683.00s - 1686.00s] Because of the depth of the other view, because the depth of the filter is..
+[1686.00s - 1689.00s] Okay, this is what I want to emphasize
+[1689.00s - 1692.00s] If I take this and see what happens in the next snapshot, let's assume that I move this filter to the left
+[1692.00s - 1695.00s] That is the question I want to answer
+[1695.00s - 1698.00s] If I move the filter to the left, do I determine the red diesel or something else? If I move the filter to the left
+[1698.00s - 1701.00s] At that point, where I'm taking the spatial coordinate therefore I am plotting which pixel
+[1701.00s - 1704.00s] Not the one I have shaded with red, but I'm plotting another pixel on the left of the green pixel in the same depth
+[1704.00s - 1707.00s] Back to your point
+[1707.00s - 1710.00s] One filter can reduce one slice of the output volume
+[1710.00s - 1713.00s] One slice and only one slice
+[1713.00s - 1716.00s] So let me delete this thing that I plotted over here
+[1716.00s - 1719.00s] Delete this quarter too
+[1719.00s - 1722.00s] which means that in order for us to produce enough volume of the ML, I need more filters
+[1722.00s - 1725.00s] That's the only reasonable answer
+[1725.00s - 1728.00s] That is really the safe conclusion of the discussion
+[1728.00s - 1731.00s] We find multiple filters
+[1731.00s - 1734.00s] So I need ML filters to form ML
+[1734.00s - 1737.00s] Is this operational linear? What we have discussed about the need for When we look at the dense network, we discuss about the link to actually producing nonlinear projections
+[1737.00s - 1740.00s] So over here we're trying to pick up special features that are present in my image
+[1740.00s - 1743.00s] I need a nonlinearity
+[1743.00s - 1746.00s] I will then need to follow up on the dot product
+[1746.00s - 1749.00s] Usually what comes after the dot product
+[1749.00s - 1752.00s] A nonlinearity
+[1752.00s - 1755.00s] So I'll maintain the rel after the nonlinearity
+[1755.00s - 1758.00s] We'll add a bias, pass it through the relic
+[1758.00s - 1761.00s] This construct, linear correlation operation in a three-dimensional space of the volume filter, this filter obviously has kept them at minus one
+[1761.00s - 1764.00s] With an input feature map, this operation is what is really happening inside the convolutional neural network, and what can I call a convolutional neuron? This operation that we just showed, which is my z
+[1764.00s - 1767.00s] So this is my convolutional neuron
+[1767.00s - 1770.00s] It's going to be this kind of operation, I'm going to take the input feature map, which I will call this X
+[1770.00s - 1773.00s] I'm going to do the 3D correlation
+[1773.00s - 1776.00s] I'm producing my Z, my Zs, which is basically a slice if I use this filter
+[1776.00s - 1779.00s] And after some kind of bias addition, which I forgot to watch out here, I can pass it through a loop to form an H
+[1779.00s - 1782.00s] Obviously the days won't be like a matrix
+[1782.00s - 1785.00s] It'll be a matrix
+[1785.00s - 1788.00s] It'll be one slice
+[1788.00s - 1791.00s] It's good
+[1791.00s - 1794.00s] So just to make sure this depth, because the only one we're understanding is just like why the depths are different between what we get and what we're starting
+[1794.00s - 1797.00s] Because ML depth, like the slices to me, where like the alpha channels are like plural
+[1797.00s - 1800.00s] The MN is the input and output M, capital M, designates the input and output depth
+[1800.00s - 1803.00s] Yes, it would be like RGB, for example
+[1803.00s - 1806.00s] Sorry? So it would be like RGB, for example
+[1806.00s - 1809.00s] No, for example, if you're looking at the very first layer of the CNN, the input depth is prescribed, like, it's going to be free
+[1809.00s - 1812.00s] But obviously, the output depth can be more than free
+[1812.00s - 1815.00s] And of course, as we'll see, the usual part that is the deeper you go into that network, the depth will increase
+[1815.00s - 1818.00s] That's a typical part of the universe
+[1818.00s - 1821.00s] So by the way, the ML that we have over here is for us to define
+[1821.00s - 1824.00s] ML minus one and L are for us, except from the very input where the ML minus one will be described by the image aggregation, how many times it is
+[1824.00s - 1827.00s] Correct
+[1827.00s - 1830.00s] So this is basically our convolutional neuron
+[1830.00s - 1833.00s] And similar to what we have seen earlier, we have multiple neurons
+[1833.00s - 1836.00s] to form an output feature model
+[1836.00s - 1839.00s] So we need to effectively have something like this
+[1839.00s - 1842.00s] So here we have our filter, that is correlating with the input volume, which is the blue thing over there
+[1842.00s - 1845.00s] Notice the depth of the filter I've discussed will be equal in the depth of the input volume
+[1845.00s - 1848.00s] The output would be one slice of the green board
+[1848.00s - 1851.00s] For D out, D out, I need multiple filters
+[1851.00s - 1854.00s] If you understand this, that's basically everything that we can understand on the simple convolutional kind of neuron
+[1854.00s - 1857.00s] Obviously, we have one of the parameters in any API code will be the number of neurons
+[1857.00s - 1860.00s] We don't have the shape of the spatial dimensions of the filter, let's say 3.3, followed by or preceded by the number, and we think the number which is the number of neurons, which is, of course, will define the output depth of the output
+[1860.00s - 1863.00s] So let's see how many animations here
+[1863.00s - 1866.00s] You see this little bit more completely of what's happening
+[1866.00s - 1869.00s] So I have here an input volume, which is padded
+[1869.00s - 1872.00s] And I need to form an output volume
+[1872.00s - 1875.00s] How many filters do I need? Two filters
+[1875.00s - 1878.00s] Because the output volume depth, one slice of the output volume, gives possibility of one filter
+[1878.00s - 1881.00s] So for a volume of that fluid, I need two filters
+[1881.00s - 1884.00s] This is the first filter, this is the second filter
+[1884.00s - 1887.00s] Notice in the animation that filter one participates only in the first slice of the algorithm, while filter two participates only in the second slice of the algorithm
+[1887.00s - 1890.00s] So this example, I think it's a good example to just give you a short of that, besides what we just discussed, with what we attempted to draw is one snapshot out of this graph
+[1890.00s - 1893.00s] Sorry
+[1893.00s - 1896.00s] Is there such a thing as like a hidden, like here you have two filters, you have three filters
+[1896.00s - 1899.00s] You only have two, you only need two
+[1899.00s - 1902.00s] Is there such a thing as like combining two filters in here, which is just producing the two output volumes, essentially having like a hidden kind of like layer with these two filters or some are one filter and some are two filters? You guys understand what I mean? things regardless, perhaps, like, I mean, okay
+[1902.00s - 1905.00s] Okay, we can talk a lot about it
+[1905.00s - 1908.00s] But, you know, definitely what we see here is what we do
+[1908.00s - 1911.00s] I always do another bias, right? The number that we see here
+[1911.00s - 1914.00s] We may want to verify this as a simple numerical expression going towards one number over there
+[1914.00s - 1917.00s] You see what's paid? Yes
+[1917.00s - 1920.00s] Minimum, Nipun, our So the depth of the output volume does not depend on the output volume
+[1920.00s - 1923.00s] This is something that we are deciding to do
+[1923.00s - 1926.00s] Yes, so this is something that is on the basis of our design of..
+[1926.00s - 1929.00s] And the number of filters you..
+[1929.00s - 1932.00s] I'm just saying that I understand
+[1932.00s - 1935.00s] The number of filters that we use is essentially the depth of the output volume
+[1935.00s - 1938.00s] Yes, sir
+[1938.00s - 1941.00s] Two filters, two slices of values
+[1941.00s - 1944.00s] And including a lot more filters, ethnicity, in which is the output volume
+[1944.00s - 1947.00s] Yeah, we need to understand what is the intuition behind, you know, as the bottom let us explain
+[1947.00s - 1950.00s] As you, the deeper you go into the CNN, the more filters typically you see
+[1950.00s - 1953.00s] We'll see an example in a little bit
+[1953.00s - 1956.00s] So let's see if we can do this
+[1956.00s - 1959.00s] Actually, I need to show you this part
+[1959.00s - 1962.00s] That's actually the next discussion
+[1962.00s - 1965.00s] Before I go to this kind of discussion, I want to highlight some formula here that you need to write down
+[1965.00s - 1968.00s] And this formula is giving you that input and output feature dimension
+[1968.00s - 1971.00s] So they are feature map dimension in depth of the spatial
+[1971.00s - 1974.00s] We give you, in other words, the HL
+[1974.00s - 1977.00s] So an HL is HL minus 1 plus 2 times the body minus the kernel size, which is the divided by the stripe
+[1977.00s - 1980.00s] You give the floor out of it
+[1980.00s - 1983.00s] This one will give you all the information that you need in order to draw the output void
+[1983.00s - 1986.00s] Because you know the number of filters, you know the spatial dimensions
+[1986.00s - 1989.00s] Obviously exactly the same formula will apply for the width dimension
+[1989.00s - 1992.00s] And so that's basically what's happening
+[1992.00s - 1995.00s] Now you know the..
+[1995.00s - 1998.00s] I'm going to pass some of this kind of discussion and come to this..
+[1998.00s - 2001.00s] Well, another component that we see very regularly in this component called pooling layer
+[2001.00s - 2004.00s] It's actually very difficult to see this kind of layer being used as a kind of a distillation mechanism
+[2004.00s - 2007.00s] So the pooling layer, instead of creating this kind of dot product, again slides this kind of kernel around and is applying a function
+[2007.00s - 2010.00s] This function could be average in function
+[2010.00s - 2013.00s] could be our max function
+[2013.00s - 2016.00s] Typically, we see a lot the max pooling, our max function
+[2016.00s - 2019.00s] Effectively, in the contents of the image is one five to two at a specific location where the kernel is located, right? It will pick up the maximum number out of these and provide it
+[2019.00s - 2022.00s] And what is the intuition behind it? If after, let's say, correlation I have the chain output feature map, I want to perhaps propagate the most important or strongest feature out of this output feature map
+[2022.00s - 2025.00s] Leave everything that's behind
+[2025.00s - 2028.00s] And then this would be my kind of distilling from perhaps some kind of a noisy situation I have after the correlation with something that might make less noise
+[2028.00s - 2031.00s] So we are trying, effectively, to improve the signal-to-noise ratio
+[2031.00s - 2034.00s] in terms of max pooling, however, at the expense of information loss
+[2034.00s - 2037.00s] And this is the reason why max pooling here has been adapted as not the best thing you can do, but still is quite dominant because of its simplicity
+[2037.00s - 2040.00s] So we'll see the typical kind of network detection now, which consists again from these kind of correlations that we just discussed in a single layer
+[2040.00s - 2043.00s] But before I go, I want to just also cover another component, which is very typical to see also in some of the projections the one by one
+[2043.00s - 2046.00s] Many people will say, okay, what are we trying to do with the one by one? And if you see the three-dimensional block of what's happening, First of all, the one by one is the only way that you can create an output slice of exactly the same spatial content as the two
+[2046.00s - 2049.00s] And as you can see here, at every location we are compressing, we are combining all the depth information we have from
+[2049.00s - 2052.00s] So for example, someone will say, hey, this one by one seems to be a problem also to use towards the end of the network
+[2052.00s - 2055.00s] as a kind of termination of the network, or we may also be using in some instances to do some kind of matching, like the dimensional dimension of matching
+[2055.00s - 2058.00s] We use it inside, for example, less nets and things like that as well, but we can do some kind of dimensional
+[2058.00s - 2061.00s] Okay, so that's basically the three components I want to mention for now
+[2061.00s - 2064.00s] And what we will do next is we will go back and see some visualizations of this kind of Okay, so this is like a toy kind of figure
+[2064.00s - 2067.00s] I told you that non-linear kind of spatial correlation would happen over here, followed by some types with some information in relation, proportionately, and so on and so on
+[2067.00s - 2070.00s] And at some point, as we go up, and better show this image right now, as we go up, will reach a point where since every time that we use a 3x3, let's say, filter, we are shrinking the spatial dimensions and we are stinking, stinking, stinking
+[2070.00s - 2073.00s] At some point, a level where there's no point in computing, we are run out of dimension no matter what we release
+[2073.00s - 2076.00s] Especially at the dimensional output feature model 7x7
+[2076.00s - 2079.00s] So what we do to terminate a network is say, okay, obviously we have a void here, so we have some specific depth, I guess today my class is really depth
+[2079.00s - 2082.00s] We will take this and guess what we'll do? What something I've seen a bit earlier that leaves us
+[2082.00s - 2085.00s] What we did is we will flatten this, create a very long vector and gradually feed this vector over a combination of projections to form a posterior probability distribution of 1000 by 1
+[2085.00s - 2088.00s] And every time you see 1000 by 1, specific data set classification task on a specific data set comes to mind like image image net is a data set which is as a thousand classes it's not necessarily mentioned in here but yeah whatever number that you see here is going to be always be 10 for example we saw an example with 10 which is going to be 10
+[2088.00s - 2091.00s] that's how we take the internet work we have some form of combiners non-linear non-linear project so the question is okay we have a liquid image i told you that the mobile revision The computers are able to distinguish features that we cannot give
+[2091.00s - 2094.00s] So it's input resolution is very important here, 224 by 224, 640 by 640
+[2094.00s - 2097.00s] This type of numbers, the inputs
+[2097.00s - 2100.00s] And the input obviously is coming in with, let's say, something of 703, depth of thing
+[2100.00s - 2103.00s] And in the first layer of my 266, then we increase it to 128, 256, 512, and it's difficult to find the one
+[2103.00s - 2106.00s] And the question is why the filters are, and the answer to that is, by intuition, it's the following
+[2106.00s - 2109.00s] If you go and see what happens inside the CNN, something that is going to come up as a standard tool, if you open up the guts of the CNN, let's say after training, right, what we will see is that the players are sticking into, or converging into detecting simple features that are, especially if you see the feature map that they're creating, they still have this kind of geometrical information around them
+[2109.00s - 2112.00s] like edges, you know, this type of stuff
+[2112.00s - 2115.00s] So the deeper you go, the features that are being created are becoming more and more abstract
+[2115.00s - 2118.00s] They are using their geometrical nature, right? And they are becoming kind of a lot of that
+[2118.00s - 2121.00s] If you see the realization, you probably see some kind of art of some sort in this kind of images
+[2121.00s - 2124.00s] So The deeper, however, you go, the features you have the greater need to combine in multiple ways the information that is provided below you
+[2124.00s - 2127.00s] So you need more filters, more combiners, non-linear combiners to produce volume and the output volumes
+[2127.00s - 2130.00s] And don't forget also that the spatial degrees are shrinking at the same time
+[2130.00s - 2133.00s] over here, you need 512 of these kind of filters over here
+[2133.00s - 2136.00s] You need 512 of these kind of filters to combine some of these actually coming from this kind of thing which is not
+[2136.00s - 2139.00s] So the deeper you go, that's the intuition, you are trying to make correlations possible as, let's say, 512 kind of neurons over here
+[2139.00s - 2142.00s] We have anything that is 323 as an actual..
+[2142.00s - 2145.00s] That's basically what we see very frequently
+[2145.00s - 2148.00s] And of course, a pattern exists only to be not broken, but you see other things as well
+[2148.00s - 2151.00s] Sometimes you see networks that are picking information even from earlier kind of layers also
+[2151.00s - 2154.00s] It's not only necessarily that information will be provided only from the layer just below
+[2154.00s - 2157.00s] But then you see at the connections that are crossing
+[2157.00s - 2160.00s] So if you look at the layers for some subsequent kind of crossing, it's been picked up from earlier kind of layers, not only just one
+[2160.00s - 2163.00s] It's some architecture that I hope to see a bit later when we are looking at the..
+[2163.00s - 2166.00s] So let's look at an example of a cylinder
+[2166.00s - 2169.00s] So over here you have a very basic..
+[2169.00s - 2172.00s] And the two glass are half doors
+[2172.00s - 2175.00s] Obviously they must come in variety of shapes, and you have to do certain pre-process
+[2175.00s - 2178.00s] In fact, the processing is over here will be limited to resizing
+[2178.00s - 2181.00s] So you size the images all to be within the same kind of size
+[2181.00s - 2184.00s] And this is basically the, and this size is almost kind of hard coded in this kind of fabric
+[2184.00s - 2187.00s] This is one of the things that we'll look at in the future, how we can actually have architecture that can accept the magnitude of size
+[2187.00s - 2190.00s] So over here you see the classical pattern, convolution, convolution, convolution, and so on
+[2190.00s - 2193.00s] Notice the increase in the number we go deeper after a point
+[2193.00s - 2196.00s] And also notice what is happening in the, we have another level, in the second kind of layer, third layer level
+[2196.00s - 2199.00s] And at this moment in time, you have, we'll see a bit later, some kind of a speciality
+[2199.00s - 2202.00s] Some, and let me do the flagging
+[2202.00s - 2205.00s] That is basically the cost of the first layer
+[2205.00s - 2208.00s] Evidently the cost is increasing because our depth is increasing
+[2208.00s - 2211.00s] However, look what is happening
+[2211.00s - 2214.00s] The spatial feature that we are forming as a vector is 6,272 elements
+[2214.00s - 2217.00s] The first dense layer is costing us 3.2 million
+[2217.00s - 2220.00s] So the total 3.4 million parameters, 3.2 million parameters is the dense layer responsible
+[2220.00s - 2223.00s] One million layers is like much more than that
+[2223.00s - 2226.00s] So first of all, if we can kind of make a comment over there, convolutional error is in this..
+[2226.00s - 2229.00s] on the part of the course, but not the..
+[2229.00s - 2232.00s] So what is really expensive is the density
+[2232.00s - 2235.00s] One thing I can note here is that if you go and train this, how do we train this thing exactly the same way as before, we are forming some body, we are feeding the white hat with viral reciprocity, right? Loss
+[2235.00s - 2238.00s] And we are using a stochastic gradient serum or a plasma of stochastic gradient descent to actually minimize the loss
+[2238.00s - 2241.00s] And, okay, we're doing this training over here
+[2241.00s - 2244.00s] And..
+[2244.00s - 2247.00s] And we observe it like this loss as the number of epochs is..
+[2247.00s - 2250.00s] Do you have any moment for me? Have we seen this earlier? As we progress the training, the difference between validation and training loss is increasing
+[2250.00s - 2253.00s] So we have a feeling
+[2253.00s - 2256.00s] Was there any surprise that..
+[2256.00s - 2259.00s] Well, in order to answer this question, we definitely need to look at the data someone gave us
+[2259.00s - 2262.00s] And the data someone gave you is, if I remember correctly, it's going to give you 2,000 cuts and 2,000 dots
+[2262.00s - 2265.00s] and we are hitting this data set with 3.4 people, definitely there is overfitting
+[2265.00s - 2268.00s] So if somebody has given you a much larger kind of data set, you expect the same behavior
+[2268.00s - 2271.00s] So in computer vision, we have one tool that's over the number
+[2271.00s - 2274.00s] There is a number of examples artificially that are being considered during the training
+[2274.00s - 2277.00s] And this is for the data
+[2277.00s - 2280.00s] But this is very, very important in the vision in general because of this type of fairness
+[2280.00s - 2283.00s] So for example, what kind of data documentation would actually be? If you go to the PyTorch API or whatever other API, you have a very special section of transformations
+[2283.00s - 2286.00s] And of course there are also several kind of libraries
+[2286.00s - 2289.00s] One is coming with a paper that is given
+[2289.00s - 2292.00s] Let me find it, okay? Data and implementations
+[2292.00s - 2295.00s] Okay, so this is basically the one library
+[2295.00s - 2298.00s] And I have a language called Porni
+[2298.00s - 2301.00s] Many of these kind of data implementations in statistical processing
+[2301.00s - 2304.00s] Because many libraries do not use the GPU for data communication
+[2304.00s - 2307.00s] Corny and I, so there is, you need to be careful what you're doing and sometimes you, while I always think with data communication we do this information, we are sort of sometimes creating, dropping some channels, for example, creating very scary images in the same mode
+[2307.00s - 2310.00s] We are going to be creating some really ugly images of cuts and downsides
+[2310.00s - 2313.00s] Having said that, the network is benefiting from such augmentation because we are improving the number of labels that we are hitting the network 3.2 meter parameters
+[2313.00s - 2316.00s] This is not also a very nice behavior
+[2316.00s - 2319.00s] Certainly it is better than we have earlier
+[2319.00s - 2322.00s] You have some strong variability in terms of loss
+[2322.00s - 2325.00s] That's either
+[2325.00s - 2328.00s] So one thing I want to close this kind of discussion is This kind of notebook is going to treat, if I remember correctly, a similar kind of problem
+[2328.00s - 2331.00s] But this time, the same network will reveal to us what is happening
+[2331.00s - 2334.00s] So I want to stay on a couple of things that I mentioned a bit earlier
+[2334.00s - 2337.00s] Look what happens in outputs of these first kind of layers, right? Versus later kind of layers as the features are becoming more and more abstract
+[2337.00s - 2340.00s] a little bit more geometrically, almost kind of copying the shapes of the objects that they are seeing through more abstract features that are going to be combined in a larger number of ways, as I talked about with this kind of number of filters, to reduce my rate of vector H that represents for a given input image
+[2340.00s - 2343.00s] And I also don't know if I don't do the job properly at all
+[2343.00s - 2346.00s] Definitely we can also observe what the filters are actually doing when we are able to So just that remember the patterns that I was showing in the first kind of taxi example where I was telling you this would be black and all this will be white
+[2346.00s - 2349.00s] Evidently we don't have this sort of such a clear kind of pattern there, but you can actually definitely observe some lines going horizontally, some other lines going vertically, things of that nature
+[2349.00s - 2352.00s] Another thing that you will investigate is, I'm not 100% sure if you will investigate that, about the assignment, is that you are able to provide some kind of certain techniques, kind of a map where you highlight where the tech or paid attention in the input, projected in the inputting must do this
+[2352.00s - 2355.00s] And so over here, you classify elephant network a little bit
+[2355.00s - 2358.00s] So that's sometimes useful for debugging purposes as well, as you're also persuading yourself that you're noticing and doing something that is kind of intuitive
+[2358.00s - 2361.00s] We have this discussion over these kind of architectures with presenting a network, which is called a single kind of network, that solved quite a lot of problems and is used today as a very important part of this generation
+[2361.00s - 2364.00s] So you will see that we more or less this comes with the name as ResNet
+[2364.00s - 2367.00s] And I'll explain why in the design, what the design of skip connection is causing to the output prediction
+[2367.00s - 2370.00s] So right now I understand this kind of impact there and why
+[2370.00s - 2373.00s] So it's unsung in this course, we will use it at some point, right, in an assignment or we will see that overall again in object detection and stuff like that
+[2373.00s - 2376.00s] OK, so let's look at a discussion on the experimental residual networks
+[2376.00s - 2379.00s] So I want to start this kind of discussion that has been going back many years and sort of narrowing what was happening around 2014, kind of like
+[2379.00s - 2382.00s] But basically at that time you know it was where the way the premise that the deeper that we go the more leisure to add the better the performance
+[2382.00s - 2385.00s] And at some point around that they observe some kind of floor or ceiling rather on So they were not able to scale neural networks more than, let's say, I haven't ever now exactly, but it was something in the order of 16 layers
+[2385.00s - 2388.00s] So we see an example of a network called 3GG from the original outcrops
+[2388.00s - 2391.00s] But it was maybe 16 to 19 layers
+[2391.00s - 2394.00s] And the reason why they were not able to extend it is to ask themselves So, previous logos for the mapping inside this network and ResNets solved this kind of problem
+[2394.00s - 2397.00s] So, the reason why we use a simulator can kind of jump to performance with the adoption of the networks we have nowadays, ResNets and all this kind of other stuff
+[2397.00s - 2400.00s] ResNets has a concept kind of evolved, but let's see at least now the..
+[2400.00s - 2403.00s] baseline kind of present architecture and understand why gradient flow improved significantly
+[2403.00s - 2406.00s] And what is the reason why gradient flow is such an important component of the phase? All right, so let's plot here the network
+[2406.00s - 2409.00s] It's going to be just three, what we call it as blocks
+[2409.00s - 2412.00s] I'm going to have block F1 followed by block F2
+[2412.00s - 2415.00s] Excuse me
+[2415.00s - 2418.00s] What the hemispheres of this researcher did suggest is that if you take the input and you hide it over what is known as skip connection, good things will happen
+[2418.00s - 2421.00s] And I think it's not a way
+[2421.00s - 2424.00s] So if I'm going up to another stage, I have to do exactly the same
+[2424.00s - 2427.00s] And finally, I'm going to plot F3 to form
+[2427.00s - 2430.00s] I'm going to call this Y3
+[2430.00s - 2433.00s] I'm not going to put the hat
+[2433.00s - 2436.00s] I'll put the hat as well, but the notation is slightly different here
+[2436.00s - 2439.00s] Y0 to finally 0
+[2439.00s - 2442.00s] So the equation, I mean, this network is implementing repetitively an equation called YI is equal to FI, YI minus 1 plus YI minus
+[2442.00s - 2445.00s] That's the equation here
+[2445.00s - 2448.00s] I hope you recognize it
+[2448.00s - 2451.00s] This is the equation
+[2451.00s - 2454.00s] that for each block that I see, that's the equation where the two connections
+[2454.00s - 2457.00s] So I have a parallel expression, that is where this three connections are
+[2457.00s - 2460.00s] Okay, so let me write down now the output
+[2460.00s - 2463.00s] My aim is to write down the output only as a function of the input f0, and the name and the blocks f1 to the root
+[2463.00s - 2466.00s] So I'm going to write it as y3, just like what the equation is suggesting
+[2466.00s - 2469.00s] It is f3 of y0 of y2 plus y2
+[2469.00s - 2472.00s] I hope you agree that's the first thing
+[2472.00s - 2475.00s] I can then replace y2 with f3 of f2 of y1 plus y1 plus of 2
+[2475.00s - 2478.00s] You can see that he just replaced y2 with..
+[2478.00s - 2481.00s] And then finally, I'm going to write f3 of f2, f1 of y0 plus f1 plus f2 of f1 of y0 plus y0 plus y0
+[2481.00s - 2484.00s] I haven't done anything intelligent
+[2484.00s - 2487.00s] You just wrote the equation by substituting two times what is y2 and what is y2
+[2487.00s - 2490.00s] So the equation basically says now that on the left-hand side I have y3, on the right-hand side I have only y0, and the functions f1, f2, and f3
+[2490.00s - 2493.00s] What are these functions f1 and f2 and f3? This is obviously for me to define
+[2493.00s - 2496.00s] In the central architecture..
+[2496.00s - 2499.00s] Definitely it would consist of convolutional layers as we show them
+[2499.00s - 2502.00s] And let's table that
+[2502.00s - 2505.00s] It doesn't necessarily mean that f1 is just one layer
+[2505.00s - 2508.00s] one but we're just lumping together into what we call F1
+[2508.00s - 2511.00s] All right, so I want to color now this guy, I will call it A, this guy I will label it B, this guy I will label it C
+[2511.00s - 2514.00s] And I want to block this equation, to draw the block diagram, this equation, this equation
+[2514.00s - 2517.00s] So I'm starting with A at the bottom over here
+[2517.00s - 2520.00s] So I'm having a y0
+[2520.00s - 2523.00s] I'm passing through f1
+[2523.00s - 2526.00s] And the output is going to pass through f2
+[2526.00s - 2529.00s] I'm adding to f2 another f1 of y0 plus y0
+[2529.00s - 2532.00s] And the whole thing, I'm passing it through f3
+[2532.00s - 2535.00s] And I'm claiming, and I want you to verify if this is true, I'm claiming that this thing here is A
+[2535.00s - 2538.00s] So, I started with the third term, and this term is this thing
+[2538.00s - 2541.00s] And I pass through F3, right? So, obviously I have another two-sanation students
+[2541.00s - 2544.00s] Okay, so definitely I can go continue a little bit of diagram
+[2544.00s - 2547.00s] I see now the B
+[2547.00s - 2550.00s] The B consists of Y0 goes through f1 and then the whole thing goes to f2
+[2550.00s - 2553.00s] That is basically my b
+[2553.00s - 2556.00s] Do you agree that this is my b? And I have f1 of y0 plus y0 and I'm plugging now the c here
+[2556.00s - 2559.00s] And both c and a, we call it by..
+[2559.00s - 2562.00s] Okay, so what? Thank you for the enlightening drawing exercise
+[2562.00s - 2565.00s] Okay, so let's see what is happening in the so-called VTC architectures or convolutional neural network sort that era before the skip connection
+[2565.00s - 2568.00s] So imagine a network without the skip connections now and apply what we learned in back propagation
+[2568.00s - 2571.00s] So I have a gradient that is arriving, let's say, at the output of Y3, right? It has to go through the field
+[2571.00s - 2574.00s] It has to go through F1 to reach Y0
+[2574.00s - 2577.00s] And as you can imagine, the important thing is not to reach Y0, the important thing is to give you a principal gradient all the W's, all the theta's that are present inside the F1, F2 and F2
+[2577.00s - 2580.00s] So what is your intuition? Is the gradient going to be, it has an easy life to go through, let's say, 15, 16 of these guys? compared to the situation we have right now, which is the following
+[2580.00s - 2583.00s] This is all relative, right? Let me call it the gradient of orange
+[2583.00s - 2586.00s] So it will go through and it will go through significant, much, much larger number of ways to reach YC
+[2586.00s - 2589.00s] So in fact, you can actually see here some paths that are even directly connected
+[2589.00s - 2592.00s] They're out of the name
+[2592.00s - 2595.00s] That is an example of what we call highway, where we are sort of building this kind of highways and roads where gradient can actually flow
+[2595.00s - 2598.00s] We see examples of other kind of when we do some natural energy processing
+[2598.00s - 2601.00s] So which one would believe that, I would call it, a better behavior in respect to gradient flow? Just as a reminder, as I told you, if we don't have enough gradient, what happens if they? Stops
+[2601.00s - 2604.00s] Trading stops
+[2604.00s - 2607.00s] And people don't have enough grade on F1
+[2607.00s - 2610.00s] And so on and so on
+[2610.00s - 2613.00s] So that's obviously not good news
+[2613.00s - 2616.00s] In the sense that we're extending also the expenses to have the F1 there, but we don't take advantage of it
+[2616.00s - 2619.00s] Of course, the gradient can also explode
+[2619.00s - 2622.00s] Remember, we met some kind of gates in that propagation that were adjusting the gradient and MRI to which
+[2622.00s - 2625.00s] Exploding gradients are also problematic
+[2625.00s - 2628.00s] Because although we are able to grip them, we have no ability to control the training kind of process, even then
+[2628.00s - 2631.00s] So either exploding or diminishing gradients are bad news for us
+[2631.00s - 2634.00s] So what needs to happen is to have to be able to manage these gradients
+[2634.00s - 2637.00s] And we have a variety of techniques to manage them
+[2637.00s - 2640.00s] One of them is to allow the gradients to definitely keep going into a variety of ways to all the elements of the network without exhibiting, for example, significant attenuation through just going through one path
+[2640.00s - 2643.00s] This might be part of the situation we have here, because basically you want to solve the gradient of the problem before we had only one path
+[2643.00s - 2646.00s] What was happening in the junction? Every time you see a junction, not your path, every time you see a junction, what is happening? A condition
+[2646.00s - 2649.00s] Remember the example with my first function, which was an express plus integral, d plus integral, so d y plus integral there
+[2649.00s - 2652.00s] So I can write that gradient flow, we now have a diverse square gradient of varying depth
+[2652.00s - 2655.00s] As you can see, you know, C is, so A is deeper than B, and B is deeper than B
+[2655.00s - 2658.00s] i mean this three we are kind of three blocks i'm an example so ready for all the groups however yet another thing which is uh going to occupy us for the last 10 minutes of the course because i didn't have a break and i have to do what we're doing so the the last thing i want to mention is something which is a health certificate but for this one i will call it a sample made or mixed in machine learning and AI that is very, very, I would call it almost like a silver bullet too
+[2658.00s - 2661.00s] So ensemble learning, let me write it down
+[2661.00s - 2664.00s] But explain what it's basically
+[2664.00s - 2667.00s] So the premise of ensemble learning is the following
+[2667.00s - 2670.00s] This is also known as committee learning
+[2670.00s - 2673.00s] Nowadays there is a lot of news about mixture of experts or MOUs
+[2673.00s - 2676.00s] people are getting really excited about this new discovery
+[2676.00s - 2679.00s] Apparently that's a new discovery, but definitely the application space is kind of very new
+[2679.00s - 2682.00s] So people are getting really excited
+[2682.00s - 2685.00s] So if I decide to suggest a following that my prediction, which I'll call the White House Committee, is not a product of sort of, it's not produced by a single, very powerful kind of predictor, but it is an aggregation over, let's say, capital K predictors
+[2685.00s - 2688.00s] And also, I know that these predictors are shouldn't necessarily be very powerful
+[2688.00s - 2691.00s] Let me call them weak predictors
+[2691.00s - 2694.00s] Anyone has an issue? I have a random one
+[2694.00s - 2697.00s] Okay, so what I was saying here is I have this kind of relationship here, some kind of way to form committees using many weak predictors
+[2697.00s - 2700.00s] To give you an example, I hope everyone here is familiar with someone with decision trees
+[2700.00s - 2703.00s] Decision trees
+[2703.00s - 2706.00s] So decision trees are sort of entropy devices based on entropy, again as a principle, to do, let's say, either classification or regression
+[2706.00s - 2709.00s] And when we merge this decision trees together, we are using a technique called, we are forming a technique called random forests
+[2709.00s - 2712.00s] And some of you may have heard it, but the basic principle is the following
+[2712.00s - 2715.00s] It's very intuitive, the basic principle
+[2715.00s - 2718.00s] If I have, if I want to form a committee of members, that's when you make a decision, then the members of this committee is, coming, you're born in the same village, went to the same school, went to the same university, had exactly the same courses done, and ultimately after graduation you went to the next seat
+[2718.00s - 2721.00s] You have ten of these people in front of you
+[2721.00s - 2724.00s] What is your expectation about the committee? A good committee to form or not so good committee? Not so good committee
+[2724.00s - 2727.00s] In fact, you can say that in the limit, Even if you pick any one of these 10, and you call it a predictor now, to use in your decision, then it's one of the same things as having 10 or 1
+[2727.00s - 2730.00s] And this is basically, if I may plot here, a kind of a performance bar
+[2730.00s - 2733.00s] Really, at the bottom over here, is going to be a lower bound in terms of performance, which is going to be identical to using a single weak predictor
+[2733.00s - 2736.00s] However, as you can imagine, as you start introducing diversity inside this committee, in other words, you find some kind of a randomization scheme
+[2736.00s - 2739.00s] For example, in random forests, the example that I actually gave, you may, you know, one of the fundamental things that we do in decision three is to pick up at any stage the feature that you're going to split your data
+[2739.00s - 2742.00s] And there is a way to find the best features to the data, but sometimes you feel the point that you don't follow the suggestion, you pick up another feature to speed the data, then you start randomizing the behavior of a decision trailer to the other committee members
+[2742.00s - 2745.00s] Then you will see the performance significantly improving
+[2745.00s - 2748.00s] And this is where, but there is also an upper bound here
+[2748.00s - 2751.00s] I just want to immediately you to understand it
+[2751.00s - 2754.00s] Just like in humans, human committees, what you don't want, definitely you expect a committee to make a wrong decision
+[2754.00s - 2757.00s] Okay? It can happen, obviously
+[2757.00s - 2760.00s] But what you don't want is to minimize that wrong decision, just like minimizing the error probability classification kind of discussion
+[2760.00s - 2763.00s] And the way to do that is to avoid a situation where people are giving you correlated mistakes
+[2763.00s - 2766.00s] In other words, they give you, they do the same, all of them are doing, or the majority of them is doing the mistake at the same time
+[2766.00s - 2769.00s] This is where the upper bound in performance is meant
+[2769.00s - 2772.00s] So there's some explanation about this in terms of analytical kind of way of explaining this, I'm not going to expand on that
+[2772.00s - 2775.00s] But definitely you can form diversity in a single possible way
+[2775.00s - 2778.00s] You can have, take this data to predictor one, another set of data to predictor two, another set of data to predictor three
+[2778.00s - 2781.00s] That's a single possible way
+[2781.00s - 2784.00s] I can sample from a data set and give different subsets of the data to these different sequences of data, different examples as they met to each predictor
+[2784.00s - 2787.00s] So that's basically one way of improving on diversity on the data kind of study
+[2787.00s - 2790.00s] The second way is to randomize something in the behavior of its predictor
+[2790.00s - 2793.00s] But what is meant in ResNet is to use different predictors
+[2793.00s - 2796.00s] I can have a register regression, I can have a neural network, I can have whatever
+[2796.00s - 2799.00s] So look what happens here
+[2799.00s - 2802.00s] Think of the predictors as predictors A, B, and C
+[2802.00s - 2805.00s] You have three weak predictors
+[2805.00s - 2808.00s] Look how they form their..
+[2808.00s - 2811.00s] hypothesis as a summation of their individual prediction
+[2811.00s - 2814.00s] Predictor A and predictor B and predictor C have different strengths in their prediction
+[2814.00s - 2817.00s] So effectively we can write as a headline that estimates exhibit some form of ensemble learning because of this diagram
+[2817.00s - 2820.00s] That's a basic little concluding question
+[2820.00s - 2823.00s] You helped me talk about annotation methods
+[2823.00s - 2826.00s] If you are interested, that's a little unbelievable
+[2826.00s - 2829.00s] You know this very much
+[2829.00s - 2832.00s] You wrote your kind of..
+[2832.00s - 2835.00s] Either the two-text books you can see there, some simulation of random forest
+[2835.00s - 2838.00s] That's what we want to use always as a problematization, example, the ensemble learning methods based on the techniques
+[2838.00s - 2841.00s] Okay, so that's basically it for today
+[2841.00s - 2844.00s] As I said, please let the TAs know if you have issues with your assignment ASAP, that is before Sunday
+[2844.00s - 2847.00s] And hopefully things will do well on assignment one, and assignment two is done
+[2847.00s - 2850.00s] Thank you.

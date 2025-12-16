@@ -1,0 +1,757 @@
+[0.00s - 3.00s] images, images
+[3.00s - 6.00s] I think we have a lot of how we can maybe start to keep up more high-level features from images, but still building on the technology
+[6.00s - 9.00s] We're talking about those over two weeks
+[9.00s - 12.00s] And we'll also talk about a little bit more mathematical breakdown, according to that with respect to a value value theory
+[12.00s - 15.00s] And then that will lead us to maybe next week's how many groups can be
+[15.00s - 18.00s] We also have all these different ways to describe features in an image
+[18.00s - 21.00s] How can we match it and be optimized for users? How can we do that? other things like segmentation and protection and class
+[21.00s - 24.00s] But today we're just going to talk about how to detect pictures without necessarily doing anything with them after
+[24.00s - 27.00s] Brief announcements
+[27.00s - 30.00s] So more ado, we did a little bit of expansion of it
+[30.00s - 33.00s] So it's going to be due tonight, or midnight
+[33.00s - 36.00s] I agree
+[36.00s - 39.00s] Great
+[39.00s - 42.00s] And we've seen a bunch of you guys already submit your homeworks
+[42.00s - 45.00s] So that's good
+[45.00s - 48.00s] But we've seen most of you have not submitted your homeworks yet
+[48.00s - 51.00s] So I guess you're still working on it
+[51.00s - 54.00s] So take advantage of office hours that will be available
+[54.00s - 57.00s] I guess ask your TAs if they need any time
+[57.00s - 60.00s] I try to get this submitted on time
+[60.00s - 63.00s] But every hour that homework is late, we'll deduct 1% of your total possible grade
+[63.00s - 66.00s] So that means you have about like four days until it's better not really working out
+[66.00s - 69.00s] and then we'll release the solutions to homework
+[69.00s - 72.00s] And another thing is like homeworks, the main point of doing these homework is to kind of set you up for exam questions
+[72.00s - 75.00s] So exam questions are gonna be samples from homework questions, right? Gotta get an idea how to do this homework's right
+[75.00s - 78.00s] You gotta do a following exam
+[78.00s - 81.00s] So just like the homework, the project, we released the project on homework time with Kenyon Steve
+[81.00s - 84.00s] So this is now you have exactly a week to finish the project
+[84.00s - 87.00s] And this one is worth more of a grade because there's probably more work involved in it and there's a lot more coding involved in it
+[87.00s - 90.00s] And we want you to also submit your last questions solution because of the Kaggle competition
+[90.00s - 93.00s] It kind of give you guys like a competitive grade that's gonna be, that's gonna incentivize the top performers in the class
+[93.00s - 96.00s] And this one you can have, you can have project teams of up to two, so they can go ahead and do that
+[96.00s - 99.00s] And the same thing will happen with this one
+[99.00s - 102.00s] So at one point we got this very hour as you thought you could select
+[102.00s - 105.00s] And for the competition, we'll have a strict cutoff or at midnight next week
+[105.00s - 108.00s] Other questions, we'll submit other questions later that we've talked at one point
+[108.00s - 111.00s] As of this morning, when I checked the..
+[111.00s - 114.00s] So the Leaderboard Act is live for the project
+[114.00s - 117.00s] I guess you guys are all bogged down by the homework, so there's not many submissions, but we see one team, Perceptron's
+[117.00s - 120.00s] It's a good, Perceptron that they hear
+[120.00s - 123.00s] You can remain anonymous
+[123.00s - 126.00s] maintain an aura of mystery
+[126.00s - 129.00s] One team already submitted to the leaderboard, and we expect this leaderboard to be populated in the next one
+[129.00s - 132.00s] So we can kind of see where it's going
+[132.00s - 135.00s] So far, the perceptrons are getting 100%
+[135.00s - 138.00s] So you have to go to GFC, throw a perceptron, if you want to go
+[138.00s - 141.00s] Okay, so yeah, the office hours are as follows
+[141.00s - 144.00s] So today, I think if you need help with your homework, you'll have office hours today by series, four to five, and then throughout next week we'll have office hours with other TAs and myself by four to eight
+[144.00s - 147.00s] We have questions about homework or other research
+[147.00s - 150.00s] Okay, so let's talk about Okay, so the point of feature detectors is to kind of mimic what we get
+[150.00s - 153.00s] The whole class is about mimicking what we do with our own eyes and our own brains
+[153.00s - 156.00s] We do this every moment of our lives
+[156.00s - 159.00s] Our life is not a..
+[159.00s - 162.00s] We are continuing to do our videos, stitch them together, talk to them
+[162.00s - 165.00s] We're often looking at similarities, sameness, and visualizing
+[165.00s - 168.00s] Oh! idea of kind of a slam simultaneous localization and mapping method applied for the scene
+[168.00s - 171.00s] As you can see, the perspective of the video changes except the features that are detected kind of remain constant and they get, you know, you can find corresponds across these features across time
+[171.00s - 174.00s] This is also useful for things like on the right hand side
+[174.00s - 177.00s] This is used in, you know, computational photography, so like museum users a lot
+[177.00s - 180.00s] So they take artifacts of artworks and stuff, statues, dinosaur bones, and they take pictures of that object from like many perspectives
+[180.00s - 183.00s] Since now you have many pictures of the same thing, you look for corresponding features together across these different images
+[183.00s - 186.00s] So you can stitch together a three-dimensional render of an object by matching features of the material so this is kind of some of the two basic applications of picture detection and stitching which we're going to cover in this lecture and so the example is this is a basic example like we see these two images of some river and some church um how do they align how do you take these images and align them we can do what we what we're doing in the in the coding you can do template matching for example
+[186.00s - 189.00s] You can take one image and then look for all possible shifts of this image and then cross correlate it with the other image and then find the point of maximum cross correlation found in this
+[189.00s - 192.00s] Instead of these two images that you see here, if you replace the background image by the individual, one of the perspectives of that river and church and You cross correlate them, you might find at some optimal shift level, you get a high response, which means that when you translate one image by that amount, they perfectly overlay, and therefore that's how we can align these two images to one another
+[192.00s - 195.00s] But this is, you know, you can do this, but it relies on a key assumption, kind of covering these things
+[195.00s - 198.00s] So one possible, the first way it's all this is, is you just look through all the possible pixels in the image, and all possible pixels in one image, and we put a for loop across all of them, and we shift such that any pixel gets matched to any other pixel, we just would check a line
+[198.00s - 201.00s] But if you have n squared pixels in one image and n squared pixels in another image, this is n to the fourth power search
+[201.00s - 204.00s] So it's kind of interactable
+[204.00s - 207.00s] So this would be like the fully sliding window template matching
+[207.00s - 210.00s] Another approach is doing this cross correlation
+[210.00s - 213.00s] So I guess the assumption here is that these two images are translation
+[213.00s - 216.00s] So if we assume that they're the translation, we can apply these types of methods to find translations, cross-correlation with broken-query to find translations
+[216.00s - 219.00s] But in a harder example like this, where it's not just a simple translation, but like a three-dimensional notation and translation of the camera, then it becomes a bit more difficult
+[219.00s - 222.00s] Bombed efforts, I believe
+[222.00s - 225.00s] taking up two different vantage points and slightly different angles of taking the picture
+[225.00s - 228.00s] So we can't necessarily cross-correlate this image to that one and find the perfect alignment
+[228.00s - 231.00s] So how do we tackle that? So the one way to tackle that, again, in this case, is the same thing
+[231.00s - 234.00s] So like The brute force way to solve this is for all possible shifts, for all possible shifts in the X, Y, and Z in terms of where the camera is rotated, and all possible ways you can rotate a camera to be basically..
+[234.00s - 237.00s] Have your attention please, my have your attention please
+[237.00s - 240.00s] Both deputies, searchlist or order, speak each floor, please respond to room 1013
+[240.00s - 243.00s] for all deputies, boarders, and searches on each floor
+[243.00s - 246.00s] Please respond to room 10, 13, under 10
+[246.00s - 249.00s] I don't know why that has to be like a..
+[249.00s - 252.00s] Suck up backwards up
+[252.00s - 255.00s] For this more complex case where the motion, as the motion model is, you get 3D rotation and translation of the gridded camera, it's the search space
+[255.00s - 258.00s] If you want blue sources, The search page is much larger
+[258.00s - 261.00s] At this point, it's often basically a recompense in track
+[261.00s - 264.00s] You have to go through all the possible limitations and translations that you need to search for, and then you have to rotate one image, shift it by these parameters that you're sampling, and then resample the image such that it's shifted by that non-rotation, and then see how the lines are going to be in trackable
+[264.00s - 267.00s] It's going to be in trackable in a very inefficient way
+[267.00s - 270.00s] And it's also how we, as humans, align with this
+[270.00s - 273.00s] Like, when we see three images, we don't, like, in our mind's eye rotate one image little by little and then see how it aligns on to something else
+[273.00s - 276.00s] If you look at the features of an image and say, oh, this is the same feature, and we kind of have a more efficient way to filter out what's an important feature, what's not an important feature, to kind of have a more efficient search space
+[276.00s - 279.00s] So a human way, this would be, you know, all the time I look at these two images, I see a peak I see this dark spot here and the rocks, there's also rocks there
+[279.00s - 282.00s] So therefore these two must be the same point
+[282.00s - 285.00s] Maybe a few more salient features that we detect with our eyes
+[285.00s - 288.00s] And then we kind of do the internal stitching after we detect these important points
+[288.00s - 291.00s] So if we break this down, maybe like humans when we do this, we detect important points in Mitch and we'll get to what important means later
+[291.00s - 294.00s] And we try to describe them, kind of like what we did here, like we said, oh this This is an important point, and what is it? It's a mountain peak
+[294.00s - 297.00s] But this is an important point, what is it? It's a dark spot
+[297.00s - 300.00s] So we need to have some kind of way to describe these points
+[300.00s - 303.00s] And after we describe them, now we say, if we match points, if they have similar or same distributions, to any other stuff
+[303.00s - 306.00s] Yeah, so algorithmically speaking, how this would be done is, in a pseudo code, we would have some kind of initial detection stage
+[306.00s - 309.00s] We would detect and describe the four points, four images
+[309.00s - 312.00s] And then only within this small subset of points, which are not every single picture, then we could potentially do a four loop, be like a, this important point, match another important one
+[312.00s - 315.00s] And then you collect the set of match points
+[315.00s - 318.00s] And after you have a set of match points, you can do your transformation of particles rather than going through every single piece of image
+[318.00s - 321.00s] The basic idea is that there's, you know, if n is the dimensionality of our image, like m by n, then we have n squared possible pixels
+[321.00s - 324.00s] But the metronomy with an n squared point point, which is not everything in an image is important in useful
+[324.00s - 327.00s] It's probably less than an order of n important points in the image of size n squared
+[327.00s - 330.00s] Okay, so how can we reduce b7 as a search space of matching points? We kind of touched upon that last week
+[330.00s - 333.00s] So what is one important feature in the image that we covered last week? Each corner
+[333.00s - 336.00s] Yeah, edges, corners, and that kind of stuff
+[336.00s - 339.00s] So each image is filled with flat areas, corners, and edges
+[339.00s - 342.00s] we can maybe focus on corners as potential points to detect back And we can do all these things with filtering
+[342.00s - 345.00s] So corners are one way, one kind of feature to detect
+[345.00s - 348.00s] There's many other high level features we can detect
+[348.00s - 351.00s] For example, if we go back to this image of Everest, we can detect what it means to be a mountain peak, or we can detect what it means to be a rock or something like that
+[351.00s - 354.00s] Those are more high level features
+[354.00s - 357.00s] But for the sake of this class today, we're going to start to see, can we use low level features to start? detecting and matching different images together
+[357.00s - 360.00s] And you can detect any feature that we want using different
+[360.00s - 363.00s] And so we can, if we're used to enhance, or I guess like point out important details of the image
+[363.00s - 366.00s] So if you smooth out stuff, we can get rid of a lot of noise that's maybe confusing us
+[366.00s - 369.00s] So we do lots of things like sharpening filters to kind of highlight sharp objects in some similar corners of the image
+[369.00s - 372.00s] And then, as we saw before, farm solutions and all filters can be stacked
+[372.00s - 375.00s] You know, we can build more and more complex filters
+[375.00s - 378.00s] We go from edges and corners to like maybe stack a bunch of these things together
+[378.00s - 381.00s] We can learn what it means to be a mountain top or what it means to be like a boulder in a mountain
+[381.00s - 384.00s] But those are things that are a bit more complicated
+[384.00s - 387.00s] When you talk about edge levels, so if we can apply edge, we can build on edges
+[387.00s - 390.00s] to talk about the design filter that can detect vertical edges or long edges very combination of this cagging edge detector we talked about last time and that just can be thought of as very low level features so you can start because you can start to think about can we use edges for example which was the first set of features we learned last week to see if we can match okay so what we're going to learn today is um How can we take an image and reduce it to key points? Which is another way of performing important points in the image
+[390.00s - 393.00s] And once you have these key points, how can we describe them using some kind of invariant features? So whatever features we like
+[393.00s - 396.00s] We want those features and the way we describe them kind of remain the same if the image was slightly rotated or upside down
+[396.00s - 399.00s] We want Everest to be, we want the mountain top with image to be as low as still a mountaintop if the image was slightly angled or turned upside down
+[399.00s - 402.00s] So we want these, we want some kind of transformation invariance in these
+[402.00s - 405.00s] And after we..
+[405.00s - 408.00s] to detect and describe features and key points, then you can learn how to match them across images to kind of get this kind of average result
+[408.00s - 411.00s] So the first little filter we learned last week are these gradient filters
+[411.00s - 414.00s] And the gradient filters are the best way to, the quickest way to get some kind of edge information in an image
+[414.00s - 417.00s] So these are two filters applied to the same image to learn vertical edges versus horizontal edges
+[417.00s - 420.00s] we can use the we can use the magnitude of these edges along each in each pixel to kind of get an idea of, so like, well, first we can detect the edges along each direction, x direction or y direction, but then we can take the combined magnitude of the x and y directions to observe generalized edges
+[420.00s - 423.00s] So if there's any kind of, if any point has a very strong response to a horizontal edge filter, or a guard glass filter
+[423.00s - 426.00s] If we take the combined magnitude, we will be able to get all the edges of the image like the cover glass
+[426.00s - 429.00s] And edges, well the thing is, edges are a denser feature than corners
+[429.00s - 432.00s] Like in any image, we can always show that there's gonna be more edges that there are gonna be corners
+[432.00s - 435.00s] So if we were to do the edge detection, it's gonna leave us a lot of, we have to add another slide here
+[435.00s - 438.00s] Yeah, so if you were to use edges as a way to match two images to one another, Are edges helpful? And often they're not going to be very helpful because it's still not going to give us a very sparse representation image
+[438.00s - 441.00s] If you were to detect edges and then try and match every single edge point, so every single pixel that counts as an edge against any other pixel in the other image that also counts as an edge against one another, search space, you may have seen this naive sense
+[441.00s - 444.00s] If you just were to do a double for loop, it would still be a lot because we're still getting a lot of, it would still be getting a lot of edges
+[444.00s - 447.00s] that we start with
+[447.00s - 450.00s] There's two main things, a combination of things
+[450.00s - 453.00s] And the edges are a downstream image feature, and seven corners
+[453.00s - 456.00s] So that's where the motivation to do any kind of feature matching is to start with looking at corners or some kind of sparse set of points in any image
+[456.00s - 459.00s] And that's where this corner detector method that we briefly talked about last week comes into play
+[459.00s - 462.00s] Again, today we're going to go into the more mathematical analysis of it
+[462.00s - 465.00s] So this corner detector we're going to talk about today is Harris corner detector based on the authors of the paper backing and see if..
+[465.00s - 468.00s] So what we want, what we want how to feature detectors is you want to find you want to find filters that find the same things So if I want to see a corner, even if the image was slightly noisy or it was slightly shifted or rotated And we want these to be distinct
+[468.00s - 471.00s] So if you detect a feature, we don't want any other points nearby to be also important features
+[471.00s - 474.00s] We want the feature to be kind of a little landmark in an image rather than every single piece will be
+[474.00s - 477.00s] And we also want these features, we'll talk about this later, but we want these to kind of depend on local image data
+[477.00s - 480.00s] So we want to kind of capture local details rather than..
+[480.00s - 483.00s] So let's try to build the corner detector
+[483.00s - 486.00s] So we talked about a corner detector last time
+[486.00s - 489.00s] I talked about it very quickly
+[489.00s - 492.00s] Today we're going to talk about it in a bit more detail
+[492.00s - 495.00s] How can we build a corner detector using mathematical first principles? And the main intuition we're going to use is that edges, they change along one direction, and corners, there's going to be a significant change in image
+[495.00s - 498.00s] When you're at a corner, if you move in any direction along that corner, you're going to see five differences in the current image values
+[498.00s - 501.00s] Okay, so let's start with an example
+[501.00s - 504.00s] Who knows what this person is, by the way? This is a historian here
+[504.00s - 507.00s] So this was a famous computer scientist, and she was a..
+[507.00s - 510.00s] She was in the US Navy for a long time
+[510.00s - 513.00s] She was like the director of computing in US Navy
+[513.00s - 516.00s] So one of the first pioneers of..
+[516.00s - 519.00s] Ada Lovelace
+[519.00s - 522.00s] Ada Lovelace
+[522.00s - 525.00s] What's the name? Lovelace
+[525.00s - 528.00s] Grace Hopper
+[528.00s - 531.00s] Grace Hopper, fantastic
+[531.00s - 534.00s] Yeah, so what would you say, Andy? I said Ada Lovelace
+[534.00s - 537.00s] Close, but yeah, it's another famous computer scientist, but yeah, this is Grace Hopper
+[537.00s - 540.00s] So she was the inventor of a lot of early computing languages, COBOL and stuff like that
+[540.00s - 543.00s] So she was kind of standing in front of one of his walls
+[543.00s - 546.00s] But that being said, So this point that we set, we put here
+[546.00s - 549.00s] Is this a corner? Yes? Yes, that's a corner
+[549.00s - 552.00s] So we want to treat that, we want to find some kind of, can you study what it means, why, why is a corner? So one thing we can, one intuition we can have is, if you focus on this part, so we have a 10 by 10 patch around at that point
+[552.00s - 555.00s] And if you take another patch that's slightly shifted, from the initial patch
+[555.00s - 558.00s] And we call this, like a window that's shifted by directions
+[558.00s - 561.00s] U and B
+[561.00s - 564.00s] So let's say it shifted in the X direction by minus 2 and the Y direction by 3
+[564.00s - 567.00s] We have another window around it
+[567.00s - 570.00s] You can compare the similarity of these two
+[570.00s - 573.00s] So we can take this patch or we can take this red patch and just compute the differences of this local patch versus that local patch
+[573.00s - 576.00s] And once we do that, we can compute their differences by just computing the sum of square errors, which is basically the image, the original image, minus other inputs
+[576.00s - 579.00s] And all those positions up to all these numbers
+[579.00s - 582.00s] And this U and V are set here, the U and V are set at minus 23
+[582.00s - 585.00s] And X and Y here, the ring goes
+[585.00s - 588.00s] and the window size
+[588.00s - 591.00s] We would just look at how these two patches are different from one
+[591.00s - 594.00s] And we can generate what is called an error image
+[594.00s - 597.00s] So this will be the error image
+[597.00s - 600.00s] So for every single, so for every single, so if this is our original patch, we would generate another patch that measures how much error we pay to that original patch if you are to shift it by different amounts of x direction or different amounts of y direction
+[600.00s - 603.00s] So we compute a local difference of our source patch with all the possible patches that are shifted by different amounts
+[603.00s - 606.00s] And we get this in a row
+[606.00s - 609.00s] So that locally, locally, If we were to take this patch and compare against all the possible patches that are shifted plus or minus 10 in each direction, we would get this type of image
+[609.00s - 612.00s] That gives us our error image localized at that point
+[612.00s - 615.00s] And questions about this? So this is what our error image looks like
+[615.00s - 618.00s] And importantly, at the center point
+[618.00s - 621.00s] At the center point, this is when the shift is exactly zero
+[621.00s - 624.00s] So this is just difference of that patch to itself
+[624.00s - 627.00s] At the center, air images are always going to have an error of zero because you're just comparing patch to itself
+[627.00s - 630.00s] But when you shift it slightly, when you shift it slightly, you're going to start to incur more error
+[630.00s - 633.00s] So here, I forgot to put a color bar, but lighter means there's more error
+[633.00s - 636.00s] Darker means there's less error
+[636.00s - 639.00s] All right
+[639.00s - 642.00s] So I guess what we want to do is, so if you're focused on different patches of an image, we just want to kind of get an intuition on what type of error images we're going to get out of them
+[642.00s - 645.00s] So if this was our focal point, if this was our patch, what type of error image do you think we're going to get if we were to compute an error, shifted error image around this patch? Are we going to get A? Raise your hand
+[645.00s - 648.00s] I'm gonna hit B, okay, do 10
+[648.00s - 651.00s] How many? So we just worked out the B
+[651.00s - 654.00s] So around that point, the error image is gonna look like that
+[654.00s - 657.00s] What about this one? So this is another point over here
+[657.00s - 660.00s] If you were to compute its local error image, would it look like A or would it look like B? If you were to just compute it by mental error
+[660.00s - 663.00s] So who says A? Who says B? Yeah, so since this is another corner, so this is a corner, this is also a corner
+[663.00s - 666.00s] It's a different type of corner, but it's a corner nebulous
+[666.00s - 669.00s] And it also yields some interesting patterns that we can start to maybe think out
+[669.00s - 672.00s] What about this one? Look at this point, an image, which is an edge, and we computed this local error image
+[672.00s - 675.00s] What would that look like? Would it look like A? So this is not a corner
+[675.00s - 678.00s] So we expect its directional gradients to kind of be uniform in one direction and basically constant in another one
+[678.00s - 681.00s] And we would get this kind of data which should be computed at this point
+[681.00s - 684.00s] All right, so maybe from this we can build an intuition
+[684.00s - 687.00s] So I guess the last example, if you took the flat area here, we will get a computer's error image in a flat area
+[687.00s - 690.00s] We will get a completely zero error everywhere
+[690.00s - 693.00s] Because since it's flat, no matter how you shift it, it should look like itself
+[693.00s - 696.00s] This kind of visualizing error images kind of gives us an idea of what kind of features you should expect to see if you were to transform corners, edges, flat areas
+[696.00s - 699.00s] We can use this to build some kind of a way, some kind of a learning tool to know what needs to be a corner versus an edge versus a flat area
+[699.00s - 702.00s] So..
+[702.00s - 705.00s] It seems like since we now have a distinct pattern that comes out when we hit a corner versus when we're going over an edge or an inside area, and we can derive this, we can derive that pattern by this filter that we just worked out
+[705.00s - 708.00s] So this filter that we want to work with is the summation of these locally shifted patches compared to the original patch
+[708.00s - 711.00s] We want to be able to efficiently calculate this feature and perhaps approximate it because in reality, if you want to do this naively, if you want to do this in a naive way, you would have to take every single, you would have to take an image and then shift it every time by closer minus 10 points in each direction, compute differences, and then compute the square error every pixel
+[711.00s - 714.00s] That's still, that'll be a lot, that's still expensive
+[714.00s - 717.00s] Can we do this in a quicker way? So the complexity of maybe a question that might be off is if you were to do a naive, version of this error image filter will be complexity with that
+[717.00s - 720.00s] So order of that will be, I guess, we have to do a few, if our window size that we're sampling for the size 10, you have to do n squared possible shifts
+[720.00s - 723.00s] And each shift you have to compute the difference of the two images, which will be order of n squared again
+[723.00s - 726.00s] So it'll be 10 squared plus n squared operations through this 90 filter operation
+[726.00s - 729.00s] Okay, can we do this quicker? Can we find a trick to approximate this? The trick to approximating this is Taylor series
+[729.00s - 732.00s] So how many of you recall Taylor series from Calc A? Calc B
+[732.00s - 735.00s] Great
+[735.00s - 738.00s] So if you have a function f, so let's start with a one-dimensional function
+[738.00s - 741.00s] If you have a one-dimensional function, and that function, you have it evaluated in an x
+[741.00s - 744.00s] But now you want to evaluate what that function looks like at x plus d, some kind of shift
+[744.00s - 747.00s] That can be approximated using a first order Taylor series by f of x, plus the derivative evaluated x with a scale value of that gradient times d
+[747.00s - 750.00s] So you can approximate
+[750.00s - 753.00s] We can locally approximate a function by basically moving along its gradient is what it says
+[753.00s - 756.00s] And we can do this in a two-dimensional space as well
+[756.00s - 759.00s] Recall that in an area image, we're trying to evaluate what an image looks like at a value that is shifted by these two offset values, u and v
+[759.00s - 762.00s] So we can say an image of x, an image evaluated x plus u and y plus v is going to be approximately what the image looks like at its original position
+[762.00s - 765.00s] plus the gradient evaluated along the x direction times how much we want to move along that gradient in the x direction which is u plus the gradient it looks like and we're going to y direction evaluated at this point and moved by how much we're going to move along the y direction which is v so this is our two-dimensional generalization of Taylor series, Taylor expansion
+[765.00s - 768.00s] Treating each image as a function, and we want to say how that image, if you assume images are smooth and continuous, which is the basic assumption in computer design, we can say each image is basically can be composed as itself, plus the gradients of that image offset by a certain amount
+[768.00s - 771.00s] So this is our main trick that we use
+[771.00s - 774.00s] And recall that This, we get the surf rate
+[774.00s - 777.00s] This is our original image
+[777.00s - 780.00s] And we can get these two renditions of an image, with a directional gradient along the x direction and a directional gradient along the y direction, by simply doing our gradient filter that we did last time
+[780.00s - 783.00s] That can be done a very simple filtering operation
+[783.00s - 786.00s] So original image, x-filtered version, y-filtered version
+[786.00s - 789.00s] And those are the two gradient ingredients we need to be able to approximate what the image looks like with a slight shift
+[789.00s - 792.00s] Great
+[792.00s - 795.00s] And now that we have that, we can go back to our equation for the error image, which is the difference of the shifted image minus the original image across all possible shifts
+[795.00s - 798.00s] And we can take that this first term, my mouse works here, yeah, this first term, and we can be composed using a scalar expansion like we did here
+[798.00s - 801.00s] Positive accounts of things out
+[801.00s - 804.00s] So now we got rid of the image there
+[804.00s - 807.00s] And now that we got that out of the way, then what we have left is calculating this value, which is basically telling us compute the gradient times how much you're shifting it by, and the other gradient times how much you're shifting by the other direction at each pixel squared and then for all the possible window sizes
+[807.00s - 810.00s] And if you expand that one more time
+[810.00s - 813.00s] We get this term
+[813.00s - 816.00s] Now, this gets interesting
+[816.00s - 819.00s] So now we have x-directional gradient squared, y-directional gradient squared, and we can do this just a point-wise operation
+[819.00s - 822.00s] These are just images, and you just basically take the values of each filtered image and square it
+[822.00s - 825.00s] And this one is these two images, multiply point-wise with each other
+[825.00s - 828.00s] So this is another value that we can just derive very easily
+[828.00s - 831.00s] And all that's left to now think about are these, are these u and the b terms in the summation
+[831.00s - 834.00s] Any questions? I know this is a lot of math and calculus
+[834.00s - 837.00s] Last lecture we discussed that the product of the x and y gradient is going to be a bland limit, something like a grain or something like that
+[837.00s - 840.00s] So is it going to have an effect over here? That's a great point
+[840.00s - 843.00s] So that's actually the crux of this argument
+[843.00s - 846.00s] If we're at a, that's not always true, so if we're at a corner, if we're at a corner, both x and y gradients are going to be non-zero
+[846.00s - 849.00s] If we're in an edge, if we're in an edge, the x gradients might be large and the other one be zero
+[849.00s - 852.00s] So if you multiply them, it'll be zero
+[852.00s - 855.00s] Or if you're in like a horizontal or vertical edge, these two things, so you multiply them, they're going to be close to zero
+[855.00s - 858.00s] But only if you're at a corner
+[858.00s - 861.00s] Where corners are where both gradients are large, this is not going to be 0
+[861.00s - 864.00s] And that's actually how we're going to use this to detect what's a corner or not
+[864.00s - 867.00s] And obviously, for the flat area, these are going to be 0
+[867.00s - 870.00s] Sorry, these
+[870.00s - 873.00s] Everything's going to be 0 if you're in a flat area
+[873.00s - 876.00s] So that's how I'm going to use this equation to kind of partition our image into three classes, corners, edges, and fly areas
+[876.00s - 879.00s] And this is going to be the secret sauce
+[879.00s - 882.00s] This term is the only one that does not become zero when they're the corner
+[882.00s - 885.00s] Everything else is going to be zero
+[885.00s - 888.00s] OK, so now that we have this representation of this error image as a function of these directional gradients and the offset terms that we're applying to them, what can we How can we represent this as another more compact form? So one thing we can do here is that, so, we can represent the equation with a simple quadratic form
+[888.00s - 891.00s] So as you notice, like we have these, so we have three terms there, but in reality if you take that middle term and break into two, we have four terms
+[891.00s - 894.00s] We can treat this as a this particular matrix times these two vectors to be multiplied in the left and the right
+[894.00s - 897.00s] Maybe I'll leave you guys at a moment to kind of show, see that if you take this matrix, multiply that in the left and right by u and v, which is basically how much we're shifting this image by, we would arrive exactly at that summation equation up there
+[897.00s - 900.00s] And the last thing by doing this is, so if you notice, The reason we're doing this is to decouple this equation into two compartments, one that depends on x and y, which is the current location of the image, and one that depends on how much we're trying to shift this image by different values u and b
+[900.00s - 903.00s] So this m matrix that we have in the middle does not depend on the shift at all
+[903.00s - 906.00s] It only depends on the local gradients and their squares and their products
+[906.00s - 909.00s] Whereas the outer terms over here or how much we're willing to shift this image by
+[909.00s - 912.00s] So what this tells us is that at any point in our image, at any point in our image, if you want to calculate how much error we're going to have, we're going to be shifted by different amounts of U and V, That only depends on the local gradients of image
+[912.00s - 915.00s] And how much you shift it is, how much you shift it, you're going to pay proportional cost to when you take those shift vectors and apply and multiply this central matrix, this quadratic matrix in the middle
+[915.00s - 918.00s] And that kind of gives us an idea of, again, how we can decompose our image into how much error we would pay if you were to shift it by different amounts every pixel
+[918.00s - 921.00s] And interesting, one more thing
+[921.00s - 924.00s] It has these terms over here, which we're going to kind of pay attention to
+[924.00s - 927.00s] So like the student asked, these terms, they are, these terms are always going to be something
+[927.00s - 930.00s] So we know that the x-directional gradient or y-direction gradient At least one of them, I mean either one of them or both of them are going to be zero based on if we're in a flat area or in a corner or an edge
+[930.00s - 933.00s] But only when we're in a corner, these two, these off-diagonal terms in this matrix are not going to be zero
+[933.00s - 936.00s] There's going to be something
+[936.00s - 939.00s] And if we're in a flat area, these diagonal terms are going to give us zeros, which is going to be useful for what we're going to do next
+[939.00s - 942.00s] I'll take more questions here if there's any questions
+[942.00s - 945.00s] Question? Okay
+[945.00s - 948.00s] So what's the point of transposing for the moment matrix? Which one? The T, where like you know U comma V, and how many? Oh yeah, so I have markers
+[948.00s - 951.00s] Well, I mean what this is, all this is showing us is that right here, everyone can see it
+[951.00s - 954.00s] Okay, so I think, all right, let's start with U and V, matrix, a vector like this, and then in the middle we have directional gradient along the x direction squared x direction and y direction can everyone see this not I'll try to make a brighter marker I guess people math that can't see can you see it okay on the bottom we have the same thing and then here we have this one and over here we just have this thing transpose which just means now it just looks like this but So now we have a 1 by 2 vector multiplying by a 2 by 2 matrix
+[954.00s - 957.00s] We multiply by a 2 by 1 vector
+[957.00s - 960.00s] So the whole thing becomes a 1 by 1 quantity
+[960.00s - 963.00s] So we just transpose this right hand side just so if you were to multiply it all out, you would get exactly this term that we have
+[963.00s - 966.00s] It's just a way to write this equation in matrix form
+[966.00s - 969.00s] decomposing that into three components
+[969.00s - 972.00s] One matrix
+[972.00s - 975.00s] Great
+[975.00s - 978.00s] And again, the important thing is this way we can decompose this equation into things that only depends on the neighborhood information, like how much we're shifting an image, versus just things that are only dependent on image gradients
+[978.00s - 981.00s] Image gradient is going to be what's going to tell us what's a corner and not a dimension
+[981.00s - 984.00s] So let's analyze what this means
+[984.00s - 987.00s] We don't really care about the..
+[987.00s - 990.00s] how much we're shifting it by
+[990.00s - 993.00s] We're just asking if we were to shift an image, what would happen to the data? So I think, so to analyze that, what we need to analyze is this matrix in the middle and how it's gonna change this product that we just have based on different values in U and B
+[993.00s - 996.00s] And that's where it kind of goes into this, that's where this eigenvalue theory comes into play
+[996.00s - 999.00s] So this matrix, we can think about it as, form but in this example if you were in a flat area so let's pretend let's pretend for now the gradients are either vertical or horizontal what that means is that either X or Y I of X or Y is going to be zero so let's say in a case where all the image gradients are only horizontal or only vertical these two terms will be never, at least one then is going to be zero for this directional gradient x or directional gradient y
+[999.00s - 1002.00s] So if that's the case, so if our image only has horizontal or vertical edges and nothing else, one possible example, our matrix gonna look like this
+[1002.00s - 1005.00s] It's gonna look like some A and B, and these two, the off diagonal terms are gonna be zeros
+[1005.00s - 1008.00s] And let's analyze what that looked like
+[1008.00s - 1011.00s] So this is one example
+[1011.00s - 1014.00s] So if you had a flat image, So that's what counts as an image that only has vertical or horizontal edges
+[1014.00s - 1017.00s] It has no edges actually
+[1017.00s - 1020.00s] We will get some kind of value like this
+[1020.00s - 1023.00s] We will get these main diagonal terms to be maybe very small, or even even close to zero, because there's almost no gradient here
+[1023.00s - 1026.00s] And the off-diagonal terms are also zero
+[1026.00s - 1029.00s] So that's what that will look like
+[1029.00s - 1032.00s] If you are in some kind of..
+[1032.00s - 1035.00s] vertical edge, that means our x-directional gradient is going to be very large
+[1035.00s - 1038.00s] And our y-directional gradient might be very small or close to zero or vice versa
+[1038.00s - 1041.00s] So you would have a matrix like this
+[1041.00s - 1044.00s] So you would have our major diagonal being have a large term and a small term
+[1044.00s - 1047.00s] In a case where both are big, so let's say our x-directional gradients or y-directional gradients is very large, you would get some kind of large terms in a diagonal
+[1047.00s - 1050.00s] And we can use this to kind of derive a rule, in this case, on what it means to be a corner versus what it means to be a edge
+[1050.00s - 1053.00s] And here it actually kind of goes to the..
+[1053.00s - 1056.00s] So that's one example
+[1056.00s - 1059.00s] So this is a very specific example of our image only had like grids, and everything was like horizontal or vertical edges, and there's no like halfway edges in the image
+[1059.00s - 1062.00s] If we have If you have an image where we have these edges that are no longer just, they're only vertical or only horizontal, that means that that goes back to that question before
+[1062.00s - 1065.00s] So now you're going to have points in the image where both the x-directional gradient and the y-directional gradient are going to be non-zero
+[1065.00s - 1068.00s] So this matrix is no longer going to have this very simple form of just a diagonal and off that angle is going to be zeros
+[1068.00s - 1071.00s] So how can we handle that? Now there's going to be some kind of rotation applied to this image
+[1071.00s - 1074.00s] But that's the nice thing about it
+[1074.00s - 1077.00s] That's the nice thing about these matrices
+[1077.00s - 1080.00s] If there's light rotation, we can prove that this matrix can still be represented by that form by applying some kind of rotation applied
+[1080.00s - 1083.00s] And now you might have this matrix that we got here
+[1083.00s - 1086.00s] This goes to M matrix
+[1086.00s - 1089.00s] can be decomposed into some kind of series of rotation
+[1089.00s - 1092.00s] And still a matrix that has a strong diagonal and zero is an off-diagonal
+[1092.00s - 1095.00s] So if we were to analyze the same set of patches, but now they've been rotated by 45 degrees, let's look what they will look like
+[1095.00s - 1098.00s] For example, we'll think like, I guess it'll be very similar to this, except now like there'll be some kind of rotation matrix applied to this on each side
+[1098.00s - 1101.00s] But that goes into eigenvalue theory
+[1101.00s - 1104.00s] So what is that? That means this matrix or version of it after the image has been rotated, if it's the same underlying image, what might change might be the rotation of this matrix
+[1104.00s - 1107.00s] But when you compose any matrix into this form, When you decompose any matrix into a sub-inverse matrix times some diagonal matrix times the same matrix again to the right, what does that present? We're familiar to you guys from linear algebra
+[1107.00s - 1110.00s] So what are those values A and B called? The eigenvalues
+[1110.00s - 1113.00s] The eigenvalues, exactly
+[1113.00s - 1116.00s] So the eigenvalues of this matrix do not change, no matter how the images are rotated
+[1116.00s - 1119.00s] What changes, what can be changed, are the basis of that matrix
+[1119.00s - 1122.00s] But the eigenvalues always remain the same
+[1122.00s - 1125.00s] And eigenvalues are proportional always to some kind of a function of diagonal terms minus the the off diagonal terms in the meanings and that the ratios of those can be changed and that's that's reflected by its rotation matrix if you only if you apply an orthogonal rotation matrix to your Alright, so That's what that brings out
+[1125.00s - 1128.00s] So for a generalized set of images where we don't only have the both edges So we have all types of edges
+[1128.00s - 1131.00s] We're going to have this M matrix that's going to look like some generalized form
+[1131.00s - 1134.00s] So we can just look at the diagonal and say one diagonal is bigger than the other to determine if something is an edge or not
+[1134.00s - 1137.00s] Now we have to do some kind of eigenvalue decomposition of that matrix
+[1137.00s - 1140.00s] And then makes some kind of statements about the difference of these eigenvalues
+[1140.00s - 1143.00s] So going back here one more time, going back here one more time, If we had an image, if you just had an image only vertical or horizontal edges, what would you guys, what kind of a basic rule would you have to determine if something is a corner or not? Based on the values of this matrix
+[1143.00s - 1146.00s] if the eigenvalues are bigger than a certain threshold? If the eigenvalues are bigger than a certain threshold
+[1146.00s - 1149.00s] So like here, one eigenvalue is bigger than a certain threshold, the other one is not
+[1149.00s - 1152.00s] Or this one is, but the other one is not
+[1152.00s - 1155.00s] So if both are, then it's a corner if one is
+[1155.00s - 1158.00s] Exactly
+[1158.00s - 1161.00s] So that would be the basic rule
+[1161.00s - 1164.00s] So you look at the eigenvalues of a matrix
+[1164.00s - 1167.00s] If they're both bigger than some value, it's a corner
+[1167.00s - 1170.00s] If only one of them is bigger than a certain value, then it's an edge
+[1170.00s - 1173.00s] If they're both below that certain threshold, then it's a flat area at an edge
+[1173.00s - 1176.00s] So that would be the basic rule
+[1176.00s - 1179.00s] And that applies also to, if you had a rotate image, eigenvalues can change
+[1179.00s - 1182.00s] So the same rules apply
+[1182.00s - 1185.00s] So how can we use this to develop an algorithm, an efficient algorithm, to take corners in the image? And basically, we do this every single pixel in the image
+[1185.00s - 1188.00s] It's like we are able to do this
+[1188.00s - 1191.00s] This expansion is applied to a specific x and y position image
+[1191.00s - 1194.00s] We want to do this for every single pixel in the image efficiently
+[1194.00s - 1197.00s] Every single pixel, we want to compute its local eigenvalues of this area image
+[1197.00s - 1200.00s] We can do that
+[1200.00s - 1203.00s] If we really want to, we can compute this value for every single pixel in an image and do eigen decomposition in every single pixel in an image and look at these lambda 1 and lambda 2 and see if they're both greater than some value, say it's a corner
+[1203.00s - 1206.00s] Great
+[1206.00s - 1209.00s] That'll be a very robust algorithm
+[1209.00s - 1212.00s] It will do its job, right? But it'll be very slow
+[1212.00s - 1215.00s] And why is that? The major reason is that if you have this two by two matrix for every single pixel in And we want to compute eigenvalue compositions
+[1215.00s - 1218.00s] What will be the complexity of computing eigenvalue of a 2 by 2 matrix? You guys know from top of your head that eigenvalue, eigen decomposition complexity for an n by n matrix
+[1218.00s - 1221.00s] It's all NQ
+[1221.00s - 1224.00s] So for every single pixel, we would have to pay you would have to pay eight operations
+[1224.00s - 1227.00s] So if you're looking at these two by two matrix, you have to pay operations to compute its eigenvalues, variance and variance
+[1227.00s - 1230.00s] And that could be a lot of operations
+[1230.00s - 1233.00s] It's not too bad, but it's relatively slow
+[1233.00s - 1236.00s] So the original paper that did quantum detection did eigenvalue decompositions
+[1236.00s - 1239.00s] And another paper came out later that said, hey, we can do this quicker with less operations
+[1239.00s - 1242.00s] And that's what we're going to talk about today
+[1242.00s - 1245.00s] questions about complexity of this operation
+[1245.00s - 1248.00s] I think we have references to read if you guys want to read about the complexity of doing all these different types of pointers here
+[1248.00s - 1251.00s] So instead of computing the IU values, what we can instead, what we want to do is we just want to determine a rule that tells us if lambda 1 and lambda 2 Both large
+[1251.00s - 1254.00s] Or they're both
+[1254.00s - 1257.00s] One of them is large, one of them is small
+[1257.00s - 1260.00s] And if you want to compute just that value, we don't even necessarily know what they are
+[1260.00s - 1263.00s] We don't even know what the values of lambda 1 and lambda 2 are
+[1263.00s - 1266.00s] All we're going to do is compute if they're both large or not
+[1266.00s - 1269.00s] And one way to do that in this Harris paper is they just take this matrix, which can be easily computed
+[1269.00s - 1272.00s] All you have to do is compute these two directional gradients
+[1272.00s - 1275.00s] And in one instance, you have to just square it
+[1275.00s - 1278.00s] In another instance, you set a point-wise product of it
+[1278.00s - 1281.00s] Once you have this M matrix computed everywhere in an image, which you can do by having these four values stored in this
+[1281.00s - 1284.00s] And then you can compute the terminal of that matrix
+[1284.00s - 1287.00s] The term of a matrix, a 2 by 2 matrix, has how many operations? Three operations, right? So you take the product of the major diagonal, minus the five diagonal, and you subtract three operations
+[1287.00s - 1290.00s] So now you create three operations here, and then you take a trace of a matrix, which is basically a summation of the main diagonal
+[1290.00s - 1293.00s] That's one operation
+[1293.00s - 1296.00s] Now I get four operations
+[1296.00s - 1299.00s] You square it, number five
+[1299.00s - 1302.00s] And you take the difference, 6
+[1302.00s - 1305.00s] So when we're gate operations, we reduce it to 6 to get this value
+[1305.00s - 1308.00s] And we can show that the term of a matrix minus the square of its trace is this quantity, which is going to be the product of its eigenvalues minus some kind of scaled value of their sum squared
+[1308.00s - 1311.00s] So that's going to be our statistic that we're going to So now that we have this matrix computed and it's determined and trace squared, calc calculated, we can come up with this R value
+[1311.00s - 1314.00s] This is going to be another value that executed every single pixel in the image
+[1314.00s - 1317.00s] And now we can use that to come up with a nice rule, plus an edge, plus a corner
+[1317.00s - 1320.00s] So now let's go into this
+[1320.00s - 1323.00s] So if both eigenvalues are close to zero, so they're below the threshold
+[1323.00s - 1326.00s] this R value, so if you kind of apply these two values to that equation over there, if those that are close to zero, this whole thing is going to be very close to zero, or below some threshold
+[1326.00s - 1329.00s] So we're going to have some region here
+[1329.00s - 1332.00s] In an edge, what's going to happen is that one of the eigenvalues is going to be greater than the other, and the other ones, or vice versa
+[1332.00s - 1335.00s] What that's going to give us is this interesting phenomenon
+[1335.00s - 1338.00s] When one eigenvalue is bigger than the other, this whole R value goes negative
+[1338.00s - 1341.00s] And we're going to get these regions where this whole statistic is negative
+[1341.00s - 1344.00s] And then in cases where both eigenvalues are large, which corresponds to edges, if we put that into that equation, we're going to get a value that's greater than 0
+[1344.00s - 1347.00s] So we can just simply take compute the statistic, and if it's greater than 0, it's going to be a corner
+[1347.00s - 1350.00s] If it's less than 0 by a lot, it's going to be an edge
+[1350.00s - 1353.00s] And if it's closer to the other end, it's not a flat area
+[1353.00s - 1356.00s] So by computing this matrix and then computing one more operation on top of that matrix by computing the determinant minus j squared Now we partitioned our image into three regions, such that in some regions of our image we're going to get this values of greater than zero, and for other points we're going to get values less than zero, and in some places we're going to get close to zero
+[1356.00s - 1359.00s] And we can use that as a try partition rule to divide our image into edges, corners, and we can see what that looks like
+[1359.00s - 1362.00s] Yeah, this is a lot, so I'm happy to get questions and follow-up or something
+[1362.00s - 1365.00s] Or this is straightforward
+[1365.00s - 1368.00s] I think that's the thing on visualization is what this looks like
+[1368.00s - 1371.00s] So let's look at what..
+[1371.00s - 1374.00s] So if we were to compute the one way, one intuitive way to visualize eigenvalues in an image is to, for every pixel, compute those two eigenvalues
+[1374.00s - 1377.00s] and also compute that rotation matrix, if that applies
+[1377.00s - 1380.00s] See what that looks like per your pixel
+[1380.00s - 1383.00s] And that can be visualized in an ellipse
+[1383.00s - 1386.00s] So let's say you have an image, let's say you have a pixel where both eigenvalues are identical and there's no rotation
+[1386.00s - 1389.00s] That would look like a perfect circle because the two eigenvalues can be mapped out as like a two axes of an ellipse
+[1389.00s - 1392.00s] If you have points where one eigenvalue dominates the other, and there's some kind of directional, like there's some kind of rotation at that pixel in terms of like where the edges, which edge dominates
+[1392.00s - 1395.00s] Then you get some kind of ellipse, the particular value, and a rotation applies to that ellipse
+[1395.00s - 1398.00s] And let's say in some points, let's see
+[1398.00s - 1401.00s] Yeah, so in like in the corner areas, you would basically get a very, you would get an ellipse with both axes very large
+[1401.00s - 1404.00s] So I guess what we're trying to look at here is, In edges, you would get an ellipse with a very small minor axis and a very large major axis
+[1404.00s - 1407.00s] In corners, you would get an ellipse with both axes of the ellipse very large
+[1407.00s - 1410.00s] So that's one way to visualize that
+[1410.00s - 1413.00s] Any questions about that? This is a way to visualize eigenvalues of the error images at every single pixel on this image
+[1413.00s - 1416.00s] So yeah, and we can use it
+[1416.00s - 1419.00s] It kind of goes back then
+[1419.00s - 1422.00s] So if we were to go back to eigenvalue visualization, In a flat area, we get a very small ellipse, because both eigenvalues are very small
+[1422.00s - 1425.00s] In edges, we would get a large ellipse, but with one axis close to zero, and the other one very large, and vice versa
+[1425.00s - 1428.00s] So in the corner, you would get a very large ellipse, which both eigenvalues are very small
+[1428.00s - 1431.00s] And you kind of want more eigenvalues to be roughly equal to one another, to say it's a corner
+[1431.00s - 1434.00s] If one eigenvalue is much greater than the other, that means one directional derivative is much greater than the other, which indicates that there's some kind of edge happening there in right of the middle
+[1434.00s - 1437.00s] And yeah, so we can use this to partition our emissions and use the little ellipses
+[1437.00s - 1440.00s] At least conceptually, we don't have to actually visualize this every time
+[1440.00s - 1443.00s] But if you arrive at which points are here, corners are not
+[1443.00s - 1446.00s] It's kind of hard to see
+[1446.00s - 1449.00s] But you can kind of, you can see some areas You see a lot of these large ellipses
+[1449.00s - 1452.00s] In the flat area, you see how these ellipses almost tiny
+[1452.00s - 1455.00s] Very visually clear that was a flat area here
+[1455.00s - 1458.00s] All right, so takeaways
+[1458.00s - 1461.00s] Main takeaway is that we can very efficiently compute these, this corn detector by just taking these, and computing these two values in which you already show to be done very efficiently using a simple convolution filter that computes the differences of each pixel with the near next pixel
+[1461.00s - 1464.00s] always compute these two matrices and then use it in four different ways
+[1464.00s - 1467.00s] It's going to be this M matrix and once we have this, I'll just take this derivative and trace, so then we get this, we get a statistic that easily tells us if that statistic is greater than zero at the corner, less than zero at the edge, otherwise it's not
+[1467.00s - 1470.00s] So this is basically the algorithm
+[1470.00s - 1473.00s] So complexity of this algorithm, you can show that it's going to be O There's a nice open CV link that kind of does it
+[1473.00s - 1476.00s] So the nice walkthrough of this Harris corn detector
+[1476.00s - 1479.00s] If you're still interested in it, there is, the eigenvalue-based corn detectors by Shi and Fumasi, also by late 80s
+[1479.00s - 1482.00s] So this has a slight higher complexity
+[1482.00s - 1485.00s] And in some ways, this is a bit more robust than the Harris corn detector, because what I don't talk about is this term
+[1485.00s - 1488.00s] This term is what allows us to kind of break this image into this negative and positive values of this statistic
+[1488.00s - 1491.00s] If you don't have this here, then these don't really split into these three possible regions
+[1491.00s - 1494.00s] So you have to kind of, you have to have a good empirical use, empirical approximation of this
+[1494.00s - 1497.00s] Whereas if you were to do explicit eigenvalue decomposition, you don't need to have this approximation
+[1497.00s - 1500.00s] Because you know the exact value of these eigenvalues, and you can see one is greater than the other explicit
+[1500.00s - 1503.00s] So there's no guesswork in the sheet of Amasi
+[1503.00s - 1506.00s] Because of no guesswork, we paid more computational cost
+[1506.00s - 1509.00s] If you have a good value of this for your image, then you can save a little bit of an order of complexity in completing corners
+[1509.00s - 1512.00s] Question, let's move on to how we can use this
+[1512.00s - 1515.00s] So let's see some, after all that math, let's look at some nice examples
+[1515.00s - 1518.00s] So these are two images of the same object, but slight different rotations and lighting condition
+[1518.00s - 1521.00s] And we want this corner detected to pick out the same corners ideally
+[1521.00s - 1524.00s] And that's the first step is computing that R value
+[1524.00s - 1527.00s] So which is those, after you compute those directional derivatives, you take that, compute that matrix, M matrix, and then take the determinant and the trace square of that matrix and derive this statistic
+[1527.00s - 1530.00s] Here, if it's a, here's the red points indicate high values, indicate low values
+[1530.00s - 1533.00s] And if LIFO is just going to be about closer to zero, take the threshold of this, get this type of map, which tells us potential corners in an image
+[1533.00s - 1536.00s] And if you take some kind of a local maximum of this, if you take the highest possible value in a local region, you can assign that to be a single single corner that we have in these images
+[1536.00s - 1539.00s] We go from this very dense image to this very sparse subset of points, that we say, okay, these are important areas of this image, these are corners
+[1539.00s - 1542.00s] We should pay attention to them or what we're going to do
+[1542.00s - 1545.00s] And nice things you can kind of see here is that salient features like the eyes and the nose and maybe where some shapes end are roughly matching
+[1545.00s - 1548.00s] This little point here, it's not there, different points along the map
+[1548.00s - 1551.00s] That's the potential for matching
+[1551.00s - 1554.00s] We still have to do this matching, but the good thing is that false at some point can be detected in two images, not up to us to match them together
+[1554.00s - 1557.00s] Properties, so invariances
+[1557.00s - 1560.00s] So did you see that this is invariant? some image transformation
+[1560.00s - 1563.00s] The corner detected in one image, which should be detected in a rotated version image based on all the math that we just did
+[1563.00s - 1566.00s] It's somewhat equerian to some other things like lighting conditions and whatnot
+[1566.00s - 1569.00s] The lighting conditions should not change the eigenvalues of the image unless some non-linear thing is happening
+[1569.00s - 1572.00s] But more or less, like this corner detector satisfies the requirements, the invariant to some slight perturbations of the image
+[1572.00s - 1575.00s] OK, but what it's not invariant to is scale
+[1575.00s - 1578.00s] So if you were to scale this image large or small, you might start to lose some features
+[1578.00s - 1581.00s] And on the same corners, no more
+[1581.00s - 1584.00s] Because if we go back to this equation, let's go back to the original equation
+[1584.00s - 1587.00s] If we go back to this equation, This equation depends on some kind of window size, like how much we're willing to shift each image along in different directions
+[1587.00s - 1590.00s] So if you have a scale version image, now the input size has changed
+[1590.00s - 1593.00s] So we're not going to get the exact same value to this for one image versus an image that's maybe double the size, that has double the number of pixels
+[1593.00s - 1596.00s] So this is not a scale invariant point right here, but it is a rotation invariant, one, and lighting and intensity invariant
+[1596.00s - 1599.00s] So how do we derive some kind of scale invariance in images? That's going to be another thing
+[1599.00s - 1602.00s] So again, the main themes of computer vision in this class in general is to learn some kind of invariance in images such that images that reflect the same concept, but opposite some transformation, perturbation
+[1602.00s - 1605.00s] We want to be able to detect the same things
+[1605.00s - 1608.00s] We want to be able to see scale as another one
+[1608.00s - 1611.00s] So scale space as another one
+[1611.00s - 1614.00s] So taking an image
+[1614.00s - 1617.00s] and it would keep up if we were to down sample it it would be great but then if you were to up sample it um every time we down sample image we start to lose some information so yeah so like since the since i just the corner detector we talked about is not entering the scales what we can do is we can try to we can try to apply this corner detector at different scales we can take an image half the scale of this you're now making 128 pixels, an average nearby pixels, what, 64, 32, so on and so forth
+[1617.00s - 1620.00s] Each time we down sample image, each pixel now captures double the amount of information that it did, or it covers double the amount of space that it did from before
+[1620.00s - 1623.00s] So now we can detect bigger corners than before
+[1623.00s - 1626.00s] Going back to the original example I gave, like these knobs in an image, if we were to apply a corner detector, on the original high resolution version image, these knobs will not be considered to be corners because they're so large, they would just be considered as some kind of a large area with edges between them
+[1626.00s - 1629.00s] But in reality, to our eyes, we first actually see them as corners, like points
+[1629.00s - 1632.00s] But point is actually another
+[1632.00s - 1635.00s] The knob sample, our image is small enough such that each of these knobs becomes one pixel, If we were to apply this corner detect that we just talked about, then it would be called to be a corner
+[1635.00s - 1638.00s] So in this image, it would probably not be considered corners because there's still a lot of information
+[1638.00s - 1641.00s] In this one, they would be considered corners
+[1641.00s - 1644.00s] In this one, now, like we've learned so much, they disappear
+[1644.00s - 1647.00s] So they would not be found as corners, like other things would, and so on and so forth
+[1647.00s - 1650.00s] And we want to be able to fuse all this information together to have some kind of scaling variant of what other types of..
+[1650.00s - 1653.00s] So one way to do this is just apply this corner detector at L scales
+[1653.00s - 1656.00s] Another way to do this, that's a bit more, I guess, easily to compete without having to do this, without having to brute force this corner detector that we just calculated
+[1656.00s - 1659.00s] It's just taking an image and convolve it by a little filter that looks like a corner
+[1659.00s - 1662.00s] And then just look at points in an image that response to that
+[1662.00s - 1665.00s] So as you guys remember from the second lecture, we can prove that a filter convolved with an image has a maximum response in patches of an image that looks exactly like that filter
+[1665.00s - 1668.00s] So if we design a filter that looks like a little corner, like a little blob
+[1668.00s - 1671.00s] We apply this to our image
+[1671.00s - 1674.00s] We're going to get high values in every place in an image that resembles this
+[1674.00s - 1677.00s] So like corners or some other, you know, specific
+[1677.00s - 1680.00s] If there's a spot that looks exactly like this image, then we get these local maximum points that has the highest outcome, the highest cross correlation that's built there
+[1680.00s - 1683.00s] And we can use this principle to design Okay, I can feel clear that takes off these local corners, local salient points
+[1683.00s - 1686.00s] This is a one-by-one pixel, right? So this is not a 1x1 pixel
+[1686.00s - 1689.00s] This would be some kind of filter that's mainly 10 by 10
+[1689.00s - 1692.00s] It has some kind of width
+[1692.00s - 1695.00s] And that looks like the corner
+[1695.00s - 1698.00s] So like this, as you can see, there's like some high values in the middle, and then some kind of different, and then implicitly computes, and has negative values around that center circle
+[1698.00s - 1701.00s] So it computes a difference of the center pixel with all the pieces around it
+[1701.00s - 1704.00s] So we designed a filter that can explicitly calculate this area operation that we did in the corner detector, but by just designing a filter that does the exact same job
+[1704.00s - 1707.00s] It doesn't have the nice mathematical property that one detector does
+[1707.00s - 1710.00s] But in principle, it computes an error image in a very efficient way
+[1710.00s - 1713.00s] And we can just look at the values of this error image
+[1713.00s - 1716.00s] You can think about this as an error image like we calculated before
+[1716.00s - 1719.00s] But instead of doing that shifting operation that we're doing every single time, that allows us to do all that eigenvalue in mathematics, this one just gives us a nice image
+[1719.00s - 1722.00s] So we can just look at this maximum values instead of doing all that
+[1722.00s - 1725.00s] fancy value value
+[1725.00s - 1728.00s] This is not as principle, but it might be a good enough job that we'll see if we can split it up
+[1728.00s - 1731.00s] Let's see if I have more to tell here
+[1731.00s - 1734.00s] Yeah, I think the way we can do this is..
+[1734.00s - 1737.00s] So there's this thing called the Laplacian of Gaussian
+[1737.00s - 1740.00s] So as we know, we have a simple Gaussian filter
+[1740.00s - 1743.00s] It just takes average of values around that point
+[1743.00s - 1746.00s] But we can use this to compute these directional derivatives, or some kind of smoothing like we saw before
+[1746.00s - 1749.00s] So these are what we call these derivative of Gaussian filters
+[1749.00s - 1752.00s] So we can also take a second derivative of this
+[1752.00s - 1755.00s] We can take the second derivative of these Gaussian filters to kind of get these epsilon responses
+[1755.00s - 1758.00s] And once you combine those two, once you combine those two, you can get this type of filter
+[1758.00s - 1761.00s] Essentially what it does is it computes some kind of local response to some kind of, we can use these to compute edges
+[1761.00s - 1764.00s] And if both of them, if both of these have high responses in the image, then we can say it's kind of captures a corner
+[1764.00s - 1767.00s] And I think that's the next line that's kind of skipped
+[1767.00s - 1770.00s] It should not be skipped
+[1770.00s - 1773.00s] But so let's look at a, let's say we have one dimensional version of an image like this
+[1773.00s - 1776.00s] And there's clearly an edge here
+[1776.00s - 1779.00s] If you were to apply a second derivative filter here, you can see, if you apply a second derivative filter here, we will see at a specific point, the second derivative crosses below zero
+[1779.00s - 1782.00s] Every time second derivative crosses below zero, that means it peaks and then it changes again
+[1782.00s - 1785.00s] And we can take those negative second derivative points, determine where edge occurred in the image
+[1785.00s - 1788.00s] So we can use this principle
+[1788.00s - 1791.00s] We can use the second derivative principle
+[1791.00s - 1794.00s] So second derivative of an image, if it ever becomes less than zero at any point, that's a edge
+[1794.00s - 1797.00s] If the second derivative in both directions are zero, then that's a point
+[1797.00s - 1800.00s] And we can design different standard deviations of these filters to pick out different corner sizes
+[1800.00s - 1803.00s] Let's go back to this bunch of stuff
+[1803.00s - 1806.00s] So again, if we were to apply this kind of Laplacian of Gaussian, we have a second derivative Gaussian filters across an image
+[1806.00s - 1809.00s] We can, instead of doing all that eigenvalue to base corner detection, we can get a large set of corners
+[1809.00s - 1812.00s] for very, very efficient way
+[1812.00s - 1815.00s] And what you can see here in different circles are corners detected at different scales
+[1815.00s - 1818.00s] So what we do here is take an image, take an image and then just do that scale it at different values, like have this whole scale image, down sample it twice, down sample it four times, so on and so forth, and each time apply these velocity of Gaussian filters and look for local maximum in those those filter images and every time you see a local maximum you say at this scale at this location there is a corner and then you can map it all back to the original image and by by drawing a circle proportional to the size of the image where that corner was found in so if you found if you found the corner in the in the full sample version image, you get a very small circle
+[1818.00s - 1821.00s] You get these very large circles if we found the corner at a very down sample version of image, which means that that corner was detected at a higher spatial, sorry, at a higher spatial extent that was seen at a down sample version of image
+[1821.00s - 1824.00s] So then from this we get the collection note
+[1824.00s - 1827.00s] We can vary for free, get a large number of points
+[1827.00s - 1830.00s] Okay, so These are two ways
+[1830.00s - 1833.00s] We can do this Harris-Corn detector and doing this up-sampling and down-sampling operation to detect loss of corners at different scales
+[1833.00s - 1836.00s] Or we can apply these Los Alessian Gaussian filters, like basically second derivative filters at different scales of image to detect loss of corners in image
+[1836.00s - 1839.00s] What do we do with that? Now that we have two ways to detect loss of corners, what can we do to describe them so we can match different corners to one another? And that's where these equal SIP comes into play
+[1839.00s - 1842.00s] Ancestors of modern future detection, future description, speaking
+[1842.00s - 1845.00s] So now we're going from future detection to future description
+[1845.00s - 1848.00s] So what we want is, let's go back here, one is we want to have some kind of way to describe features of the technique
+[1848.00s - 1851.00s] And it just..
+[1851.00s - 1854.00s] So, features, by features, I mean for now, let's say we detect bunch of corners
+[1854.00s - 1857.00s] We want to assign some level, some features to these corners
+[1857.00s - 1860.00s] like some kind of a knob, and we want to say this knob has some particular description
+[1860.00s - 1863.00s] Or we could like either the person or the node of a person, we want to say these different areas in the image have some kind of description
+[1863.00s - 1866.00s] So we can match them for one another
+[1866.00s - 1869.00s] And we want these descriptions to be invariant to rotations, and we want these to be invariant to cropping, or we want them to go invariant
+[1869.00s - 1872.00s] How can we do that? finding, we can handle scale by saying at which resolution of the image this feature was detected
+[1872.00s - 1875.00s] So is it a corner at the full sample version image or is it one that's at a lower sample version image? That kind of gives us an idea of where that corner was detected
+[1875.00s - 1878.00s] So this this house, for example, this image
+[1878.00s - 1881.00s] In the original version image, it would not be detected as a corner
+[1881.00s - 1884.00s] But if we were to down sample image so much that this house becomes one pixel, then it'll be grabbed as a corner in a down sample version image
+[1884.00s - 1887.00s] Which then means, if you go back to the full sample version image, that's a, you can say that's a feature that has a quite large scale
+[1887.00s - 1890.00s] Because it was only detected as a corner once we down sample the image allowed
+[1890.00s - 1893.00s] So we can use the in which corner was found to describe the scale
+[1893.00s - 1896.00s] What's that? Another thing we want to do is, we want to compute some kind of orientation of that feature
+[1896.00s - 1899.00s] That makes no sense
+[1899.00s - 1902.00s] One way we can..
+[1902.00s - 1905.00s] Is it comparing white values in dark? Yes
+[1905.00s - 1908.00s] I don't know
+[1908.00s - 1911.00s] White plates
+[1911.00s - 1914.00s] What if you need to flip this? Something like..
+[1914.00s - 1917.00s] The minute
+[1917.00s - 1920.00s] The minute
+[1920.00s - 1923.00s] It's not like they're raised
+[1923.00s - 1926.00s] I'm confused on the point
+[1926.00s - 1929.00s] For that particular feature, look at the regional gradient that you have
+[1929.00s - 1932.00s] So for every pixel, for every pixel around the pixel that reaches within, we can look at how, what is the magnitude of its gradient along the X direction or in the Y direction, and then conclude this pixel is aligned towards the X direction or the Y direction, or both
+[1932.00s - 1935.00s] So we can assign some kind of a direction for each pixel
+[1935.00s - 1938.00s] Do I have any better visualizations on this? So as before, for every single pixel in the image, we can compute its x-directional gradient or y-directional gradient
+[1938.00s - 1941.00s] Let's say for that particular pixel, x-directional gradient was very large, but the y-directional gradient was small
+[1941.00s - 1944.00s] Then you can say, in that pixel, the image, that pixel is oriented towards x direction and not towards y direction
+[1944.00s - 1947.00s] If you have a value of that pixel, if both x and y directional gradients at that pixel are large, we can say that pixel is oriented 45 degrees and so on and so forth
+[1947.00s - 1950.00s] So based on the value of either x and y directional gradients, you can compute an angle of where that pixel is aligned to by computing the arc tangent of those two x and y directional gradients
+[1950.00s - 1953.00s] And we can do this for every single pixel
+[1953.00s - 1956.00s] And once we have that map for every single pixel, this major orientation, we can query the pixel that we're interested in and say, in this kind of 8 by 8 neighborhood around that pixel, what is the histogram of all direction we observe? So in this example, Let's see, is there something obvious? I guess, let's say all these pixels were kind of going 45 degrees or so
+[1956.00s - 1959.00s] If we were to make a histogram of all these pixels around that center pixel, we would get a peak around 45 degrees
+[1959.00s - 1962.00s] If they're all facing 270 degrees, then you would get a different peak in the system
+[1962.00s - 1965.00s] So you can use this to compute what is a local orientation of a patch by looking at it better
+[1965.00s - 1968.00s] histogram of the directions of every single pixel around that patch
+[1968.00s - 1971.00s] And I'm smart you computing if there are any questions about that
+[1971.00s - 1974.00s] So this is how you compute some kind of orientation image by just looking at its directions
+[1974.00s - 1977.00s] Directionally pixels are derived from the grid gradients that's present
+[1977.00s - 1980.00s] So now that we have a way to quantify the scale of a pixel, if it's a corner, like what scale corner it is and what type of orientation that pixel has based on what's around it
+[1980.00s - 1983.00s] Then we can come up with these types of..
+[1983.00s - 1986.00s] To put them together, what gives us the SIFT representation? SIFT scale stands for scale invariant feature transformation
+[1986.00s - 1989.00s] So we get these types of maps and images
+[1989.00s - 1992.00s] So what you're seeing here are..
+[1992.00s - 1995.00s] each box here is a different..
+[1995.00s - 1998.00s] like a feature or a corner that's detected in this image
+[1998.00s - 2001.00s] And the orientation of these boxes tells us the dominant direction of that pixel
+[2001.00s - 2004.00s] So like for example, this thing that's picked up here, it has some kind of corners that are particular direction, so this box is slightly translated to reflect that
+[2004.00s - 2007.00s] Other boxes like this box over here captures the pixel over here, and this pixel is surrounded by pixels that are mostly oriented towards this 45 degree direction and so on and so forth
+[2007.00s - 2010.00s] And you can, so by doing this, you can describe all these corners of image based on this major orientation that's seen in their local neighborhoods
+[2010.00s - 2013.00s] And the size of this box tells us, at which scale that point was found in the corner
+[2013.00s - 2016.00s] And so this is another way to sparsify an image into a bunch of salient points, but on top of just detecting important points, now we start to give some kind of description
+[2016.00s - 2019.00s] So we say this is an important point and this important point is oriented 45 degrees at a scale of 10 pixels or something like that
+[2019.00s - 2022.00s] So now we have a couple of features that we can assign each pixel to describe
+[2022.00s - 2025.00s] And then, so like, and this is basically the gist of doing key point detection
+[2025.00s - 2028.00s] So once we have, so once we have some kind of like face-to-face feature, for example, face-to-image
+[2028.00s - 2031.00s] If you were to apply this SIF features, which all it does is find salient corners in an image and then assign some kind of scale and direction assigned to them
+[2031.00s - 2034.00s] Now we have a way to describe an image as a series of these SIF protected features and the description
+[2034.00s - 2037.00s] Okay
+[2037.00s - 2040.00s] So that goes back
+[2040.00s - 2043.00s] It's kind of going back to the same thing
+[2043.00s - 2046.00s] So once we have these features detected, you compute some kind of histogram of the angles that's present around that pixel, and then find this dominant direction
+[2046.00s - 2049.00s] And then..
+[2049.00s - 2052.00s] So, and then the major thing is to make this rotation variant, let's say we have some features that, let's say this pixel is oriented
+[2052.00s - 2055.00s] So this pixel happens to be oriented mostly zero degrees
+[2055.00s - 2058.00s] So most of the gradients that you're seeing here are facing upwards, zero degrees
+[2058.00s - 2061.00s] Oh, sorry, not zero degrees over here
+[2061.00s - 2064.00s] So we will leave this as it is
+[2064.00s - 2067.00s] But in some cases, like in this one, let's say the angles that this local patch is slightly favoring maybe 45 degrees or something
+[2067.00s - 2070.00s] You take this patch, rotated you would basically rotate it such that it's aligned to the zero direction so you would you would store the spatial angles such that they're normalized in reference to a zero degree direction so that gives us a second level of um here so for each for each point And now you also want to store these features as well
+[2070.00s - 2073.00s] So now that after you find the dominant direction of a local pixel in this patch, keep the 8x8 pixels around it such that the deep angles have been normalized, such that now the dominant direction is zero
+[2073.00s - 2076.00s] That's all these things
+[2076.00s - 2079.00s] But what if we just rotate them? Is it the dominant direction? such that everything is aligned to the 0 degree, but you still keep what that dominant direction was
+[2079.00s - 2082.00s] So you can recover the original center direction
+[2082.00s - 2085.00s] Then, and then you basically complete, once again, compute histograms
+[2085.00s - 2088.00s] around each of these local patches
+[2088.00s - 2091.00s] So if you have an 8x8 image, you once again compute local histogram directions in like a 4x4 grid around that pixel, and then you come up and now you have these, for each pixel, now you have these eight subpatches, and each of them can be represented as another histogram, and then you represent now this pixel the scale, dominant direction, and the direction, angular histograms of these local patches around that
+[2091.00s - 2094.00s] This is a lot of, it's really, this synth is a super ad hoc long story short but it's been it's been used to like until late 2010s as a way to take an image and represent the views on these local information and because of these because of these transformations within like for example this hook being a dominant direction and then subtracting it you can show that this rotation invariance or if you let's say let's say we had an image Let's say we have an image like this
+[2094.00s - 2097.00s] So let's say we have an image that had features
+[2097.00s - 2100.00s] Let's say we have an image that had a little, that had a part to get fixed, and had features like this
+[2100.00s - 2103.00s] If we were to rotate this image and then compute the same features, the rotated features would exactly look the same as the original one, because the only thing that would be different will be the dominant direction
+[2103.00s - 2106.00s] But we're always tracking that out over the operation
+[2106.00s - 2109.00s] After we get rid of the dominant direction, what are the direction invariants, local gradients that we have around? So that's the major, I guess, the inclusion behind all this stuff, but kind of implementation engineering is a lot of handcrafted
+[2109.00s - 2112.00s] So now I'm doing all this complicated stuff
+[2112.00s - 2115.00s] Now each key point that we detected has a location where we detect that corner
+[2115.00s - 2118.00s] The scale, at which scale image we detect that corner
+[2118.00s - 2121.00s] is major orientation, dominant directions that I talked about
+[2121.00s - 2124.00s] And now these 128 different directions that we can derive around each pixel, what kind of local gradient information there is
+[2124.00s - 2127.00s] So now each pixel can be represented as this 130 plus, maybe that's a one, by these 130 dimensional features
+[2127.00s - 2130.00s] And instead of just having points that we detect as important features, now we have some kind of scale and direction and some kind of additional features associated with them
+[2130.00s - 2133.00s] And if I were to rotate this image slightly, I would expect, let's say there's this feature that's a foreign feature that captures this third person's chin
+[2133.00s - 2136.00s] That future would be the exact same feature in this rotate image
+[2136.00s - 2139.00s] So if I were to do images, all I would have to do is find this feature that at this point would have 120, 130 different features associated with it
+[2139.00s - 2142.00s] I would see if that's 130 different
+[2142.00s - 2145.00s] Those features are exactly the same in the knowledge
+[2145.00s - 2148.00s] If they're exactly the same, then I would say they're the same
+[2148.00s - 2151.00s] They reflect the same point
+[2151.00s - 2154.00s] All right, so that's kind of how the next lecture is going to kind of go
+[2154.00s - 2157.00s] So let's say we have this image of Notre Dame
+[2157.00s - 2160.00s] Let's say you want to find and give another image, but you can find that slightly shifted and take it a different time
+[2160.00s - 2163.00s] I detect a bunch of key points here
+[2163.00s - 2166.00s] Each key point now is going to be described by scale, dominant direction, and these local dimensional gradients
+[2166.00s - 2169.00s] So now each point is going to be I have a 130 dimensional representation
+[2169.00s - 2172.00s] I have another image now
+[2172.00s - 2175.00s] In this same image, I do the exact same procedure
+[2175.00s - 2178.00s] I try to detect features and describe each feature by a set of scales, locations, and these little angular representations
+[2178.00s - 2181.00s] I'm going to try to see the features of this doesn't match any of these at all
+[2181.00s - 2184.00s] If it matches below some kind of threshold, then I'm going to say this point matches this point, and it does not match this other point
+[2184.00s - 2187.00s] And once I have these matches, then I can start to do some transformations
+[2187.00s - 2190.00s] And that's going to be something that goes next time
+[2190.00s - 2193.00s] So let's say, like, let's say, so going back to the Mount Everest picture, these are the key points that one would detect in these images
+[2193.00s - 2196.00s] And some of these key points can match those using, say, for example, the type of technique
+[2196.00s - 2199.00s] And once we have a set of matches, how can we do a learning geometric transformation such that this image can be transformed to look exactly like that, or this one So we're going to have, once we have a corresponding set of points, we're going to And we know where those points are in each image
+[2199.00s - 2202.00s] So let's say we had a set of points here and a set of points there that we know exactly match one another
+[2202.00s - 2205.00s] We're going to make it, we're going to assume that points here in the second image are some transformation, some linear algebraic transformation or their coordinates to match the points here
+[2205.00s - 2208.00s] And we're going to learn exactly what that transformation is and how that transformation can be solved based on some kind of geometric assumptions
+[2208.00s - 2211.00s] copies of it because you're taking it
+[2211.00s - 2214.00s] And that's going to be the supplement class
+[2214.00s - 2217.00s] I know this kind of stuff is like super classical, and like some of you might already be familiar with this
+[2217.00s - 2220.00s] So analogies of this to modern computer vision is how many of you have been playing around with things like YOLO or like, especially how many of you have been from a Dino model from there? Yeah, exactly
+[2220.00s - 2223.00s] So a Dino is another model that is very dense descriptors for every pixel
+[2223.00s - 2226.00s] So we take an image
+[2226.00s - 2229.00s] an app
+[2229.00s - 2232.00s] What they do is instead of, so one thing you guys can maybe take away from this is that we did all of this just by engineering alone
+[2232.00s - 2235.00s] We're not having a training
+[2235.00s - 2238.00s] We just take an image based on some first principles approach to try to find ways to represent different parts of images using corners and scales and stuff like that
+[2238.00s - 2241.00s] If you have lots and lots of images, You can train these algorithms to, if you already know what's a corner, what are some important features, like what Facebook AI research done
+[2241.00s - 2244.00s] You can buy for free, take an image after, and like billions of images we train on, learn what it means to be an important feature, how to represent each point in an image
+[2244.00s - 2247.00s] So we can put a new image through that dyno model, and it's going to give you like a 760 dimensional representation of each pixel
+[2247.00s - 2250.00s] And you would compare how two different representations from two different pixels across images, very similar or not, five pixels
+[2250.00s - 2253.00s] machine learning approach to doing this, which we'll cover later on in class
+[2253.00s - 2256.00s] But the point of this is to kind of show you maybe by on purpose how tedious to replace all these things and learn based methods later on
+[2256.00s - 2259.00s] But if you didn't before machine learning, this is how people were designing these features to like map out
+[2259.00s - 2262.00s] This is how people are using, this is the kind of algorithm people are using, like match cases and stuff
+[2262.00s - 2265.00s] and all these things back in the day
+[2265.00s - 2268.00s] And I'm pretty sure in the US department it's all about, this was at least like 10, 20 years to time, because how people use patient detection even to this day, that's soon to hopefully be replaced by more clever AI algorithms
+[2268.00s - 2271.00s] All right, but I should take questions and otherwise let's take a look.
