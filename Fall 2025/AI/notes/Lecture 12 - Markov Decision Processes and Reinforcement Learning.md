@@ -427,19 +427,35 @@ The key insight: instead of averaging over actions (as in expectation equations)
 
 **V-function optimality:**
 
-$$V^_(s) = \max_a \sum_{s',r} P(s',r|s,a)\left[r + \gamma V^_(s')\right]$$
+$$
+V^*(s) = \max_{a} \sum_{s', r} P(s', r \mid s, a)\left[ r + \gamma V^*(s') \right]
+$$
+
 
 **Q-function optimality:**
+$$
+Q^*(s,a) = \sum_{s', r} P(s', r \mid s, a)
+\left[ r + \gamma \max_{a'} Q^*(s', a') \right]
+$$
 
-$$Q^_(s,a) = \sum_{s',r} P(s',r|s,a)\left[r + \gamma \max_{a'} Q^_(s',a')\right]$$
 
 **Relationship:**
 
-$$V^_(s) = \max_a Q^_(s,a)$$
+$$
+V^*(s) = \max_{a} Q^*(s,a)
+$$
+
 
 **Optimal policy extraction:**
 
-$$\pi^_(a|s) = \begin{cases} 1 & \text{if } a = \arg\max_{a'} Q^_(s,a') \ 0 & \text{otherwise} \end{cases}$$
+$$
+\pi^*(a \mid s) =
+\begin{cases}
+1 & \text{if } a = \arg\max_{a'} Q^*(s,a') \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
 
 **Annotations:**
 
@@ -456,23 +472,33 @@ Actions from High: {Search, Wait} Actions from Low: {Search, Wait, Recharge}
 
 Given transitions and rewards, write optimality equation for $V^*(\text{High})$:
 
-$$V^*(\text{High}) = \max\Bigg{$$
+$$
+V^*(\text{High}) = \max \Bigg\{
+$$
 
-**Search:** $P(H|H,S)[R(H,S,H) + \gamma V^_(H)] + P(L|H,S)[R(H,S,L) + \gamma V^_(L)]$
+**Search:** $P(H|H,S)[R(H,S,H) + \gamma V^*(H)] + P(L|H,S)[R(H,S,L) + \gamma V^*(L)]$
 
 **Wait:** $P(H|H,W)[R(H,W,H) + \gamma V^*(H)]$
 
-$$\Bigg}$$
+$$
+\Bigg\}
+$$
 
 With $\gamma = 0.9$, $P(H|H,S) = 0.7$, $P(L|H,S) = 0.3$, $R(\text{search}) = 4$, $R(\text{wait}) = 1$:
 
-$$V^_(H) = \max{0.7[4 + 0.9V^_(H)] + 0.3[4 + 0.9V^_(L)], 1[1 + 0.9V^_(H)]}$$
+$$
+V^*(H) = \max \left\{
+0.7[4 + 0.9V^*(H)] + 0.3[4 + 0.9V^*(L)],\;
+1[1 + 0.9V^*(H)]
+\right\}
+$$
 
 This is a system of nonlinear equations requiring iterative solution.
 
 ### Connections & Prerequisites
 
 **Prerequisite Refresher on Bellman Expectation:** The optimality equation replaces $\sum_a \pi(a|s)$ with $\max_a$—instead of averaging over policy, we optimize over actions.
+
 
 ---
 
@@ -761,7 +787,8 @@ $\gamma = 0.9$, current estimates: $V(S_1) = 4.0$, $V(S_2) = 2.5$
     
 - **The Bellman equations enable recursive computation:** $$V^\pi(s) = \sum_a \pi(a|s) \sum_{s'} P(s'|s,a)[R + \gamma V^\pi(s')]$$
     
-- **Optimality introduces nonlinearity:** $V^_(s) = \max_a Q^_(s,a)$—the max operator prevents direct matrix solution.
+- **Optimality introduces nonlinearity:** $V^*(s) = \max_{a} Q^*(s,a)$
+—the max operator prevents direct matrix solution.
     
 - **Policy iteration alternates evaluation and improvement:** Evaluate current policy → Act greedily on values → Repeat until convergence to $\pi^*$.
     

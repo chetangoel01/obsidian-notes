@@ -55,15 +55,15 @@ Where:
 
 Consider 3 tokens with $d = 4$ dimensional embeddings, projecting to $d_k = 2$:
 
-**Input:** $$ X = \begin{bmatrix} 1 & 0 & 1 & 0 \ 0 & 1 & 0 & 1 \ 1 & 1 & 0 & 0 \end{bmatrix} $$
+**Input:** $$ X = \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 1 & 0 & 0 \end{bmatrix} $$
 
-**Weight matrices (simplified):** $$ W_Q = \begin{bmatrix} 1 & 0 \ 0 & 1 \ 1 & 0 \ 0 & 1 \end{bmatrix}, \quad W_K = \begin{bmatrix} 0 & 1 \ 1 & 0 \ 0 & 1 \ 1 & 0 \end{bmatrix} $$
+**Weight matrices (simplified):** $$ W_Q = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 0 \\ 0 & 1 \end{bmatrix}, \quad W_K = \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ 0 & 1 \\ 1 & 0 \end{bmatrix} $$
 
-**Step 1:** Compute $Q = XW_Q$: $$ Q = \begin{bmatrix} 1 & 0 & 1 & 0 \ 0 & 1 & 0 & 1 \ 1 & 1 & 0 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 1 \ 1 & 0 \ 0 & 1 \end{bmatrix} = \begin{bmatrix} 2 & 0 \ 0 & 2 \ 1 & 1 \end{bmatrix} $$
+**Step 1:** Compute $Q = XW_Q$: $$ Q = \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 1 & 0 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & 2 \\ 1 & 1 \end{bmatrix} $$
 
-**Step 2:** Compute $K = XW_K$: $$ K = \begin{bmatrix} 0 & 2 \ 2 & 0 \ 1 & 1 \end{bmatrix} $$
+**Step 2:** Compute $K = XW_K$: $$ K = \begin{bmatrix} 0 & 2 \\ 2 & 0 \\ 1 & 1 \end{bmatrix} $$
 
-**Step 3:** Compute attention scores $QK^T$: $$ QK^T = \begin{bmatrix} 2 & 0 \ 0 & 2 \ 1 & 1 \end{bmatrix} \begin{bmatrix} 0 & 2 & 1 \ 2 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \ 4 & 0 & 2 \ 2 & 2 & 2 \end{bmatrix} $$
+**Step 3:** Compute attention scores $QK^T$: $$ QK^T = \begin{bmatrix} 2 & 0 \\ 0 & 2 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 0 & 2 & 1 \\ 2 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 0 & 2 \\ 2 & 2 & 2 \end{bmatrix} $$
 
 Token 1's query strongly attends to Token 2's key (score = 4), indicating these tokens should share information.
 
@@ -1011,3 +1011,5 @@ For the final exam, bring **Table 7.11** from Russell & Norvig's "AI: A Modern A
 - $\alpha \Rightarrow \beta \equiv \neg\alpha \lor \beta$
 - $\alpha \Leftrightarrow \beta \equiv (\alpha \Rightarrow \beta) \land (\beta \Rightarrow \alpha)$
 - De Morgan's Laws: $\neg(\alpha \land \beta) \equiv \neg\alpha \lor \neg\beta$
+
+![[Pasted image 20251217150936.png]]

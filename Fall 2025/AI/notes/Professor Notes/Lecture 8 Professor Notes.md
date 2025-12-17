@@ -1,26 +1,3 @@
-**Date:** October 31st (Halloween)  
-**Instructor:** Professor Pantelis Monogioudis
-
----
-
-## 1. Course Logistics and Assignment Updates
-
-The professor opened by noting reduced attendance due to Halloween. Key administrative points:
-
-- **Assignment 3** was due Sunday
-- **Assignment 4** was still in development, expected within two weeks
-- **Project Milestone 1** should be started after Assignment 3, due before Thanksgiving
-- No additional assignments after Assignment 4—students would focus on project deliverables and final exam preparation
-
-The professor also addressed issues students faced with tracking the ball in a previous assignment, explaining that ball tracking is significantly harder than player tracking because:
-
-- The ball moves erratically (changes direction when kicked)
-- It has a different motion model than players (no constant speed assumption)
-- The ball is "featureless"—any white ball looks the same, making re-identification difficult
-- It can leave and re-enter the camera's field of view
-
----
-
 ## 2. Review: Tokenization and Embeddings
 
 ### Tokenization Recap

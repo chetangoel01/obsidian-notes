@@ -397,11 +397,17 @@ If there are 4 possible actions: $\pi(a|s) = 0.25$ for each action.
 
 **Uniform Random Policy:**
 
-| State | $\pi(\text{UP}|s)$ | $\pi(\text{DOWN}|s)$ | $\pi(\text{LEFT}|s)$ | $\pi(\text{RIGHT}|s)$ | |-------|-----|------|------|-------| | Any $s$ | 0.25 | 0.25 | 0.25 | 0.25 |
+| **State** | **UP** | **DOWN** | **LEFT** | **RIGHT** |
+|:---------:|:-----:|:--------:|:--------:|:---------:|
+| Any $s$  | 0.25  | 0.25     | 0.25     | 0.25      |
 
 **Deterministic Policy (example):**
 
-| State | $\pi(\text{UP}|s)$ | $\pi(\text{DOWN}|s)$ | $\pi(\text{LEFT}|s)$ | $\pi(\text{RIGHT}|s)$ | |-------|-----|------|------|-------| | $S_{11}$ | 1.0 | 0 | 0 | 0 | | $S_{12}$ | 0 | 0 | 0 | 1.0 | | $S_{21}$ | 1.0 | 0 | 0 | 0 |
+| **State** | **UP** | **DOWN** | **LEFT** | **RIGHT** |
+|:---------:|:-----:|:--------:|:--------:|:---------:|
+| $S_{11}$  | 1.0   | 0        | 0        | 0         |
+| $S_{12}$  | 0     | 0        | 0        | 1.0       |
+| $S_{21}$  | 1.0   | 0        | 0        | 0         |
 
 This deterministic policy always goes UP from $S_{11}$, RIGHT from $S_{12}$, and UP from $S_{21}$.
 
@@ -552,7 +558,7 @@ Find: $\pi^* = \arg\max_\pi V^\pi(s)$ for all $s \in \mathcal{S}$
 
 $$ V^*(s) = \max_\pi V^\pi(s) $$
 
-**Optimal Policy:** A policy $\pi^_$ is optimal if $V^{\pi^_}(s) \geq V^\pi(s)$ for all states $s$ and all policies $\pi$.
+**Optimal Policy:** A policy $\pi^*$ is optimal if $V^{\pi^*}(s) \geq V^\pi(s)$ for all states $s$ and all policies $\pi$.
 
 ### 7.4 Worked Toy Example
 
