@@ -428,30 +428,34 @@ Set weights for simplicity:
 
 **Step 1 – gates & candidate**
 
-[  
+$$
 \begin{aligned}  
-i_t &= \sigma(W_i x_t + U_i h_{t-1}) = \sigma(0.5 \cdot 2.0 + 0) = \sigma(1.0) \approx 0.731 \  
-f_t &= \sigma(W_f x_t + U_f h_{t-1}) = \sigma(0 + 1.0 \cdot 0) = \sigma(0) = 0.5 \  
+i_t &= \sigma(W_i x_t + U_i h_{t-1}) = \sigma(0.5 \cdot 2.0 + 0) = \sigma(1.0) \approx 0.731  
+\\
+
+f_t &= \sigma(W_f x_t + U_f h_{t-1}) = \sigma(0 + 1.0 \cdot 0) = \sigma(0) = 0.5 \  \\
 o_t &= \sigma(W_o x_t + U_o h_{t-1}) = \sigma(0 + 1.0 \cdot 0) = 0.5 \  
+\\
+
 g_t &= \tanh(W_g x_t + U_g h_{t-1}) = \tanh(0.5 \cdot 2.0 + 0) = \tanh(1.0) \approx 0.7616  
 \end{aligned}  
-]
+$$
 
 **Step 2 – cell state update**
 
-[  
+$$  
 s_t = f_t s_{t-1} + i_t g_t  
 = 0.5 \cdot 1.0 + 0.731 \cdot 0.7616  
 \approx 0.5 + 0.556 = 1.056  
-]
+$$
 
 **Step 3 – hidden state**
 
-[  
+$$
 h_t = o_t \tanh(s_t)  
 = 0.5 \cdot \tanh(1.056)  
 \approx 0.5 \cdot 0.783 = 0.392  
-]
+$$
 
 Here, the forget gate **kept half of the previous memory** (0.5), and the input gate added a reasonable chunk of new information; the output gate only exposed half of the updated cell state.
 
@@ -535,19 +539,19 @@ $$
 2. **RNN state update** (using LSTM or simple RNN)
     
 
-[  
+$$
 h_t = \text{RNNCell}(x_t, h_{t-1})  
-]
+$$
 
 3. **Softmax head (next-token distribution)**
     
 
-[  
+$$  
 \begin{aligned}  
 o_t &= W_o h_t + b_o \  
 P(w_{t+1} = k \mid w_{\le t}) &= \frac{\exp(o_{t,k})}{\sum_{j=1}^V \exp(o_{t,j})}  
 \end{aligned}  
-]
+$$
 
 4. **Training objective**: **cross-entropy loss** over the true next tokens:
     
@@ -664,7 +668,7 @@ Let source sentence be $x_1, \dots, x_T$ and target sentence be $y_1, \dots, y_{
 
 $$  
 \begin{aligned}  
-h_t^{\text{enc}} &= \text{RNNEncCell}(x_t, h_{t-1}^{\text{enc}}), \quad t=1,\dots,T \  
+h_t^{\text{enc}} &= \text{RNNEncCell}(x_t, h_{t-1}^{\text{enc}}), \quad t=1,\dots,T \\  
 c &= h_T^{\text{enc}} \quad \text{(context / thought vector)}  
 \end{aligned}  
 $$
@@ -677,8 +681,8 @@ Initialize hidden state with $h_0^{\text{dec}} = c$. At each target step $t$:
 $$  
 \begin{aligned}  
 h_t^{\text{dec}} &= \text{RNNDecCell}(e(y_{t-1}), h_{t-1}^{\text{dec}}) \  
-o_t &= W_o h_t^{\text{dec}} + b_o \  
-P(y_t = k \mid y_{<t}, x_{1:T}) &= \text{softmax}(o_t)_k  
+o_t \\&= W_o h_t^{\text{dec}} + b_o \  
+P(y_t = k \mid y_{<t}, x_{1:T}) \\&= \text{softmax}(o_t)_k  
 \end{aligned}  
 $$
 
