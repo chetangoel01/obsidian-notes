@@ -169,12 +169,14 @@ $$Q^\pi(s,a) = \mathbb{E}_\pi[R_{t+1} + \gamma Q^\pi(S_{t+1}, A_{t+1}) | S_t = s
 
 When we want to find the **optimal** value function (V* or Q*), we introduce the **max** operator, which makes the equations **nonlinear**.
 
-**For V***:$$
+**For V***:
+$$
 V^*(s) = \max_{a} \sum_{s'} P(s' \mid s,a) \bigl[ R(s,a,s') + \gamma V^*(s') \bigr]
 $$
 
 
-**For Q***: $$
+**For Q***: 
+$$
 Q^*(s,a) = \sum_{s'} P(s' \mid s,a) \bigl[ R(s,a,s') + \gamma \max_{a'} Q^*(s',a') \bigr]
 $$
 
