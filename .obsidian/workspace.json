@@ -4,21 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "6d0a7cde1d9b7c03",
+        "id": "f3e7809be1aa705b",
         "type": "tabs",
         "children": [
           {
-            "id": "68b8a307e63f01e8",
+            "id": "5acc75cc8c7acddb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Fall 2025/AI/question bank/Question Bank.md",
-                "mode": "preview",
-                "source": false
+                "file": "Fall 2025/AI/sample final.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Question Bank"
+              "icon": "lucide-file-text",
+              "title": "sample final"
+            }
+          }
+        ]
+      },
+      {
+        "id": "01dceb5b17d8583d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f1a35fdb5715427",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Fall 2025/AI/sample final - solutions.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "sample final - solutions"
             }
           }
         ]
@@ -78,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.5
+    "width": 348.5,
+    "collapsed": true
   },
   "right": {
     "id": "c81b5bfb3d72f83e",
@@ -190,16 +207,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "68b8a307e63f01e8",
+  "active": "1f1a35fdb5715427",
   "lastOpenFiles": [
+    "Fall 2025/AI/sample final.pdf",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Fall 2025/AI/question bank/AI Final Exam Question Bank - QUESTIONS.md",
+    "Fall 2025/AI/sample final - solutions.pdf",
+    "Fall 2025/AI/question bank/Question Bank.md",
     "Pasted image 20251217152404.png",
     "Pasted image 20251217152445.png",
     "Pasted image 20251217150936.png",
     "Pasted image 20251217152402.png",
-    "Fall 2025/AI/question bank/Question Bank.md",
-    "Fall 2025/AI/question bank/AI Final Exam Question Bank - QUESTIONS.md",
     "Fall 2025/AI/question bank/AI Final Exam Question Bank - ANSWERS.md",
-    "Fall 2025/AI/sample final.pdf",
     "Fall 2025/AI/question bank/Lecture 7 Question Bank.md",
     "Fall 2025/AI/notes/Professor Notes/Lecture 12 Professor Notes.md",
     "Fall 2025/AI/notes/Professor Notes/Lecture 11 Professor Notes.md",
@@ -219,7 +239,6 @@
     "Fall 2025/AI/notes/Lecture 13 - Reinforcement Learning Fine-Tuning and Policy Gradient Methods.md",
     "Fall 2025/AI/Untitled.md",
     "Fall 2025/AI/notes/Lecture 7 Notes - Introduction to NLP, Tokenization, Embeddings & Language Models.md",
-    "Fall 2025/AI/sample final solutions.pdf",
     "Fall 2025/AI/question bank",
     "Fall 2025/AI/recordings/processed/AI_lecture_9:26_20251008_005221.m4a",
     "Fall 2025/AI/recordings/processed/AI_Lecture_3_20250924_140633.m4a",
@@ -231,7 +250,6 @@
     "Interview Prep/daily prep list.md",
     "Fall 2025/AI/transcripts/ai lecture nov 21 2025.md",
     "Fall 2025/AI/notes/upto midterm/Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
-    "Pasted image 20251015231529.png",
-    "Untitled.canvas"
+    "Pasted image 20251015231529.png"
   ]
 }

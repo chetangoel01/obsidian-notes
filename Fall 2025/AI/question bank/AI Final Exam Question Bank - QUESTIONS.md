@@ -59,7 +59,7 @@
 
 ## Section 3: MDP Estimation (Prediction Problem)
 
-**Q18.** Define the state value function V^π(s). Write the mathematical definition using the expected return.
+**Q18.** Define the state value function $V^π(s)$. Write the mathematical definition using the expected return.
 
 **Q19.** Write the Bellman expectation equation for V^π(s). Explain each component of the equation: $$v(s) = \sum_a \pi(a|s) \sum_{s'} p(s'|s,a) [r(s,a,s') + \gamma v(s')]$$
 
