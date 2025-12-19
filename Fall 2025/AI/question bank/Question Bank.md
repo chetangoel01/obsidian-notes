@@ -95,7 +95,7 @@
 
 **Q4.9** Compare and contrast policy iteration and value iteration algorithms.
 
-**Q4.10** Given a gridworld with initial uniform random policy, describe the process of one complete iteration of policy iteration (policy evaluation followed by policy improvement).
+**Q4.10** Given a grid world with initial uniform random policy, describe the process of one complete iteration of policy iteration (policy evaluation followed by policy improvement).
 
 ---
 
