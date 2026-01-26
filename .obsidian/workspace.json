@@ -4,39 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f3e7809be1aa705b",
+        "id": "d16f60c623e5594c",
         "type": "tabs",
-        "dimension": 47.01670644391408,
         "children": [
           {
-            "id": "5acc75cc8c7acddb",
+            "id": "6ac2691cefa1518a",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Fall 2025/AI/sample final.pdf"
+                "file": "Fall 2025/AI/notes/upto midterm/Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "sample final"
-            }
-          }
-        ]
-      },
-      {
-        "id": "01dceb5b17d8583d",
-        "type": "tabs",
-        "dimension": 52.98329355608592,
-        "children": [
-          {
-            "id": "1f1a35fdb5715427",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Fall 2025/AI/sample final - solutions.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "sample final - solutions"
+              "icon": "lucide-file",
+              "title": "Lecture 1 - Introduction to AI Agents and Statistical Learning Theory"
             }
           }
         ]
@@ -96,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.5,
-    "collapsed": true
+    "width": 348.5
   },
   "right": {
     "id": "c81b5bfb3d72f83e",
@@ -113,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
+                "file": "Fall 2025/AI/notes/upto midterm/Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
+                "file": "Fall 2025/AI/notes/upto midterm/Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -156,12 +137,12 @@
             }
           },
           {
-            "id": "0df35a9905c96fcb",
+            "id": "73894c054de71be6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
+                "file": "Fall 2025/AI/notes/upto midterm/Lecture 1 - Introduction to AI Agents and Statistical Learning Theory.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -169,33 +150,14 @@
               "icon": "lucide-list",
               "title": "Outline of Lecture 1 - Introduction to AI Agents and Statistical Learning Theory"
             }
-          },
-          {
-            "id": "711f15533889e5f5",
-            "type": "leaf",
-            "state": {
-              "type": "dictionary-view",
-              "state": {},
-              "icon": "quote-glyph",
-              "title": "Dictionary"
-            }
-          },
-          {
-            "id": "97de7906a2098c89",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,7 +171,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1f1a35fdb5715427",
+  "active": "6ac2691cefa1518a",
   "lastOpenFiles": [
     "Fall 2025/AI/sample final.pdf",
     "Fall 2025/AI/sample final - solutions.pdf",
